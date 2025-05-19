@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:entity",
+    "title": "Generic Entity",
+    "description": "A schema which contains the keys that all entities share.",
+    "type": "object",
+    "properties": {
+        "entity_number": {
+            "title": "Entity Number",
+            "description": "A unique ID given to every entity contained within a blueprint. In practice, this value is the 1-indexed position of the entity inside it's parent blueprint's 'entities' list. This is not enforced however, so an entity's number can be specified with any value as long as it's unique inside that particular blueprint. This value is used for resolving associations between different entities, such as wire connections or schedule definitions.",
+            "$ref": "urn:uint64"
+        },
+        "name": {
+            "title": "Name",
+            "description": "The name of the entity. If this name is not recognized by Factorio when importing the entity is omitted with a notification to the console.",
+            "type": "string"
+        },
+        "position": {
+            "title": "Position",
+            "description": "The position where the entity is located.",
+            "$ref": "urn:factorio:position"
+        },
+        "mirror": {
+            "title": "Mirror",
+            "description": "Whether or not the input/output fluid boxes are mirrored on this particular entity.",
+            "type": "boolean",
+            "default": false
+        },
+        "quality": {
+            "title": "Quality",
+            "description": "The quality of the entity itself.",
+            "$ref": "urn:factorio:quality-name",
+            "default": "normal"
+        },
+        "tags": {
+            "title": "Tags",
+            "description": "Any additional metadata associated with this entity, intended for including mod information inside exported blueprint strings. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.",
+            "type": "object",
+            "additionalProperties": {
+                "anyOf": [
+                    {"type": "string"},
+                    {"type": "boolean"},
+                    {"type": "number"},
+                    {"$ref": "object"}
+                ]
+            }
+        }
+    },
+    "required": ["entity_number", "name", "position"]
+}

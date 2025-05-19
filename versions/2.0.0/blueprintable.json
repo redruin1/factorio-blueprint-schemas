@@ -1,0 +1,12 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:blueprintable",
+    "title": "Blueprintable",
+    "description": "A schema that validates any encodable/decodable blueprint object, including blueprints, deconstruction planners, upgrade planners, and blueprint books.",
+    "oneOf": [
+        {"$ref": "urn:factorio:blueprint"},
+        {"$ref": "urn:factorio:deconstruction-planner"},
+        {"$ref": "urn:factorio:upgrade-planner"},
+        {"$ref": "urn:factorio:blueprint-book"}
+    ]
+}

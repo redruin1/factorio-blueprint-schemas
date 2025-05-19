@@ -1,0 +1,177 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:blueprint",
+    "title": "Blueprint Root",
+    "description": "A regular blueprint, which can contain entities, tiles, schedules, wire connections, stock connections, in addition to additional metadata.",
+    "$defs": {},
+    "type": "object",
+    "properties": {
+        "index": {
+            "title": "Index",
+            "description": "The unique index of the blueprint, if it lies inside of a parent blueprint book. If not inside of a blueprint book, this key has no effect.",
+            "oneOf": [
+                {"$ref": "urn:uint16"},
+                {"type": "null"}
+            ]
+        },
+        "blueprint": {
+            "title": "Blueprint Object",
+            "description": "Main object of the blueprint, which actually contains the majority of its keys.",
+            "type": "object",
+            "properties": {
+                "item": {
+                    "title": "Item",
+                    "description": "The name of the item associated with this blueprintable. Always equivalent to 'blueprint'.",
+                    "const": "blueprint"
+                },
+                "label": {
+                    "title": "Label",
+                    "description": "The player-given title of this blueprint. Can be specified with rich text colors and icons. If omitted or specified as an empty string, then the blueprint is given the default name 'Blueprint'.",
+                    "type": "string",
+                    "default": ""
+                },
+                "label_color": {
+                    "title": "Label Colors",
+                    "description": "The color of the label. If omitted, this color defaults to a special hybrid color, where it is white in your inventory and black when being placed.",
+                    "$ref": "urn:factorio:color"
+                },
+                "description": {
+                    "title": "Description",
+                    "description": "The player-given description of this blueprint. Can be specified with rich text colors and icons.",
+                    "type": "string",
+                    "default": ""
+                },
+                "icons": {
+                    "title": "Icons",
+                    "description": "The list of icons to display over the blueprint item, with a maximum of 4 icons total.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "urn:factorio:icon"
+                    },
+                    "maxItems": 4
+                },
+                "version": {
+                    "title": "Version",
+                    "description": "The version of the game associated with this blueprint string. Encoded as four bytes, where each byte corresponds to a semantic version number.",
+                    "$ref": "urn:uint64"
+                },
+                "snap-to-grid": {
+                    "title": "Snap to Grid",
+                    "description": "A snapping grid with a width ('x') and height ('y') to apply when placing this blueprint. If this field is omitted, this means the blueprint has no snapping grid.",
+                    "$ref": "urn:factorio:position"
+                },
+                "absolute-snapping": {
+                    "title": "Absolute Snapping",
+                    "description": "Whether or not this blueprint will use absolute coordinates when snapping to it's defined snapping grid. If no snapping grid is defined, this key does nothing.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "position-relative-to-grid": {
+                    "title": "Position Relative to Grid",
+                    "description": "The coordinate offset to give the snapping grid (as indicated by the flag icon in the Blueprint's inspection GUI).",
+                    "$ref": "urn:factorio:position",
+                    "default": {"x": 0, "y": 0}
+                },
+                "entities": {
+                    "title": "Entities",
+                    "description": "The list of all entities stored inside this blueprint.",
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {"$ref": "urn:factorio:entity:accumulator"},
+                            {"$ref": "urn:factorio:entity:agricultural-tower"},
+                            {"$ref": "urn:factorio:entity:ammo-turret"},
+                            {"$ref": "urn:factorio:entity:arithmetic-combinator"},
+                            {"$ref": "urn:factorio:entity:artillery-turret"},
+                            {"$ref": "urn:factorio:entity:artillery-wagon"},
+                            {"$ref": "urn:factorio:entity:assembling-machine"},
+                            {"$ref": "urn:factorio:entity:asteroid-collector"},
+                            {"$ref": "urn:factorio:entity:beacon"},
+                            {"$ref": "urn:factorio:entity:boiler"},
+                            {"$ref": "urn:factorio:entity:burner-generator"},
+                            {"$ref": "urn:factorio:entity:car"},
+                            {"$ref": "urn:factorio:entity:cargo-bay"},
+                            {"$ref": "urn:factorio:entity:cargo-landing-pad"},
+                            {"$ref": "urn:factorio:entity:cargo-wagon"},
+                            {"$ref": "urn:factorio:entity:constant-combinator"},
+                            {"$ref": "urn:factorio:entity:container"},
+                            {"$ref": "urn:factorio:entity:curved-rail-a"},
+                            {"$ref": "urn:factorio:entity:curved-rail-b"},
+                            {"$ref": "urn:factorio:entity:decider-combinator"}
+                        ]
+                    },
+                    "default": []
+                },
+                "tiles": {
+                    "title": "Tiles",
+                    "description": "The list of all tiles stored inside this blueprint.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "urn:factorio:tile"
+                    },
+                    "default": []
+                },
+                "wires": {
+                    "title": "Wires",
+                    "description": "The list of all wire connections stored inside this blueprint, including both power and circuit wires.",
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "prefixItems": [
+                            {
+                                "$ref": "urn:uint64",
+                                "description": "'entity_number' of the first entity being connected."
+                            },
+                            {
+                                "enum": [
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6
+                                ],
+                                "description": "What kind of connection the wire has to entity1. See 'wire_connection_types' in Factorio defines."
+                            },
+                            {
+                                "$ref": "urn:uint64",
+                                "description": "'entity_number' of the second entity being connected."
+                            },
+                            {
+                                "enum": [
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6
+                                ],
+                                "description": "What kind of connection the wire has to entity2. See 'wire_connection_types' in Factorio defines."
+                            }
+                        ],
+                        "items": false
+                    },
+                    "default": []
+                },
+                "schedules": {
+                    "title": "Wires",
+                    "description": "The list of all schedules in this blueprint, including both train and space platform schedules.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "urn:factorio:schedule"
+                    },
+                    "default": []
+                },
+                "stock_connections": {
+                    "title": "Stock Connections",
+                    "description": "A list of all connections between train cars. In Factorio 1.0, train car connections were automatically made if two rolling stock entities were in the correct positions - but in this structure their connections are now explicit.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "urn:factorio:stock-connection"
+                    },
+                    "default": []
+                }
+            }
+        }
+    }
+}

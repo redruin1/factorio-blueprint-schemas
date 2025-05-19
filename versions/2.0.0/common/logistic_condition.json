@@ -1,0 +1,19 @@
+{
+    "properties": {
+        "control_behavior": {
+            "properties": {
+                "connect_to_logistic_network": {
+                    "title": "Connect to logistic network?",
+                    "description": "Whether or not this entity's function should be controlled by some condition based on the logistic network it resides inside of.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "logistic_condition": {
+                    "title": "Logistic Condition",
+                    "description": "The logistic condition that the entity should be enabled with, if 'connect_to_logistic_network' is 'true'.",
+                    "$ref": "urn:common:condition"
+                }
+            }
+        }
+    }
+}

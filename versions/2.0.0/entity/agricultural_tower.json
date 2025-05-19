@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:entity:agricultural-tower",
+    "title": "Agricultural Tower",
+    "description": "An entity that seeds and harvests plants automatically.",
+    "allOf": [
+        {"$ref": "urn:factorio:entity"},
+        {"$ref": "urn:common:control-behavior"},
+        {"$ref": "urn:common:circuit-enabled"},
+        {"$ref": "urn:common:logistic-condition"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "properties": {
+                "circuit_enabled": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "read_contents": {
+                    "type": "boolean",
+                    "default": "false"
+                }
+            }
+        }
+    }
+}
