@@ -1,0 +1,41 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:entity:ammo-turret",
+    "title": "Agricultural Tower",
+    "description": "An entity that seeds and harvests plants automatically.",
+    "allOf": [
+        {"$ref": "urn:factorio:entity"},
+        {"$ref": "urn:common:control-behavior"},
+        {"$ref": "urn:common:circuit-enabled"},
+        {"$ref": "urn:common:logistic-condition"},
+        {"$ref": "urn:factorio:common:turret-priorities"}
+    ],
+    "type": "object",
+    "properties": {
+        "items": {
+            "title": "Item Requests",
+            "description": "A list of item requests objects, which contain the item name, it's quality, the amount to request, as well as exactly what inventories to request to and where inside those inventories.",
+            "type": "array",
+            "items": {
+                "$ref": "urn:factorio:item-request"
+            }
+        },
+        "control_behavior": {
+            "type": "object",
+            "description": "Entity-specific structure which holds keys related to configuring how this entity acts.",
+            "properties": {
+                "read_ammo": {
+                    "title": "Read Ammo",
+                    "description": "Whether or not to broadcast the current amount of ammo in the turrets inventory to a connected circuit network.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        }
+    },
+    "required": [
+        "entity_number",
+        "name",
+        "position"
+    ]
+}

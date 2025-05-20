@@ -1,10 +1,12 @@
 {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:common:logistic-condition",
     "properties": {
         "control_behavior": {
             "properties": {
                 "connect_to_logistic_network": {
                     "title": "Connect to logistic network?",
-                    "description": "Whether or not this entity's function should be controlled by some condition based on the logistic network it resides inside of.",
+                    "description": "Whether or not this entity should be controlled by a specified logistic condition.",
                     "type": "boolean",
                     "default": false
                 },

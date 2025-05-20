@@ -17,8 +17,14 @@
         },
         "position": {
             "title": "Position",
-            "description": "The position where the entity is located.",
-            "$ref": "urn:factorio:position"
+            "description": "The position where the entity is located inside of it's parent blueprint. This position is (almost) always located at the spatial center of the entity. For grid-aligned entities, this position always lies either in the center of a tile or on its transition.",
+            "$ref": "urn:factorio:common:position"
+        },
+        "direction": {
+            "title": "Direction",
+            "description": "The direction of the entity, where 0 corresponds to north and incrementing spins clockwise.",
+            "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+            "default": 0
         },
         "mirror": {
             "title": "Mirror",
@@ -29,12 +35,12 @@
         "quality": {
             "title": "Quality",
             "description": "The quality of the entity itself.",
-            "$ref": "urn:factorio:quality-name",
+            "$ref": "urn:factorio:common:quality-name",
             "default": "normal"
         },
         "tags": {
             "title": "Tags",
-            "description": "Any additional metadata associated with this entity, intended for including mod information inside exported blueprint strings. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.",
+            "description": "Any additional metadata associated with this entity, mostly intended for including mod information inside exported blueprint strings. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.",
             "type": "object",
             "additionalProperties": {
                 "anyOf": [

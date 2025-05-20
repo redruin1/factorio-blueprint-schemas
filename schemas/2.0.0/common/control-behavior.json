@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:common:control-behavior",
+    "$id": "urn:factorio:common:control-behavior",
     "$comment": "Gives the entity a control behavior object",
     "properties": {
         "control_behavior": {

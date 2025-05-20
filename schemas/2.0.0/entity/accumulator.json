@@ -6,7 +6,7 @@
     "type": "object",
     "allOf": [
         {"$ref": "urn:factorio:entity"},
-        {"$ref": "urn:common:control-behavior"}
+        {"$ref": "urn:factorio:common:control-behavior"}
     ],
     "properties": {
         "control_behavior": {
@@ -15,7 +15,7 @@
                     "title": "Output Signal",
                     "description": "What signal to send the current accumulator charge level value (in the range [0, 100]) if this accumulator is connected to a circuit network.",
                     "oneOf": [
-                        {"$ref": "urn:factorio:signal-id"},
+                        {"$ref": "urn:factorio:common:signal-id"},
                         {"type": "null"}
                     ],
                     "default": {"name": "signal-A", "type": "virtual"}

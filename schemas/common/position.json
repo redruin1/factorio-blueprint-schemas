@@ -1,0 +1,11 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:common:position",
+    "title": "Position",
+    "description": "A float or integer 2D position.",
+    "type": "object",
+    "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"}
+    }
+}

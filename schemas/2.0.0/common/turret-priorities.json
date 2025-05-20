@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:common:turret-priorities",
+    "properties": {
+        "priority_list": {
+            "title": "Priority List",
+            "description": "The (static) list of priority targets that this turret should aim for. Overwritten by circuit network signals if 'set_priority_list' is 'true'.",
+            "type": "array",
+            "items": {
+                "$ref": "urn:factorio:target-id"
+            },
+            "default": []
+        },
+        "ignore_unprioritized": {
+            "title": "Ignore Unprioritized",
+            "description": "Whether or not to completely ignore enemies that do not lie in this turret's target priority lists.",
+            "type": "boolean",
+            "default": false
+        },
+        "set_priority_list": {
+            "title": "Set Priority List",
+            "description": "Whether or not this entity should set its target priorities via connected circuit network signals.",
+            "type": "boolean",
+            "default": false
+        },
+        "set_ignore_unprioritized": {
+            "title": "Set Ignore Unprioritized",
+            "description": "Whether or not this entity should have it's ignore unprioritized behavior be set conditionally via 'ignore_unlisted_targets_condition'.",
+            "type": "boolean",
+            "default": false
+        },
+        "ignore_unlisted_targets_condition": {
+            "title": "Ignore Unlisted Targets Condition",
+            "description": "A condition which must be true in order for non-prioritized targets to be entirely ignored when this turret is targeting. Does nothing unless 'set_ignore_unprioritized' is 'true'.",
+            "$ref": "urn:factorio:simple-condition"
+        }
+    }
+}

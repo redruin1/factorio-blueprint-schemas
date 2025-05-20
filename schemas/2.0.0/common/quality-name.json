@@ -1,0 +1,8 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:common:quality-name",
+    "title": "Quality",
+    "description": "A type of quality.",
+    "enum": ["normal", "uncommon", "rare", "epic", "legendary", "quality-unknown"],
+    "default": "normal"
+}

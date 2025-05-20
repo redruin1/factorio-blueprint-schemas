@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:common:circuit-enabled",
+    "properties": {
+        "control_behavior": {
+            "properties": {
+                "circuit_enabled": {
+                    "description": "Whether or not this entity should be controlled by a specified circuit condition.",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}

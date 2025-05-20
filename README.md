@@ -12,10 +12,10 @@ Each version of the blueprint string format is located in it's respective semant
 
 Each file is written as Draft 2020-compliant JSON schema. Titles and descriptions should also be provided, if a properties function is not immediately obvious.
 
-To keep schemas concise and easy to maintain, large schemas are frequently split into multiple smaller schemas and `$ref`-erenced appropriately. `$defs` are also permitted if certain structures are reused often in *one* single schema; but if something is used in more than one place at once, referencing the schema is preferred.
+To keep schemas concise and easy to maintain, large schemas are frequently split into multiple smaller schemas and `"$ref"`-erenced appropriately. `$defs` are also permitted if certain structures are reused often in *one* single schema; but if something is used in more than one place at once, referencing the schema is preferred.
 
 In order to reduce the duplication of work, cross-referencing schemas between versions is not only permitted, but recommended if a schema is truly unchanged. In such cases, always prefer referencing schemas in earlier semantic versions; so schemas defined in folder `2.0.0` can reference schemas in defined in `1.0.0`, but not vise-versa.
 
 ## Usage
 
-Individual schemas can be grabbed by taking their corresponding raw github URL
+Individual schemas can be grabbed by taking their corresponding raw GitHub URL.

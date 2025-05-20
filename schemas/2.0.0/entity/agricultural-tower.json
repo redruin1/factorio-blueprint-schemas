@@ -5,21 +5,18 @@
     "description": "An entity that seeds and harvests plants automatically.",
     "allOf": [
         {"$ref": "urn:factorio:entity"},
-        {"$ref": "urn:common:control-behavior"},
-        {"$ref": "urn:common:circuit-enabled"},
-        {"$ref": "urn:common:logistic-condition"}
+        {"$ref": "urn:factorio:common:control-behavior"},
+        {"$ref": "urn:factorio:common:circuit-enabled"},
+        {"$ref": "urn:factorio:common:logistic-condition"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
             "properties": {
-                "circuit_enabled": {
-                    "type": "boolean",
-                    "default": "false"
-                },
                 "read_contents": {
+                    "description": "Whether or not this entity should broadcast the contents of its inventory to a connected circuit network.",
                     "type": "boolean",
-                    "default": "false"
+                    "default": false
                 }
             }
         }

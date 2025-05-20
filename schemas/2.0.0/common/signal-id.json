@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:common:signal-id",
+    "title": "SignalID",
+    "description": "An object which represents a valid signal.",
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "type": {
+            "description": "The category of the signal. There can be multiple signals with the same name but differing types.",
+            "enum": [
+                "item",
+                "fluid",
+                "recipe",
+                "entity",
+                "space-location",
+                "asteroid-chunk",
+                "quality",
+                "virtual"
+            ],
+            "default": "item"
+        },
+        "quality": {"$ref": "urn:factorio:common:quality-name"}
+    }
+}
