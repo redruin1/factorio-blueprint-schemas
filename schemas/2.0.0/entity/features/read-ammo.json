@@ -1,7 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/entity/features/read-ammo.json",
-    "$comment": "Gives this entity the ability to broadcast the amount of ammo it contains to a connected circuit network",
+    "title": "Read Ammo",
+    "description": "Gives this entity the ability to broadcast the amount of ammo it contains to a connected circuit network.",
     "type": "object",
     "properties": {
         "control_behavior": {

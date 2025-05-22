@@ -1,7 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/entity/features/circuit-condition.json",
-    "$comment": "Gives the entity a circuit condition",
+    "title": "Circuit Condition",
+    "description": "Allows the entity to configure when it should operate based on some circuit network condition.",
     "properties": {
         "control_behavior": {
             "type": "object",

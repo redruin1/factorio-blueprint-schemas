@@ -1,13 +1,37 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/entity/features/turret-priorities.json",
+    "title": "Turret Priorities",
+    "description": "Allows this entity to prioritize specific targets over others, and to do so conditionally as well.",
+    "$defs": {
+        "target-filter": {
+            "title": "Target Filter",
+            "description": "A valid Factorio entity belonging to an enemy force of this turret.",
+            "type": "object",
+            "properties": {
+                "index": {
+                    "description": "The index of the filter in the turret's GUI, 1-indexed.",
+                    "$ref": "../../../common/uint32.json"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "examples": [
+                {
+                    "index": 1,
+                    "name": "medium-spitter"
+                }
+            ]
+        }
+    },
     "properties": {
         "priority_list": {
             "title": "Priority List",
-            "description": "The (static) list of priority targets that this turret should aim for. Overwritten by circuit network signals if 'set_priority_list' is 'true'.",
+            "description": "The (static) list of priority targets that this turret should aim for. Overwritten by circuit network signals if `'set_priority_list'` is `true`.",
             "type": "array",
             "items": {
-                "$ref": "urn:factorio:target-id"
+                "$ref": "#/$defs/target-filter"
             },
             "default": []
         },
@@ -25,14 +49,14 @@
         },
         "set_ignore_unprioritized": {
             "title": "Set Ignore Unprioritized",
-            "description": "Whether or not this entity should have it's ignore unprioritized behavior be set conditionally via 'ignore_unlisted_targets_condition'.",
+            "description": "Whether or not this entity should have it's ignore unprioritized behavior be set conditionally via `'ignore_unlisted_targets_condition'`.",
             "type": "boolean",
             "default": false
         },
         "ignore_unlisted_targets_condition": {
             "title": "Ignore Unlisted Targets Condition",
-            "description": "A condition which must be true in order for non-prioritized targets to be entirely ignored when this turret is targeting. Does nothing unless 'set_ignore_unprioritized' is 'true'.",
-            "$ref": "urn:factorio:simple-condition"
+            "description": "A condition which must be true in order for non-prioritized targets to be entirely ignored when this turret is targeting. Does nothing unless `'set_ignore_unprioritized'` is `true`.",
+            "$ref": "../../common/condition.json"
         }
     }
 }

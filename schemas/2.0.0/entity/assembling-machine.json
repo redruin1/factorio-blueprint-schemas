@@ -16,8 +16,8 @@
             "title": "Recipe",
             "description": "The recipe that this entity is configured to perform.",
             "oneOf": [
-                {"type": "string"},
-                {"type": "null"}
+                {"title": "String", "type": "string"},
+                {"title": "null", "type": "null"}
             ]
         },
         "recipe_quality": {
@@ -30,40 +30,37 @@
             "properties": {
                 "set_recipe": {
                     "type": "boolean",
-                    "default": "false"
+                    "default": false
                 },
                 "read_contents": {
                     "type": "boolean",
-                    "default": "false"
+                    "default": false
                 },
                 "include_in_crafting": {
                     "type": "boolean",
-                    "default": "true"
+                    "default": true
                 },
                 "read_recipe_finished": {
                     "type": "boolean",
-                    "default": "false"
+                    "default": false
                 },
                 "recipe_finished_signal": {
                     "anyOf": [
-                        {"$ref": "urn:factorio:signal-id"},
-                        {"type": "null"}
+                        {"$ref": "../common/signal-id.json"},
+                        {"title": "null", "type": "null"}
                     ],
                     "default": null
                 },
                 "read_working": {
                     "type": "boolean",
-                    "default": "false"
+                    "default": false
                 },
                 "working_signal": {
                     "anyOf": [
-                        {
-                            "$ref": "urn:factorio:signal-id"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ]
+                        {"$ref": "../common/signal-id.json"},
+                        {"title": "null", "type": "null"}
+                    ],
+                    "default": null
                 }
             }
         }

@@ -1,6 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/entity/features/circuit-enabled.json",
+    "title": "Circuit Enabled",
+    "description": "Allows this entity to configure if it can control it's behavior with a circuit condition when connected to a circuit network. An entity posessing this field necessitates that it must also posess a `'circuit_condition'` field, but the converse is not true; certain entities are *always* controlled by a circuit condition when connected to a circuit network.",
     "properties": {
         "control_behavior": {
             "properties": {

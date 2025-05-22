@@ -53,6 +53,180 @@
                     "const": 6
                 }
             ]
+        },
+        "schedule-stop": {
+            "type": "object",
+            "properties": {
+                "station": {
+                    "title": "Station",
+                    "description": "The name of the stop. Either the name of a train stop or the name of a planet, depending on the type of schedule.",
+                    "type": "string"
+                },
+                "wait_conditions": {
+                    "title": "Wait Conditions",
+                    "description": "A list of wait condition objects, conjoined by their `compare_type`. The `compare_type` of each wait condition interacts with the previous wait condition object.",
+                    "type": "array",
+                    "items": {
+                        "title": "Wait Condition",
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "enum": ["TODO"]
+                            },
+                            "compare_type": {
+                                "enum": ["or", "and"],
+                                "default": "or"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "locomotive-schedule": {
+            "title": "Locomotive Schedule",
+            "type": "object",
+            "properties": {
+                "records": {
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/schedule-stop"}
+                },
+                "interrupts": {
+                    "title": "Interrupts",
+                    "description": "TODO"
+                }
+            }
+        },
+        "space-platform-schedule": {
+            "title": "Space Platform Schedule",
+            "type": "object",
+            "properties": {
+                "records": {
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/schedule-stop"}
+                },
+                "interrupts": {
+                    "title": "Interrupts",
+                    "description": "TODO"
+                }
+            }
+        },
+        "schedule": {
+            "title": "Schedule",
+            "description": "An object which encodes a list of consecutive stops as well as a number of entities configured to proceed between those stops. Includes both locomotive schedules as well as space platform schedules.",
+            "type": "object",
+            "properties": {
+                "locomotives": {
+                    "type": "array",
+                    "items": {
+                        "description": "The `entity_number` of a locomotive or space platform hub which has this schedule.",
+                        "$ref": "../common/uint64.json"
+                    }
+                },
+                "schedule": {
+                    "oneOf": [
+                        {"$ref": "#/$defs/locomotive-schedule"},
+                        {"$ref": "#/$defs/space-platform-schedule"}
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "locomotives": [1],
+                    "schedule": {
+                        "records": [
+                            {
+                                "station": "nauvis",
+                                "wait_conditions": [
+                                    {
+                                        "type": "all_requests_satisfied",
+                                        "compare_type": "and"
+                                    }
+                                ]
+                            },
+                            {
+                                "station": "vulcanus",
+                                "wait_conditions": [
+                                    {
+                                        "type": "any_request_zero",
+                                        "compare_type": "and"
+                                    }
+                                ]
+                            }
+                        ],
+                        "interrupts": [
+                            {
+                                "name": "Interrupt name",
+                                "conditions": [
+                                    {
+                                        "type": "damage_taken",
+                                        "compare_type": "and",
+                                        "damage": 1000
+                                    }
+                                ],
+                                "targets": [
+                                    {
+                                        "station": "nauvis",
+                                        "wait_conditions": [
+                                            {
+                                                "type": "passenger_not_present",
+                                                "compare_type": "and"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "station": "vulcanus",
+                                        "wait_conditions": [
+                                            {
+                                                "type": "item_count",
+                                                "compare_type": "and",
+                                                "condition": {
+                                                    "first_signal": {
+                                                        "name": "inserter"
+                                                    },
+                                                    "constant": 100,
+                                                    "comparator": "\u2264"
+                                                }
+                                            }
+                                        ],
+                                        "allows_unloading": false
+                                    }
+                                ],
+                                "inside_interrupt": true
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "stock-connection": {
+            "title": "Stock Connection",
+            "description": "An object which documents whether or not a particular RollingStock entity has connections to any other RollingStock.",
+            "type": "object",
+            "properties": {
+                "stock": {
+                    "description": "`entity_number` of the locomotive or wagon whose connections are being specified.",
+                    "$ref": "urn:uint64"
+                },
+                "front": {
+                    "description": "`entity_number` of the locomotive or wagon connected to the front of this `stock`.",
+                    "$ref": "urn:uint64"
+                },
+                "back": {
+                    "description": "`entity_number` of the locomotive or wagon connected to the front of this `stock`.",
+                    "$ref": "urn:uint64"
+                }
+            },
+            "required": ["stock"],
+            "examples": [
+                {
+                    "stock": 2,
+                    "front": 1,
+                    "back": 3
+                },
+                {
+                    "stock": 4
+                }
+            ]
         }
     },
     "type": "object",
@@ -108,8 +282,8 @@
                 },
                 "snap-to-grid": {
                     "title": "Snap to Grid",
-                    "description": "A snapping grid with a width ('x') and height ('y') to apply when placing this blueprint. If this field is omitted, this means the blueprint has no snapping grid.",
-                    "$ref": "common/position.json"
+                    "description": "A snapping grid with a width (`x`) and height (`y`) to apply when placing this blueprint. If this field is omitted, this means the blueprint has no snapping grid.",
+                    "$ref": "../common/position.json"
                 },
                 "absolute-snapping": {
                     "title": "Absolute Snapping",
@@ -173,7 +347,7 @@
                         "prefixItems": [
                             {
                                 "$ref": "../common/uint64.json",
-                                "description": "`'entity_number'` of the first entity being connected."
+                                "description": "`entity_number` of the first entity being connected."
                             },
                             {
                                 "description": "What kind of connection the wire has to the first entity. See [`wire_connector_id`](https://lua-api.factorio.com/latest/defines.html#defines.wire_connector_id).",
@@ -181,7 +355,7 @@
                             },
                             {
                                 "$ref": "../common/uint64.json",
-                                "description": "`'entity_number'` of the second entity being connected."
+                                "description": "`entity_number` of the second entity being connected."
                             },
                             {
                                 "description": "What kind of connection the wire has to the second entity. See [`wire_connector_id`](https://lua-api.factorio.com/latest/defines.html#defines.wire_connector_id).",
@@ -193,20 +367,20 @@
                     "default": []
                 },
                 "schedules": {
-                    "title": "Wires",
+                    "title": "Schedules",
                     "description": "The list of all schedules in this blueprint, including both train and space platform schedules.",
                     "type": "array",
                     "items": {
-                        "$ref": "urn:factorio:schedule"
+                        "$ref": "#/$defs/schedule"
                     },
                     "default": []
                 },
                 "stock_connections": {
                     "title": "Stock Connections",
-                    "description": "A list of all connections between train cars. In Factorio 1.0, train car connections were automatically made if two rolling stock entities were in the correct positions - but in this structure their connections are now made explicit.",
+                    "description": "An explicit list of all connections between rolling stock.",
                     "type": "array",
                     "items": {
-                        "$ref": "urn:factorio:stock-connection"
+                        "$ref": "#/$defs/stock-connection"
                     },
                     "default": []
                 }

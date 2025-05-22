@@ -11,12 +11,15 @@
     <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
     <script src="schema_doc.min.js"></script>
     <meta charset="utf-8"/>
-    <title>Schema Docs</title>
+        
+    
+    <title>Equipment Grid</title>
 </head>
 <body onload="anchorOnLoad();" id="root">
 
-    <span class="badge badge-dark value-type">Type: object</span><br/>
-
+     <h1>Equipment Grid</h1><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Gives this entity the ability to specify the contents of an attached equipment grid.</p>
+</span>
         
 
         
@@ -153,11 +156,14 @@
              data-parent="#accordiongrid_items_equipment_quality">
             <div class="card-body pl-5">
 
-    <span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description"><p>😅 ERROR in schema generation, a referenced schema could not be loaded, no documentation here unfortunately 🏜️</p>
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
 </span>
 
-    
+    <div class="enum-value" id="grid_items_equipment_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
         
 
         
@@ -186,7 +192,7 @@
              data-parent="#accordiongrid_items_position">
             <div class="card-body pl-5">
 
-    <span class="badge badge-dark value-type">Type: object</span><br/>
+    <h4>Position</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>The position of the equipment in integer coordinates, corresponding to the top-leftmost tile it occupies.</p>
 </span>
 
@@ -197,6 +203,58 @@
         
 
         
+<div class="accordion" id="accordiongrid_items_position_x">
+    <div class="card">
+        <div class="card-header" id="headinggrid_items_position_x">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#grid_items_position_x"
+                        aria-expanded="" aria-controls="grid_items_position_x" onclick="setAnchor('#grid_items_position_x')"><span class="property-name">x</span></button>
+            </h2>
+        </div>
+
+        <div id="grid_items_position_x"
+             class="collapse property-definition-div" aria-labelledby="headinggrid_items_position_x"
+             data-parent="#accordiongrid_items_position_x">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: number</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordiongrid_items_position_y">
+    <div class="card">
+        <div class="card-header" id="headinggrid_items_position_y">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#grid_items_position_y"
+                        aria-expanded="" aria-controls="grid_items_position_y" onclick="setAnchor('#grid_items_position_y')"><span class="property-name">y</span></button>
+            </h2>
+        </div>
+
+        <div id="grid_items_position_y"
+             class="collapse property-definition-div" aria-labelledby="headinggrid_items_position_y"
+             data-parent="#accordiongrid_items_position_y">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: number</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>

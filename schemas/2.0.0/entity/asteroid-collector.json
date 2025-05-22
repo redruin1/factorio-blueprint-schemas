@@ -10,15 +10,26 @@
         {"$ref": "features/circuit-condition.json"}
     ],
     "$defs": {
-        "asteroid-chunk-id": {
+        "asteroid-chunk-filter": {
+            "title": "Asteroid Chunk Filter",
+            "description": "An individual chunk filter entry.",
             "type": "object",
             "properties": {
-                "index": {"$ref": "../../uint32.json"},
+                "index": {
+                    "description": "The index of the filter in the GUI, 1-indexed.",
+                    "$ref": "../../common/uint32.json"
+                },
                 "name": {
                     "description": "The name of a valid Factorio asteroid chunk.",
                     "type": "string"
                 }
-            }
+            },
+            "examples": [
+                {
+                    "index": 1,
+                    "name": "oxide-asteroid-chunk"
+                }
+            ]
         }
     },
     "type": "object",
@@ -28,28 +39,35 @@
             "description": "Inventory object which holds the limiting bar for this entity.",
             "type": "object",
             "properties": {
-                "bar": {"$ref": "../../common/uint16.json"}
+                "bar": {"$ref": "../../common/limiting-bar.json"}
             },
             "TODO": "Make this a reference to an `Inventory` object"
         },
         "chunk-filter": {
+            "title": "Chunk Filters",
+            "description": "A static list of chunk filters that this collector should abide by. Does nothing if `'circuit_set_filters'` is `true`.",
             "type": "array",
             "items": {
-                "$ref": "#/$defs/asteroid-chunk-id"
+                "$ref": "#/$defs/asteroid-chunk-filter"
             }
         },
         "control_behavior": {
             "type": "object",
             "properties": {
                 "circuit_set_filters": {
+                    "description": "Whether or not the chunk filters of this entity should be specified by a connected circuit network. Overwrites the `'chunk-filter'` array if both are specified.",
                     "type": "boolean",
-                    "default": "false"
+                    "default": false
                 },
                 "circuit_read_contents": {
+                    "title": "Circuit Read Contents",
+                    "description": "Whether or not to broadcast the items contained within this machine's inventory to any connected circuit network.",
                     "type": "boolean",
                     "default": false
                 },
                 "include_hands": {
+                    "title": "Include Hands",
+                    "description": "Whether or not the items currently in the asteroid collector's arms should be included in the total amount reported to the circuit network. Only has an effect if `'circuit_read_contents'` is `true`.",
                     "type": "boolean",
                     "default": true
                 }

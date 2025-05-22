@@ -1,7 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/entity/features/equipment-grid.json",
-    "$comment": "Gives this entity the ability to specify an attached equipment grid",
+    "title": "Equipment Grid",
+    "description": "Gives this entity the ability to specify the contents of an attached equipment grid.",
     "$defs": {
         "equipment-id": {
             "title": "Equipment ID",
@@ -13,7 +14,7 @@
                     "type": "string"
                 },
                 "quality": {
-                    "$ref": "urn:factorio:quality-name"
+                    "$ref": "../../common/quality-name.json"
                 }
             }
         },
@@ -23,7 +24,7 @@
                 "equipment": {"$ref": "#/$defs/equipment-id"},
                 "position": {
                     "description": "The position of the equipment in integer coordinates, corresponding to the top-leftmost tile it occupies.",
-                    "$ref": "urn:factorio:position"
+                    "$ref": "../../../common/position.json"
                 }
             },
             "required": ["equipment", "position"]

@@ -1,7 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/entity/features/artillery-auto-targeting.json",
-    "$comment": "Only used by artillery turrets and artillery wagons",
+    "title": "Artillery Auto Targeting",
+    "description": "Allows the entity to configure artillery as to whether it should automatically target enemies within range. Only used by artillery turrets and artillery wagons.",
     "type": "object",
     "properties": {
         "artillery_auto_targeting": {

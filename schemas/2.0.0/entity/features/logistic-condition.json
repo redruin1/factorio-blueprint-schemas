@@ -1,18 +1,20 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/entity/features/logistic-condition.json",
+    "title": "Logistic Condition",
+    "description": "Allows this entity to control it's function based on the logistic network it lives inside of.",
     "properties": {
         "control_behavior": {
             "properties": {
                 "connect_to_logistic_network": {
-                    "title": "Connect to logistic network?",
+                    "title": "Connect to logistic network",
                     "description": "Whether or not this entity should be controlled by a specified logistic condition.",
                     "type": "boolean",
                     "default": false
                 },
                 "logistic_condition": {
                     "title": "Logistic Condition",
-                    "description": "The logistic condition that the entity should be enabled with, if 'connect_to_logistic_network' is 'true'.",
+                    "description": "The logistic condition that the entity should be enabled with, if `'connect_to_logistic_network'` is `true`.",
                     "$ref": "../../common/condition.json"
                 }
             }

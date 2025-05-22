@@ -1,7 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/entity/features/player-description.json",
-    "$comment": "Gives this entity the ability to attach a player-defined string",
+    "title": "Player Description",
+    "description": "Gives this entity the ability to attach a player-defined string.",
     "type": "object",
     "properties": {
         "player_description": {
