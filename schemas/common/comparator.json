@@ -1,0 +1,8 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "common/comparator.json",
+    "title": "Comparator",
+    "description": "In/equality operation to use in conditions and item request filters.",
+    "enum": [">", "<", "=", "≥", "≤", "≠"],
+    "default": ">"
+}

@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:common:turret-priorities",
+    "$id": "2.0.0/entity/features/turret-priorities.json",
     "properties": {
         "priority_list": {
             "title": "Priority List",

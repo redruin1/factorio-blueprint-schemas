@@ -1,17 +1,68 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:blueprint",
+    "$id": "2.0.0/blueprint.json",
     "title": "Blueprint Root",
     "description": "A regular blueprint, which can contain entities, tiles, schedules, wire connections, stock connections, in addition to additional metadata.",
-    "$defs": {},
+    "$defs": {
+        "wire-connector-id": {
+            "title": "Wire Connector ID",
+            "anyOf": [
+                {
+                    "title": "Circuit Red", 
+                    "description": "`wire_connector_id.circuit_red`", 
+                    "const": 1
+                },
+                {
+                    "title": "Circuit Green", 
+                    "description": "`wire_connector_id.circuit_green`", 
+                    "const": 2
+                },
+                {
+                    "title": "Circuit Red Input", 
+                    "description": "`wire_connector_id.combinator_input_red`", 
+                    "const": 1
+                },
+                {
+                    "title": "Circuit Green Input", 
+                    "description": "`wire_connector_id.combinator_input_green`", 
+                    "const": 2
+                },
+                {
+                    "title": "Circuit Red Output", 
+                    "description": "`wire_connector_id.combinator_output_red`", 
+                    "const": 3
+                },
+                {
+                    "title": "Circuit Green Output", 
+                    "description": "`wire_connector_id.combinator_output_green`", 
+                    "const": 4
+                },
+                {
+                    "title": "Power Wire", 
+                    "description": "`wire_connector_id.pole_copper`", 
+                    "const": 5
+                },
+                {
+                    "title": "Power Switch Left", 
+                    "description": "`wire_connector_id.power_switch_left_copper`", 
+                    "const": 5
+                },
+                {
+                    "title": "Power Switch Right", 
+                    "description": "`wire_connector_id.power_switch_right_copper`", 
+                    "const": 6
+                }
+            ]
+        }
+    },
     "type": "object",
     "properties": {
         "index": {
             "title": "Index",
             "description": "The unique index of the blueprint, if it lies inside of a parent blueprint book. If not inside of a blueprint book, this key has no effect.",
             "oneOf": [
-                {"$ref": "urn:uint16"},
-                {"type": "null"}
+                {"$ref": "../common/uint16.json"},
+                {"title": "Null", "type": "null"}
             ]
         },
         "blueprint": {
@@ -21,7 +72,7 @@
             "properties": {
                 "item": {
                     "title": "Item",
-                    "description": "The name of the item associated with this blueprintable. Always equivalent to 'blueprint'.",
+                    "description": "The name of the item associated with this blueprintable.",
                     "const": "blueprint"
                 },
                 "label": {
@@ -31,9 +82,9 @@
                     "default": ""
                 },
                 "label_color": {
-                    "title": "Label Colors",
+                    "title": "Label Color",
                     "description": "The color of the label. If omitted, this color defaults to a special hybrid color, where it is white in your inventory and black when being placed.",
-                    "$ref": "urn:factorio:color"
+                    "$ref": "../common/color.json"
                 },
                 "description": {
                     "title": "Description",
@@ -46,19 +97,19 @@
                     "description": "The list of icons to display over the blueprint item, with a maximum of 4 icons total.",
                     "type": "array",
                     "items": {
-                        "$ref": "urn:factorio:icon"
+                        "$ref": "common/icon.json"
                     },
                     "maxItems": 4
                 },
                 "version": {
                     "title": "Version",
                     "description": "The version of the game associated with this blueprint string. Encoded as four bytes, where each byte corresponds to a semantic version number.",
-                    "$ref": "urn:uint64"
+                    "$ref": "../common/uint64.json"
                 },
                 "snap-to-grid": {
                     "title": "Snap to Grid",
                     "description": "A snapping grid with a width ('x') and height ('y') to apply when placing this blueprint. If this field is omitted, this means the blueprint has no snapping grid.",
-                    "$ref": "urn:factorio:position"
+                    "$ref": "common/position.json"
                 },
                 "absolute-snapping": {
                     "title": "Absolute Snapping",
@@ -69,7 +120,7 @@
                 "position-relative-to-grid": {
                     "title": "Position Relative to Grid",
                     "description": "The coordinate offset to give the snapping grid (as indicated by the flag icon in the Blueprint's inspection GUI).",
-                    "$ref": "urn:factorio:position",
+                    "$ref": "../common/position.json",
                     "default": {"x": 0, "y": 0}
                 },
                 "entities": {
@@ -77,30 +128,32 @@
                     "description": "The list of all entities stored inside this blueprint.",
                     "type": "array",
                     "items": {
-                        "oneOf": [
-                            {"$ref": "urn:factorio:entity:accumulator"},
-                            {"$ref": "urn:factorio:entity:agricultural-tower"},
-                            {"$ref": "urn:factorio:entity:ammo-turret"},
-                            {"$ref": "urn:factorio:entity:arithmetic-combinator"},
-                            {"$ref": "urn:factorio:entity:artillery-turret"},
-                            {"$ref": "urn:factorio:entity:artillery-wagon"},
-                            {"$ref": "urn:factorio:entity:assembling-machine"},
-                            {"$ref": "urn:factorio:entity:asteroid-collector"},
-                            {"$ref": "urn:factorio:entity:beacon"},
-                            {"$ref": "urn:factorio:entity:boiler"},
-                            {"$ref": "urn:factorio:entity:burner-generator"},
-                            {"$ref": "urn:factorio:entity:car"},
-                            {"$ref": "urn:factorio:entity:cargo-bay"},
-                            {"$ref": "urn:factorio:entity:cargo-landing-pad"},
-                            {"$ref": "urn:factorio:entity:cargo-wagon"},
-                            {"$ref": "urn:factorio:entity:constant-combinator"},
-                            {"$ref": "urn:factorio:entity:container"},
-                            {"$ref": "urn:factorio:entity:curved-rail-a"},
-                            {"$ref": "urn:factorio:entity:curved-rail-b"},
-                            {"$ref": "urn:factorio:entity:decider-combinator"}
+                        "anyOf": [
+                            {"$ref": "entity/accumulator.json"},
+                            {"$ref": "entity/agricultural-tower.json"},
+                            {"$ref": "entity/ammo-turret.json"},
+                            {"$ref": "entity/arithmetic-combinator.json"},
+                            {"$ref": "entity/artillery-turret.json"},
+                            {"$ref": "entity/artillery-wagon.json"},
+                            {"$ref": "entity/assembling-machine.json"},
+                            {"$ref": "entity/asteroid-collector.json"}
                         ]
                     },
-                    "default": []
+                    "default": [],
+                    "TODO": [
+                        {"$ref": "entity/beacon.json"},
+                        {"$ref": "entity/boiler.json"},
+                        {"$ref": "entity/burner-generator.json"},
+                        {"$ref": "entity/car.json"},
+                        {"$ref": "entity/cargo-bay.json"},
+                        {"$ref": "entity/cargo-landing-pad.json"},
+                        {"$ref": "entity/cargo-wagon.json"},
+                        {"$ref": "entity/constant-combinator.json"},
+                        {"$ref": "entity/container.json"},
+                        {"$ref": "entity/curved-rail-a.json"},
+                        {"$ref": "entity/curved-rail-b.json"},
+                        {"$ref": "entity/decider-combinator.json"}
+                    ]
                 },
                 "tiles": {
                     "title": "Tiles",
@@ -119,34 +172,20 @@
                         "type": "array",
                         "prefixItems": [
                             {
-                                "$ref": "urn:uint64",
-                                "description": "'entity_number' of the first entity being connected."
+                                "$ref": "../common/uint64.json",
+                                "description": "`'entity_number'` of the first entity being connected."
                             },
                             {
-                                "enum": [
-                                    1,
-                                    2,
-                                    3,
-                                    4,
-                                    5,
-                                    6
-                                ],
-                                "description": "What kind of connection the wire has to entity1. See 'wire_connection_types' in Factorio defines."
+                                "description": "What kind of connection the wire has to the first entity. See [`wire_connector_id`](https://lua-api.factorio.com/latest/defines.html#defines.wire_connector_id).",
+                                "$ref": "#/$defs/wire-connector-id"                                
                             },
                             {
-                                "$ref": "urn:uint64",
-                                "description": "'entity_number' of the second entity being connected."
+                                "$ref": "../common/uint64.json",
+                                "description": "`'entity_number'` of the second entity being connected."
                             },
                             {
-                                "enum": [
-                                    1,
-                                    2,
-                                    3,
-                                    4,
-                                    5,
-                                    6
-                                ],
-                                "description": "What kind of connection the wire has to entity2. See 'wire_connection_types' in Factorio defines."
+                                "description": "What kind of connection the wire has to the second entity. See [`wire_connector_id`](https://lua-api.factorio.com/latest/defines.html#defines.wire_connector_id).",
+                                "$ref": "#/$defs/wire-connector-id"
                             }
                         ],
                         "items": false
@@ -164,7 +203,7 @@
                 },
                 "stock_connections": {
                     "title": "Stock Connections",
-                    "description": "A list of all connections between train cars. In Factorio 1.0, train car connections were automatically made if two rolling stock entities were in the correct positions - but in this structure their connections are now explicit.",
+                    "description": "A list of all connections between train cars. In Factorio 1.0, train car connections were automatically made if two rolling stock entities were in the correct positions - but in this structure their connections are now made explicit.",
                     "type": "array",
                     "items": {
                         "$ref": "urn:factorio:stock-connection"

@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="schema_doc.css">
+    <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+    <script src="schema_doc.min.js"></script>
+    <meta charset="utf-8"/>
+        
+    
+    <title>Accumulator</title>
+</head>
+<body onload="anchorOnLoad();" id="root">
+
+     <h1>Accumulator</h1><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An entity that stores electricity for periods of high demand.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionentity_number">
+    <div class="card">
+        <div class="card-header" id="headingentity_number">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#entity_number"
+                        aria-expanded="" aria-controls="entity_number" onclick="setAnchor('#entity_number')"><span class="property-name">entity_number</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="entity_number"
+             class="collapse property-definition-div" aria-labelledby="headingentity_number"
+             data-parent="#accordionentity_number">
+            <div class="card-body pl-5">
+
+    <h4>Entity Number</h4><span class="badge badge-dark value-type">Type: number</span><br/>
+<span class="description"><p>A unique ID given to every entity contained within a blueprint. In practice, this value is the 1-indexed position of the entity inside it's parent blueprint's 'entities' list. This is not enforced however, so an entity's number can be specified with any value as long as it's unique inside that particular blueprint. This value is used for resolving associations between different entities, such as wire connections or schedule definitions.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionname">
+    <div class="card">
+        <div class="card-header" id="headingname">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#name"
+                        aria-expanded="" aria-controls="name" onclick="setAnchor('#name')"><span class="property-name">name</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="name"
+             class="collapse property-definition-div" aria-labelledby="headingname"
+             data-parent="#accordionname">
+            <div class="card-body pl-5">
+
+    <h4>Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description"><p>The name of the entity. If this name is not recognized by Factorio when importing the entity is omitted with a notification to the console.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionposition">
+    <div class="card">
+        <div class="card-header" id="headingposition">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#position"
+                        aria-expanded="" aria-controls="position" onclick="setAnchor('#position')"><span class="property-name">position</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="position"
+             class="collapse property-definition-div" aria-labelledby="headingposition"
+             data-parent="#accordionposition">
+            <div class="card-body pl-5">
+
+    <h4>Position</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>The position where the entity is located inside of it's parent blueprint. This position is (almost) always located at the spatial center of the entity. For grid-aligned entities, this position always lies either in the center of a tile or on its transition.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionposition_x">
+    <div class="card">
+        <div class="card-header" id="headingposition_x">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#position_x"
+                        aria-expanded="" aria-controls="position_x" onclick="setAnchor('#position_x')"><span class="property-name">x</span></button>
+            </h2>
+        </div>
+
+        <div id="position_x"
+             class="collapse property-definition-div" aria-labelledby="headingposition_x"
+             data-parent="#accordionposition_x">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: number</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionposition_y">
+    <div class="card">
+        <div class="card-header" id="headingposition_y">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#position_y"
+                        aria-expanded="" aria-controls="position_y" onclick="setAnchor('#position_y')"><span class="property-name">y</span></button>
+            </h2>
+        </div>
+
+        <div id="position_y"
+             class="collapse property-definition-div" aria-labelledby="headingposition_y"
+             data-parent="#accordionposition_y">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: number</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordiondirection">
+    <div class="card">
+        <div class="card-header" id="headingdirection">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#direction"
+                        aria-expanded="" aria-controls="direction" onclick="setAnchor('#direction')"><span class="property-name">direction</span></button>
+            </h2>
+        </div>
+
+        <div id="direction"
+             class="collapse property-definition-div" aria-labelledby="headingdirection"
+             data-parent="#accordiondirection">
+            <div class="card-body pl-5">
+
+    <h4>Direction</h4><span class="badge badge-dark value-type">Type: enum (of integer)</span> <span class="badge badge-success default-value">Default: 0</span><br/>
+<span class="description"><p>The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect.</p>
+</span><div class="enum-value" id="direction_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">0</li><li class="list-group-item enum-item">1</li><li class="list-group-item enum-item">2</li><li class="list-group-item enum-item">3</li><li class="list-group-item enum-item">4</li><li class="list-group-item enum-item">5</li><li class="list-group-item enum-item">6</li><li class="list-group-item enum-item">7</li><li class="list-group-item enum-item">8</li><li class="list-group-item enum-item">9</li><li class="list-group-item enum-item">10</li><li class="list-group-item enum-item">11</li><li class="list-group-item enum-item">12</li><li class="list-group-item enum-item">13</li><li class="list-group-item enum-item">14</li><li class="list-group-item enum-item">15</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionmirror">
+    <div class="card">
+        <div class="card-header" id="headingmirror">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#mirror"
+                        aria-expanded="" aria-controls="mirror" onclick="setAnchor('#mirror')"><span class="property-name">mirror</span></button>
+            </h2>
+        </div>
+
+        <div id="mirror"
+             class="collapse property-definition-div" aria-labelledby="headingmirror"
+             data-parent="#accordionmirror">
+            <div class="card-body pl-5">
+
+    <h4>Mirror</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not the input/output fluid boxes are mirrored on this particular entity.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionquality">
+    <div class="card">
+        <div class="card-header" id="headingquality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#quality"
+                        aria-expanded="" aria-controls="quality" onclick="setAnchor('#quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="quality"
+             class="collapse property-definition-div" aria-labelledby="headingquality"
+             data-parent="#accordionquality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>The quality of the entity itself.</p>
+</span>
+
+    <div class="enum-value" id="quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordiontags">
+    <div class="card">
+        <div class="card-header" id="headingtags">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#tags"
+                        aria-expanded="" aria-controls="tags" onclick="setAnchor('#tags')"><span class="property-name">tags</span></button>
+            </h2>
+        </div>
+
+        <div id="tags"
+             class="collapse property-definition-div" aria-labelledby="headingtags"
+             data-parent="#accordiontags">
+            <div class="card-body pl-5">
+
+    <h4>Tags</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Any additional metadata associated with this entity, mostly intended for including mod information inside exported blueprint strings. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordioncontrol_behavior">
+    <div class="card">
+        <div class="card-header" id="headingcontrol_behavior">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#control_behavior"
+                        aria-expanded="" aria-controls="control_behavior" onclick="setAnchor('#control_behavior')"><span class="property-name">control_behavior</span></button>
+            </h2>
+        </div>
+
+        <div id="control_behavior"
+             class="collapse property-definition-div" aria-labelledby="headingcontrol_behavior"
+             data-parent="#accordioncontrol_behavior">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordioncontrol_behavior_output_signal">
+    <div class="card">
+        <div class="card-header" id="headingcontrol_behavior_output_signal">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#control_behavior_output_signal"
+                        aria-expanded="" aria-controls="control_behavior_output_signal" onclick="setAnchor('#control_behavior_output_signal')"><span class="property-name">output_signal</span></button>
+            </h2>
+        </div>
+
+        <div id="control_behavior_output_signal"
+             class="collapse property-definition-div" aria-labelledby="headingcontrol_behavior_output_signal"
+             data-parent="#accordioncontrol_behavior_output_signal">
+            <div class="card-body pl-5">
+
+    <h4>Output Signal</h4> <span class="badge badge-success default-value">Default: {"name": "signal-A", "type": "virtual"}</span><br/>
+<span class="description"><p>What signal to send the current accumulator charge level value (in the range [0, 100]) if this accumulator is connected to a circuit network.</p>
+</span><div class="one-of-value" id="control_behavior_output_signal_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabscontrol_behavior_output_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="control_behavior_output_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_control_behavior_output_signal_oneOf_i0" role="tab"
+               onclick="setAnchor('#control_behavior_output_signal_oneOf_i0')"
+            >SignalID</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="control_behavior_output_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_control_behavior_output_signal_oneOf_i1" role="tab"
+               onclick="setAnchor('#control_behavior_output_signal_oneOf_i1')"
+            >Option 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_control_behavior_output_signal_oneOf_i0" role="tabpanel">
+            
+
+    <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object which represents a valid signal.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordioncontrol_behavior_output_signal_oneOf_i0_name">
+    <div class="card">
+        <div class="card-header" id="headingcontrol_behavior_output_signal_oneOf_i0_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#control_behavior_output_signal_oneOf_i0_name"
+                        aria-expanded="" aria-controls="control_behavior_output_signal_oneOf_i0_name" onclick="setAnchor('#control_behavior_output_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
+            </h2>
+        </div>
+
+        <div id="control_behavior_output_signal_oneOf_i0_name"
+             class="collapse property-definition-div" aria-labelledby="headingcontrol_behavior_output_signal_oneOf_i0_name"
+             data-parent="#accordioncontrol_behavior_output_signal_oneOf_i0_name">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: string</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordioncontrol_behavior_output_signal_oneOf_i0_type">
+    <div class="card">
+        <div class="card-header" id="headingcontrol_behavior_output_signal_oneOf_i0_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#control_behavior_output_signal_oneOf_i0_type"
+                        aria-expanded="" aria-controls="control_behavior_output_signal_oneOf_i0_type" onclick="setAnchor('#control_behavior_output_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="control_behavior_output_signal_oneOf_i0_type"
+             class="collapse property-definition-div" aria-labelledby="headingcontrol_behavior_output_signal_oneOf_i0_type"
+             data-parent="#accordioncontrol_behavior_output_signal_oneOf_i0_type">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
+<span class="description"><p>The category of the signal. There can be multiple signals with the same name but differing types.</p>
+</span><div class="enum-value" id="control_behavior_output_signal_oneOf_i0_type_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordioncontrol_behavior_output_signal_oneOf_i0_quality">
+    <div class="card">
+        <div class="card-header" id="headingcontrol_behavior_output_signal_oneOf_i0_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#control_behavior_output_signal_oneOf_i0_quality"
+                        aria-expanded="" aria-controls="control_behavior_output_signal_oneOf_i0_quality" onclick="setAnchor('#control_behavior_output_signal_oneOf_i0_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="control_behavior_output_signal_oneOf_i0_quality"
+             class="collapse property-definition-div" aria-labelledby="headingcontrol_behavior_output_signal_oneOf_i0_quality"
+             data-parent="#accordioncontrol_behavior_output_signal_oneOf_i0_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
+</span>
+
+    <div class="enum-value" id="control_behavior_output_signal_oneOf_i0_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_control_behavior_output_signal_oneOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: null</span><br/>
+
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a></p>
+    </footer></body>
+</html>

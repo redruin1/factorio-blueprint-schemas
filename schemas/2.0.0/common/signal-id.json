@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:common:signal-id",
+    "$id": "2.0.0/common/signal-id.json",
     "title": "SignalID",
     "description": "An object which represents a valid signal.",
     "type": "object",
@@ -20,6 +20,6 @@
             ],
             "default": "item"
         },
-        "quality": {"$ref": "urn:factorio:common:quality-name"}
+        "quality": {"$ref": "quality-name.json"}
     }
 }

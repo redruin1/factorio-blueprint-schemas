@@ -1,14 +1,14 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:entity",
-    "title": "Generic Entity",
+    "$id": "2.0.0/entity.json",
+    "title": "Entity",
     "description": "A schema which contains the keys that all entities share.",
     "type": "object",
     "properties": {
         "entity_number": {
             "title": "Entity Number",
             "description": "A unique ID given to every entity contained within a blueprint. In practice, this value is the 1-indexed position of the entity inside it's parent blueprint's 'entities' list. This is not enforced however, so an entity's number can be specified with any value as long as it's unique inside that particular blueprint. This value is used for resolving associations between different entities, such as wire connections or schedule definitions.",
-            "$ref": "urn:uint64"
+            "$ref": "../common/uint64.json"
         },
         "name": {
             "title": "Name",
@@ -18,13 +18,14 @@
         "position": {
             "title": "Position",
             "description": "The position where the entity is located inside of it's parent blueprint. This position is (almost) always located at the spatial center of the entity. For grid-aligned entities, this position always lies either in the center of a tile or on its transition.",
-            "$ref": "urn:factorio:common:position"
+            "$ref": "../common/position.json"
         },
         "direction": {
             "title": "Direction",
-            "description": "The direction of the entity, where 0 corresponds to north and incrementing spins clockwise.",
+            "description": "The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect.",
             "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-            "default": 0
+            "default": 0,
+            "$comment": "maybe use `anyOf` in order to document each individual value with their name"
         },
         "mirror": {
             "title": "Mirror",
@@ -35,21 +36,13 @@
         "quality": {
             "title": "Quality",
             "description": "The quality of the entity itself.",
-            "$ref": "urn:factorio:common:quality-name",
+            "$ref": "common/quality-name.json",
             "default": "normal"
         },
         "tags": {
             "title": "Tags",
             "description": "Any additional metadata associated with this entity, mostly intended for including mod information inside exported blueprint strings. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.",
-            "type": "object",
-            "additionalProperties": {
-                "anyOf": [
-                    {"type": "string"},
-                    {"type": "boolean"},
-                    {"type": "number"},
-                    {"$ref": "object"}
-                ]
-            }
+            "type": "object"
         }
     },
     "required": ["entity_number", "name", "position"]

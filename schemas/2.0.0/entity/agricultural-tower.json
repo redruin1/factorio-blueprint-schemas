@@ -1,19 +1,21 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:entity:agricultural-tower",
+    "$id": "2.0.0/entity/agricultural-tower.json",
     "title": "Agricultural Tower",
     "description": "An entity that seeds and harvests plants automatically.",
     "allOf": [
-        {"$ref": "urn:factorio:entity"},
-        {"$ref": "urn:factorio:common:control-behavior"},
-        {"$ref": "urn:factorio:common:circuit-enabled"},
-        {"$ref": "urn:factorio:common:logistic-condition"}
+        {"$ref": "../entity.json"},
+        {"$ref": "features/item-requests.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
             "properties": {
                 "read_contents": {
+                    "title": "Read Contents",
                     "description": "Whether or not this entity should broadcast the contents of its inventory to a connected circuit network.",
                     "type": "boolean",
                     "default": false

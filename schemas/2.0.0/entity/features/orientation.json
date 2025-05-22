@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/features/orientation.json",
+    "type": "object",
+    "properties": {
+        "orientation": {
+            "title": "Orientation",
+            "description": "A number in the range [0.0, 1.0] representing the direction this entity is facing. Any value specified out of this range is modulo'd back into this range.",
+            "type": "number",
+            "default": 0.0
+        }
+    }
+}

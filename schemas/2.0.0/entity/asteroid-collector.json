@@ -1,0 +1,59 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/asteroid-collector.json",
+    "title": "Asteroid Collector",
+    "description": "An entity uses arms to grab asteroid chunks from space.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/item-requests.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"}
+    ],
+    "$defs": {
+        "asteroid-chunk-id": {
+            "type": "object",
+            "properties": {
+                "index": {"$ref": "../../uint32.json"},
+                "name": {
+                    "description": "The name of a valid Factorio asteroid chunk.",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "type": "object",
+    "properties": {
+        "result_inventory": {
+            "title": "Result Inventory Object",
+            "description": "Inventory object which holds the limiting bar for this entity.",
+            "type": "object",
+            "properties": {
+                "bar": {"$ref": "../../common/uint16.json"}
+            },
+            "TODO": "Make this a reference to an `Inventory` object"
+        },
+        "chunk-filter": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/asteroid-chunk-id"
+            }
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_set_filters": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "circuit_read_contents": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "include_hands": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        }
+    }
+}

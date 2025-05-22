@@ -1,7 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:uint64",
-    "description": "Unsigned 64-bit integer.",
+    "$id": "common/uint64.json",
+    "title": "uint64",
+    "description": "An unsigned 64-bit integer.",
     "type": "number",
     "min": 0,
     "exclusiveMax": 18446744073709551616

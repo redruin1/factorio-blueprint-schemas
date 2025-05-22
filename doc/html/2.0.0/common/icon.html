@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="schema_doc.css">
+    <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+    <script src="schema_doc.min.js"></script>
+    <meta charset="utf-8"/>
+    <title>Schema Docs</title>
+</head>
+<body onload="anchorOnLoad();" id="root">
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionindex">
+    <div class="card">
+        <div class="card-header" id="headingindex">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#index"
+                        aria-expanded="" aria-controls="index" onclick="setAnchor('#index')"><span class="property-name">index</span></button>
+            </h2>
+        </div>
+
+        <div id="index"
+             class="collapse property-definition-div" aria-labelledby="headingindex"
+             data-parent="#accordionindex">
+            <div class="card-body pl-5">
+
+    <h4>uint8</h4><span class="badge badge-dark value-type">Type: number</span><br/>
+<span class="description"><p>An unsigned 8-bit integer.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsignal">
+    <div class="card">
+        <div class="card-header" id="headingsignal">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#signal"
+                        aria-expanded="" aria-controls="signal" onclick="setAnchor('#signal')"><span class="property-name">signal</span></button>
+            </h2>
+        </div>
+
+        <div id="signal"
+             class="collapse property-definition-div" aria-labelledby="headingsignal"
+             data-parent="#accordionsignal">
+            <div class="card-body pl-5">
+
+    <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object which represents a valid signal.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionsignal_name">
+    <div class="card">
+        <div class="card-header" id="headingsignal_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#signal_name"
+                        aria-expanded="" aria-controls="signal_name" onclick="setAnchor('#signal_name')"><span class="property-name">name</span></button>
+            </h2>
+        </div>
+
+        <div id="signal_name"
+             class="collapse property-definition-div" aria-labelledby="headingsignal_name"
+             data-parent="#accordionsignal_name">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: string</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsignal_type">
+    <div class="card">
+        <div class="card-header" id="headingsignal_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#signal_type"
+                        aria-expanded="" aria-controls="signal_type" onclick="setAnchor('#signal_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="signal_type"
+             class="collapse property-definition-div" aria-labelledby="headingsignal_type"
+             data-parent="#accordionsignal_type">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
+<span class="description"><p>The category of the signal. There can be multiple signals with the same name but differing types.</p>
+</span><div class="enum-value" id="signal_type_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsignal_quality">
+    <div class="card">
+        <div class="card-header" id="headingsignal_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#signal_quality"
+                        aria-expanded="" aria-controls="signal_quality" onclick="setAnchor('#signal_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="signal_quality"
+             class="collapse property-definition-div" aria-labelledby="headingsignal_quality"
+             data-parent="#accordionsignal_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
+</span>
+
+    <div class="enum-value" id="signal_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a></p>
+    </footer></body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/features/item-requests.json",
+    "$comment": "Allows this entity to request construction items that bots will attempt to fullfil once",
+    "type": "object",
+    "properties": {
+        "items": {
+            "title": "Item Requests",
+            "description": "A list of item requests objects, which contain the item name, it's quality, the amount to request, as well as exactly what inventories to request to and where inside those inventories.",
+            "type": "array",
+            "items": {
+                "$ref": "urn:factorio:item-request"
+            }
+        }
+    }
+}

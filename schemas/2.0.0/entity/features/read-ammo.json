@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/features/read-ammo.json",
+    "$comment": "Gives this entity the ability to broadcast the amount of ammo it contains to a connected circuit network",
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "read_ammo": {
+                    "title": "Read Ammo",
+                    "description": "Whether or not to broadcast the current amount of ammo in the turrets inventory to a connected circuit network.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        }
+    }
+}

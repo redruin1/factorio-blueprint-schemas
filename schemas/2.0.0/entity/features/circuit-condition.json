@@ -1,13 +1,13 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:common:circuit-condition",
+    "$id": "2.0.0/entity/features/circuit-condition.json",
     "$comment": "Gives the entity a circuit condition",
     "properties": {
         "control_behavior": {
             "type": "object",
             "properties": {
                 "circuit_condition": {
-                    "$ref": "urn:factorio:simple-condition"
+                    "$ref": "../../common/condition.json"
                 }
             }
         }

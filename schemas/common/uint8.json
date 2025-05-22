@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "common/uint8.json",
+    "title": "uint8",
+    "description": "An unsigned 8-bit integer.",
+    "type": "number",
+    "min": 0,
+    "exclusiveMax": 256
+}

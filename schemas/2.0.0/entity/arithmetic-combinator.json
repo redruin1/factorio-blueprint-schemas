@@ -1,0 +1,89 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/arithmetic-combinator.json",
+    "title": "Arithmetic Combinator",
+    "description": "A combinator that can perform mathematical operations on one or more values.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/player-description.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "properties": {
+                "arithmetic_conditions": {
+                    "title": "Arithmetic Conditions",
+                    "description": "Container for arithmetic combinator specific parameters.",
+                    "type": "object",
+                    "properties": {
+                        "first_constant": {
+                            "title": "First Constant",
+                            "description": "Constant value that goes in the leftmost slot. This value is ignored if 'second_signal' is also present.",
+                            "oneOf": [
+                                {"$ref": "../../common/int32.json"},
+                                {"type": "null"}
+                            ],
+                            "default": null
+                        },
+                        "first_signal": {
+                            "title": "First Signal",
+                            "description": "Signal ID that goes in the leftmost slot. Takes precedence over 'first_constant', if both happen to be specified.",
+                            "oneOf": [
+                                {"$ref": "../common/signal-id.json"},
+                                {"type": "null"}
+                            ],
+                            "default": null
+                        },
+                        "first_signal_networks": {
+                            "title": "First Signal Networks",
+                            "description": "Which wire colors the leftmost slot should consider for values. Only has an effect if the first slot is occupied by a signal.",
+                            "$ref": "../common/network-specification.json",
+                            "default": {"red": true, "green": true}
+                        },
+                        "operation": {
+                            "title": "Operation",
+                            "description": "The mathematical operation to perform.",
+                            "enum": [
+                                "*", "/", "+", "-", "%", "^", "<<", ">>", "AND", "OR", "XOR"
+                            ],
+                            "default": "*"
+                        },
+                        "second_constant": {
+                            "title": "Second Constant",
+                            "description": "Constant value that goes in the rightmost slot. This value is ignored if 'second_signal' is also present.",
+                            "oneOf": [
+                                {"$ref": "../../common/int32.json"},
+                                {"type": "null"}
+                            ],
+                            "default": 0
+                        },
+                        "second_signal": {
+                            "title": "Second Signal",
+                            "description": "Signal ID that goes in the rightmost slot. Takes precedence over 'second_constant', if both happen to be specified.",
+                            "oneOf": [
+                                {"$ref": "../common/signal-id.json"},
+                                {"type": "null"}
+                            ],
+                            "default": null
+                        },
+                        "second_signal_networks": {
+                            "title": "Second Signal Networks",
+                            "description": "Which wire colors the rightmost slot should consider for values. Only has an effect if the second slot is occupied by a signal.",
+                            "$ref": "../common/network-specification.json",
+                            "default": {"red": true, "green": true}
+                        },
+                        "output_signal": {
+                            "title": "Output Signal",
+                            "description": "What signal (or signals) should this combinator output.",
+                            "oneOf": [
+                                {"$ref": "../common/signal-id.json"},
+                                {"type": "null"}
+                            ],
+                            "default": null
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

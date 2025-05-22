@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:common:logistic-condition",
+    "$id": "2.0.0/entity/features/logistic-condition.json",
     "properties": {
         "control_behavior": {
             "properties": {
@@ -13,7 +13,7 @@
                 "logistic_condition": {
                     "title": "Logistic Condition",
                     "description": "The logistic condition that the entity should be enabled with, if 'connect_to_logistic_network' is 'true'.",
-                    "$ref": "urn:common:condition"
+                    "$ref": "../../common/condition.json"
                 }
             }
         }

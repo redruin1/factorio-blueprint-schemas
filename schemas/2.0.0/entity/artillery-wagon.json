@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/artillery-wagon.json",
+    "title": "Artillery Wagon",
+    "description": "Rolling stock with an attached artillery turret.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/orientation.json"},
+        {"$ref": "features/item-requests.json"},
+        {"$ref": "features/equipment-grid.json"},
+        {"$ref": "features/artillery-auto-targeting.json"}
+    ]
+}

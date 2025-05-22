@@ -1,4 +1,34 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:common:condition"
+    "$id": "2.0.0/common/condition.json",
+    "title": "Condition",
+    "description": "A conditional statement between either 2 signals or 1 signal and 1 constant value.",
+    "type": "object",
+    "properties": {
+        "first_signal": {
+            "title": "First Signal",
+            "description": "The leftmost signal in the condition.",
+            "oneOf": [
+                {"$ref": "signal-id.json"}, 
+                {"type": "null"}
+            ],
+            "default": null
+        },
+        "comparator": {"$ref": "../../common/comparator.json"},
+        "constant": {
+            "title": "Constant",
+            "description": "A constant to compare against, always lying in the rightmost slot. This value is ignored if 'second_signal' is also present.",
+            "$ref": "../../common/int32.json",
+            "default": 0
+        },
+        "second_signal": {
+            "title": "Second Signal",
+            "description": "The rightmost signal of the condition. Takes precedence over 'constant', if both happen to be specified.",
+            "oneOf": [
+                {"$ref": "signal-id.json"}, 
+                {"type": "null"}
+            ],
+            "default": null
+        }
+    }
 }

@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="schema_doc.css">
+    <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+    <script src="schema_doc.min.js"></script>
+    <meta charset="utf-8"/>
+    <title>Schema Docs</title>
+</head>
+<body onload="anchorOnLoad();" id="root">
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionpriority_list">
+    <div class="card">
+        <div class="card-header" id="headingpriority_list">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#priority_list"
+                        aria-expanded="" aria-controls="priority_list" onclick="setAnchor('#priority_list')"><span class="property-name">priority_list</span></button>
+            </h2>
+        </div>
+
+        <div id="priority_list"
+             class="collapse property-definition-div" aria-labelledby="headingpriority_list"
+             data-parent="#accordionpriority_list">
+            <div class="card-body pl-5">
+
+    <h4>Priority List</h4><span class="badge badge-dark value-type">Type: array</span> <span class="badge badge-success default-value">Default: []</span><br/>
+<span class="description"><p>The (static) list of priority targets that this turret should aim for. Overwritten by circuit network signals if 'set<em>priority</em>list' is 'true'.</p>
+</span>
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="priority_list_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>😅 ERROR in schema generation, a referenced schema could not be loaded, no documentation here unfortunately 🏜️</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionignore_unprioritized">
+    <div class="card">
+        <div class="card-header" id="headingignore_unprioritized">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ignore_unprioritized"
+                        aria-expanded="" aria-controls="ignore_unprioritized" onclick="setAnchor('#ignore_unprioritized')"><span class="property-name">ignore_unprioritized</span></button>
+            </h2>
+        </div>
+
+        <div id="ignore_unprioritized"
+             class="collapse property-definition-div" aria-labelledby="headingignore_unprioritized"
+             data-parent="#accordionignore_unprioritized">
+            <div class="card-body pl-5">
+
+    <h4>Ignore Unprioritized</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not to completely ignore enemies that do not lie in this turret's target priority lists.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionset_priority_list">
+    <div class="card">
+        <div class="card-header" id="headingset_priority_list">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#set_priority_list"
+                        aria-expanded="" aria-controls="set_priority_list" onclick="setAnchor('#set_priority_list')"><span class="property-name">set_priority_list</span></button>
+            </h2>
+        </div>
+
+        <div id="set_priority_list"
+             class="collapse property-definition-div" aria-labelledby="headingset_priority_list"
+             data-parent="#accordionset_priority_list">
+            <div class="card-body pl-5">
+
+    <h4>Set Priority List</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not this entity should set its target priorities via connected circuit network signals.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionset_ignore_unprioritized">
+    <div class="card">
+        <div class="card-header" id="headingset_ignore_unprioritized">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#set_ignore_unprioritized"
+                        aria-expanded="" aria-controls="set_ignore_unprioritized" onclick="setAnchor('#set_ignore_unprioritized')"><span class="property-name">set_ignore_unprioritized</span></button>
+            </h2>
+        </div>
+
+        <div id="set_ignore_unprioritized"
+             class="collapse property-definition-div" aria-labelledby="headingset_ignore_unprioritized"
+             data-parent="#accordionset_ignore_unprioritized">
+            <div class="card-body pl-5">
+
+    <h4>Set Ignore Unprioritized</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not this entity should have it's ignore unprioritized behavior be set conditionally via 'ignore<em>unlisted</em>targets_condition'.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionignore_unlisted_targets_condition">
+    <div class="card">
+        <div class="card-header" id="headingignore_unlisted_targets_condition">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ignore_unlisted_targets_condition"
+                        aria-expanded="" aria-controls="ignore_unlisted_targets_condition" onclick="setAnchor('#ignore_unlisted_targets_condition')"><span class="property-name">ignore_unlisted_targets_condition</span></button>
+            </h2>
+        </div>
+
+        <div id="ignore_unlisted_targets_condition"
+             class="collapse property-definition-div" aria-labelledby="headingignore_unlisted_targets_condition"
+             data-parent="#accordionignore_unlisted_targets_condition">
+            <div class="card-body pl-5">
+
+    <h4>Ignore Unlisted Targets Condition</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>A condition which must be true in order for non-prioritized targets to be entirely ignored when this turret is targeting. Does nothing unless 'set<em>ignore</em>unprioritized' is 'true'.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a></p>
+    </footer></body>
+</html>

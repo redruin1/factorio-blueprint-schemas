@@ -1,0 +1,49 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/features/equipment-grid.json",
+    "$comment": "Gives this entity the ability to specify an attached equipment grid",
+    "$defs": {
+        "equipment-id": {
+            "title": "Equipment ID",
+            "description": "A particular type of equipment and its quality.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The name of a valid piece of equipment (that can fit inside this particular equipment grid).",
+                    "type": "string"
+                },
+                "quality": {
+                    "$ref": "urn:factorio:quality-name"
+                }
+            }
+        },
+        "equipment-component": {
+            "type": "object",
+            "properties": {
+                "equipment": {"$ref": "#/$defs/equipment-id"},
+                "position": {
+                    "description": "The position of the equipment in integer coordinates, corresponding to the top-leftmost tile it occupies.",
+                    "$ref": "urn:factorio:position"
+                }
+            },
+            "required": ["equipment", "position"]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "enable_logistics_while_moving": {
+            "title": "Enable Logistics While Moving?",
+            "description": "Whether or not this entity should try to fulfill it's logistic requests when it is in motion. Only has an effect if this entity is configured to have an equipment grid and that equipment grid contains personal roboports.",
+            "type": "boolean",
+            "default": true
+        },
+        "grid": {
+            "title": "Equipment Grid Components",
+            "description": "The specification for where equipment should lie inside of this entity's equipment grid (if it has one).",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/equipment-component"
+            }
+        }
+    }
+}

@@ -1,0 +1,1414 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="schema_doc.css">
+    <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+    <script src="schema_doc.min.js"></script>
+    <meta charset="utf-8"/>
+        
+    
+    <title>Agricultural Tower</title>
+</head>
+<body onload="anchorOnLoad();" id="root">
+
+     <h1>Agricultural Tower</h1><br/>
+<span class="description"><p>An entity that seeds and harvests plants automatically.</p>
+</span><div class="all-of-value" id="allOf"><h2 class="handle">
+  <label>All of</label>
+</h2><ul class="nav nav-tabs" id="tabsallOf_allOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active allOf-option"
+               id="allOf_i0" data-toggle="tab" href="#tab-pane_allOf_i0" role="tab"
+               onclick="setAnchor('#allOf_i0')"
+            >Generic Entity</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="allOf_i1" data-toggle="tab" href="#tab-pane_allOf_i1" role="tab"
+               onclick="setAnchor('#allOf_i1')"
+            >item-requests.json</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="allOf_i2" data-toggle="tab" href="#tab-pane_allOf_i2" role="tab"
+               onclick="setAnchor('#allOf_i2')"
+            >circuit-enabled.json</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="allOf_i3" data-toggle="tab" href="#tab-pane_allOf_i3" role="tab"
+               onclick="setAnchor('#allOf_i3')"
+            >circuit-condition.json</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="allOf_i4" data-toggle="tab" href="#tab-pane_allOf_i4" role="tab"
+               onclick="setAnchor('#allOf_i4')"
+            >logistic-condition.json</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_allOf_i0" role="tabpanel">
+            
+
+    <h4>Generic Entity</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>A schema which contains the keys that all entities share.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i0_entity_number">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_entity_number">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_entity_number"
+                        aria-expanded="" aria-controls="allOf_i0_entity_number" onclick="setAnchor('#allOf_i0_entity_number')"><span class="property-name">entity_number</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_entity_number"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_entity_number"
+             data-parent="#accordionallOf_i0_entity_number">
+            <div class="card-body pl-5">
+
+    <h4>Entity Number</h4><span class="badge badge-dark value-type">Type: number</span><br/>
+<span class="description"><p>A unique ID given to every entity contained within a blueprint. In practice, this value is the 1-indexed position of the entity inside it's parent blueprint's 'entities' list. This is not enforced however, so an entity's number can be specified with any value as long as it's unique inside that particular blueprint. This value is used for resolving associations between different entities, such as wire connections or schedule definitions.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i0_name">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_name"
+                        aria-expanded="" aria-controls="allOf_i0_name" onclick="setAnchor('#allOf_i0_name')"><span class="property-name">name</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_name"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_name"
+             data-parent="#accordionallOf_i0_name">
+            <div class="card-body pl-5">
+
+    <h4>Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description"><p>The name of the entity. If this name is not recognized by Factorio when importing the entity is omitted with a notification to the console.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i0_position">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_position">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_position"
+                        aria-expanded="" aria-controls="allOf_i0_position" onclick="setAnchor('#allOf_i0_position')"><span class="property-name">position</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_position"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_position"
+             data-parent="#accordionallOf_i0_position">
+            <div class="card-body pl-5">
+
+    <h4>Position</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>The position where the entity is located inside of it's parent blueprint. This position is (almost) always located at the spatial center of the entity. For grid-aligned entities, this position always lies either in the center of a tile or on its transition.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i0_position_x">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_position_x">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_position_x"
+                        aria-expanded="" aria-controls="allOf_i0_position_x" onclick="setAnchor('#allOf_i0_position_x')"><span class="property-name">x</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_position_x"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_position_x"
+             data-parent="#accordionallOf_i0_position_x">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: number</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i0_position_y">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_position_y">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_position_y"
+                        aria-expanded="" aria-controls="allOf_i0_position_y" onclick="setAnchor('#allOf_i0_position_y')"><span class="property-name">y</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_position_y"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_position_y"
+             data-parent="#accordionallOf_i0_position_y">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: number</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i0_direction">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_direction">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_direction"
+                        aria-expanded="" aria-controls="allOf_i0_direction" onclick="setAnchor('#allOf_i0_direction')"><span class="property-name">direction</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_direction"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_direction"
+             data-parent="#accordionallOf_i0_direction">
+            <div class="card-body pl-5">
+
+    <h4>Direction</h4><span class="badge badge-dark value-type">Type: enum (of integer)</span> <span class="badge badge-success default-value">Default: 0</span><br/>
+<span class="description"><p>The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect.</p>
+</span><div class="enum-value" id="allOf_i0_direction_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">0</li><li class="list-group-item enum-item">1</li><li class="list-group-item enum-item">2</li><li class="list-group-item enum-item">3</li><li class="list-group-item enum-item">4</li><li class="list-group-item enum-item">5</li><li class="list-group-item enum-item">6</li><li class="list-group-item enum-item">7</li><li class="list-group-item enum-item">8</li><li class="list-group-item enum-item">9</li><li class="list-group-item enum-item">10</li><li class="list-group-item enum-item">11</li><li class="list-group-item enum-item">12</li><li class="list-group-item enum-item">13</li><li class="list-group-item enum-item">14</li><li class="list-group-item enum-item">15</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i0_mirror">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_mirror">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_mirror"
+                        aria-expanded="" aria-controls="allOf_i0_mirror" onclick="setAnchor('#allOf_i0_mirror')"><span class="property-name">mirror</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_mirror"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_mirror"
+             data-parent="#accordionallOf_i0_mirror">
+            <div class="card-body pl-5">
+
+    <h4>Mirror</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not the input/output fluid boxes are mirrored on this particular entity.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i0_quality">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_quality"
+                        aria-expanded="" aria-controls="allOf_i0_quality" onclick="setAnchor('#allOf_i0_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_quality"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_quality"
+             data-parent="#accordionallOf_i0_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>The quality of the entity itself.</p>
+</span>
+
+    <div class="enum-value" id="allOf_i0_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i0_tags">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i0_tags">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i0_tags"
+                        aria-expanded="" aria-controls="allOf_i0_tags" onclick="setAnchor('#allOf_i0_tags')"><span class="property-name">tags</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i0_tags"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i0_tags"
+             data-parent="#accordionallOf_i0_tags">
+            <div class="card-body pl-5">
+
+    <h4>Tags</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Any additional metadata associated with this entity, mostly intended for including mod information inside exported blueprint strings. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_items">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_items">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_items"
+                        aria-expanded="" aria-controls="allOf_i1_items" onclick="setAnchor('#allOf_i1_items')"><span class="property-name">items</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_items"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_items"
+             data-parent="#accordionallOf_i1_items">
+            <div class="card-body pl-5">
+
+    <h4>Item Requests</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description"><p>A list of item requests objects, which contain the item name, it's quality, the amount to request, as well as exactly what inventories to request to and where inside those inventories.</p>
+</span>
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="allOf_i1_items_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>😅 ERROR in schema generation, a referenced schema could not be loaded, no documentation here unfortunately 🏜️</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i2" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i2_control_behavior">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i2_control_behavior">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior" onclick="setAnchor('#allOf_i2_control_behavior')"><span class="property-name">control_behavior</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i2_control_behavior"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior"
+             data-parent="#accordionallOf_i2_control_behavior">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_enabled">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_enabled">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_enabled"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_enabled" onclick="setAnchor('#allOf_i2_control_behavior_circuit_enabled')"><span class="property-name">circuit_enabled</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i2_control_behavior_circuit_enabled"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_enabled"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_enabled">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not this entity should be controlled by a specified circuit condition.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i3" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i3_control_behavior">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior" onclick="setAnchor('#allOf_i3_control_behavior')"><span class="property-name">control_behavior</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior"
+             data-parent="#accordionallOf_i3_control_behavior">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition')"><span class="property-name">circuit_condition</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition">
+            <div class="card-body pl-5">
+
+    <h4>Condition</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>A conditional statement between either 2 signals or 1 signal and 1 constant value.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_first_signal">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_first_signal">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_first_signal"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_first_signal" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_first_signal')"><span class="property-name">first_signal</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_first_signal"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_first_signal"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_first_signal">
+            <div class="card-body pl-5">
+
+    <h4>First Signal</h4> <span class="badge badge-success default-value">Default: null</span><br/>
+<span class="description"><p>The leftmost signal in the condition.</p>
+</span><div class="one-of-value" id="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabsallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0" role="tab"
+               onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0')"
+            >SignalID</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i1" role="tab"
+               onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i1')"
+            >Option 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0" role="tabpanel">
+            
+
+    <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object which represents a valid signal.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: string</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
+<span class="description"><p>The category of the signal. There can be multiple signals with the same name but differing types.</p>
+</span><div class="enum-value" id="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_type_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
+</span>
+
+    <div class="enum-value" id="allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: null</span><br/>
+
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_comparator">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_comparator">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_comparator"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_comparator" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_comparator')"><span class="property-name">comparator</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_comparator"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_comparator"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_comparator">
+            <div class="card-body pl-5">
+
+    <h4>Comparator</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: ">"</span><br/>
+<span class="description"><p>In/equality operation to use in conditions and item request filters.</p>
+</span>
+
+    <div class="enum-value" id="allOf_i3_control_behavior_circuit_condition_comparator_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_constant">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_constant">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_constant"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_constant" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_constant')"><span class="property-name">constant</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_constant"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_constant"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_constant">
+            <div class="card-body pl-5">
+
+    <h4>Constant</h4><span class="badge badge-dark value-type">Type: number</span> <span class="badge badge-success default-value">Default: 0</span><br/>
+<span class="description"><p>A constant to compare against, always lying in the rightmost slot. This value is ignored if 'second_signal' is also present.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_second_signal">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_second_signal">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_second_signal"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_second_signal" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_second_signal')"><span class="property-name">second_signal</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_second_signal"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_second_signal"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_second_signal">
+            <div class="card-body pl-5">
+
+    <h4>Second Signal</h4> <span class="badge badge-success default-value">Default: null</span><br/>
+<span class="description"><p>The rightmost signal of the condition. Takes precedence over 'constant', if both happen to be specified.</p>
+</span><div class="one-of-value" id="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabsallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0" role="tab"
+               onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0')"
+            >SignalID</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i1" role="tab"
+               onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i1')"
+            >Option 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0" role="tabpanel">
+            
+
+    <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object which represents a valid signal.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: string</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
+<span class="description"><p>The category of the signal. There can be multiple signals with the same name but differing types.</p>
+</span><div class="enum-value" id="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_type_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality"
+                        aria-expanded="" aria-controls="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality" onclick="setAnchor('#allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality"
+             data-parent="#accordionallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
+</span>
+
+    <div class="enum-value" id="allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: null</span><br/>
+
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i4" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i4_control_behavior">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior" onclick="setAnchor('#allOf_i4_control_behavior')"><span class="property-name">control_behavior</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior"
+             data-parent="#accordionallOf_i4_control_behavior">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i4_control_behavior_connect_to_logistic_network">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_connect_to_logistic_network">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_connect_to_logistic_network"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_connect_to_logistic_network" onclick="setAnchor('#allOf_i4_control_behavior_connect_to_logistic_network')"><span class="property-name">connect_to_logistic_network</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_connect_to_logistic_network"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_connect_to_logistic_network"
+             data-parent="#accordionallOf_i4_control_behavior_connect_to_logistic_network">
+            <div class="card-body pl-5">
+
+    <h4>Connect to logistic network?</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not this entity should be controlled by a specified logistic condition.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition')"><span class="property-name">logistic_condition</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition">
+            <div class="card-body pl-5">
+
+    <h4>Logistic Condition</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>The logistic condition that the entity should be enabled with, if 'connect<em>to</em>logistic_network' is 'true'.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_first_signal">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_first_signal">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_first_signal"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_first_signal" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_first_signal')"><span class="property-name">first_signal</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_first_signal"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_first_signal"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_first_signal">
+            <div class="card-body pl-5">
+
+    <h4>First Signal</h4> <span class="badge badge-success default-value">Default: null</span><br/>
+<span class="description"><p>The leftmost signal in the condition.</p>
+</span><div class="one-of-value" id="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabsallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0" role="tab"
+               onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0')"
+            >SignalID</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i1" role="tab"
+               onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i1')"
+            >Option 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0" role="tabpanel">
+            
+
+    <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object which represents a valid signal.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: string</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
+<span class="description"><p>The category of the signal. There can be multiple signals with the same name but differing types.</p>
+</span><div class="enum-value" id="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_type_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
+</span>
+
+    <div class="enum-value" id="allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: null</span><br/>
+
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_comparator">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_comparator">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_comparator"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_comparator" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_comparator')"><span class="property-name">comparator</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_comparator"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_comparator"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_comparator">
+            <div class="card-body pl-5">
+
+    <h4>Comparator</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: ">"</span><br/>
+<span class="description"><p>In/equality operation to use in conditions and item request filters.</p>
+</span>
+
+    <div class="enum-value" id="allOf_i4_control_behavior_logistic_condition_comparator_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_constant">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_constant">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_constant"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_constant" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_constant')"><span class="property-name">constant</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_constant"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_constant"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_constant">
+            <div class="card-body pl-5">
+
+    <h4>Constant</h4><span class="badge badge-dark value-type">Type: number</span> <span class="badge badge-success default-value">Default: 0</span><br/>
+<span class="description"><p>A constant to compare against, always lying in the rightmost slot. This value is ignored if 'second_signal' is also present.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_second_signal">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_second_signal">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_second_signal"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_second_signal" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_second_signal')"><span class="property-name">second_signal</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_second_signal"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_second_signal"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_second_signal">
+            <div class="card-body pl-5">
+
+    <h4>Second Signal</h4> <span class="badge badge-success default-value">Default: null</span><br/>
+<span class="description"><p>The rightmost signal of the condition. Takes precedence over 'constant', if both happen to be specified.</p>
+</span><div class="one-of-value" id="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabsallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0" role="tab"
+               onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0')"
+            >SignalID</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i1" role="tab"
+               onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i1')"
+            >Option 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0" role="tabpanel">
+            
+
+    <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object which represents a valid signal.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: string</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
+<span class="description"><p>The category of the signal. There can be multiple signals with the same name but differing types.</p>
+</span><div class="enum-value" id="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_type_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality"
+                        aria-expanded="" aria-controls="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality" onclick="setAnchor('#allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality"
+             data-parent="#accordionallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
+</span>
+
+    <div class="enum-value" id="allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: null</span><br/>
+
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div></div></div>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordioncontrol_behavior">
+    <div class="card">
+        <div class="card-header" id="headingcontrol_behavior">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#control_behavior"
+                        aria-expanded="" aria-controls="control_behavior" onclick="setAnchor('#control_behavior')"><span class="property-name">control_behavior</span></button>
+            </h2>
+        </div>
+
+        <div id="control_behavior"
+             class="collapse property-definition-div" aria-labelledby="headingcontrol_behavior"
+             data-parent="#accordioncontrol_behavior">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordioncontrol_behavior_read_contents">
+    <div class="card">
+        <div class="card-header" id="headingcontrol_behavior_read_contents">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#control_behavior_read_contents"
+                        aria-expanded="" aria-controls="control_behavior_read_contents" onclick="setAnchor('#control_behavior_read_contents')"><span class="property-name">read_contents</span></button>
+            </h2>
+        </div>
+
+        <div id="control_behavior_read_contents"
+             class="collapse property-definition-div" aria-labelledby="headingcontrol_behavior_read_contents"
+             data-parent="#accordioncontrol_behavior_read_contents">
+            <div class="card-body pl-5">
+
+    <h4>Read Contents</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not this entity should broadcast the contents of its inventory to a connected circuit network.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a></p>
+    </footer></body>
+</html>

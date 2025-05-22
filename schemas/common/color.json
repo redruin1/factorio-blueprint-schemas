@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:color",
+    "$id": "common/color.json",
     "title": "Color",
     "description": "An object which stores an RGBA color value. Each color component can be either specified as a float in the [0.0, 1.0] range, or as a integer in the [0, 255] range. If any of the given values exceeds 1, then the color is interpreted with the latter range, otherwise the former. Colors specified in the [0, 255] range are normalized to the [0.0, 1.0] range upon import/export cycle.",
     "type": "object",

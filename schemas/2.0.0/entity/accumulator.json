@@ -1,13 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:entity:accumulator",
+    "$id": "2.0.0/entity/accumulator.json",
     "title": "Accumulator",
     "description": "An entity that stores electricity for periods of high demand.",
-    "type": "object",
     "allOf": [
-        {"$ref": "urn:factorio:entity"},
-        {"$ref": "urn:factorio:common:control-behavior"}
+        {"$ref": "../entity.json"}
     ],
+    "type": "object",
     "properties": {
         "control_behavior": {
             "properties": {
@@ -15,7 +14,7 @@
                     "title": "Output Signal",
                     "description": "What signal to send the current accumulator charge level value (in the range [0, 100]) if this accumulator is connected to a circuit network.",
                     "oneOf": [
-                        {"$ref": "urn:factorio:common:signal-id"},
+                        {"$ref": "../common/signal-id.json"},
                         {"type": "null"}
                     ],
                     "default": {"name": "signal-A", "type": "virtual"}

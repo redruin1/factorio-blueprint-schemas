@@ -4,9 +4,9 @@
     "title": "Blueprintable",
     "description": "A schema that validates any encodable/decodable blueprint object, including blueprints, deconstruction planners, upgrade planners, and blueprint books.",
     "oneOf": [
-        {"$ref": "urn:factorio:blueprint"},
-        {"$ref": "urn:factorio:deconstruction-planner"},
-        {"$ref": "urn:factorio:upgrade-planner"},
-        {"$ref": "urn:factorio:blueprint-book"}
+        {"title": "Blueprint", "$ref": "blueprint.json"},
+        {"title": "Deconstruction Planner", "$ref": "deconstruction-planner.json"},
+        {"title": "Upgrade Planner", "$ref": "upgrade-planner.json"},
+        {"title": "Blueprint Book", "$ref": "blueprint-book.json"}
     ]
 }

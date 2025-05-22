@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:common:circuit-enabled",
+    "$id": "2.0.0/entity/features/circuit-enabled.json",
     "properties": {
         "control_behavior": {
             "properties": {

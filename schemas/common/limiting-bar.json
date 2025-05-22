@@ -1,0 +1,7 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "id": "common/limiting-bar.json",
+    "title": "Limiting Bar",
+    "description": "Limits the inventory to this many available slots.",
+    "$ref": "uint32.json"
+}
