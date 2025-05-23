@@ -37,10 +37,10 @@ test_reg = Registry(retrieve=retrieve_from_path)
 from draftsman.entity import *
 
 @pytest.mark.parametrize(
-    "inst,filepath", 
+    "inst,filepath",
     [
         (Accumulator(), "accumulator.json"),
-        (AgriculturalTower(items=[]), "agricultural-tower.json"), 
+        (AgriculturalTower(items=[]), "agricultural-tower.json"),
         (AmmoTurret(), "ammo-turret.json"),
         (ArithmeticCombinator(player_description=""), "arithmetic-combinator.json"),
         (ArtilleryTurret(items=[]), "artillery-turret.json"),

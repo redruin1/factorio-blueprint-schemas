@@ -27,7 +27,7 @@
         "a": {
             "title": "Alpha",
             "oneOf": [
-                {"$ref": "#/$defs/color-component"}, 
+                {"$ref": "#/$defs/color-component"},
                 {"type": "null"}
             ]
         }

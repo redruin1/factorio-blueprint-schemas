@@ -11,8 +11,8 @@
     <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
     <script src="schema_doc.min.js"></script>
     <meta charset="utf-8"/>
-        
-    
+
+
     <title>Assembling Machine</title>
 </head>
 <body onload="anchorOnLoad();" id="root">
@@ -49,19 +49,19 @@
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
              id="tab-pane_allOf_i0" role="tabpanel">
-            
+
 
     <h4>Entity</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>A schema which contains the keys that all entities share.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i0_entity_number">
     <div class="card">
         <div class="card-header" id="headingallOf_i0_entity_number">
@@ -80,13 +80,13 @@
 <span class="description"><p>A unique ID given to every entity contained within a blueprint. In practice, this value is the 1-indexed position of the entity inside it's parent blueprint's 'entities' list. This is not enforced however, so an entity's number can be specified with any value as long as it's unique inside that particular blueprint. This value is used for resolving associations between different entities, such as wire connections or schedule definitions.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -108,12 +108,12 @@
     <h4>Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
 <span class="description"><p>The name of the entity. If this name is not recognized by Factorio when importing the entity is omitted with a notification to the console.</p>
 </span>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -136,13 +136,13 @@
 <span class="description"><p>The position where the entity is located inside of it's parent blueprint. This position is (almost) always located at the spatial center of the entity. For grid-aligned entities, this position always lies either in the center of a tile or on its transition.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i0_position_x">
     <div class="card">
         <div class="card-header" id="headingallOf_i0_position_x">
@@ -159,12 +159,12 @@
 
     <span class="badge badge-dark value-type">Type: number</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -185,12 +185,12 @@
 
     <span class="badge badge-dark value-type">Type: number</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -219,12 +219,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">0</li><li class="list-group-item enum-item">1</li><li class="list-group-item enum-item">2</li><li class="list-group-item enum-item">3</li><li class="list-group-item enum-item">4</li><li class="list-group-item enum-item">5</li><li class="list-group-item enum-item">6</li><li class="list-group-item enum-item">7</li><li class="list-group-item enum-item">8</li><li class="list-group-item enum-item">9</li><li class="list-group-item enum-item">10</li><li class="list-group-item enum-item">11</li><li class="list-group-item enum-item">12</li><li class="list-group-item enum-item">13</li><li class="list-group-item enum-item">14</li><li class="list-group-item enum-item">15</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -246,12 +246,12 @@
     <h4>Mirror</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
 <span class="description"><p>Whether or not the input/output fluid boxes are mirrored on this particular entity.</p>
 </span>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -278,12 +278,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -305,31 +305,31 @@
     <h4>Tags</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Any additional metadata associated with this entity, mostly intended for including mod information inside exported blueprint strings. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.</p>
 </span>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_allOf_i1" role="tabpanel">
-            
+
 
     <h4>Item Requests</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Allows this entity to request items on construction to one or more of it's inventories.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i1_items">
     <div class="card">
         <div class="card-header" id="headingallOf_i1_items">
@@ -347,25 +347,25 @@
     <h4>Item Request List</h4><span class="badge badge-dark value-type">Type: array</span><br/>
 <span class="description"><p>A list of item requests objects, which contain the item name, it's quality, the amount to request, as well as exactly what inventories to request to and where inside those inventories.</p>
 </span>
-        
 
-        
-        
+
+
+
 
          <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
     <div class="card">
         <div class="card-body items-definition" id="allOf_i1_items_items">
-            
+
 
     <h4>Item Request</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>All item requests for a particular item type.</p>
 </span>
 
-    
-        
 
-        
-        
+
+
+
+
 
         <br/>
 <div class="badge badge-secondary">Example:</div>
@@ -405,13 +405,13 @@
 <span class="description"><p>The particular item being requested. Must be a valid Factorio item.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i1_items_items_id_name">
     <div class="card">
         <div class="card-header" id="headingallOf_i1_items_items_id_name">
@@ -428,12 +428,12 @@
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -460,12 +460,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -492,13 +492,13 @@
 <span class="description"><p>All places/positions where this item is requested to.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i1_items_items_items_in_inventory">
     <div class="card">
         <div class="card-header" id="headingallOf_i1_items_items_items_in_inventory">
@@ -516,27 +516,27 @@
     <h4>Inventory Locations</h4><span class="badge badge-dark value-type">Type: array</span><br/>
 <span class="description"><p>A list of unique positions inside of one or more of this entity's inventories where the requested item should occupy.</p>
 </span>
-        
 
-        
-        
+
+
+
 
          <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
     <div class="card">
         <div class="card-body items-definition" id="allOf_i1_items_items_items_in_inventory_items">
-            
+
 
     <h4>Inventory Location</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Where and how much of the item should be requested. In Factorio, the order of delivered items in entity inventories was entirely arbitrary, being decided by the order in which bots delivered the requested items. In Factorio 2.0, inventory slot positions are now preserved and defined using the <code>'stack'</code> property.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i1_items_items_items_in_inventory_items_inventory">
     <div class="card">
         <div class="card-header" id="headingallOf_i1_items_items_items_in_inventory_items_inventory">
@@ -555,13 +555,13 @@
 <span class="description"><p>Which inventory this item should be requested to, 1-indexed. See <a href="https://lua-api.factorio.com/latest/defines.html#defines.inventory"><code>inventory</code></a>.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -584,13 +584,13 @@
 <span class="description"><p>Which slot in the specified inventory this item should occupy, 0-indexed. The item request is ignored if this slot lies beyond the number of available slots for this inventory.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -613,13 +613,13 @@
 <span class="description"><p>How much of the item should be requested to this slot.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -648,13 +648,13 @@
 <span class="description"><p>The count of this item inside of this entity's equipment grid. Exactly where in the equipment grid they are located is defined by the <code>'grid'</code> key on applicable entities. If the entity does not have an equipment grid, this value is always 0.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -671,19 +671,19 @@
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_allOf_i2" role="tabpanel">
-            
+
 
     <h4>Circuit Enabled</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Allows this entity to configure if it can control it's behavior with a circuit condition when connected to a circuit network. An entity posessing this field necessitates that it must also posess a <code>'circuit_condition'</code> field, but the converse is not true; certain entities are <em>always</em> controlled by a circuit condition when connected to a circuit network.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i2_control_behavior">
     <div class="card">
         <div class="card-header" id="headingallOf_i2_control_behavior">
@@ -700,12 +700,12 @@
 
     <span class="badge badge-dark value-type">Type: object</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
 <div class="accordion" id="accordionallOf_i2_control_behavior_circuit_enabled">
     <div class="card">
         <div class="card-header" id="headingallOf_i2_control_behavior_circuit_enabled">
@@ -723,12 +723,12 @@
     <span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
 <span class="description"><p>Whether or not this entity should be controlled by a specified circuit condition.</p>
 </span>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -739,19 +739,19 @@
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_allOf_i3" role="tabpanel">
-            
+
 
     <h4>Circuit Condition</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Allows the entity to configure when it should operate based on some circuit network condition.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i3_control_behavior">
     <div class="card">
         <div class="card-header" id="headingallOf_i3_control_behavior">
@@ -768,12 +768,12 @@
 
     <span class="badge badge-dark value-type">Type: object</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
 <div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition">
     <div class="card">
         <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition">
@@ -792,13 +792,13 @@
 <span class="description"><p>A conditional statement between either 2 signals or 1 signal and 1 constant value.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_first_signal">
     <div class="card">
         <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_first_signal">
@@ -830,19 +830,19 @@
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
              id="tab-pane_allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0" role="tabpanel">
-            
+
 
     <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>An object which represents a valid signal.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
     <div class="card">
         <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
@@ -859,12 +859,12 @@
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -889,12 +889,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -921,35 +921,35 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_allOf_i3_control_behavior_circuit_condition_first_signal_oneOf_i1" role="tabpanel">
-            
+
 
     <span class="badge badge-dark value-type">Type: null</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
         </div></div></div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -976,12 +976,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1004,13 +1004,13 @@
 <span class="description"><p>A constant to compare against, always lying in the rightmost slot. This value is ignored if 'second_signal' is also present.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -1046,19 +1046,19 @@
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
              id="tab-pane_allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0" role="tabpanel">
-            
+
 
     <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>An object which represents a valid signal.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
     <div class="card">
         <div class="card-header" id="headingallOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
@@ -1075,12 +1075,12 @@
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1105,12 +1105,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1137,35 +1137,35 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_allOf_i3_control_behavior_circuit_condition_second_signal_oneOf_i1" role="tabpanel">
-            
+
 
     <span class="badge badge-dark value-type">Type: null</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
         </div></div></div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1180,19 +1180,19 @@
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_allOf_i4" role="tabpanel">
-            
+
 
     <h4>Logistic Condition</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Allows this entity to control it's function based on the logistic network it lives inside of.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i4_control_behavior">
     <div class="card">
         <div class="card-header" id="headingallOf_i4_control_behavior">
@@ -1209,12 +1209,12 @@
 
     <span class="badge badge-dark value-type">Type: object</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
 <div class="accordion" id="accordionallOf_i4_control_behavior_connect_to_logistic_network">
     <div class="card">
         <div class="card-header" id="headingallOf_i4_control_behavior_connect_to_logistic_network">
@@ -1232,12 +1232,12 @@
     <h4>Connect to logistic network</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
 <span class="description"><p>Whether or not this entity should be controlled by a specified logistic condition.</p>
 </span>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1260,13 +1260,13 @@
 <span class="description"><p>The logistic condition that the entity should be enabled with, if <code>'connect_to_logistic_network'</code> is <code>true</code>.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_first_signal">
     <div class="card">
         <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_first_signal">
@@ -1298,19 +1298,19 @@
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
              id="tab-pane_allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0" role="tabpanel">
-            
+
 
     <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>An object which represents a valid signal.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name">
     <div class="card">
         <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i0_name">
@@ -1327,12 +1327,12 @@
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1357,12 +1357,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1389,35 +1389,35 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_allOf_i4_control_behavior_logistic_condition_first_signal_oneOf_i1" role="tabpanel">
-            
+
 
     <span class="badge badge-dark value-type">Type: null</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
         </div></div></div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1444,12 +1444,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1472,13 +1472,13 @@
 <span class="description"><p>A constant to compare against, always lying in the rightmost slot. This value is ignored if 'second_signal' is also present.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -1514,19 +1514,19 @@
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
              id="tab-pane_allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0" role="tabpanel">
-            
+
 
     <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>An object which represents a valid signal.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordionallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name">
     <div class="card">
         <div class="card-header" id="headingallOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i0_name">
@@ -1543,12 +1543,12 @@
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1573,12 +1573,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1605,35 +1605,35 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_allOf_i4_control_behavior_logistic_condition_second_signal_oneOf_i1" role="tabpanel">
-            
+
 
     <span class="badge badge-dark value-type">Type: null</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
         </div></div></div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1647,12 +1647,12 @@
     </div>
 </div>
         </div></div></div>
-        
 
-        
-        
 
-        
+
+
+
+
 <div class="accordion" id="accordionrecipe">
     <div class="card">
         <div class="card-header" id="headingrecipe">
@@ -1684,35 +1684,35 @@
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
              id="tab-pane_recipe_oneOf_i0" role="tabpanel">
-            
+
 
     <h4>String</h4><span class="badge badge-dark value-type">Type: string</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
         </div><div class="tab-pane fade card-body "
              id="tab-pane_recipe_oneOf_i1" role="tabpanel">
-            
+
 
     <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
         </div></div></div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1739,12 +1739,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1765,12 +1765,12 @@
 
     <span class="badge badge-dark value-type">Type: object</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
 <div class="accordion" id="accordioncontrol_behavior_set_recipe">
     <div class="card">
         <div class="card-header" id="headingcontrol_behavior_set_recipe">
@@ -1787,12 +1787,12 @@
 
     <span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1813,12 +1813,12 @@
 
     <span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1839,12 +1839,12 @@
 
     <span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: true</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1865,12 +1865,12 @@
 
     <span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1905,19 +1905,19 @@
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
              id="tab-pane_control_behavior_recipe_finished_signal_anyOf_i0" role="tabpanel">
-            
+
 
     <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>An object which represents a valid signal.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordioncontrol_behavior_recipe_finished_signal_anyOf_i0_name">
     <div class="card">
         <div class="card-header" id="headingcontrol_behavior_recipe_finished_signal_anyOf_i0_name">
@@ -1934,12 +1934,12 @@
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1964,12 +1964,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -1996,35 +1996,35 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_control_behavior_recipe_finished_signal_anyOf_i1" role="tabpanel">
-            
+
 
     <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
         </div></div></div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -2045,12 +2045,12 @@
 
     <span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -2085,19 +2085,19 @@
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
              id="tab-pane_control_behavior_working_signal_anyOf_i0" role="tabpanel">
-            
+
 
     <h4>SignalID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>An object which represents a valid signal.</p>
 </span>
 
-    
-        
 
-        
-        
 
-        
+
+
+
+
+
 <div class="accordion" id="accordioncontrol_behavior_working_signal_anyOf_i0_name">
     <div class="card">
         <div class="card-header" id="headingcontrol_behavior_working_signal_anyOf_i0_name">
@@ -2114,12 +2114,12 @@
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -2144,12 +2144,12 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li><li class="list-group-item enum-item">"virtual"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -2176,35 +2176,35 @@
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_control_behavior_working_signal_anyOf_i1" role="tabpanel">
-            
+
 
     <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>
 
-        
 
-        
-        
 
-        
+
+
+
+
         </div></div></div>
-        
 
-        
-        
 
-        
+
+
+
+
             </div>
         </div>
     </div>
@@ -2215,6 +2215,6 @@
 </div>
 
     <footer>
-        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a></p>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a> on 2025-05-23 at 05:01:20 -0400</p>
     </footer></body>
 </html>

@@ -9,7 +9,7 @@
             "title": "First Signal",
             "description": "The leftmost signal in the condition.",
             "oneOf": [
-                {"$ref": "signal-id.json"}, 
+                {"$ref": "signal-id.json"},
                 {"type": "null"}
             ],
             "default": null
@@ -25,7 +25,7 @@
             "title": "Second Signal",
             "description": "The rightmost signal of the condition. Takes precedence over 'constant', if both happen to be specified.",
             "oneOf": [
-                {"$ref": "signal-id.json"}, 
+                {"$ref": "signal-id.json"},
                 {"type": "null"}
             ],
             "default": null

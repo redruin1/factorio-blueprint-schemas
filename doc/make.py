@@ -1,7 +1,7 @@
 # make.py
 
 """
-Uses `json-schema-for-humans` to generate a set of HTML/Markdown files in 
+Uses `json-schema-for-humans` to generate a set of HTML/Markdown files in
 `doc/html` and `doc/md` respectively.
 """
 
@@ -19,7 +19,6 @@ def main(template_name):
         show_breadcrumbs=False,
         link_to_reused_ref=False,
         template_name=template_name,
-        footer_show_time=False,
     )
 
     if template_name in {"js", "js_offline", "flat"}:

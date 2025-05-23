@@ -8,48 +8,48 @@
             "title": "Wire Connector ID",
             "anyOf": [
                 {
-                    "title": "Circuit Red", 
-                    "description": "`wire_connector_id.circuit_red`", 
+                    "title": "Circuit Red",
+                    "description": "`wire_connector_id.circuit_red`",
                     "const": 1
                 },
                 {
-                    "title": "Circuit Green", 
-                    "description": "`wire_connector_id.circuit_green`", 
+                    "title": "Circuit Green",
+                    "description": "`wire_connector_id.circuit_green`",
                     "const": 2
                 },
                 {
-                    "title": "Circuit Red Input", 
-                    "description": "`wire_connector_id.combinator_input_red`", 
+                    "title": "Circuit Red Input",
+                    "description": "`wire_connector_id.combinator_input_red`",
                     "const": 1
                 },
                 {
-                    "title": "Circuit Green Input", 
-                    "description": "`wire_connector_id.combinator_input_green`", 
+                    "title": "Circuit Green Input",
+                    "description": "`wire_connector_id.combinator_input_green`",
                     "const": 2
                 },
                 {
-                    "title": "Circuit Red Output", 
-                    "description": "`wire_connector_id.combinator_output_red`", 
+                    "title": "Circuit Red Output",
+                    "description": "`wire_connector_id.combinator_output_red`",
                     "const": 3
                 },
                 {
-                    "title": "Circuit Green Output", 
-                    "description": "`wire_connector_id.combinator_output_green`", 
+                    "title": "Circuit Green Output",
+                    "description": "`wire_connector_id.combinator_output_green`",
                     "const": 4
                 },
                 {
-                    "title": "Power Wire", 
-                    "description": "`wire_connector_id.pole_copper`", 
+                    "title": "Power Wire",
+                    "description": "`wire_connector_id.pole_copper`",
                     "const": 5
                 },
                 {
-                    "title": "Power Switch Left", 
-                    "description": "`wire_connector_id.power_switch_left_copper`", 
+                    "title": "Power Switch Left",
+                    "description": "`wire_connector_id.power_switch_left_copper`",
                     "const": 5
                 },
                 {
-                    "title": "Power Switch Right", 
-                    "description": "`wire_connector_id.power_switch_right_copper`", 
+                    "title": "Power Switch Right",
+                    "description": "`wire_connector_id.power_switch_right_copper`",
                     "const": 6
                 }
             ]
@@ -351,7 +351,7 @@
                             },
                             {
                                 "description": "What kind of connection the wire has to the first entity. See [`wire_connector_id`](https://lua-api.factorio.com/latest/defines.html#defines.wire_connector_id).",
-                                "$ref": "#/$defs/wire-connector-id"                                
+                                "$ref": "#/$defs/wire-connector-id"
                             },
                             {
                                 "$ref": "../common/uint64.json",
