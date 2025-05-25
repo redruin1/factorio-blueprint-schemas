@@ -3,5 +3,8 @@
     "id": "common/limiting-bar.json",
     "title": "Limiting Bar",
     "description": "Limits the inventory to this many available slots.",
-    "$ref": "uint32.json"
+    "oneOf": [
+        {"$ref": "uint16.json"},
+        {"title": "null", "type": "null"}
+    ]
 }

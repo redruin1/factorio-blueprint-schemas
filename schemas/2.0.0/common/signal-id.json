@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/common/signal-id.json",
-    "title": "SignalID",
+    "title": "Signal ID",
     "description": "An object which represents a valid signal.",
     "type": "object",
     "properties": {

@@ -1,0 +1,11 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/offshore-pump.json",
+    "title": "Offshore Pump",
+    "description": "A pump which extracts fluids from fluid surface tiles.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
+    ]
+}

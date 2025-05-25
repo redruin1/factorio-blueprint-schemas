@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity.json",
+    "title": "Entity",
+    "description": "A schema which contains the keys that all entities share.",
+    "type": "object",
+    "properties": {
+        "name": {
+            "title": "Tile Name",
+            "description": "Name of the tile. Must be a valid Factorio tile.",
+            "type": "string"
+        },
+        "position": {
+            "title": "Tile Position",
+            "description": "Integer grid cell that this tile occupies.",
+            "$ref": "../common/position.json"
+        }
+    },
+    "required": ["name", "position"]
+}

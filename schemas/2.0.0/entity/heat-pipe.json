@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/heat-pipe.json",
+    "title": "Heat Pipe",
+    "description": "An entity used for heat transfer.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

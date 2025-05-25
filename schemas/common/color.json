@@ -7,8 +7,8 @@
     "$defs": {
         "color-component": {
             "type": "number",
-            "min": 0.0,
-            "exclusiveMax": 256.0
+            "minimum": 0.0,
+            "exclusiveMaximum": 256.0
         }
     },
     "properties": {

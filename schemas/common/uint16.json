@@ -3,7 +3,7 @@
     "$id": "common/uint16.json",
     "title": "uint16",
     "description": "An unsigned 16-bit integer.",
-    "type": "number",
-    "min": 0,
-    "exclusiveMax": 65536
+    "type": "integer",
+    "minimum": 0,
+    "exclusiveMaximum": 65536
 }

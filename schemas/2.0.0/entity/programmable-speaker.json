@@ -1,0 +1,116 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/programmable-speaker.json",
+    "title": "Programmable Speaker",
+    "description": "A circuit-controllable entity which can emit sounds.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "playback_volume": {
+                    "title": "Playback Volume",
+                    "description": "The volume the speaker should emit at.",
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "default": 1.0
+                },
+                "playback_mode": {
+                    "description": "At what distances should the audio of this speaker be audible.",
+                    "enum": [
+                        "local",
+                        "surface",
+                        "global"
+                    ],
+                    "default": "local"
+                },
+                "allow_polyphony": {
+                    "title": "Allow Polyphony",
+                    "description": "Whether or not notes can overlap one another, or if they have to wait for the previously emitted sound to complete before playing a new one.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "volume_controlled_by_signal": {
+                    "title": "Volume Controlled By Signal",
+                    "description": "Whether or not the volume of this speaker should be controlled by a dynamic signal, as defined in `volume_signal_id`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "volume_signal_id": {
+                    "title": "Volume Control Signal",
+                    "description": "What signal should be read in order to determine the speakers volume. Only has an effect if `volume_controlled_by_signal` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": null
+                }
+            }
+        },
+        "alert_parameters": {
+            "type": "object",
+            "properties": {
+                "show_alert": {
+                    "title": "Show Alert",
+                    "description": "Whether or not to create an alert when this speaker is playing.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "icon_signal_id": {
+                    "title": "Alert Icon",
+                    "description": "The icon that should display when this speaker is playing. If left null, the game defaults to the standard warning alert icon. Only has an effect if `show_alert` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": null
+                },
+                "show_on_map": {
+                    "title": "Show On Map",
+                    "description": "Whether or not the displayed alert should appear on the map view, the icon being displayed as specified by `icon_signal_id`. Only has an effect if `show_alert` is `true`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "alert_message": {
+                    "title": "Alert Message",
+                    "description": "The message that should display alongside the alert icon. If left as an empty string, the game will display the string 'Custom alert'. Only has an effect if `show_alert` is `true`.",
+                    "type": "string",
+                    "default": ""
+                }
+            }
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_parameters": {
+                    "type": "object",
+                    "properties": {
+                        "signal_value_is_pitch": {
+                            "title": "Signal Value Is Pitch",
+                            "description": "Whether or not the value of the first signal in `circuit_condition` should be used to modulate the pitch of the played sound.",
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "stop_playing_sounds": {
+                            "title": "Stop Playing Sounds",
+                            "description": "Whether or not the speaker should halt the currently playing sound if it detects a change in the input signal.",
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "instrument_id": {
+                            "title": "Instrument ID",
+                            "description": "Index of the family of sounds this speaker is programmed to play.",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "note_id": {
+                            "title": "Note ID",
+                            "description": "Index of particular note of the instrument that this speaker is programmed to play. Only has an effect if `signal_value_is_pitch` is `false`.",
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

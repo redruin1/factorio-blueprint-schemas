@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/transport-belt.json",
+    "title": "Transport Belt",
+    "description": "An entity which moves multiple lanes of items across a surface.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_read_hand_contents": {
+                    "description": "Whether or not to broadcast the current number of items on this belt to a connected circuit network.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "circuit_contents_read_mode": {
+                    "description": "In what manner should the contents of this belt be broadcast to a connected circuit network.",
+                    "oneOf": [
+                        {
+                            "title": "Pulse",
+                            "description": "Pulse the amount of the item for 1 tick as soon as it enters the belt surface.",
+                            "const": 0
+                        },
+                        {
+                            "title": "Hold",
+                            "description": "Continually broadcast the items on particular belt segment every tick.",
+                            "const": 1
+                        },
+                        {
+                            "title": "Hold (all belts)",
+                            "description": "Continually broadcast the items on all connected belt segments every tick.",
+                            "const": 2
+                        }
+                    ],
+                    "default": 0
+                }
+            }
+        }
+    }
+}

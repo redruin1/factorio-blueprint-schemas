@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/rail-support.json",
+    "title": "Rail Support",
+    "description": "A structure which supports elevated rails.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

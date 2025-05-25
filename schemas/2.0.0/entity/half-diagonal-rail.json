@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/half-diagonal-rail.json",
+    "title": "Half Diagonal Rail",
+    "description": "Half diagonal rails.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

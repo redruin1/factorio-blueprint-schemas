@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/common/signal-id.json",
+    "title": "Signal ID",
+    "description": "An object which represents a valid signal.",
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "type": {
+            "description": "The category of the signal. There can be multiple signals with the same name but differing types.",
+            "enum": [
+                "item",
+                "fluid",
+                "virtual"
+            ],
+            "default": "item"
+        }
+    }
+}

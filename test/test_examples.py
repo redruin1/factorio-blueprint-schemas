@@ -27,7 +27,7 @@ def grab_json_file(*path) -> dict:
 
 
 def retrieve_from_path(uri: str):
-    print(uri)
+    # print(uri)
     with open("schemas/" + uri, "r") as json_file:
         res = json.load(json_file)
     return Resource.from_contents(res)

@@ -3,7 +3,7 @@
     "$id": "common/uint64.json",
     "title": "uint64",
     "description": "An unsigned 64-bit integer.",
-    "type": "number",
-    "min": 0,
-    "exclusiveMax": 18446744073709551616
+    "type": "integer",
+    "minimum": 0,
+    "exclusiveMaximum": 18446744073709551616
 }

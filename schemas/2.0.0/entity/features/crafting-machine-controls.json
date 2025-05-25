@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/features/crafting-machine-controls.json",
+    "title": "Crafting Machine Circuit Controls",
+    "description": "Allows this crafting machine to control it's behavior via the circuit network, if connected.",
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "set_recipe": {
+                    "title": "Set Recipe",
+                    "description": "Whether or not this assembling machine should have it's recipe be selected by a connected circuit network.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "read_contents": {
+                    "title": "Read Contents",
+                    "description": "Whether or not to broadcast the number of items contained within this entity's inventory to a connected circuit network.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "include_in_crafting": {
+                    "title": "Include In Crafting",
+                    "description": "Whether or not to include the ingredients currently being crafted in the total items count being broadcast to the circuit network. Only has an effect if `read_contents` is `true`.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "read_recipe_finished": {
+                    "title": "Read Recipe",
+                    "description": "Whether or not this machine should pulse a signal with a unit value for 1 tick when a recipe finishes crafting. What signal it outputs is specified by `recipe_finished_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "recipe_finished_signal": {
+                    "title": "Recipe Finished Signal",
+                    "description": "What signal should be broadcast to the circuit network when the recipe finishes. Only has an effect if `read_recipe_finished` is `true`.",
+                    "$ref": "../../common/optional-signal-id.json",
+                    "default": null
+                },
+                "read_working": {
+                    "title": "Read Working",
+                    "description": "Whether or not this machine should output a unit signal continuously while the machine is crafting. What signal it outputs is specfied by `working_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "working_signal": {
+                    "title": "Working Signal",
+                    "description": "What signal should be broadcast to the circuit network during the machines operation. Only has an effect if `read_working` is `true`.",
+                    "$ref": "../../common/optional-signal-id.json",
+                    "default": null
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/loader.json",
+    "title": "Loader",
+    "description": "A machine which moves items from one entity to another without a swinging arm.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/filters.json"},
+        {"$ref": "features/circuit-set-filters.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "type": {
+            "$ref": "../common/io-type.json"
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_read_transfers": {
+                    "title": "Read Transfers",
+                    "description": "Pulse the item being loaded/unloaded from this Loader.",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}

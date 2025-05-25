@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/pipe.json",
+    "title": "Pipe",
+    "description": "A static entity which transports fluids.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

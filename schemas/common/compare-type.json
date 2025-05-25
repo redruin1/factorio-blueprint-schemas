@@ -1,0 +1,8 @@
+
+{
+    "$schema": "",
+    "$id": "common/compare-type.json",
+    "title": "Compare Type",
+    "description": "How this condition should be compared to the condition directly preceding it.",
+    "enum": ["or", "and"]
+}

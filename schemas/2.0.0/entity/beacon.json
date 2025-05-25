@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/beacon.json",
+    "title": "Beacon",
+    "description": "An entity which broadcasts module effects to other machines within radius.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

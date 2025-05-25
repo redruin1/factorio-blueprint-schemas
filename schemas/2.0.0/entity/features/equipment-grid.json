@@ -33,7 +33,7 @@
     "type": "object",
     "properties": {
         "enable_logistics_while_moving": {
-            "title": "Enable Logistics While Moving?",
+            "title": "Enable Logistics While Moving",
             "description": "Whether or not this entity should try to fulfill it's logistic requests when it is in motion. Only has an effect if this entity is configured to have an equipment grid and that equipment grid contains personal roboports.",
             "type": "boolean",
             "default": true

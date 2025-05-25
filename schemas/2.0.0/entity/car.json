@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/car.json",
+    "title": "Car",
+    "description": "A wheeled or tracked vehicle that steers.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/orientation.json"},
+        {"$ref": "features/equipment-grid.json"},
+        {"$ref": "features/vehicle.json"},
+        {"$ref": "features/request-filters.json"}
+    ]
+}

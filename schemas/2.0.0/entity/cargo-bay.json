@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/cargo-bay.json",
+    "title": "Cargo Bay",
+    "description": "An entity which can be attached to a Cargo Landing Pad or a Space Platform Hub in order to expand its inventory size and the amount of cargo pods it can send/recieve at once.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

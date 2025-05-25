@@ -5,10 +5,10 @@
     "description": "An entity that can convert items and fluids into other items and fluids.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/item-requests.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
+        {"$ref": "features/logistic-condition.json"},
+        {"$ref": "features/crafting-machine-controls.json"}
     ],
     "type": "object",
     "properties": {
@@ -16,7 +16,7 @@
             "title": "Recipe",
             "description": "The recipe that this entity is configured to perform.",
             "oneOf": [
-                {"title": "String", "type": "string"},
+                {"title": "Recipe Name", "type": "string"},
                 {"title": "null", "type": "null"}
             ]
         },
@@ -24,45 +24,6 @@
             "title": "Recipe Quality",
             "description": "The quality of the ingredients/output items that this machine should use.",
             "$ref": "../common/quality-name.json"
-        },
-        "control_behavior": {
-            "type": "object",
-            "properties": {
-                "set_recipe": {
-                    "type": "boolean",
-                    "default": false
-                },
-                "read_contents": {
-                    "type": "boolean",
-                    "default": false
-                },
-                "include_in_crafting": {
-                    "type": "boolean",
-                    "default": true
-                },
-                "read_recipe_finished": {
-                    "type": "boolean",
-                    "default": false
-                },
-                "recipe_finished_signal": {
-                    "anyOf": [
-                        {"$ref": "../common/signal-id.json"},
-                        {"title": "null", "type": "null"}
-                    ],
-                    "default": null
-                },
-                "read_working": {
-                    "type": "boolean",
-                    "default": false
-                },
-                "working_signal": {
-                    "anyOf": [
-                        {"$ref": "../common/signal-id.json"},
-                        {"title": "null", "type": "null"}
-                    ],
-                    "default": null
-                }
-            }
         }
     }
 }

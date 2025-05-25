@@ -1,4 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:upgrade-planner"
+    "$id": "2.0.0/upgrade-planner.json",
+    "title": "Upgrade Planner",
+    "description": "A object that allows you to configure what entities/tiles to upgrade/downgrade."
 }

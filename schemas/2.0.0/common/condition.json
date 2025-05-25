@@ -8,10 +8,7 @@
         "first_signal": {
             "title": "First Signal",
             "description": "The leftmost signal in the condition.",
-            "oneOf": [
-                {"$ref": "signal-id.json"},
-                {"type": "null"}
-            ],
+            "$ref": "optional-signal-id.json",
             "default": null
         },
         "comparator": {"$ref": "../../common/comparator.json"},
@@ -24,10 +21,7 @@
         "second_signal": {
             "title": "Second Signal",
             "description": "The rightmost signal of the condition. Takes precedence over 'constant', if both happen to be specified.",
-            "oneOf": [
-                {"$ref": "signal-id.json"},
-                {"type": "null"}
-            ],
+            "$ref": "optional-signal-id.json",
             "default": null
         }
     }

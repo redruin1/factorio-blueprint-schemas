@@ -1,8 +1,77 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:blueprint-book",
+    "$id": "2.0.0/blueprint-book.json",
+    "title": "Blueprint Book",
+    "description": "A blueprintable that holds other blueprintables.",
     "type": "object",
     "properties": {
-
+        "index": {
+            "title": "Index",
+            "description": "The unique index of the blueprint book, if it lies inside of a parent blueprint book. If not inside of a blueprint book, this key has no effect.",
+            "oneOf": [
+                {"$ref": "../common/uint16.json"},
+                {"title": "null", "type": "null"}
+            ]
+        },
+        "blueprint_book": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "title": "Item",
+                    "description": "The name of the item associated with this blueprintable.",
+                    "const": "blueprint-book"
+                },
+                "label": {
+                    "title": "Label",
+                    "description": "The player-given title of this blueprint. Can be specified with rich text colors and icons. If omitted or specified as an empty string, then the blueprint is given the default name 'Blueprint'.",
+                    "type": "string",
+                    "default": ""
+                },
+                "label_color": {
+                    "title": "Label Color",
+                    "description": "The color of the label. If omitted, this color defaults to a special hybrid color, where it is white in your inventory and black when being placed. Distinct from color modifiers applied to `label` using rich text, possibly deprecated.",
+                    "$ref": "../common/color.json"
+                },
+                "description": {
+                    "title": "Description",
+                    "description": "The player-given description of this blueprint. Can be specified with rich text colors and icons.",
+                    "type": "string",
+                    "default": ""
+                },
+                "icons": {
+                    "title": "Icons",
+                    "description": "The list of icons to display over the blueprint item, with a maximum of 4 icons total.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "common/icon.json"
+                    },
+                    "maxItems": 4
+                },
+                "version": {
+                    "title": "Version",
+                    "description": "The version of the game associated with this blueprint string. Encoded as four bytes, where each byte corresponds to a semantic version number.",
+                    "$ref": "../common/uint64.json"
+                },
+                "active_index": {
+                    "title": "Active Index",
+                    "description": "The currently selected blueprint in this blueprint book, 0-indexed.",
+                    "$ref": "../common/uint16.json",
+                    "default": 0
+                },
+                "blueprints": {
+                    "title": "Blueprintable List",
+                    "description": "The list of blueprintable objects that this blueprint contains.",
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {"$ref": "blueprint.json"},
+                            {"$ref": "deconstruction-planner.json"},
+                            {"$ref": "upgrade-planner.json"},
+                            {"$ref": "blueprint-book.json"}
+                        ]
+                    }
+                }
+            }
+        }
     }
 }

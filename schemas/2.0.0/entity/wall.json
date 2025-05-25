@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/wall.json",
+    "title": "Wall",
+    "description": "A static barrier intended to protect structures.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_open_gate": {
+                    "description": "Whether or not this gate should open based on `circuit_condition` when connected to a circuit network.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "circuit_read_gate": {
+                    "description": "Whether or not the state of the gate should be broadcast as a unit signal to a connected circuit network.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "output_signal": {
+                    "description": "What signal should be broadcast if the gate is open and `circuit_read_gate` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-G", "type": "virtual"}
+                }
+            }
+        }
+    }
+}

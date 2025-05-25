@@ -1,0 +1,10 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/simple-entity-with-force.json",
+    "title": "Simple Entity With Force",
+    "description": "A simple entity associated with some force.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/visual-variation.json"}
+    ]
+}

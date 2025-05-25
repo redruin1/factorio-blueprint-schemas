@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "common/lua-integer.json",
+    "title": "Lua Integer",
+    "description": "The maximum integer range that a Lua `number` can represent without losing precision; I.E. [-2^53, 2^53).",
+    "type": "number",
+    "minimum": -9007199254740992,
+    "exclusiveMaximum": 9007199254740992
+}

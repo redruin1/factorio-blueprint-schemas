@@ -1,4 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:deconstruction-planner"
+    "$id": "2.0.0/deconstruction-planner.json",
+    "title": "Deconstruction Planner",
+    "description": "A object that allows you to configure what entities/tiles to deconstruct."
 }

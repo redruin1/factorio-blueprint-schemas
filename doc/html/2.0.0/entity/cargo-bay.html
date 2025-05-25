@@ -1,0 +1,915 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="schema_doc.css">
+    <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+    <script src="schema_doc.min.js"></script>
+    <meta charset="utf-8"/>
+        
+    
+    <title>Cargo Bay</title>
+</head>
+<body onload="anchorOnLoad();" id="root">
+
+     <h1>Cargo Bay</h1><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An entity which can be attached to a Cargo Landing Pad or a Space Platform Hub in order to expand its inventory size and the amount of cargo pods it can send/recieve at once.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionentity_number">
+    <div class="card">
+        <div class="card-header" id="headingentity_number">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#entity_number"
+                        aria-expanded="" aria-controls="entity_number" onclick="setAnchor('#entity_number')"><span class="property-name">entity_number</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="entity_number"
+             class="collapse property-definition-div" aria-labelledby="headingentity_number"
+             data-parent="#accordionentity_number">
+            <div class="card-body pl-5">
+
+    <h4>Entity Number</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>A unique ID given to every entity contained within a blueprint. In practice, this value is the 1-indexed position of the entity inside it's parent blueprint's 'entities' list. This is not enforced however, so an entity's number can be specified with any value as long as it's unique inside that particular blueprint. This value is used for resolving associations between different entities, such as wire connections or schedule definitions.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="entity_number_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionname">
+    <div class="card">
+        <div class="card-header" id="headingname">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#name"
+                        aria-expanded="" aria-controls="name" onclick="setAnchor('#name')"><span class="property-name">name</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="name"
+             class="collapse property-definition-div" aria-labelledby="headingname"
+             data-parent="#accordionname">
+            <div class="card-body pl-5">
+
+    <h4>Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description"><p>The name of the entity. If this name is not recognized by Factorio when importing the entity is omitted with a notification to the console.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionposition">
+    <div class="card">
+        <div class="card-header" id="headingposition">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#position"
+                        aria-expanded="" aria-controls="position" onclick="setAnchor('#position')"><span class="property-name">position</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="position"
+             class="collapse property-definition-div" aria-labelledby="headingposition"
+             data-parent="#accordionposition">
+            <div class="card-body pl-5">
+
+    <h4>Position</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>The position where the entity is located inside of it's parent blueprint. This position is (almost) always located at the spatial center of the entity. For grid-aligned entities, this position always lies either in the center of a tile or on its transition.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionposition_x">
+    <div class="card">
+        <div class="card-header" id="headingposition_x">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#position_x"
+                        aria-expanded="" aria-controls="position_x" onclick="setAnchor('#position_x')"><span class="property-name">x</span></button>
+            </h2>
+        </div>
+
+        <div id="position_x"
+             class="collapse property-definition-div" aria-labelledby="headingposition_x"
+             data-parent="#accordionposition_x">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: number</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionposition_y">
+    <div class="card">
+        <div class="card-header" id="headingposition_y">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#position_y"
+                        aria-expanded="" aria-controls="position_y" onclick="setAnchor('#position_y')"><span class="property-name">y</span></button>
+            </h2>
+        </div>
+
+        <div id="position_y"
+             class="collapse property-definition-div" aria-labelledby="headingposition_y"
+             data-parent="#accordionposition_y">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: number</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordiondirection">
+    <div class="card">
+        <div class="card-header" id="headingdirection">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#direction"
+                        aria-expanded="" aria-controls="direction" onclick="setAnchor('#direction')"><span class="property-name">direction</span></button>
+            </h2>
+        </div>
+
+        <div id="direction"
+             class="collapse property-definition-div" aria-labelledby="headingdirection"
+             data-parent="#accordiondirection">
+            <div class="card-body pl-5">
+
+    <h4>Direction</h4> <span class="badge badge-success default-value">Default: 0</span><br/>
+<span class="description"><p>The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect. See <a href="https://lua-api.factorio.com/latest/defines.html#defines.direction"><code>defines.direction</code></a></p>
+</span><div class="one-of-value" id="direction_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabsdirection_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="direction_oneOf_i0" data-toggle="tab" href="#tab-pane_direction_oneOf_i0" role="tab"
+               onclick="setAnchor('#direction_oneOf_i0')"
+            >North</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i1" data-toggle="tab" href="#tab-pane_direction_oneOf_i1" role="tab"
+               onclick="setAnchor('#direction_oneOf_i1')"
+            >North North East</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i2" data-toggle="tab" href="#tab-pane_direction_oneOf_i2" role="tab"
+               onclick="setAnchor('#direction_oneOf_i2')"
+            >North East</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i3" data-toggle="tab" href="#tab-pane_direction_oneOf_i3" role="tab"
+               onclick="setAnchor('#direction_oneOf_i3')"
+            >East North East</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i4" data-toggle="tab" href="#tab-pane_direction_oneOf_i4" role="tab"
+               onclick="setAnchor('#direction_oneOf_i4')"
+            >East</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i5" data-toggle="tab" href="#tab-pane_direction_oneOf_i5" role="tab"
+               onclick="setAnchor('#direction_oneOf_i5')"
+            >East South East</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i6" data-toggle="tab" href="#tab-pane_direction_oneOf_i6" role="tab"
+               onclick="setAnchor('#direction_oneOf_i6')"
+            >South East</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i7" data-toggle="tab" href="#tab-pane_direction_oneOf_i7" role="tab"
+               onclick="setAnchor('#direction_oneOf_i7')"
+            >South South East</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i8" data-toggle="tab" href="#tab-pane_direction_oneOf_i8" role="tab"
+               onclick="setAnchor('#direction_oneOf_i8')"
+            >South</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i9" data-toggle="tab" href="#tab-pane_direction_oneOf_i9" role="tab"
+               onclick="setAnchor('#direction_oneOf_i9')"
+            >South South West</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i10" data-toggle="tab" href="#tab-pane_direction_oneOf_i10" role="tab"
+               onclick="setAnchor('#direction_oneOf_i10')"
+            >South West</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i11" data-toggle="tab" href="#tab-pane_direction_oneOf_i11" role="tab"
+               onclick="setAnchor('#direction_oneOf_i11')"
+            >West South West</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i12" data-toggle="tab" href="#tab-pane_direction_oneOf_i12" role="tab"
+               onclick="setAnchor('#direction_oneOf_i12')"
+            >West</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i13" data-toggle="tab" href="#tab-pane_direction_oneOf_i13" role="tab"
+               onclick="setAnchor('#direction_oneOf_i13')"
+            >West North West</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i14" data-toggle="tab" href="#tab-pane_direction_oneOf_i14" role="tab"
+               onclick="setAnchor('#direction_oneOf_i14')"
+            >North West</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="direction_oneOf_i15" data-toggle="tab" href="#tab-pane_direction_oneOf_i15" role="tab"
+               onclick="setAnchor('#direction_oneOf_i15')"
+            >North North West</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_direction_oneOf_i0" role="tabpanel">
+            
+
+    <h4>North</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.north</code></p>
+</span><span class="const-value" id="direction_oneOf_i0_const">Specific value: <code>0</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i1" role="tabpanel">
+            
+
+    <h4>North North East</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.northnortheast</code></p>
+</span><span class="const-value" id="direction_oneOf_i1_const">Specific value: <code>1</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i2" role="tabpanel">
+            
+
+    <h4>North East</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.northeast</code></p>
+</span><span class="const-value" id="direction_oneOf_i2_const">Specific value: <code>2</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i3" role="tabpanel">
+            
+
+    <h4>East North East</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.eastnortheast</code></p>
+</span><span class="const-value" id="direction_oneOf_i3_const">Specific value: <code>3</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i4" role="tabpanel">
+            
+
+    <h4>East</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.east</code></p>
+</span><span class="const-value" id="direction_oneOf_i4_const">Specific value: <code>4</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i5" role="tabpanel">
+            
+
+    <h4>East South East</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.eastsoutheast</code></p>
+</span><span class="const-value" id="direction_oneOf_i5_const">Specific value: <code>5</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i6" role="tabpanel">
+            
+
+    <h4>South East</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.southeast</code></p>
+</span><span class="const-value" id="direction_oneOf_i6_const">Specific value: <code>6</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i7" role="tabpanel">
+            
+
+    <h4>South South East</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.southsoutheast</code></p>
+</span><span class="const-value" id="direction_oneOf_i7_const">Specific value: <code>7</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i8" role="tabpanel">
+            
+
+    <h4>South</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.south</code></p>
+</span><span class="const-value" id="direction_oneOf_i8_const">Specific value: <code>8</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i9" role="tabpanel">
+            
+
+    <h4>South South West</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.southsouthwest</code></p>
+</span><span class="const-value" id="direction_oneOf_i9_const">Specific value: <code>9</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i10" role="tabpanel">
+            
+
+    <h4>South West</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.southwest</code></p>
+</span><span class="const-value" id="direction_oneOf_i10_const">Specific value: <code>10</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i11" role="tabpanel">
+            
+
+    <h4>West South West</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.westsouthwest</code></p>
+</span><span class="const-value" id="direction_oneOf_i11_const">Specific value: <code>11</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i12" role="tabpanel">
+            
+
+    <h4>West</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.west</code></p>
+</span><span class="const-value" id="direction_oneOf_i12_const">Specific value: <code>12</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i13" role="tabpanel">
+            
+
+    <h4>West North West</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.westnorthwest</code></p>
+</span><span class="const-value" id="direction_oneOf_i13_const">Specific value: <code>13</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i14" role="tabpanel">
+            
+
+    <h4>North West</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.northwest</code></p>
+</span><span class="const-value" id="direction_oneOf_i14_const">Specific value: <code>14</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_direction_oneOf_i15" role="tabpanel">
+            
+
+    <h4>North North West</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p><code>defines.direction.northnorthwest</code></p>
+</span><span class="const-value" id="direction_oneOf_i15_const">Specific value: <code>15</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionmirror">
+    <div class="card">
+        <div class="card-header" id="headingmirror">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#mirror"
+                        aria-expanded="" aria-controls="mirror" onclick="setAnchor('#mirror')"><span class="property-name">mirror</span></button>
+            </h2>
+        </div>
+
+        <div id="mirror"
+             class="collapse property-definition-div" aria-labelledby="headingmirror"
+             data-parent="#accordionmirror">
+            <div class="card-body pl-5">
+
+    <h4>Mirror</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not the input/output fluid boxes are mirrored on this particular entity.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionquality">
+    <div class="card">
+        <div class="card-header" id="headingquality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#quality"
+                        aria-expanded="" aria-controls="quality" onclick="setAnchor('#quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="quality"
+             class="collapse property-definition-div" aria-labelledby="headingquality"
+             data-parent="#accordionquality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>The quality of the entity itself.</p>
+</span>
+
+    <div class="enum-value" id="quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems">
+    <div class="card">
+        <div class="card-header" id="headingitems">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items"
+                        aria-expanded="" aria-controls="items" onclick="setAnchor('#items')"><span class="property-name">items</span></button>
+            </h2>
+        </div>
+
+        <div id="items"
+             class="collapse property-definition-div" aria-labelledby="headingitems"
+             data-parent="#accordionitems">
+            <div class="card-body pl-5">
+
+    <h4>Item Requests</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description"><p>A list of items that are requested to this entity once on 'revive' (construction). Used for satisfying construction requests like delivering modules to beacons or train fuel to locomotives.</p>
+</span>
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="items_items">
+            
+
+    <h4>Insert Plan</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>All item requests for a particular item type, specifying the manner in which they should be delivered. See <a href="https://lua-api.factorio.com/latest/concepts/BlueprintInsertPlan.html"><code>BlueprintInsertPlan</code></a>.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Example:</div>
+<br/><button class="btn btn-light example-show collapsed" data-toggle="collapse" data-target="#items_items_ex1" aria-controls="items_items_ex1"></button><div id="items_items_ex1" class="collapse jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;personal-roboport&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;quality&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rare&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;items&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;in_inventory&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="s2">&quot;inventory&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;stack&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="s2">&quot;grid_count&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="accordion" id="accordionitems_items_id">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_id"
+                        aria-expanded="" aria-controls="items_items_id" onclick="setAnchor('#items_items_id')"><span class="property-name">id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_id"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_id"
+             data-parent="#accordionitems_items_id">
+            <div class="card-body pl-5">
+
+    <h4>Item And Quality ID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>The particular item/quality pair being requested. Must be a valid Factorio item and quality. See <a href="https://lua-api.factorio.com/latest/concepts/ItemIDAndQualityIDPair.html"><code>ItemIDAndQualityIDPair</code></a>.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionitems_items_id_name">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_id_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_id_name"
+                        aria-expanded="" aria-controls="items_items_id_name" onclick="setAnchor('#items_items_id_name')"><span class="property-name">name</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_id_name"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_id_name"
+             data-parent="#accordionitems_items_id_name">
+            <div class="card-body pl-5">
+
+    <h4>Item Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_items_id_quality">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_id_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_id_quality"
+                        aria-expanded="" aria-controls="items_items_id_quality" onclick="setAnchor('#items_items_id_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_id_quality"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_id_quality"
+             data-parent="#accordionitems_items_id_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
+</span>
+
+    <div class="enum-value" id="items_items_id_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_items_items">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_items">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_items"
+                        aria-expanded="" aria-controls="items_items_items" onclick="setAnchor('#items_items_items')"><span class="property-name">items</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_items"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_items"
+             data-parent="#accordionitems_items_items">
+            <div class="card-body pl-5">
+
+    <h4>Item Inventory Positions</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {}</span><br/>
+<span class="description"><p>All places/positions where this item is requested to.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionitems_items_items_in_inventory">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_items_in_inventory">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_items_in_inventory"
+                        aria-expanded="" aria-controls="items_items_items_in_inventory" onclick="setAnchor('#items_items_items_in_inventory')"><span class="property-name">in_inventory</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_items_in_inventory"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_items_in_inventory"
+             data-parent="#accordionitems_items_items_in_inventory">
+            <div class="card-body pl-5">
+
+    <h4>Inventory Positions</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description"><p>A list of unique positions inside of one or more of this entity's inventories where the requested item should occupy.</p>
+</span>
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="items_items_items_in_inventory_items">
+            
+
+    <h4>Inventory Position</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Where and how much of the item should be requested. In Factorio, the order of delivered items in entity inventories was entirely arbitrary, being decided by the order in which bots delivered the requested items. In Factorio 2.0, inventory slot positions are now preserved and defined using the <code>'stack'</code> property.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionitems_items_items_in_inventory_items_inventory">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_items_in_inventory_items_inventory">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_items_in_inventory_items_inventory"
+                        aria-expanded="" aria-controls="items_items_items_in_inventory_items_inventory" onclick="setAnchor('#items_items_items_in_inventory_items_inventory')"><span class="property-name">inventory</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_items_in_inventory_items_inventory"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_items_in_inventory_items_inventory"
+             data-parent="#accordionitems_items_items_in_inventory_items_inventory">
+            <div class="card-body pl-5">
+
+    <h4>Inventory ID</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>Which inventory this item should be requested to, 1-indexed. See <a href="https://lua-api.factorio.com/latest/defines.html#defines.inventory"><code>defines.inventory</code></a>.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="items_items_items_in_inventory_items_inventory_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_items_items_in_inventory_items_stack">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_items_in_inventory_items_stack">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_items_in_inventory_items_stack"
+                        aria-expanded="" aria-controls="items_items_items_in_inventory_items_stack" onclick="setAnchor('#items_items_items_in_inventory_items_stack')"><span class="property-name">stack</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_items_in_inventory_items_stack"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_items_in_inventory_items_stack"
+             data-parent="#accordionitems_items_items_in_inventory_items_stack">
+            <div class="card-body pl-5">
+
+    <h4>Inventory Slot</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>Which slot in the specified inventory this item should occupy, 0-indexed. The item request is ignored if this slot lies beyond the number of available slots for this inventory.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="items_items_items_in_inventory_items_stack_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>65536</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_items_items_in_inventory_items_count">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_items_in_inventory_items_count">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_items_in_inventory_items_count"
+                        aria-expanded="" aria-controls="items_items_items_in_inventory_items_count" onclick="setAnchor('#items_items_items_in_inventory_items_count')"><span class="property-name">count</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_items_in_inventory_items_count"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_items_in_inventory_items_count"
+             data-parent="#accordionitems_items_items_in_inventory_items_count">
+            <div class="card-body pl-5">
+
+    <h4>Count</h4><span class="badge badge-dark value-type">Type: integer</span> <span class="badge badge-success default-value">Default: 1</span><br/>
+<span class="description"><p>How much of the item should be requested to this slot.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="items_items_items_in_inventory_items_count_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_items_items_grid_count">
+    <div class="card">
+        <div class="card-header" id="headingitems_items_items_grid_count">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_items_items_grid_count"
+                        aria-expanded="" aria-controls="items_items_items_grid_count" onclick="setAnchor('#items_items_items_grid_count')"><span class="property-name">grid_count</span></button>
+            </h2>
+        </div>
+
+        <div id="items_items_items_grid_count"
+             class="collapse property-definition-div" aria-labelledby="headingitems_items_items_grid_count"
+             data-parent="#accordionitems_items_items_grid_count">
+            <div class="card-body pl-5">
+
+    <h4>Grid Count</h4><span class="badge badge-dark value-type">Type: integer</span> <span class="badge badge-success default-value">Default: 0</span><br/>
+<span class="description"><p>The count of this item inside of this entity's equipment grid. Exactly where in the equipment grid they are located is defined by the <code>'grid'</code> key on applicable entities. If the entity does not have an equipment grid, this value is always 0.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="items_items_items_grid_count_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordiontags">
+    <div class="card">
+        <div class="card-header" id="headingtags">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#tags"
+                        aria-expanded="" aria-controls="tags" onclick="setAnchor('#tags')"><span class="property-name">tags</span></button>
+            </h2>
+        </div>
+
+        <div id="tags"
+             class="collapse property-definition-div" aria-labelledby="headingtags"
+             data-parent="#accordiontags">
+            <div class="card-body pl-5">
+
+    <h4>Tags</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Object used to store metadata of a ghost entity. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a> on 2025-05-25 at 16:39:20 -0400</p>
+    </footer></body>
+</html>

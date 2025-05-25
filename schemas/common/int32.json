@@ -1,8 +1,9 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "common/int32.json",
+    "title": "int32",
     "description": "Signed 32-bit integer.",
-    "type": "number",
-    "min": -2147483648,
-    "exclusiveMax": 2147483648
+    "type": "integer",
+    "minimum": -2147483648,
+    "exclusiveMaximum": 2147483648
 }

@@ -1,0 +1,85 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity.json",
+    "title": "Entity",
+    "description": "A schema which contains the keys that all entities share.",
+    "type": "object",
+    "properties": {
+        "entity_number": {
+            "title": "Entity Number",
+            "description": "A unique ID given to every entity contained within a blueprint. In practice, this value is the 1-indexed position of the entity inside it's parent blueprint's 'entities' list. This is not enforced however, so an entity's number can be specified with any value as long as it's unique inside that particular blueprint. This value is used for resolving associations between different entities, such as wire connections or schedule definitions.",
+            "$ref": "../common/uint32.json"
+        },
+        "name": {
+            "title": "Name",
+            "description": "The name of the entity. If this name is not recognized by Factorio when importing the entity is omitted with a notification to the console.",
+            "type": "string"
+        },
+        "position": {
+            "title": "Position",
+            "description": "The position where the entity is located inside of it's parent blueprint. This position is (almost) always located at the spatial center of the entity. For grid-aligned entities, this position always lies either in the center of a tile or on its transition.",
+            "$ref": "../common/position.json"
+        },
+        "direction": {
+            "title": "Direction",
+            "description": "The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect. See [`defines.direction`](https://lua-api.factorio.com/1.1.110/defines.html#defines.direction)",
+            "oneOf": [
+                {
+                    "title": "North",
+                    "description": "`defines.direction.north`",
+                    "const": 0
+                },
+                {
+                    "title": "North East",
+                    "description": "`defines.direction.northeast`",
+                    "const": 1
+                },
+                {
+                    "title": "East",
+                    "description": "`defines.direction.east`",
+                    "const": 2
+                },
+                {
+                    "title": "South East",
+                    "description": "`defines.direction.southeast`",
+                    "const": 3
+                },
+                {
+                    "title": "South",
+                    "description": "`defines.direction.south`",
+                    "const": 4
+                },
+                {
+                    "title": "South West",
+                    "description": "`defines.direction.southwest`",
+                    "const": 5
+                },
+                {
+                    "title": "West",
+                    "description": "`defines.direction.west`",
+                    "const": 6
+                },
+                {
+                    "title": "North West",
+                    "description": "`defines.direction.northwest`",
+                    "const": 7
+                }
+            ],
+            "default": 0,
+            "$comment": "maybe use `anyOf` in order to document each individual value with their name"
+        },
+        "items": {
+            "title": "Item Requests",
+            "description": "A dictionary of items that are requested to this entity once on 'revive' (construction). Each key is a name of a valid Factorio item, and each value is an integer representing how many of that item to request to this entity. Used for satisfying construction requests like delivering modules to beacons or train fuel to locomotives.",
+            "type": "object",
+            "default": {}
+        },
+        "tags": {
+            "title": "Tags",
+            "description": "Object used to store metadata of a ghost entity. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.",
+            "type": "object",
+            "default": {}
+        }
+    },
+    "required": ["entity_number", "name", "position"]
+}

@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="schema_doc.css">
+    <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+    <script src="schema_doc.min.js"></script>
+    <meta charset="utf-8"/>
+        
+    
+    <title>Logistic Sections</title>
+</head>
+<body onload="anchorOnLoad();" id="root">
+
+     <h1>Logistic Sections</h1><span class="badge badge-dark value-type">Type: array</span> <span class="badge badge-success default-value">Default: []</span><br/>
+<span class="description"><p>A list of (player-defined) logistic sections that this entity is using for logistic requests.</p>
+</span>
+        
+
+        
+        
+
+        <p><span class="badge badge-light restriction max-items-restriction" id="maxItems">Must contain a maximum of <code>100</code> items</span></p> <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="items">
+            
+
+    <h4>Logistic Section</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>A (player-defined) set of (possibly named) Logistic Filter objects. Used for both logistics requests in logistic elements (like requester chests) as well as for constant combinator signal definitions.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="items_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="p">}</span>
+</pre></div>
+</div><button class="btn btn-light example-show collapsed" data-toggle="collapse" data-target="#items_ex2" aria-controls="items_ex2"></button><div id="items_ex2" class="collapse jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;filters&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;iron-ore&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;quality&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rare&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;comparator&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;max-count&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="s2">&quot;group&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Example&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;active&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="accordion" id="accordionitems_index">
+    <div class="card">
+        <div class="card-header" id="headingitems_index">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_index"
+                        aria-expanded="" aria-controls="items_index" onclick="setAnchor('#items_index')"><span class="property-name">index</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_index"
+             class="collapse property-definition-div" aria-labelledby="headingitems_index"
+             data-parent="#accordionitems_index">
+            <div class="card-body pl-5">
+
+    <h4>Section Index</h4><span class="badge badge-dark value-type">Type: number</span><br/>
+<span class="description"><p>Index of this section in the section list in the parent entity, 1-indexed.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="items_index_number">Value must be greater or equal to <code>1</code> and strictly lesser than <code>9007199254740992</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_filters">
+    <div class="card">
+        <div class="card-header" id="headingitems_filters">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_filters"
+                        aria-expanded="" aria-controls="items_filters" onclick="setAnchor('#items_filters')"><span class="property-name">filters</span></button>
+            </h2>
+        </div>
+
+        <div id="items_filters"
+             class="collapse property-definition-div" aria-labelledby="headingitems_filters"
+             data-parent="#accordionitems_filters">
+            <div class="card-body pl-5">
+
+    <h4>Logistic Filters</h4><span class="badge badge-dark value-type">Type: array</span> <span class="badge badge-success default-value">Default: []</span><br/>
+<span class="description"><p>What filters this section has. Capped to 1000 unique signals per section.</p>
+</span>
+        
+
+        
+        
+
+        <p><span class="badge badge-light restriction max-items-restriction" id="items_filters_maxItems">Must contain a maximum of <code>1000</code> items</span></p> <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="items_filters_items">
+            
+
+    <h4>Logistic Filter</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>A single item request/signal specification.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionitems_filters_items_index">
+    <div class="card">
+        <div class="card-header" id="headingitems_filters_items_index">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_filters_items_index"
+                        aria-expanded="" aria-controls="items_filters_items_index" onclick="setAnchor('#items_filters_items_index')"><span class="property-name">index</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_filters_items_index"
+             class="collapse property-definition-div" aria-labelledby="headingitems_filters_items_index"
+             data-parent="#accordionitems_filters_items_index">
+            <div class="card-body pl-5">
+
+    <h4>Index</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>GUI index of the filter, 1-indexed.</p>
+</span>
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="items_filters_items_index_number">Value must be greater or equal to <code>1</code> and lesser or equal to <code>1000</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_filters_items_name">
+    <div class="card">
+        <div class="card-header" id="headingitems_filters_items_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_filters_items_name"
+                        aria-expanded="" aria-controls="items_filters_items_name" onclick="setAnchor('#items_filters_items_name')"><span class="property-name">name</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_filters_items_name"
+             class="collapse property-definition-div" aria-labelledby="headingitems_filters_items_name"
+             data-parent="#accordionitems_filters_items_name">
+            <div class="card-body pl-5">
+
+    <h4>Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description"><p>Name of the filter being specified. Must be a valid Factorio item or signal.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_filters_items_type">
+    <div class="card">
+        <div class="card-header" id="headingitems_filters_items_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_filters_items_type"
+                        aria-expanded="" aria-controls="items_filters_items_type" onclick="setAnchor('#items_filters_items_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="items_filters_items_type"
+             class="collapse property-definition-div" aria-labelledby="headingitems_filters_items_type"
+             data-parent="#accordionitems_filters_items_type">
+            <div class="card-body pl-5">
+
+    <h4>Type</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
+<span class="description"><p>Underlying type of the given filter. Cannot be specified by GUI; instead, the game selects the most appropriate type given the circumstance. If omitted, the implied type is 'item'.</p>
+</span><div class="enum-value" id="items_filters_items_type_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"virtual"</li><li class="list-group-item enum-item">"recipe"</li><li class="list-group-item enum-item">"entity"</li><li class="list-group-item enum-item">"space-location"</li><li class="list-group-item enum-item">"asteroid-chunk"</li><li class="list-group-item enum-item">"quality"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_filters_items_quality">
+    <div class="card">
+        <div class="card-header" id="headingitems_filters_items_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_filters_items_quality"
+                        aria-expanded="" aria-controls="items_filters_items_quality" onclick="setAnchor('#items_filters_items_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="items_filters_items_quality"
+             class="collapse property-definition-div" aria-labelledby="headingitems_filters_items_quality"
+             data-parent="#accordionitems_filters_items_quality">
+            <div class="card-body pl-5">
+
+    <h4>Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>A type of quality.</p>
+</span>
+
+    <div class="enum-value" id="items_filters_items_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_filters_items_comparator">
+    <div class="card">
+        <div class="card-header" id="headingitems_filters_items_comparator">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_filters_items_comparator"
+                        aria-expanded="" aria-controls="items_filters_items_comparator" onclick="setAnchor('#items_filters_items_comparator')"><span class="property-name">comparator</span></button>
+            </h2>
+        </div>
+
+        <div id="items_filters_items_comparator"
+             class="collapse property-definition-div" aria-labelledby="headingitems_filters_items_comparator"
+             data-parent="#accordionitems_filters_items_comparator">
+            <div class="card-body pl-5">
+
+    <h4>Comparator</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: ">"</span><br/>
+<span class="description"><p>In/equality operation to use in conditions and item request filters.</p>
+</span>
+
+    <div class="enum-value" id="items_filters_items_comparator_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_filters_items_count">
+    <div class="card">
+        <div class="card-header" id="headingitems_filters_items_count">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_filters_items_count"
+                        aria-expanded="" aria-controls="items_filters_items_count" onclick="setAnchor('#items_filters_items_count')"><span class="property-name">count</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="items_filters_items_count"
+             class="collapse property-definition-div" aria-labelledby="headingitems_filters_items_count"
+             data-parent="#accordionitems_filters_items_count">
+            <div class="card-body pl-5">
+
+    <h4>Count</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>How much of this item to request, or what signal value to output.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="items_filters_items_count_number">Value must be greater or equal to <code>-2147483648</code> and strictly lesser than <code>2147483648</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_filters_items_max_count">
+    <div class="card">
+        <div class="card-header" id="headingitems_filters_items_max_count">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_filters_items_max_count"
+                        aria-expanded="" aria-controls="items_filters_items_max_count" onclick="setAnchor('#items_filters_items_max_count')"><span class="property-name">max_count</span></button>
+            </h2>
+        </div>
+
+        <div id="items_filters_items_max_count"
+             class="collapse property-definition-div" aria-labelledby="headingitems_filters_items_max_count"
+             data-parent="#accordionitems_filters_items_max_count">
+            <div class="card-body pl-5">
+
+    <h4>Max Count</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>Maximum amount of this item to request, above which bots will actively remove. Has no effect when specified in constant combinators.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="items_filters_items_max_count_number">Value must be greater or equal to <code>-2147483648</code> and strictly lesser than <code>2147483648</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_group">
+    <div class="card">
+        <div class="card-header" id="headingitems_group">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_group"
+                        aria-expanded="" aria-controls="items_group" onclick="setAnchor('#items_group')"><span class="property-name">group</span></button>
+            </h2>
+        </div>
+
+        <div id="items_group"
+             class="collapse property-definition-div" aria-labelledby="headingitems_group"
+             data-parent="#accordionitems_group">
+            <div class="card-body pl-5">
+
+    <h4>Section Name</h4><span class="badge badge-dark value-type">Type: string</span> <span class="badge badge-success default-value">Default: ""</span><br/>
+<span class="description"><p>Name of this particular section. If there already exists a logistic section within the save being imported into, the contents specified here will be ignored in favor of the group already defined in the save.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionitems_active">
+    <div class="card">
+        <div class="card-header" id="headingitems_active">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#items_active"
+                        aria-expanded="" aria-controls="items_active" onclick="setAnchor('#items_active')"><span class="property-name">active</span></button>
+            </h2>
+        </div>
+
+        <div id="items_active"
+             class="collapse property-definition-div" aria-labelledby="headingitems_active"
+             data-parent="#accordionitems_active">
+            <div class="card-body pl-5">
+
+    <h4>Active</h4><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: true</span><br/>
+<span class="description"><p>Whether or not this particular section is toggled on or off.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a> on 2025-05-25 at 16:39:18 -0400</p>
+    </footer></body>
+</html>

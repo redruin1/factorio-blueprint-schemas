@@ -5,7 +5,6 @@
     "description": "An entity that seeds and harvests plants automatically.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/item-requests.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/logistic-condition.json"}

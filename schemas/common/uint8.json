@@ -3,7 +3,7 @@
     "$id": "common/uint8.json",
     "title": "uint8",
     "description": "An unsigned 8-bit integer.",
-    "type": "number",
-    "min": 0,
-    "exclusiveMax": 256
+    "type": "integer",
+    "minimum": 0,
+    "exclusiveMaximum": 256
 }

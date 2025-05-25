@@ -1,0 +1,36 @@
+{
+
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:factorio:entity:reactor",
+    "title": "Reactor",
+    "description": "A nuclear (fission) reactor.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "read_burner_fuel": {
+                    "title": "Read Fuel",
+                    "description": "Whether or not to broadcast the current fuel items to a connected circuit network.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "read_temperature": {
+                    "title": "Read Temperature",
+                    "description": "Whether or not to broadcast the current reactor temperature in degrees Celsius to a connected circuit network. What signal the value will be broadcast as is determined by `temperature_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "temperature_signal": {
+                    "title": "Temperature Signal",
+                    "description": "What signal to output this reactors temperature as. Only has an effect if `read_temperature` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-T", "type": "virtual"}
+                }
+            }
+        }
+    }
+}

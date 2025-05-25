@@ -1,0 +1,71 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/display-panel.json",
+    "title": "Display Panel",
+    "description": "A circuit-controllable signpost which can display text as well as signal icons.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "$defs": {
+        "display-panel-message": {
+            "type": "object",
+            "properties": {
+                "icon": {
+                    "title": "Icon",
+                    "description": "Icon to display if `condition` evaluates to `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": null
+                },
+                "text": {
+                    "title": "Text",
+                    "description": "Message to display if `condition` evaluates to `true`.",
+                    "type": "string",
+                    "default": ""
+                },
+                "condition": {
+                    "description": "Condition under which this message should be displayed.",
+                    "$ref": "../common/condition.json"
+                }
+            }
+        }
+    },
+    "type": "object",
+    "properties": {
+        "text": {
+            "title": "Static Text",
+            "description": "Static text to display. In what manner it is visible is determined by `always_show`. Overwritten by any conditional messages specified in `control_behavior.parameters` if connected to a circuit network.",
+            "type": "string"
+        },
+        "icon": {
+            "title": "Static Icon",
+            "description": "Static icon to display on the front of the panel. Overwritten by any conditional messages specified in `control_behavior.parameters` if connected to a circuit network.",
+            "$ref": "../common/optional-signal-id.json",
+            "default": null
+        },
+        "always_show": {
+            "title": "Always Show",
+            "description": "Whether or not to always display the text above this panel, regardless of whether the player has 'alt-mode' enabled.",
+            "type": "boolean",
+            "default": false
+        },
+        "show_in_chart": {
+            "title": "Show In Chart",
+            "description": "Whether or not to show the configured icon on the map view, like a map tag.",
+            "type": "boolean",
+            "default": false
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "parameters": {
+                    "title": "Conditional Messages",
+                    "description": "A list of display panel messages that are selected based on circuit condition. Only has an effect if this display panel is connected to a circuit network. Only one message can be displayed at a time; if the conditions for multiple messages pass, the first one in order of definition is used.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/display-panel-message"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/space-platform-hub.json",
+    "title": "Space Platform Hub",
+    "description": "The control center of a space platform.",
+    "type": "object",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/request-filters.json"}
+    ],
+    "properties": {
+        "request_missing_construction_materials": {
+            "description": "Whether or not this space platform should automatically request deliveries to satisfy it's own construction demands.",
+            "type": "boolean",
+            "default": true
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "read_contents": {
+                    "description": "Whether or not this hub should broadcast the contents of it's inventory to a connected circuit network.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "send_to_platform": {
+                    "description": "Whether or not the hub should use signals given to it when determining it's schedule.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "read_moving_from": {
+                    "description": "Whether or not the hub should output a signal with a value of 1 representing the planet being travelled away from.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "read_moving_to": {
+                    "description": "Whether or not the hub should output a signal with a value of 2 representing the planet being travelled to.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "read_speed": {
+                    "description": "Whether or not the hub should output it's current speed. The signal type to output is determined by `speed_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "speed_signal": {
+                    "description": "The signal to output this platforms current speed on. Has no effect unless `read_speed` is `true`.",
+                    "$ref": "../common/optional-signal-id.json"
+                },
+                "read_damage_taken": {
+                    "description": "Whether or not the hub should output the amount of damage sustained by the platform since it started travelling. The signal type to output is determined by `damage_taken_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "damage_taken_signal": {
+                    "description": "The signal to output the amount of damage taken on. Has no effect unless `read_damage_taken` is `true`.",
+                    "$ref": "../common/optional-signal-id.json"
+                }
+            }
+        }
+    }
+}

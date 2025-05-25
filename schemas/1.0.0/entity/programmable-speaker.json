@@ -1,0 +1,89 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/programmable-speaker.json",
+    "title": "Programmable Speaker",
+    "description": "A circuit-controllable entity which can emit sounds.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "playback_volume": {
+                    "title": "Playback Volume",
+                    "description": "The volume the speaker should emit at.",
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "default": 1.0
+                },
+                "playback_globally": {
+                    "title": "Playback Globally",
+                    "description": "If true, this speaker will be fully audible from any position on that surface.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "allow_polyphony": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        },
+        "alert_parameters": {
+            "type": "object",
+            "properties": {
+                "show_alert": {
+                    "title": "Show Alert",
+                    "description": "Whether or not to create an alert when this speaker is playing.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "icon_signal_id": {
+                    "title": "Alert Icon",
+                    "description": "The icon that should display when this speaker is playing. If left null, the game defaults to the standard warning alert icon. Only has an effect if `show_alert` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": null
+                },
+                "show_on_map": {
+                    "title": "Show On Map",
+                    "description": "Whether or not the displayed alert should appear on the map view, as specified by `icon_signal_id`. Only has an effect if `show_alert` is `true`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "alert_message": {
+                    "title": "Alert Message",
+                    "description": "The message that should display next to the alert icon when this speaker is playing. If left as an empty string, the game will display the string 'Custom alert'. Only has an effect if `show_alert` is `true`.",
+                    "type": "string",
+                    "default": ""
+                }
+            }
+        },
+        "control_behavior": {
+            "type": "object",
+            "description": "Entity-specific structure which holds keys related to configuring how this entity acts.",
+            "properties": {
+                "signal_value_is_pitch": {
+                    "title": "Signal Value Is Pitch",
+                    "description": "Whether or not the value of the provided signal should be used to modulate the pitch of the played sound.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "instrument_id": {
+                    "title": "Instrument ID",
+                    "description": "Index of the family of sounds this speaker is programmed to play.",
+                    "type": "integer",
+                    "default": 0
+                },
+                "note_id": {
+                    "title": "Note ID",
+                    "description": "Index of particular note of the instrument that this speaker is programmed to play. Only has an effect if `signal_value_is_pitch` is `false`.",
+                    "type": "integer",
+                    "default": 0
+                }
+            }
+        }
+    }
+}

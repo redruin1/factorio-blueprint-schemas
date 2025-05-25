@@ -5,7 +5,6 @@
     "description": "A turret that targets enemy structures over long ranges.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/item-requests.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/logistic-condition.json"},

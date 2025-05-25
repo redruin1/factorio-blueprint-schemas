@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/roboport.json",
+    "title": "Roboport",
+    "description": "An entity in charge of holding, dispatching, and recharging logistic network robots.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "description": "Entity-specific structure which holds keys related to configuring how this entity acts.",
+            "properties": {
+                "read_logistics": {
+                    "title": "Read Logistics",
+                    "description": "Whether or not this roboport should broadcast all the items contained within the network it is a part of to a connected circuit network.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "read_robot_stats": {
+                    "title": "Read Robot Statistics",
+                    "description": "Whether or not the total/active logistic/construction robot counts should be broadcast to a connected circuit network. Exactly what signals are output is controlled by `available_logistic_output_signal`, `total_logistic_output_signal`, `gavailable_construction_output_signal`, and `total_construction_output_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "available_logistic_output_signal": {
+                    "title": "Available Logistic Robots",
+                    "description": "What signal the number of available logistic robots in this network should be output as.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {
+                        "name": "signal-X",
+                        "type": "virtual"
+                    }
+                },
+                "total_logistic_output_signal": {
+                    "title": "Total Logistic Robots",
+                    "description": "What signal the number of total logistic robots in this network should be output as.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {
+                        "name": "signal-Y",
+                        "type": "virtual"
+                    }
+                },
+                "available_construction_output_signal": {
+                    "title": "Available Construction Robots",
+                    "description": "What signal the number of available construction robots in this network should be output as.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {
+                        "name": "signal-Z",
+                        "type": "virtual"
+                    }
+                },
+                "total_construction_output_signal": {
+                    "title": "Total Construction Robots",
+                    "description": "What signal the number of total construction robots in this network should be output as.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {
+                        "name": "signal-T",
+                        "type": "virtual"
+                    }
+                }
+            }
+        }
+    }
+}

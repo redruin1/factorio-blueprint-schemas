@@ -6,7 +6,6 @@
     "allOf": [
         {"$ref": "../entity.json"},
         {"$ref": "features/orientation.json"},
-        {"$ref": "features/item-requests.json"},
         {"$ref": "features/equipment-grid.json"},
         {"$ref": "features/artillery-auto-targeting.json"}
     ]

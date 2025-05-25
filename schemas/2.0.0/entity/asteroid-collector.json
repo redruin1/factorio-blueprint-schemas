@@ -5,9 +5,9 @@
     "description": "An entity uses arms to grab asteroid chunks from space.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/item-requests.json"},
         {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"}
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/circuit-set-filters.json"}
     ],
     "$defs": {
         "asteroid-chunk-filter": {
@@ -20,6 +20,7 @@
                     "$ref": "../../common/uint32.json"
                 },
                 "name": {
+                    "title": "Asteroid Chunk Name",
                     "description": "The name of a valid Factorio asteroid chunk.",
                     "type": "string"
                 }
@@ -54,11 +55,6 @@
         "control_behavior": {
             "type": "object",
             "properties": {
-                "circuit_set_filters": {
-                    "description": "Whether or not the chunk filters of this entity should be specified by a connected circuit network. Overwrites the `'chunk-filter'` array if both are specified.",
-                    "type": "boolean",
-                    "default": false
-                },
                 "circuit_read_contents": {
                     "title": "Circuit Read Contents",
                     "description": "Whether or not to broadcast the items contained within this machine's inventory to any connected circuit network.",
@@ -67,7 +63,7 @@
                 },
                 "include_hands": {
                     "title": "Include Hands",
-                    "description": "Whether or not the items currently in the asteroid collector's arms should be included in the total amount reported to the circuit network. Only has an effect if `'circuit_read_contents'` is `true`.",
+                    "description": "Whether or not the items currently in the asteroid collector's arms should be included in the total amount reported to the circuit network. Only has an effect if `circuit_read_contents` is `true`.",
                     "type": "boolean",
                     "default": true
                 }

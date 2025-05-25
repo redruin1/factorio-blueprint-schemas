@@ -1,0 +1,136 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/decider-combinator.json",
+    "title": "Decider Combinator",
+    "description": "A combinator that can check one or more conditions and output signals based on those conditions.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/player-description.json"}
+    ],
+    "$defs": {
+        "circuit-network-selection": {
+            "type": "object",
+            "properties": {
+                "red": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "green": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "decider-condition": {
+            "title": "Decider Condition",
+            "$ref": "../common/condition.json",
+            "properties": {
+                "first_signal_networks": {
+                    "title": "First Signal Networks",
+                    "description": "Which wires should be used when determining the value of the first signal.",
+                    "$ref": "#/$defs/circuit-network-selection"
+                },
+                "second_signal_networks": {
+                    "title": "Second Signal Networks",
+                    "description": "Which wires should be used when determining the value of the second signal.",
+                    "$ref": "#/$defs/circuit-network-selection"
+                },
+                "compare_type": {
+                    "$ref": "../../common/compare-type.json",
+                    "default": "or"
+                }
+            }
+        },
+        "decider-output": {
+            "title": "Decider Ouput",
+            "description": "An object which represents a single signal or constant output.",
+            "type": "object",
+            "properties": {
+                "signal": {
+                    "title": "Signal",
+                    "description": "What signal to output, if `copy_count_from_input` is `true`.",
+                    "$ref": "../common/optional-signal-id.json"
+                },
+                "copy_count_from_input": {
+                    "title": "Copy Count From Input",
+                    "description": "Whether or not this entity should use the input wires to determine the output value, or to simply output a constant value. Which wires are considered is determined by `networks`, and what constant value is output is determined by `constant`.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "networks": {
+                    "title": "Output Networks",
+                    "description": "Which wires should be considered when determining the value of the output, if `copy_count_from_input` is `true`.",
+                    "$ref": "#/$defs/circuit-network-selection"
+                },
+                "constant": {
+                    "description": "The constant value to output if `copy_count_from_input` is `false`. Can be any 32-bit integer.",
+                    "$ref": "../../common/int32.json",
+                    "default": 1
+                }
+            }
+        }
+    },
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "decider_conditions": {
+                    "title": "Decider Parameters",
+                    "description": "Container for decider combinator specific parameters.",
+                    "type": "object",
+                    "properties": {
+                        "conditions": {
+                            "title": "Decider Conditions",
+                            "description": "The list of conditions that this combinator evaluates.",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/decider-condition"
+                            },
+                            "default": [
+                                {}
+                            ],
+                            "examples": [
+                                {
+                                    "first_signal": {"name": "signal-I", "type": "virtual"},
+                                    "first_signal_networks": {"green": false},
+                                    "comparator": ">",
+                                    "second_signal": {"name": "iron-ore", "quality": "rare"},
+                                    "second_signal_networks": {"red": false}
+                                },
+                                {
+                                    "first_signal": {"name": "signal-check", "type": "virtual"},
+                                    "comparator": "<",
+                                    "constant": 100,
+                                    "compare_type": "and"
+                                }
+                            ]
+                        },
+                        "outputs": {
+                            "title": "Decider Outputs",
+                            "description": "The list of unique outputs this combinator should emit.",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/decider-output"
+                            },
+                            "default": [
+                                {}
+                            ],
+                            "examples": [
+                                {
+                                    "signal": {"name": "signal-each", "type": "virtual"},
+                                    "networks": {"red": true, "green": false}
+                                },
+                                {
+                                    "signal": {"name": "signal-A", "type": "virtual", "quality": "rare"},
+                                    "copy_count_from_input": false,
+                                    "constant": -123
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

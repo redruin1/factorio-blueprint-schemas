@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/features/request-filters.json",
+    "title": "Request Filters",
+    "description": "Allows this entity to request items from the logistic network like a requester or buffer chest.",
+    "type": "object",
+    "properties": {
+        "request_filters": {
+            "title": "Request Filters",
+            "description": "Logisitic request specification object.",
+            "type": "object",
+            "properties": {
+                "trash_not_requested": {
+                    "title": "Trash Not Requested",
+                    "description": "Whether or not to tell robots to remove items from this entity's inventory if those items are not currently being requested.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "request_from_buffers": {
+                    "title": "Request From Buffers",
+                    "description": "Whether or not robots should use buffer chests when satisfying this entity's requests.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "enabled": {
+                    "title": "Request Enabled",
+                    "description": "Master enable/disable switch for all item requests this entity has.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "sections": {"$ref": "../../common/logistic-sections.json"}
+            }
+        }
+    }
+}

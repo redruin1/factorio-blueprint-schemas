@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/common/item-filter.json",
+    "title": "Item Filter",
+    "description": "An object representing a restricted item slot.",
+    "type": "object",
+    "$ref": "quality-filter.json",
+    "properties": {
+        "index": {
+            "title": "Index",
+            "description": "Slot at which this filter occupies, 1-indexed.",
+            "$ref": "../../common/uint32.json"
+        },
+        "name": {
+            "title": "Item Name",
+            "description": "Name of a valid Factorio item.",
+            "type": "string"
+        }
+    },
+    "examples": [
+        {
+            "index": 1,
+            "name": "iron-ore"
+        },
+        {
+            "index": 2,
+            "name": "copper-ore",
+            "quality": "rare",
+            "comparator": "<"
+        }
+    ]
+}

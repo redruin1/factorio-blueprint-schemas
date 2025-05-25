@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/features/vehicle.json",
+    "title": "Vehicle",
+    "description": "Gives this entity a trunk and ammo inventory, as well as gunnar control parameters.",
+    "type": "object",
+    "properties": {
+        "ammo_inventory": {
+            "title": "Ammo Inventory",
+            "description": "Inventory object representing the ammo slots of this entity (if it has weapons). Setting the bar of this object has no effect.",
+            "$ref": "../../common/inventory.json"
+        },
+        "trunk_inventory": {
+            "title": "Trunk Inventory",
+            "description": "Inventory object representing regular item storage.",
+            "$ref": "../../common/inventory.json"
+        },
+        "driver_is_main_gunner": {
+            "title": "Driver Is Main Gunner",
+            "description": "Whether or not the driver should control the vehicles weapon, or if that responsibility should go to the passenger.",
+            "type": "boolean",
+            "default": false
+        },
+        "selected_gun_index": {
+            "title": "Selected Gun Index",
+            "description": "Which gun is currently selected, 1-indexed. Included regardless of whether or not this vehicle has a weapon.",
+            "$ref": "../../../common/uint32.json",
+            "default": 1
+        }
+    }
+}

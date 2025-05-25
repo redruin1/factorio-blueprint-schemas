@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/blueprint.json",
-    "title": "Blueprint Root",
-    "description": "A regular blueprint, which can contain entities, tiles, schedules, wire connections, stock connections, in addition to additional metadata.",
+    "title": "Blueprint",
+    "description": "A regular blueprint, which can contain entities, tiles, schedules, wire connections, and stock connections, as well as additional metadata.",
     "$defs": {
         "wire-connector-id": {
             "title": "Wire Connector ID",
@@ -54,59 +54,477 @@
                 }
             ]
         },
-        "schedule-stop": {
-            "type": "object",
-            "properties": {
-                "station": {
-                    "title": "Station",
-                    "description": "The name of the stop. Either the name of a train stop or the name of a planet, depending on the type of schedule.",
-                    "type": "string"
+        "schedule-conditions": {
+            "$comment": "Definitions for all schedule condition objects (both wait and interrupt conditions) for both train schedules and space platform schedules",
+
+            "compare-type": {
+                "$comment": "(Re)define compare type with a default of 'and'",
+                "$ref": "../common/compare-type.json",
+                "default": "and"
+            },
+            "station": {
+                "$comment": "Used when defining the following wait condition objects",
+                "description": "The name of the station this wait condition inspects.",
+                "type": "string",
+                "default": ""
+            },
+
+            "at-station": {
+                "title": "At Specified Station",
+                "properties": {
+                    "type": {"const": "at_station"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "station": {"$ref": "#/$defs/schedule-conditions/station"}
                 },
-                "wait_conditions": {
-                    "title": "Wait Conditions",
-                    "description": "A list of wait condition objects, conjoined by their `compare_type`. The `compare_type` of each wait condition interacts with the previous wait condition object.",
-                    "type": "array",
-                    "items": {
-                        "title": "Wait Condition",
+                "required": ["type", "compare_type"]
+            },
+            "circuit": {
+                "title": "Circuit Condition",
+                "properties": {
+                    "type": {"const": "circuit"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "condition": {"$ref": "common/condition.json"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "destination-full-or-no-path": {
+                "title": "Destination Full Or No Path",
+                "properties": {
+                    "type": {"const": "destination_full_or_no_path"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "empty": {
+                "title": "Empty Cargo Inventory",
+                "properties": {
+                    "type": {"const": "empty"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "fluid-count": {
+                "title": "Fluid Count",
+                "properties": {
+                    "type": {"const": "fluid_count"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "condition": {"$ref": "common/condition.json"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "fuel-item-count-all": {
+                "title": "Fuel (All Locomotives)",
+                "properties": {
+                    "type": {"const": "fuel_item_count_all"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "condition": {"$ref": "common/condition.json"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "fuel-item-count-any": {
+                "title": "Fuel (Any Locomotives)",
+                "properties": {
+                    "type": {"const": "fuel_item_count_any"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "full": {
+                "title": "Full Cargo Inventory",
+                "properties": {
+                    "type": {"const": "full"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "fuel-full": {
+                "title": "All Locomotives Fully Fueled",
+                "properties": {
+                    "type": {"const": "fuel_full"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "not-empty": {
+                "title": "Has Cargo",
+                "properties": {
+                    "type": {"const": "not_empty"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "inactivity": {
+                "title": "Inactivity",
+                "properties": {
+                    "type": {"const": "inactivity"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "ticks": {
+                        "description": "The amount of time in ticks this locomotive must be inactive before proceeding.",
+                        "$ref": "../common/uint32.json",
+                        "default": 300
+                    }
+                },
+                "required": ["type", "compare_type"]
+            },
+            "item-count": {
+                "title": "Item Count",
+                "properties": {
+                    "type": {"const": "item_count"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "condition": {"$ref": "common/condition.json"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "not-at-station": {
+                "title": "Not At Specified Station",
+                "properties": {
+                    "type": {"const": "not_at_station"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "station": {"$ref": "#/$defs/schedule-conditions/station"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "passenger-not-present": {
+                "title": "Passenger Not Present",
+                "properties": {
+                    "type": {"const": "passenger_not_present"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "passenger-present": {
+                "title": "Passenger Present",
+                "properties": {
+                    "type": {"const": "passenger_present"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "specific-destination-full": {
+                "title": "Station Is Full",
+                "properties": {
+                    "type": {"const": "specific_destination_full"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "station": {"$ref": "#/$defs/schedule-conditions/station"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "specific-destination-not-full": {
+                "title": "Station Is Not Full",
+                "properties": {
+                    "type": {"const": "specific_destination_not_full"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "station": {"$ref": "#/$defs/schedule-conditions/station"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "time": {
+                "title": "Time Passed",
+                "properties": {
+                    "type": {"const": "time"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "ticks": {
+                        "description": "The amount of time in ticks to wait.",
+                        "$ref": "../common/uint32.json",
+                        "default": 1800
+                    }
+                },
+                "required": ["type", "compare_type"]
+            },
+            "all-requests-satisfied": {
+                "title": "All Requests Satisfied",
+                "properties": {
+                    "type": {"const": "all_requests_satisfied"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "any-request-not-satisfied": {
+                "title": "Any Request Not Satisfied",
+                "properties": {
+                    "type": {"const": "any_request_not_satisfied"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "any-request-zero": {
+                "title": "Any Request Zero",
+                "properties": {
+                    "type": {"const": "any_request_zero"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                },
+                "required": ["type", "compare_type"]
+            },
+            "damage-taken": {
+                "title": "Damage Taken",
+                "properties": {
+                    "type": {"const": "damage_taken"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "damage": {
+                        "description": "The amount of damage, in hit points.",
+                        "$ref": "../common/uint32.json",
+                        "default": 1000,
+                        "TODO": "ensure that uint32 is correct"
+                    }
+                },
+                "required": ["type", "compare_type"]
+            },
+            "request-not-satisfied": {
+                "title": "Request Not Satisfied",
+                "properties": {
+                    "type": {"const": "request_not_satisfied"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "condition": {
+                        "description": "The value of `first_signal` will determine what item request is being checked.",
+                        "$ref": "common/condition.json"
+                    }
+                },
+                "required": ["type", "compare_type"]
+            },
+            "request-satisfied": {
+                "title": "Request Satisfied",
+                "properties": {
+                    "type": {"const": "request_satisfied"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "condition": {
+                        "description": "The value of `first_signal` will determine what item request is being checked.",
+                        "$ref": "common/condition.json"
+                    }
+                },
+                "required": ["type", "compare_type"]
+            },
+            "any-planet-import-zero": {
+                "title": "Any Planet Import Zero",
+                "properties": {
+                    "type": {"const": "any_planet_import_zero"},
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
+                    "planet": {
+                        "description": "Planet to check.",
                         "type": "object",
                         "properties": {
-                            "type": {
-                                "enum": ["TODO"]
+                            "name": {
+                                "description": "Name of the planet. Must be a valid Factorio planet.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "required": ["type", "compare_type"]
+            }
+        },
+        "train-wait-condition": {
+            "$comment": "Includes every condition except for 'at_station', 'destination_full_or_no_path', and 'not_at_station'",
+            "title": "Train Wait Condition",
+            "description": "All valid wait condition types.",
+            "oneOf": [
+                {"$ref": "#/$defs/schedule-conditions/circuit"},
+                {"$ref": "#/$defs/schedule-conditions/empty"},
+                {"$ref": "#/$defs/schedule-conditions/fluid-count"},
+                {"$ref": "#/$defs/schedule-conditions/fuel-item-count-all"},
+                {"$ref": "#/$defs/schedule-conditions/fuel-item-count-any"},
+                {"$ref": "#/$defs/schedule-conditions/full"},
+                {"$ref": "#/$defs/schedule-conditions/fuel-full"},
+                {"$ref": "#/$defs/schedule-conditions/not-empty"},
+                {"$ref": "#/$defs/schedule-conditions/inactivity"},
+                {"$ref": "#/$defs/schedule-conditions/item-count"},
+                {"$ref": "#/$defs/schedule-conditions/passenger-not-present"},
+                {"$ref": "#/$defs/schedule-conditions/passenger-present"},
+                {"$ref": "#/$defs/schedule-conditions/specific-destination-full"},
+                {"$ref": "#/$defs/schedule-conditions/specific-destination-not-full"},
+                {"$ref": "#/$defs/schedule-conditions/time"}
+            ]
+        },
+        "train-interrupt-condition": {
+            "$comment": "Includes every condition except for 'inactivity' and 'time'",
+            "title": "Train Interrupt Condition",
+            "description": "All valid interrupt condition types.",
+            "oneOf": [
+                {"$ref": "#/$defs/schedule-conditions/at-station"},
+                {"$ref": "#/$defs/schedule-conditions/circuit"},
+                {"$ref": "#/$defs/schedule-conditions/destination-full-or-no-path"},
+                {"$ref": "#/$defs/schedule-conditions/empty"},
+                {"$ref": "#/$defs/schedule-conditions/fluid-count"},
+                {"$ref": "#/$defs/schedule-conditions/fuel-item-count-all"},
+                {"$ref": "#/$defs/schedule-conditions/fuel-item-count-any"},
+                {"$ref": "#/$defs/schedule-conditions/full"},
+                {"$ref": "#/$defs/schedule-conditions/fuel-full"},
+                {"$ref": "#/$defs/schedule-conditions/not-empty"},
+                {"$ref": "#/$defs/schedule-conditions/item-count"},
+                {"$ref": "#/$defs/schedule-conditions/not-at-station"},
+                {"$ref": "#/$defs/schedule-conditions/passenger-not-present"},
+                {"$ref": "#/$defs/schedule-conditions/passenger-present"},
+                {"$ref": "#/$defs/schedule-conditions/specific-destination-full"},
+                {"$ref": "#/$defs/schedule-conditions/specific-destination-not-full"}
+            ]
+        },
+        "train-schedule": {
+            "title": "Train Schedule",
+            "properties": {
+                "records": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "station": {
+                                "title": "Station",
+                                "description": "The name of a train stop.",
+                                "type": "string"
                             },
-                            "compare_type": {
-                                "enum": ["or", "and"],
-                                "default": "or"
+                            "wait_conditions": {
+                                "title": "Wait Conditions",
+                                "description": "A list of wait condition objects, conjoined by their `compare_type`.",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/$defs/train-wait-condition"
+                                }
+                            }
+                        },
+                        "required": ["station", "wait_conditions"]
+                    }
+                },
+                "interrupts": {
+                    "title": "Interrupts",
+                    "description": "A list of Interrupt objects, describing which interrupts should apply to this schedule.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "title": "Interrupt Name",
+                                "description": "The name of the interrupt.",
+                                "type": "string"
+                            },
+                            "conditions": {
+                                "title": "Interrupt Conditions",
+                                "description": "What conditions need to pass in order for this interrupt to trigger.",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/$defs/train-interrupt-condition"
+                                }
+                            },
+                            "targets": {
+                                "title": "Target Stops",
+                                "description": "What new schedule should be performed if the interrupt is triggered.",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/$defs/train-wait-condition"
+                                }
+                            },
+                            "inside_interrupt": {
+                                "title": "Allow Interrupting Other Interrupts",
+                                "description": "Whether or not this interrupt can trigger inside of another interrupt.",
+                                "type": "boolean",
+                                "default": false
                             }
                         }
                     }
                 }
             }
         },
-        "locomotive-schedule": {
-            "title": "Locomotive Schedule",
-            "type": "object",
-            "properties": {
-                "records": {
-                    "type": "array",
-                    "items": {"$ref": "#/$defs/schedule-stop"}
-                },
-                "interrupts": {
-                    "title": "Interrupts",
-                    "description": "TODO"
-                }
-            }
+        "space-platform-wait-condition": {
+            "title": "Space Platform Wait Condition",
+            "description": "All valid wait condition types.",
+            "oneOf": [
+                {"$ref": "#/$defs/schedule-conditions/all-requests-satisfied"},
+                {"$ref": "#/$defs/schedule-conditions/any-request-not-satisfied"},
+                {"$ref": "#/$defs/schedule-conditions/any-request-zero"},
+                {"$ref": "#/$defs/schedule-conditions/circuit"},
+                {"$ref": "#/$defs/schedule-conditions/damage-taken"},
+                {"$ref": "#/$defs/schedule-conditions/inactivity"},
+                {"$ref": "#/$defs/schedule-conditions/item-count"},
+                {"$ref": "#/$defs/schedule-conditions/passenger-not-present"},
+                {"$ref": "#/$defs/schedule-conditions/passenger-present"},
+                {"$ref": "#/$defs/schedule-conditions/request-not-satisfied"},
+                {"$ref": "#/$defs/schedule-conditions/request-satisfied"},
+                {"$ref": "#/$defs/schedule-conditions/time"}
+            ]
+        },
+        "space-platform-interrupt-condition": {
+            "title": "Space Platform Interrupt Condition",
+            "description": "All valid interrupt condition types.",
+            "oneOf": [
+                {"$ref": "#/$defs/schedule-conditions/all-requests-satisfied"},
+                {"$ref": "#/$defs/schedule-conditions/any-planet-import-zero"},
+                {"$ref": "#/$defs/schedule-conditions/any-request-not-satisfied"},
+                {"$ref": "#/$defs/schedule-conditions/any-request-zero"},
+                {"$ref": "#/$defs/schedule-conditions/circuit"},
+                {"$ref": "#/$defs/schedule-conditions/damage-taken"},
+                {"$ref": "#/$defs/schedule-conditions/item-count"},
+                {"$ref": "#/$defs/schedule-conditions/passenger-not-present"},
+                {"$ref": "#/$defs/schedule-conditions/passenger-present"},
+                {"$ref": "#/$defs/schedule-conditions/request-not-satisfied"},
+                {"$ref": "#/$defs/schedule-conditions/request-satisfied"}
+            ]
         },
         "space-platform-schedule": {
             "title": "Space Platform Schedule",
             "type": "object",
             "properties": {
                 "records": {
+                    "title": "Space Platform Stops",
                     "type": "array",
-                    "items": {"$ref": "#/$defs/schedule-stop"}
+                    "items": {
+                        "title": "Space Platform Stop",
+                        "type": "object",
+                        "properties": {
+                            "station": {
+                                "title": "Station",
+                                "description": "The name of the destination planet.",
+                                "type": "string"
+                            },
+                            "wait_conditions": {
+                                "title": "Wait Conditions",
+                                "description": "A list of wait condition objects, conjoined by their `compare_type`.",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/$defs/space-platform-wait-condition"
+                                }
+                            },
+                            "allows_unloading": {
+                                "description": "Whether or not this platform will unload at this `station`.",
+                                "type": "boolean",
+                                "default": true
+                            }
+                        },
+                        "required": ["station", "wait_conditions"]
+                    }
                 },
                 "interrupts": {
                     "title": "Interrupts",
-                    "description": "TODO"
+                    "description": "A list of Interrupt objects, describing which interrupts should apply to this schedule.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "title": "Interrupt Name",
+                                "description": "The name of the interrupt.",
+                                "type": "string"
+                            },
+                            "conditions": {
+                                "title": "Interrupt Conditions",
+                                "description": "What conditions need to pass in order for this interrupt to trigger.",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/$defs/space-platform-interrupt-condition"
+                                }
+                            },
+                            "targets": {
+                                "title": "Target Stops",
+                                "description": "What new schedule should be performed if the interrupt is triggered.",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/$defs/space-platform-wait-condition"
+                                }
+                            },
+                            "inside_interrupt": {
+                                "title": "Allow Interrupting Other Interrupts",
+                                "description": "Whether or not this interrupt can trigger inside of another interrupt.",
+                                "type": "boolean",
+                                "default": false
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -124,7 +542,7 @@
                 },
                 "schedule": {
                     "oneOf": [
-                        {"$ref": "#/$defs/locomotive-schedule"},
+                        {"$ref": "#/$defs/train-schedule"},
                         {"$ref": "#/$defs/space-platform-schedule"}
                     ]
                 }
@@ -205,15 +623,15 @@
             "properties": {
                 "stock": {
                     "description": "`entity_number` of the locomotive or wagon whose connections are being specified.",
-                    "$ref": "urn:uint64"
+                    "$ref": "../common/uint32.json"
                 },
                 "front": {
                     "description": "`entity_number` of the locomotive or wagon connected to the front of this `stock`.",
-                    "$ref": "urn:uint64"
+                    "$ref": "../common/uint32.json"
                 },
                 "back": {
                     "description": "`entity_number` of the locomotive or wagon connected to the front of this `stock`.",
-                    "$ref": "urn:uint64"
+                    "$ref": "../common/uint32.json"
                 }
             },
             "required": ["stock"],
@@ -257,7 +675,7 @@
                 },
                 "label_color": {
                     "title": "Label Color",
-                    "description": "The color of the label. If omitted, this color defaults to a special hybrid color, where it is white in your inventory and black when being placed.",
+                    "description": "The color of the label. If omitted, this color defaults to a special hybrid color, where it is white in your inventory and black when being placed. Distinct from color modifiers applied to `label` using rich text, possibly deprecated.",
                     "$ref": "../common/color.json"
                 },
                 "description": {
@@ -310,31 +728,90 @@
                             {"$ref": "entity/artillery-turret.json"},
                             {"$ref": "entity/artillery-wagon.json"},
                             {"$ref": "entity/assembling-machine.json"},
-                            {"$ref": "entity/asteroid-collector.json"}
+                            {"$ref": "entity/asteroid-collector.json"},
+                            {"$ref": "entity/beacon.json"},
+                            {"$ref": "entity/boiler.json"},
+                            {"$ref": "entity/burner-generator.json"},
+                            {"$ref": "entity/car.json"},
+                            {"$ref": "entity/cargo-bay.json"},
+                            {"$ref": "entity/cargo-landing-pad.json"},
+                            {"$ref": "entity/cargo-wagon.json"},
+                            {"$ref": "entity/constant-combinator.json"},
+                            {"$ref": "entity/container.json"},
+                            {"$ref": "entity/curved-rail-a.json"},
+                            {"$ref": "entity/curved-rail-b.json"},
+                            {"$ref": "entity/decider-combinator.json"},
+                            {"$ref": "entity/display-panel.json"},
+                            {"$ref": "entity/electric-energy-interface.json"},
+                            {"$ref": "entity/electric-pole.json"},
+                            {"$ref": "entity/electric-turret.json"},
+                            {"$ref": "entity/elevated-curved-rail-a.json"},
+                            {"$ref": "entity/elevated-curved-rail-b.json"},
+                            {"$ref": "entity/elevated-half-diagonal-rail.json"},
+                            {"$ref": "entity/elevated-straight-rail.json"},
+                            {"$ref": "entity/fluid-turret.json"},
+                            {"$ref": "entity/fluid-wagon.json"},
+                            {"$ref": "entity/furnace.json"},
+                            {"$ref": "entity/fusion-generator.json"},
+                            {"$ref": "entity/fusion-reactor.json"},
+                            {"$ref": "entity/gate.json"},
+                            {"$ref": "entity/generator.json"},
+                            {"$ref": "entity/half-diagonal-rail.json"},
+                            {"$ref": "entity/heat-interface.json"},
+                            {"$ref": "entity/heat-pipe.json"},
+                            {"$ref": "entity/infinity-container.json"},
+                            {"$ref": "entity/infinity-pipe.json"},
+                            {"$ref": "entity/inserter.json"},
+                            {"$ref": "entity/lab.json"},
+                            {"$ref": "entity/lamp.json"},
+                            {"$ref": "entity/land-mine.json"},
+                            {"$ref": "entity/legacy-curved-rail.json"},
+                            {"$ref": "entity/legacy-straight-rail.json"},
+                            {"$ref": "entity/lightning-attractor.json"},
+                            {"$ref": "entity/linked-belt.json"},
+                            {"$ref": "entity/linked-container.json"},
+                            {"$ref": "entity/loader.json"},
+                            {"$ref": "entity/locomotive.json"},
+                            {"$ref": "entity/logistic-container.json"},
+                            {"$ref": "entity/mining-drill.json"},
+                            {"$ref": "entity/offshore-pump.json"},
+                            {"$ref": "entity/pipe-to-ground.json"},
+                            {"$ref": "entity/pipe.json"},
+                            {"$ref": "entity/power-switch.json"},
+                            {"$ref": "entity/programmable-speaker.json"},
+                            {"$ref": "entity/pump.json"},
+                            {"$ref": "entity/radar.json"},
+                            {"$ref": "entity/rail-chain-signal.json"},
+                            {"$ref": "entity/rail-ramp.json"},
+                            {"$ref": "entity/rail-signal.json"},
+                            {"$ref": "entity/rail-support.json"},
+                            {"$ref": "entity/reactor.json"},
+                            {"$ref": "entity/roboport.json"},
+                            {"$ref": "entity/rocket-silo.json"},
+                            {"$ref": "entity/selector-combinator.json"},
+                            {"$ref": "entity/simple-entity-with-force.json"},
+                            {"$ref": "entity/simple-entity-with-owner.json"},
+                            {"$ref": "entity/solar-panel.json"},
+                            {"$ref": "entity/space-platform-hub.json"},
+                            {"$ref": "entity/spider-vehicle.json"},
+                            {"$ref": "entity/splitter.json"},
+                            {"$ref": "entity/storage-tank.json"},
+                            {"$ref": "entity/straight-rail.json"},
+                            {"$ref": "entity/thruster.json"},
+                            {"$ref": "entity/train-stop.json"},
+                            {"$ref": "entity/transport-belt.json"},
+                            {"$ref": "entity/underground-belt.json"},
+                            {"$ref": "entity/wall.json"}
                         ]
                     },
-                    "default": [],
-                    "TODO": [
-                        {"$ref": "entity/beacon.json"},
-                        {"$ref": "entity/boiler.json"},
-                        {"$ref": "entity/burner-generator.json"},
-                        {"$ref": "entity/car.json"},
-                        {"$ref": "entity/cargo-bay.json"},
-                        {"$ref": "entity/cargo-landing-pad.json"},
-                        {"$ref": "entity/cargo-wagon.json"},
-                        {"$ref": "entity/constant-combinator.json"},
-                        {"$ref": "entity/container.json"},
-                        {"$ref": "entity/curved-rail-a.json"},
-                        {"$ref": "entity/curved-rail-b.json"},
-                        {"$ref": "entity/decider-combinator.json"}
-                    ]
+                    "default": []
                 },
                 "tiles": {
                     "title": "Tiles",
                     "description": "The list of all tiles stored inside this blueprint.",
                     "type": "array",
                     "items": {
-                        "$ref": "urn:factorio:tile"
+                        "$ref": "../1.0.0/tile.json"
                     },
                     "default": []
                 },

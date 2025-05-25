@@ -1,0 +1,120 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/common/logistic-section.json",
+    "title": "Logistic Sections",
+    "description": "A list of (player-defined) logistic sections that this entity is using for logistic requests.",
+    "$defs": {
+        "logistic-filter": {
+            "title": "Logistic Filter",
+            "description": "A single item request/signal specification.",
+            "type": "object",
+            "properties": {
+                "index": {
+                    "title": "Index",
+                    "description": "GUI index of the filter, 1-indexed.",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 1000
+                },
+                "name": {
+                    "title": "Name",
+                    "description": "Name of the filter being specified. Must be a valid Factorio item or signal.",
+                    "type": "string"
+                },
+                "type": {
+                    "title": "Type",
+                    "description": "Underlying type of the given filter. Cannot be specified by GUI; instead, the game selects the most appropriate type given the circumstance. If omitted, the implied type is 'item'.",
+                    "enum": [
+                        "item",
+                        "fluid",
+                        "virtual",
+                        "recipe",
+                        "entity",
+                        "space-location",
+                        "asteroid-chunk",
+                        "quality"
+                    ],
+                    "default": "item"
+                },
+                "quality": {
+                    "$ref": "quality-name.json"
+                },
+                "comparator": {
+                    "$ref": "../../common/comparator.json"
+                },
+                "count": {
+                    "title": "Count",
+                    "description": "How much of this item to request, or what signal value to output.",
+                    "$ref": "../../common/int32.json"
+                },
+                "max_count": {
+                    "title": "Max Count",
+                    "description": "Maximum amount of this item to request, above which bots will actively remove. Has no effect when specified in constant combinators.",
+                    "$ref": "../../common/int32.json"
+                }
+            },
+            "required": ["index", "name", "count"]
+        },
+        "logistic-section": {
+            "title": "Logistic Section",
+            "description": "A (player-defined) set of (possibly named) Logistic Filter objects. Used for both logistics requests in logistic elements (like requester chests) as well as for constant combinator signal definitions.",
+            "type": "object",
+            "properties": {
+                "index": {
+                    "title": "Section Index",
+                    "description": "Index of this section in the section list in the parent entity, 1-indexed.",
+                    "$ref": "../../common/lua-integer.json",
+                    "minimum": 1,
+                    "maximum": 100
+                },
+                "filters": {
+                    "title": "Logistic Filters",
+                    "description": "What filters this section has. Capped to 1000 unique signals per section.",
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/logistic-filter"},
+                    "maxItems": 1000,
+                    "default": []
+                },
+                "group": {
+                    "title": "Section Name",
+                    "description": "Name of this particular section. If there already exists a logistic section within the save being imported into, the contents specified here will be ignored in favor of the group already defined in the save.",
+                    "type": "string",
+                    "default": ""
+                },
+                "active": {
+                    "title": "Active",
+                    "description": "Whether or not this particular section is toggled on or off.",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "required": ["index"],
+            "examples": [
+                {
+                    "index": 1
+                },
+                {
+                    "index": 2,
+                    "filters": [
+                        {
+                            "index": 1,
+                            "name": "iron-ore",
+                            "quality": "rare",
+                            "comparator": "<",
+                            "count": 100,
+                            "max-count": 200
+                        }
+                    ],
+                    "group": "Example",
+                    "active": false
+                }
+            ]
+        }
+    },
+    "type": "array",
+    "items": {
+        "$ref": "#/$defs/logistic-section"
+    },
+    "maxItems": 100,
+    "default": []
+}

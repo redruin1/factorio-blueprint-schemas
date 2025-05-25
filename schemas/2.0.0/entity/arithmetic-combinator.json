@@ -28,10 +28,7 @@
                         "first_signal": {
                             "title": "First Signal",
                             "description": "Signal ID that goes in the leftmost slot. Takes precedence over 'first_constant', if both happen to be specified.",
-                            "oneOf": [
-                                {"$ref": "../common/signal-id.json"},
-                                {"type": "null"}
-                            ],
+                            "$ref": "../common/optional-signal-id.json",
                             "default": null
                         },
                         "first_signal_networks": {
@@ -60,10 +57,7 @@
                         "second_signal": {
                             "title": "Second Signal",
                             "description": "Signal ID that goes in the rightmost slot. Takes precedence over 'second_constant', if both happen to be specified.",
-                            "oneOf": [
-                                {"$ref": "../common/signal-id.json"},
-                                {"type": "null"}
-                            ],
+                            "$ref": "../common/optional-signal-id.json",
                             "default": null
                         },
                         "second_signal_networks": {
@@ -75,10 +69,7 @@
                         "output_signal": {
                             "title": "Output Signal",
                             "description": "What signal (or signals) should this combinator output.",
-                            "oneOf": [
-                                {"$ref": "../common/signal-id.json"},
-                                {"type": "null"}
-                            ],
+                            "$ref": "../common/optional-signal-id.json",
                             "default": null
                         }
                     }

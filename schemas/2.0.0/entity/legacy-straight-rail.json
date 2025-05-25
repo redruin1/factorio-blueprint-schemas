@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/legacy-straight-rail.json",
+    "title": "Legacy Straight Rail",
+    "description": "An old, Factorio 1.0 straight rail entity.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

@@ -1,0 +1,22 @@
+
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/cargo-landing-pad.json",
+    "title": "Cargo Landing Pad",
+    "description": "An entity on a surface which recieves cargo from space platforms.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/request-filters.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_mode_of_operation": {
+                    "$ref": "../common/logistic-mode-of-operation.json"
+                }
+            }
+        }
+    }
+}

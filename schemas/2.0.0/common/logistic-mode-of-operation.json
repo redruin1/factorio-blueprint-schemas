@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/features/circuit-mode-of-operation.json",
+    "title": "Circuit Mode Of Operation",
+    "description": "In what manner the circuit network should affect the behavior of this logistics node. See [`control_behavior.cargo_landing_pad.exclusive_mode`](https://lua-api.factorio.com/latest/defines.html#defines.control_behavior).",
+    "anyOf": [
+        {
+            "title": "Read Contents",
+            "description": "`defines.control_behavior.cargo_landing_pad.exclusive_mode.send_contents`",
+            "const": 0
+        },
+        {
+            "title": "Set Requests",
+            "description": "`defines.control_behavior.cargo_landing_pad.exclusive_mode.set_requests`",
+            "const": 1
+        },
+        {
+            "title": "None",
+            "description": "`defines.control_behavior.cargo_landing_pad.exclusive_mode.none`",
+            "const": 2
+        }
+    ],
+    "default": 0
+}

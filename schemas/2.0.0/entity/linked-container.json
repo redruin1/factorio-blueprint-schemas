@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/linked-container.json",
+    "title": "Linked Container",
+    "description": "A chest which shares it's contents with any other chest with the same `link_id`.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "link_id": {
+            "title": "Link ID",
+            "description": "A unique number which defines an abstract inventory location that multiple chests can access simultaneously.",
+            "type": "../../common/uint32.json",
+            "default": 0
+        }
+    }
+}

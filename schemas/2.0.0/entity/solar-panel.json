@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/solar-panel.json",
+    "title": "Solar Panel",
+    "description": "An entity which generates electricity based on the presence of sunlight.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

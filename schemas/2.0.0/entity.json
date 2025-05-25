@@ -3,12 +3,93 @@
     "$id": "2.0.0/entity.json",
     "title": "Entity",
     "description": "A schema which contains the keys that all entities share.",
+    "$defs": {
+        "inventory-position": {
+            "title": "Inventory Position",
+            "description": "Where and how much of the item should be requested. In Factorio, the order of delivered items in entity inventories was entirely arbitrary, being decided by the order in which bots delivered the requested items. In Factorio 2.0, inventory slot positions are now preserved and defined using the `'stack'` property.",
+            "type": "object",
+            "properties": {
+                "inventory": {
+                    "title": "Inventory ID",
+                    "description": "Which inventory this item should be requested to, 1-indexed. See [`defines.inventory`](https://lua-api.factorio.com/latest/defines.html#defines.inventory).",
+                    "$ref": "../common/uint32.json"
+                },
+                "stack": {
+                    "title": "Inventory Slot",
+                    "description": "Which slot in the specified inventory this item should occupy, 0-indexed. The item request is ignored if this slot lies beyond the number of available slots for this inventory.",
+                    "$ref": "../common/uint16.json"
+                },
+                "count": {
+                    "title": "Count",
+                    "description": "How much of the item should be requested to this slot.",
+                    "$ref": "../common/uint32.json",
+                    "default": 1
+                }
+            },
+            "required": ["inventory", "stack"]
+        },
+        "item-and-quality-id": {
+            "title": "Item And Quality ID",
+            "description": "The particular item/quality pair being requested. Must be a valid Factorio item and quality. See [`ItemIDAndQualityIDPair`](https://lua-api.factorio.com/latest/concepts/ItemIDAndQualityIDPair.html).",
+            "type": "object",
+            "properties": {
+                "name": {"title": "Item Name", "type": "string"},
+                "quality": {"$ref": "common/quality-name.json"}
+            },
+            "required": ["name"]
+        },
+        "item-inventory-positions": {
+            "title": "Item Inventory Positions",
+            "description": "All places/positions where this item is requested to.",
+            "type": "object",
+            "properties": {
+                "in_inventory": {
+                    "title": "Inventory Positions",
+                    "description": "A list of unique positions inside of one or more of this entity's inventories where the requested item should occupy.",
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/inventory-position"}
+                },
+                "grid_count": {
+                    "title": "Grid Count",
+                    "description": "The count of this item inside of this entity's equipment grid. Exactly where in the equipment grid they are located is defined by the `'grid'` key on applicable entities. If the entity does not have an equipment grid, this value is always 0.",
+                    "$ref": "../common/uint32.json",
+                    "default": 0
+                }
+            },
+            "default": {}
+        },
+        "insert-plan": {
+            "title": "Insert Plan",
+            "description": "All item requests for a particular item type, specifying the manner in which they should be delivered. See [`BlueprintInsertPlan`](https://lua-api.factorio.com/latest/concepts/BlueprintInsertPlan.html).",
+            "type": "object",
+            "properties": {
+                "id": {"$ref": "#/$defs/item-and-quality-id"},
+                "items": {"$ref": "#/$defs/item-inventory-positions"}
+            },
+            "required": ["id", "items"],
+            "examples": [
+                {
+                    "id": {"name": "personal-roboport", "quality": "rare"},
+                    "items": {
+                        "in_inventory": [
+                            {
+                                "inventory": 3,
+                                "stack": 5,
+                                "count": 10
+                            }
+                        ],
+                        "grid_count": 1
+                    }
+                }
+            ]
+        }
+    },
     "type": "object",
     "properties": {
         "entity_number": {
             "title": "Entity Number",
             "description": "A unique ID given to every entity contained within a blueprint. In practice, this value is the 1-indexed position of the entity inside it's parent blueprint's 'entities' list. This is not enforced however, so an entity's number can be specified with any value as long as it's unique inside that particular blueprint. This value is used for resolving associations between different entities, such as wire connections or schedule definitions.",
-            "$ref": "../common/uint64.json"
+            "$ref": "../common/uint32.json"
         },
         "name": {
             "title": "Name",
@@ -22,8 +103,89 @@
         },
         "direction": {
             "title": "Direction",
-            "description": "The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect.",
-            "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+            "description": "The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect. See [`defines.direction`](https://lua-api.factorio.com/latest/defines.html#defines.direction)",
+            "oneOf": [
+                {
+                    "title": "North",
+                    "description": "`defines.direction.north`",
+                    "const": 0
+                },
+                {
+                    "title": "North North East",
+                    "description": "`defines.direction.northnortheast`",
+                    "const": 1
+                },
+                {
+                    "title": "North East",
+                    "description": "`defines.direction.northeast`",
+                    "const": 2
+                },
+                {
+                    "title": "East North East",
+                    "description": "`defines.direction.eastnortheast`",
+                    "const": 3
+                },
+                {
+                    "title": "East",
+                    "description": "`defines.direction.east`",
+                    "const": 4
+                },
+                {
+                    "title": "East South East",
+                    "description": "`defines.direction.eastsoutheast`",
+                    "const": 5
+                },
+                {
+                    "title": "South East",
+                    "description": "`defines.direction.southeast`",
+                    "const": 6
+                },
+                {
+                    "title": "South South East",
+                    "description": "`defines.direction.southsoutheast`",
+                    "const": 7
+                },
+                {
+                    "title": "South",
+                    "description": "`defines.direction.south`",
+                    "const": 8
+                },
+                {
+                    "title": "South South West",
+                    "description": "`defines.direction.southsouthwest`",
+                    "const": 9
+                },
+                {
+                    "title": "South West",
+                    "description": "`defines.direction.southwest`",
+                    "const": 10
+                },
+                {
+                    "title": "West South West",
+                    "description": "`defines.direction.westsouthwest`",
+                    "const": 11
+                },
+                {
+                    "title": "West",
+                    "description": "`defines.direction.west`",
+                    "const": 12
+                },
+                {
+                    "title": "West North West",
+                    "description": "`defines.direction.westnorthwest`",
+                    "const": 13
+                },
+                {
+                    "title": "North West",
+                    "description": "`defines.direction.northwest`",
+                    "const": 14
+                },
+                {
+                    "title": "North North West",
+                    "description": "`defines.direction.northnorthwest`",
+                    "const": 15
+                }
+            ],
             "default": 0,
             "$comment": "maybe use `anyOf` in order to document each individual value with their name"
         },
@@ -39,9 +201,17 @@
             "$ref": "common/quality-name.json",
             "default": "normal"
         },
+        "items": {
+            "title": "Item Requests",
+            "description": "A list of items that are requested to this entity once on 'revive' (construction). Used for satisfying construction requests like delivering modules to beacons or train fuel to locomotives.",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/insert-plan"
+            }
+        },
         "tags": {
             "title": "Tags",
-            "description": "Any additional metadata associated with this entity, mostly intended for including mod information inside exported blueprint strings. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.",
+            "description": "Object used to store metadata of a ghost entity. Each key must be a string, and each value can be either a string, a boolean, a number, or another JSON object.",
             "type": "object"
         }
     },
