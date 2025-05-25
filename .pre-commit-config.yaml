@@ -8,12 +8,12 @@ repos:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
     -   id: check-added-large-files
-# -   repo: local
-#     hooks:
-#     -   id: make-doc
-#         name: make-doc
-#         entry: python doc/make.py
-#         language: python
-#         types: [python]
-#         additional_dependencies: [json-schema-for-humans]
-#         pass_filenames: false
+-   repo: local
+    hooks:
+    -   id: make-doc
+        name: make-doc
+        entry: python doc/make.py
+        language: python
+        types: [python]
+        additional_dependencies: [json-schema-for-humans]
+        pass_filenames: false
