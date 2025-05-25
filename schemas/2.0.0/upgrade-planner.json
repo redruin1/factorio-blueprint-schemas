@@ -2,5 +2,16 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/upgrade-planner.json",
     "title": "Upgrade Planner",
-    "description": "A object that allows you to configure what entities/tiles to upgrade/downgrade."
+    "description": "A object that allows you to configure what entities/tiles to upgrade/downgrade.",
+    "type": "object",
+    "properties": {
+        "index": {
+            "title": "Index",
+            "description": "The unique index of the upgrade planner, if it lies inside of a parent blueprint book. If not inside of a blueprint book, this key has no effect.",
+            "oneOf": [
+                {"$ref": "../common/uint16.json"},
+                {"title": "Null", "type": "null"}
+            ]
+        }
+    }
 }

@@ -2,5 +2,16 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "2.0.0/deconstruction-planner.json",
     "title": "Deconstruction Planner",
-    "description": "A object that allows you to configure what entities/tiles to deconstruct."
+    "description": "A object that allows you to configure what entities/tiles to deconstruct.",
+    "type": "object",
+    "properties": {
+        "index": {
+            "title": "Index",
+            "description": "The unique index of the deconstruction planner, if it lies inside of a parent blueprint book. If not inside of a blueprint book, this key has no effect.",
+            "oneOf": [
+                {"$ref": "../common/uint16.json"},
+                {"title": "Null", "type": "null"}
+            ]
+        }
+    }
 }
