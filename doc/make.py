@@ -20,6 +20,7 @@ def main(template_name):
         link_to_reused_ref=False,
         template_name=template_name,
         recursive_detection_depth=1,
+        footer_show_time=False,
     )
 
     if template_name in {"js", "js_offline", "flat"}:
