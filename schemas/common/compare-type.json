@@ -1,6 +1,6 @@
 
 {
-    "$schema": "",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "common/compare-type.json",
     "title": "Compare Type",
     "description": "How this condition should be compared to the condition directly preceding it.",

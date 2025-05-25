@@ -357,29 +357,33 @@
                 {"$ref": "#/$defs/schedule-conditions/specific-destination-not-full"}
             ]
         },
+        "train-schedule-stop": {
+            "type": "object",
+            "properties": {
+                "station": {
+                    "title": "Station",
+                    "description": "The name of a train stop.",
+                    "type": "string"
+                },
+                "wait_conditions": {
+                    "title": "Wait Conditions",
+                    "description": "A list of wait condition objects, conjoined by their `compare_type`.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/train-wait-condition"
+                    }
+                }
+            },
+            "required": ["station"]
+        },
         "train-schedule": {
             "title": "Train Schedule",
+            "type": "object",
             "properties": {
                 "records": {
                     "type": "array",
                     "items": {
-                        "type": "object",
-                        "properties": {
-                            "station": {
-                                "title": "Station",
-                                "description": "The name of a train stop.",
-                                "type": "string"
-                            },
-                            "wait_conditions": {
-                                "title": "Wait Conditions",
-                                "description": "A list of wait condition objects, conjoined by their `compare_type`.",
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/$defs/train-wait-condition"
-                                }
-                            }
-                        },
-                        "required": ["station", "wait_conditions"]
+                        "$ref": "#/$defs/train-schedule-stop"
                     }
                 },
                 "interrupts": {
@@ -407,7 +411,7 @@
                                 "description": "What new schedule should be performed if the interrupt is triggered.",
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#/$defs/train-wait-condition"
+                                    "$ref": "#/$defs/train-schedule-stop"
                                 }
                             },
                             "inside_interrupt": {
@@ -456,6 +460,31 @@
                 {"$ref": "#/$defs/schedule-conditions/request-satisfied"}
             ]
         },
+        "space-platform-schedule-stop": {
+            "title": "Space Platform Stop",
+            "type": "object",
+            "properties": {
+                "station": {
+                    "title": "Station",
+                    "description": "The name of the destination planet.",
+                    "type": "string"
+                },
+                "wait_conditions": {
+                    "title": "Wait Conditions",
+                    "description": "A list of wait condition objects, conjoined by their `compare_type`.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/space-platform-wait-condition"
+                    }
+                },
+                "allows_unloading": {
+                    "description": "Whether or not this platform will unload at this `station`.",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "required": ["station"]
+        },
         "space-platform-schedule": {
             "title": "Space Platform Schedule",
             "type": "object",
@@ -464,29 +493,7 @@
                     "title": "Space Platform Stops",
                     "type": "array",
                     "items": {
-                        "title": "Space Platform Stop",
-                        "type": "object",
-                        "properties": {
-                            "station": {
-                                "title": "Station",
-                                "description": "The name of the destination planet.",
-                                "type": "string"
-                            },
-                            "wait_conditions": {
-                                "title": "Wait Conditions",
-                                "description": "A list of wait condition objects, conjoined by their `compare_type`.",
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/$defs/space-platform-wait-condition"
-                                }
-                            },
-                            "allows_unloading": {
-                                "description": "Whether or not this platform will unload at this `station`.",
-                                "type": "boolean",
-                                "default": true
-                            }
-                        },
-                        "required": ["station", "wait_conditions"]
+                        "$ref": "#/$defs/space-platform-schedule-stop"
                     }
                 },
                 "interrupts": {
@@ -514,7 +521,7 @@
                                 "description": "What new schedule should be performed if the interrupt is triggered.",
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#/$defs/space-platform-wait-condition"
+                                    "$ref": "#/$defs/space-platform-schedule-stop"
                                 }
                             },
                             "inside_interrupt": {
