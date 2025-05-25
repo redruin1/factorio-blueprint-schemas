@@ -40,5 +40,5 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         template_name = sys.argv[1]
     else:
-        template_name = "js"
+        template_name = "js_offline"
     main(template_name=template_name)
