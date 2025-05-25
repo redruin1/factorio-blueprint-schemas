@@ -47,31 +47,21 @@ assert validator.is_valid(blueprint_dict)
 
 ## Specification
 
-Each file is written as Draft 2020-compliant JSON schema. In addition to required fields, documentation metadata `"title"` and `"description"` fields should also be provided (if a properties function is not immediately obvious), as well as comments for maintainers.
+Each file is written as Draft 2020-compliant JSON schema. In addition to required fields, documentation metadata `"title"` and `"description"` fields should also be provided (if a properties function is not immediately obvious), as well as comments for maintainers. Descriptions for properties are defined in Markdown, and as such can include things like _emphasis_, **bold**, `inline code`, as well as [hyperlinks](https://example.com/).
 
-All schemas corresponding to a particular blueprint string format is located in it's respective semantically versioned subfolder in the `schemas` folder. A versioned schema is valid for all versions above until the next versioned schema; so the schemas in folder `1.0.0` will validate up to and excluding version `1.1.0` - and the `1.1.0` folder will validate for versions up until `2.0.0`, and so on. "Global" schemas that are not necessarily associated with a particular Factorio version (such as a specification for a `uint16`) lie in the adjacent `common` folder.
+All schemas corresponding to a particular format are located in their respective semantically versioned directory inside of the `schemas` master folder. A versioned schema is valid for all versions above it until the next specified versioned schema; so the schemas in folder `1.0.0` will validate up to and excluding version `1.1.0` - and the `1.1.0` folder will validate for versions up until `2.0.0`, and so on. "Global" schemas that are not necessarily associated with a particular Factorio version (such as a specification for a `uint16`) lie in the topmost `common` folder next to the versioned schema folders. Inside of a version folder, this pattern continues; definitions that are reused throughout version `2.0.0` are defined in the `schemas/2.0.0/common` folder.
 
-To keep schemas concise and easy to maintain, large schemas are frequently split into multiple smaller schemas and `"$ref"`-erenced appropriately. `$defs` are also permitted if certain structures are reused often in *one* single schema; but if something is used in more than one place at once, the definition is given it's own file and referenced.
+To keep schemas concise and easy to maintain, large schemas are frequently split into multiple smaller schemas and `"$ref"`-erenced appropriately. `$defs` are also permitted if certain structures are reused often in *one* single schema; but if something is used in more than one file at once, the definition is broken out into it's own file and referenced accordingly.
 
-In an effort towards DRY, cross-referencing schemas *between* versions is not only permitted, but recommended. In such cases, always prefer referencing schemas in earlier semantic versions; so schemas defined in folder `2.0.0` can reference schemas in defined in `1.0.0`, but not vise-versa. However, if cross referencing between versions would directly reduce readability/understandability of the schema, this recommendation can be ignored.
+In an effort towards DRY, cross-referencing schemas *between* versions is not only permitted, but recommended. In such cases, always prefer referencing schemas in earlier semantic versions; so schemas defined in folder `2.0.0` can reference schemas defined in `1.0.0`, but not vise-versa. However, if cross referencing between versions in this manner would directly reduce readability/understandability of the schema, this recommendation can be ignored.
 
 ## Testing
 
-To ensure correctness, this repo comes with a set of Python files in the `test` folder which can be run with `pytest`:
-
-```
-$> pytest
-platform win32 -- Python 3.12.10, pytest-8.3.5, pluggy-1.6.0
-rootdir: D:\SourceCode\repos\Misc\factorio-blueprint-schemas
-collected 9 items
-
-test\test_examples.py ..........
-=========== 10 passed in 3.94s ==================
-```
+To ensure correctness, this repo comes with a set of Python files in the `test` folder which can be simply run with [`pytest`](https://github.com/pytest-dev/pytest). This will collect and attempt to validate a set of blueprint string files located in the `test/examples` subdirectory. You can use these files located here as sample data to test your own validation suites against.
 
 ## Building HTML/Markdown Documentation Locally
 
-If you have Python installed (in whatever venv you prefer), you can `pip install json-schema-for-humans` and then run the `make.py` script in the doc folder:
+If you have Python installed (in whatever virtual environment you prefer), you can `pip install json-schema-for-humans` and then run the `make.py` script in the `doc` folder:
 
 ```
 python doc/make.py
@@ -85,6 +75,8 @@ python doc/make.py md
 
 Which will then populate the `doc/md` folder with the same structure.
 
+Additionally, `doc/make.py` is specified as a pre-commit hook, so it should automatically run on `git commit` and keep the generated files up-to-date.
+
 ## Contributing
 
-PRs of all types are of course welcome. It is suggested that all changes abide by the specification outlined above, unless the purpose of the change is to tweak the specification itself.
+PRs of all types are of course welcome. It is suggested that any changes to the JSON schemas themselves abide by the specification outlined above, unless the purpose of the change is to tweak the conventions themselves.
