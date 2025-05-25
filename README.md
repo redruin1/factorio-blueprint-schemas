@@ -2,9 +2,7 @@
 
 This document is intended to be an open source public specification for the decoded JSON format of [Factorio](https://factorio.com/) blueprint strings. If you don't know what any of that that means, see [here](https://wiki.factorio.com/Blueprint_string_format).
 
-The purpose of this repository is similar to that of the Factorio wiki page on the blueprint string format, but specified in a standardized, machine readable format - giving it the potential to used by software suites for validation purposes. In addition to providing rigorous technical description of the format, documentation and descriptions are also provided directly alongside each property, meaning that automatically generating accurate, readable documentation of these formats is not only possible, but eminently feasible. [For example, here's a convenient, navigatable digest of the entire blueprint string format.](https://html-preview.github.io/?url=https://github.com/redruin1/factorio-blueprint-schemas/blob/main/doc/html/2.0.0/blueprintable.html)
-
-This repo uses `json-schema-for-humans` in order to render readable overviews of the schemas (as shown above), the rendered outputs of which are located in the `doc/html` folder. The files can either be viewed by cloning the repo locally, or online using [https://html-preview.github.io/](https://html-preview.github.io/).
+The purpose of this repository is similar to that of the Factorio wiki page on the blueprint string format, but specified in a standardized, machine readable format - giving it the potential to used by software suites for validation purposes. In addition to providing rigorous technical description of the format, documentation and descriptions are also provided directly alongside each property, meaning that automatically generating accurate, readable documentation of these formats is not only possible, but eminently feasible. [For example, here's a convenient, navigatable digest of the entire 2.0 blueprint string format.](https://redruin1.github.io/factorio-blueprint-schemas/html/2.0.0/blueprintable.html)
 
 ## Validation
 
