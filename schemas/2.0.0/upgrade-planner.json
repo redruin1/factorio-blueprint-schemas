@@ -6,6 +6,7 @@
     "type": "object",
     "properties": {
         "index": {
+            "test": "thingy",
             "title": "Index",
             "description": "The unique index of the upgrade planner, if it lies inside of a parent blueprint book. If not inside of a blueprint book, this key has no effect.",
             "oneOf": [
