@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "urn:factorio:entity:logistics-active-container",
+    "$id": "2.0.0/entity/logistic-container.json",
     "title": "Logistic Container",
     "description": "A container which acts as a node for the logistic network. Validates logistics chests of all 5 types, though some keys (`request_filters`) only apply to specific types.",
     "allOf": [
