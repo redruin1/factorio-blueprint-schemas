@@ -8,12 +8,20 @@
         "ammo_inventory": {
             "title": "Ammo Inventory",
             "description": "Inventory object representing the ammo slots of this entity (if it has weapons). Setting the bar of this object has no effect.",
-            "$ref": "../../common/inventory.json"
+            "oneOf": [
+                {"$ref": "../../common/inventory.json"},
+                {"title": "null", "type": "null"}
+            ],
+            "default": null
         },
         "trunk_inventory": {
             "title": "Trunk Inventory",
             "description": "Inventory object representing regular item storage.",
-            "$ref": "../../common/inventory.json"
+            "oneOf": [
+                {"$ref": "../../common/inventory.json"},
+                {"title": "null", "type": "null"}
+            ],
+            "default": null
         },
         "driver_is_main_gunner": {
             "title": "Driver Is Main Gunner",
