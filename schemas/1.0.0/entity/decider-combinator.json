@@ -15,9 +15,9 @@
                 "decider_conditions": {
                     "title": "Decider Parameters",
                     "description": "Container for decider combinator specific parameters.",
+                    "$ref": "../common/condition.json",
                     "type": "object",
                     "properties": {
-                        "$ref": "../common/condition.json",
                         "output_signal": {
                             "title": "Signal",
                             "description": "What signal to output, if `copy_count_from_input` is `true`.",
