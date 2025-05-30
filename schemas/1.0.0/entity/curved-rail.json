@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/curved-rail.json",
+    "title": "Curved Rail",
+    "description": "A curved rail entity.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

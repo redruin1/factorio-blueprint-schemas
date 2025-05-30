@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/decider-combinator.json",
+    "title": "Decider Combinator",
+    "description": "A combinator that can check one or more conditions and output signals based on those conditions.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "decider_conditions": {
+                    "title": "Decider Parameters",
+                    "description": "Container for decider combinator specific parameters.",
+                    "type": "object",
+                    "properties": {
+                        "$ref": "../common/condition.json",
+                        "output_signal": {
+                            "title": "Signal",
+                            "description": "What signal to output, if `copy_count_from_input` is `true`.",
+                            "$ref": "../common/optional-signal-id.json"
+                        },
+                        "copy_count_from_input": {
+                            "title": "Copy Count From Input",
+                            "description": "Whether or not this entity should use the input wires to determine the output value, or to simply output a constant value of 1.",
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -8,19 +8,6 @@
         {"$ref": "features/player-description.json"}
     ],
     "$defs": {
-        "circuit-network-selection": {
-            "type": "object",
-            "properties": {
-                "red": {
-                    "type": "boolean",
-                    "default": true
-                },
-                "green": {
-                    "type": "boolean",
-                    "default": true
-                }
-            }
-        },
         "decider-condition": {
             "title": "Decider Condition",
             "$ref": "../common/condition.json",
@@ -28,12 +15,12 @@
                 "first_signal_networks": {
                     "title": "First Signal Networks",
                     "description": "Which wires should be used when determining the value of the first signal.",
-                    "$ref": "#/$defs/circuit-network-selection"
+                    "$ref": "../common/network-specification.json"
                 },
                 "second_signal_networks": {
                     "title": "Second Signal Networks",
                     "description": "Which wires should be used when determining the value of the second signal.",
-                    "$ref": "#/$defs/circuit-network-selection"
+                    "$ref": "../common/network-specification.json"
                 },
                 "compare_type": {
                     "$ref": "../../common/compare-type.json",
@@ -60,7 +47,7 @@
                 "networks": {
                     "title": "Output Networks",
                     "description": "Which wires should be considered when determining the value of the output, if `copy_count_from_input` is `true`.",
-                    "$ref": "#/$defs/circuit-network-selection"
+                    "$ref": "../common/network-specification.json"
                 },
                 "constant": {
                     "description": "The constant value to output if `copy_count_from_input` is `false`. Can be any 32-bit integer.",

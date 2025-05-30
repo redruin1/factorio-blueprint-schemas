@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/features/vehicle.json",
+    "title": "Visual Variation",
+    "description": "Allows this entity to have multiple visual appearances.",
+    "type": "object",
+    "properties": {
+        "variation": {
+            "description": "Which visual variation this entity should display, 1-indexed.",
+            "$ref": "../../../common/uint16.json"
+        }
+    }
+}

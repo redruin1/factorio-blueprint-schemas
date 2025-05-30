@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/accumulator.json",
+    "title": "Accumulator",
+    "description": "An entity that stores electricity for periods of high demand.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "properties": {
+                "output_signal": {
+                    "title": "Output Signal",
+                    "description": "What signal to send the current accumulator charge level value (in the range [0, 100]) if this accumulator is connected to a circuit network.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-A", "type": "virtual"}
+                }
+            }
+        }
+    }
+}

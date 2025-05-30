@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/power-switch.json",
+    "title": "Power Switch",
+    "description": "An entity which can conditionally connect or disconnect a power connection.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "switch_state": {
+            "title": "Switch State",
+            "description": "Manual on/off switch for this entity. Has no effect if connected to a circuit network.",
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/storage-tank.json",
+    "title": "Storage Tank",
+    "description": "A static structure which stores fluids.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"}
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/infinity-container.json",
+    "title": "Infinity Container",
+    "description": "A container which can spawn or remove any item infinitely.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "$defs": {
+        "infinity-inventory-filter": {
+            "title": "Infinity Inventory Filter",
+            "description": "A inventory filter that should be infinitely requested.",
+            "type": "object",
+            "properties": {
+                "index": {
+                    "title": "Filter Index",
+                    "description": "Index of this filter in the container's GUI, 1-indexed.",
+                    "$ref": "../../common/uint32.json"
+                },
+                "name": {
+                    "title": "Item Name",
+                    "description": "Name of the item being infinitely requested. Must be a valid Factorio item.",
+                    "type": "string"
+                },
+                "count": {
+                    "description": "Amount of the item to request.",
+                    "$ref": "../../common/uint32.json",
+                    "default": 0
+                },
+                "mode": {
+                    "description": "In what manner should the count of this item be managed inside of the container.",
+                    "enum": ["at-least", "at-most", "exactly"],
+                    "default": "at-least"
+                }
+            },
+            "required": ["index", "name"]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "bar": {"$ref": "../../common/limiting-bar.json"},
+        "infinity_settings": {
+            "title": "Infinity Settings",
+            "description": "Configuration parameters for this Infinity Container.",
+            "type": "object",
+            "properties": {
+                "remove_unfiltered_items": {
+                    "title": "Remove Unfiltered Items",
+                    "description": "Whether or not to delete items in this inventory that do not match any entry in `filters`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "filters": {
+                    "title": "Infinity Inventory Filters",
+                    "description": "What items should be infinitely requested, and in what manner.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/infinity-inventory-filter"
+                    },
+                    "maxItems": 1000
+                }
+            }
+        }
+    }
+}

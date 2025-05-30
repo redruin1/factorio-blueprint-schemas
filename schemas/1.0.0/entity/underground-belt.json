@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/underground-belt.json",
+    "title": "Underground Belt",
+    "description": "An belt which can transport items underneath other entities.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "type": {
+            "$ref": "../../common/io-type.json"
+        }
+    }
+}

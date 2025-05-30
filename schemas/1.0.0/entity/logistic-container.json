@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/logistic-container.json",
+    "title": "Logistic Container",
+    "description": "A container which acts as a node for the logistic network. Validates logistics chests of all 5 types, though some keys (`request_filters`) only apply to specific types.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "bar": {"$ref": "../../common/limiting-bar.json"}
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/mining-drill.json",
+    "title": "Mining Drill",
+    "description": "An entity which extracts resources from the environment.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_read_resources": {
+                    "title": "Read Resources",
+                    "description": "Whether or not this mining drill should broadcast the amount of ore underneath it to a connected circuit network.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "circuit_resource_read_mode": {
+                    "title": "Resource Read Mode",
+                    "description": "In what manner should 'the amount of ore under this drill' be calculated. See [`control_behavior.mining_drill.resource_read_mode`](https://lua-api.factorio.com/latest/defines.html#defines.control_behavior).",
+                    "oneOf": [
+                        {
+                            "title": "Under Drill",
+                            "description": "`resource_read_mode.this_miner`",
+                            "const": 0
+                        },
+                        {
+                            "title": "Entire Patch",
+                            "description": "`resource_read_mode.entire_patch`",
+                            "const": 1
+                        }
+                    ],
+                    "default": 0
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/rail-signal.json",
+    "title": "Rail Signal",
+    "description": "An entity which divvies up a rail network into blocks that trains can path through.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"},
+        {"$ref": "features/circuit-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_close_signal": {
+                    "title": "Circuit Close Signal",
+                    "description": "Whether or not a circuit condition should determine whether this rail signal is open or closed.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "circuit_read_signal": {
+                    "title": "Circuit Read Signal",
+                    "description": "Whether or not the signal's current state should be broadcast to a connected circuit network as a unit signal. Exactly what signals are output is controlled by `red_output_signal`, `orange_output_signal`, and `green_output_signal`.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "red_output_signal": {
+                    "title": "Red Output Signal",
+                    "description": "The signal to broadcast when this signal's state is red.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-red", "type": "virtual"}
+                },
+                "orange_output_signal": {
+                    "title": "Yellow Output Signal",
+                    "description": "The signal to broadcast when this signal's state is yellow.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-yellow", "type": "virtual"}
+                },
+                "green_output_signal": {
+                    "title": "Green Output Signal",
+                    "description": "The signal to broadcast when this signal's state is green.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-green", "type": "virtual"}
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/container.json",
+    "title": "Container",
+    "description": "A static entity that stores items.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "bar": {"$ref": "../../common/limiting-bar.json"}
+    }
+}

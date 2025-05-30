@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/heat-interface.json",
+    "title": "Heat Interface",
+    "description": "An entity that adds or removes temperature from adjacent entities.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "temperature": {
+            "title": "Temperature",
+            "description": "The temperature of this heat interface, in degrees Celcius.",
+            "type": "number"
+        },
+        "mode": {
+            "title": "Mode",
+            "description": "The manner in which this interface should interact with it's neighbours.",
+            "enum": [
+                "at-least",
+                "at-most",
+                "exactly",
+                "add",
+                "remove"
+            ],
+            "default": "at-least"
+        }
+    }
+}

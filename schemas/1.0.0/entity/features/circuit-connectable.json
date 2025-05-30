@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/accumulator.json",
+    "title": "Circuit Connectable",
+    "description": "Allows this entity to have circuit connections. Also includes copper wire connections if they eminate from a power switch.",
+    "$defs": {
+        "circuit-connection-point": {
+            "type": "object",
+            "properties": {
+                "entity_id": {"$ref": "../../../common/uint64.json"},
+                "circuit_id": {"enum": [1, 2]}
+            },
+            "required": ["entity_id"]
+        },
+        "wire-connection-point": {
+            "properties": {
+                "entity_id": {"$ref": "../../../common/uint64.json"},
+                "wire_id": {"enum": [0, 1]}
+            },
+            "required": ["entity_id"]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "connections": {
+            "type": "object",
+            "properties": {
+                "1": {
+                    "title": "Circuit Wire Input",
+                    "description": "Input node for circuit wires. This node is used if the entity only has one connection point.",
+                    "type": "object",
+                    "properties": {
+                        "red": {
+                            "type": "array",
+                            "items": {"$ref": "#/$defs/circuit-connection-point"}
+                        },
+                        "green": {
+                            "type": "array",
+                            "items": {"$ref": "#/$defs/circuit-connection-point"}
+                        }
+                    }
+                },
+                "2": {
+                    "title": "Circuit Wire Output",
+                    "description": "Output node for circuit wires.",
+                    "type": "object",
+                    "properties": {
+                        "red": {
+                            "type": "array",
+                            "items": {"$ref": "#/$defs/circuit-connection-point"}
+                        },
+                        "green": {
+                            "type": "array",
+                            "items": {"$ref": "#/$defs/circuit-connection-point"}
+                        }
+                    }
+                },
+                "Cu0": {
+                    "title": "Copper Wire Input",
+                    "description": "Power wire inputs (only used with power switch). Regular power connections use the `neighbours` key.",
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/wire-connection-point"}
+                },
+                "Cu1": {
+                    "title": "Copper Wire Input",
+                    "description": "Power wire outputs (only used with power switch). Regular power connections use the `neighbours` key.",
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/wire-connection-point"}
+                }
+            }
+        }
+    }
+}

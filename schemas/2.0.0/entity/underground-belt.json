@@ -9,7 +9,7 @@
     "type": "object",
     "properties": {
         "type": {
-            "$ref": "../common/io-type.json"
+            "$ref": "../../common/io-type.json"
         }
     }
 }

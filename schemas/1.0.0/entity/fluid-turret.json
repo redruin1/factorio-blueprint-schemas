@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/fluid-turret.json",
+    "title": "Fluid Turret",
+    "description": "A turret that uses fluids for ammunition.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

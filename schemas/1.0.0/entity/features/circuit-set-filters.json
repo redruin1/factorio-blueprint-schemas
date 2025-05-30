@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/features/circuit-set-filters.json",
+    "title": "Circuit Set Filters",
+    "description": "Grants this entity the ability to control it's filters via circuit network signals.",
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_set_filters": {
+                    "description": "Whether or not the filters of this entity should be specified by a connected circuit network. Overwrites the static filters for this entity if both are specified.",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}

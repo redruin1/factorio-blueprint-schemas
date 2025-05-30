@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/burner-generator.json",
+    "title": "Burner Generator",
+    "description": "An entity which generates electricity directly from items.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

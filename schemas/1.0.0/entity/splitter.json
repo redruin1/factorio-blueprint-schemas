@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/splitter.json",
+    "title": "Splitter",
+    "description": "An entity which distributes items across transport belts.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "input_priority": {
+            "description": "What side the splitter should prioritize it's input, or none if there should be no prioritization.",
+            "enum": [
+                "left",
+                "none",
+                "right"
+            ],
+            "default": "none"
+        },
+        "output_priority": {
+            "description": "What side the splitter should prioritize it's output, or none if there should be no prioritization.",
+            "enum": [
+                "left",
+                "none",
+                "right"
+            ],
+            "default": "none"
+        },
+        "filter": {
+            "title": "Item Name",
+            "description": "What item this splitter should filter on the `output_priority` side. If this value is set but `output_priority` is omitted, `output_priority` defaults to `'left'`",
+            "type": "string"
+        }
+    }
+}

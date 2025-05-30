@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/common/io-type.json",
+    "$id": "common/io-type.json",
     "title": "I/O Type",
     "description": "Allows this entity to be configured as either an 'input' or an 'output'.",
     "enum": ["input", "output"],

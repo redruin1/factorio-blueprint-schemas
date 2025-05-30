@@ -40,8 +40,27 @@
              data-parent="#accordionammo_inventory">
             <div class="card-body pl-5">
 
-    <h4>Ammo Inventory</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+    <h4>Ammo Inventory</h4> <span class="badge badge-success default-value">Default: null</span><br/>
 <span class="description"><p>Inventory object representing the ammo slots of this entity (if it has weapons). Setting the bar of this object has no effect.</p>
+</span><div class="one-of-value" id="ammo_inventory_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabsammo_inventory_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="ammo_inventory_oneOf_i0" data-toggle="tab" href="#tab-pane_ammo_inventory_oneOf_i0" role="tab"
+               onclick="setAnchor('#ammo_inventory_oneOf_i0')"
+            >Inventory Object</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="ammo_inventory_oneOf_i1" data-toggle="tab" href="#tab-pane_ammo_inventory_oneOf_i1" role="tab"
+               onclick="setAnchor('#ammo_inventory_oneOf_i1')"
+            >null</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_ammo_inventory_oneOf_i0" role="tabpanel">
+            
+
+    <h4>Inventory Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object which holds any item slot filters defined for this inventory in addition to a limiting bar.</p>
 </span>
 
     
@@ -51,18 +70,18 @@
         
 
         
-<div class="accordion" id="accordionammo_inventory_filters">
+<div class="accordion" id="accordionammo_inventory_oneOf_i0_filters">
     <div class="card">
-        <div class="card-header" id="headingammo_inventory_filters">
+        <div class="card-header" id="headingammo_inventory_oneOf_i0_filters">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_filters"
-                        aria-expanded="" aria-controls="ammo_inventory_filters" onclick="setAnchor('#ammo_inventory_filters')"><span class="property-name">filters</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_oneOf_i0_filters"
+                        aria-expanded="" aria-controls="ammo_inventory_oneOf_i0_filters" onclick="setAnchor('#ammo_inventory_oneOf_i0_filters')"><span class="property-name">filters</span></button>
             </h2>
         </div>
 
-        <div id="ammo_inventory_filters"
-             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_filters"
-             data-parent="#accordionammo_inventory_filters">
+        <div id="ammo_inventory_oneOf_i0_filters"
+             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_oneOf_i0_filters"
+             data-parent="#accordionammo_inventory_oneOf_i0_filters">
             <div class="card-body pl-5">
 
     <h4>Inventory Filters</h4><span class="badge badge-dark value-type">Type: array</span> <span class="badge badge-success default-value">Default: []</span><br/>
@@ -75,7 +94,7 @@
 
          <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
     <div class="card">
-        <div class="card-body items-definition" id="ammo_inventory_filters_items">
+        <div class="card-body items-definition" id="ammo_inventory_oneOf_i0_filters_items">
             
 
     <h4>Item Filter</h4><span class="badge badge-dark value-type">Type: object</span><br/>
@@ -92,12 +111,12 @@
 
         <br/>
 <div class="badge badge-secondary">Examples:</div>
-<br/><div id="ammo_inventory_filters_items_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<br/><div id="ammo_inventory_oneOf_i0_filters_items_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;iron-ore&quot;</span>
 <span class="p">}</span>
 </pre></div>
-</div><div id="ammo_inventory_filters_items_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+</div><div id="ammo_inventory_oneOf_i0_filters_items_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copper-ore&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;quality&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rare&quot;</span><span class="p">,</span>
@@ -105,25 +124,25 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="accordion" id="accordionammo_inventory_filters_items_quality">
+<div class="accordion" id="accordionammo_inventory_oneOf_i0_filters_items_quality">
     <div class="card">
-        <div class="card-header" id="headingammo_inventory_filters_items_quality">
+        <div class="card-header" id="headingammo_inventory_oneOf_i0_filters_items_quality">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_filters_items_quality"
-                        aria-expanded="" aria-controls="ammo_inventory_filters_items_quality" onclick="setAnchor('#ammo_inventory_filters_items_quality')"><span class="property-name">quality</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_oneOf_i0_filters_items_quality"
+                        aria-expanded="" aria-controls="ammo_inventory_oneOf_i0_filters_items_quality" onclick="setAnchor('#ammo_inventory_oneOf_i0_filters_items_quality')"><span class="property-name">quality</span></button>
             </h2>
         </div>
 
-        <div id="ammo_inventory_filters_items_quality"
-             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_filters_items_quality"
-             data-parent="#accordionammo_inventory_filters_items_quality">
+        <div id="ammo_inventory_oneOf_i0_filters_items_quality"
+             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_oneOf_i0_filters_items_quality"
+             data-parent="#accordionammo_inventory_oneOf_i0_filters_items_quality">
             <div class="card-body pl-5">
 
     <h4>Filter Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
 <span class="description"><p>Quality of the item that should occupy this slot. If omitted, this value is treated as 'any' quality. Otherwise, the quality specified here is used in relation to <code>comparator</code>, which can be used to specify a range of quality values. Required if <code>comparator</code> is specified.</p>
 </span>
 
-    <div class="enum-value" id="ammo_inventory_filters_items_quality_enum">
+    <div class="enum-value" id="ammo_inventory_oneOf_i0_filters_items_quality_enum">
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
@@ -137,25 +156,25 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionammo_inventory_filters_items_comparator">
+<div class="accordion" id="accordionammo_inventory_oneOf_i0_filters_items_comparator">
     <div class="card">
-        <div class="card-header" id="headingammo_inventory_filters_items_comparator">
+        <div class="card-header" id="headingammo_inventory_oneOf_i0_filters_items_comparator">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_filters_items_comparator"
-                        aria-expanded="" aria-controls="ammo_inventory_filters_items_comparator" onclick="setAnchor('#ammo_inventory_filters_items_comparator')"><span class="property-name">comparator</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_oneOf_i0_filters_items_comparator"
+                        aria-expanded="" aria-controls="ammo_inventory_oneOf_i0_filters_items_comparator" onclick="setAnchor('#ammo_inventory_oneOf_i0_filters_items_comparator')"><span class="property-name">comparator</span></button>
             </h2>
         </div>
 
-        <div id="ammo_inventory_filters_items_comparator"
-             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_filters_items_comparator"
-             data-parent="#accordionammo_inventory_filters_items_comparator">
+        <div id="ammo_inventory_oneOf_i0_filters_items_comparator"
+             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_oneOf_i0_filters_items_comparator"
+             data-parent="#accordionammo_inventory_oneOf_i0_filters_items_comparator">
             <div class="card-body pl-5">
 
     <h4>Quality Comparator</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "="</span><br/>
 <span class="description"><p>What comparison should be performed along with <code>quality</code> when determining what range of qualities can be filtered against. Required if <code>quality</code> is specified.</p>
 </span>
 
-    <div class="enum-value" id="ammo_inventory_filters_items_comparator_enum">
+    <div class="enum-value" id="ammo_inventory_oneOf_i0_filters_items_comparator_enum">
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
             </div>
@@ -169,18 +188,18 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionammo_inventory_filters_items_index">
+<div class="accordion" id="accordionammo_inventory_oneOf_i0_filters_items_index">
     <div class="card">
-        <div class="card-header" id="headingammo_inventory_filters_items_index">
+        <div class="card-header" id="headingammo_inventory_oneOf_i0_filters_items_index">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_filters_items_index"
-                        aria-expanded="" aria-controls="ammo_inventory_filters_items_index" onclick="setAnchor('#ammo_inventory_filters_items_index')"><span class="property-name">index</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_oneOf_i0_filters_items_index"
+                        aria-expanded="" aria-controls="ammo_inventory_oneOf_i0_filters_items_index" onclick="setAnchor('#ammo_inventory_oneOf_i0_filters_items_index')"><span class="property-name">index</span></button>
             </h2>
         </div>
 
-        <div id="ammo_inventory_filters_items_index"
-             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_filters_items_index"
-             data-parent="#accordionammo_inventory_filters_items_index">
+        <div id="ammo_inventory_oneOf_i0_filters_items_index"
+             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_oneOf_i0_filters_items_index"
+             data-parent="#accordionammo_inventory_oneOf_i0_filters_items_index">
             <div class="card-body pl-5">
 
     <h4>Index</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
@@ -191,25 +210,25 @@
         
 
         
-        <p><span class="badge badge-light restriction numeric-restriction" id="ammo_inventory_filters_items_index_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
+        <p><span class="badge badge-light restriction numeric-restriction" id="ammo_inventory_oneOf_i0_filters_items_index_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
 
         
             </div>
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionammo_inventory_filters_items_name">
+<div class="accordion" id="accordionammo_inventory_oneOf_i0_filters_items_name">
     <div class="card">
-        <div class="card-header" id="headingammo_inventory_filters_items_name">
+        <div class="card-header" id="headingammo_inventory_oneOf_i0_filters_items_name">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_filters_items_name"
-                        aria-expanded="" aria-controls="ammo_inventory_filters_items_name" onclick="setAnchor('#ammo_inventory_filters_items_name')"><span class="property-name">name</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_oneOf_i0_filters_items_name"
+                        aria-expanded="" aria-controls="ammo_inventory_oneOf_i0_filters_items_name" onclick="setAnchor('#ammo_inventory_oneOf_i0_filters_items_name')"><span class="property-name">name</span></button>
             </h2>
         </div>
 
-        <div id="ammo_inventory_filters_items_name"
-             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_filters_items_name"
-             data-parent="#accordionammo_inventory_filters_items_name">
+        <div id="ammo_inventory_oneOf_i0_filters_items_name"
+             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_oneOf_i0_filters_items_name"
+             data-parent="#accordionammo_inventory_oneOf_i0_filters_items_name">
             <div class="card-body pl-5">
 
     <h4>Item Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
@@ -231,39 +250,39 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionammo_inventory_bar">
+<div class="accordion" id="accordionammo_inventory_oneOf_i0_bar">
     <div class="card">
-        <div class="card-header" id="headingammo_inventory_bar">
+        <div class="card-header" id="headingammo_inventory_oneOf_i0_bar">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_bar"
-                        aria-expanded="" aria-controls="ammo_inventory_bar" onclick="setAnchor('#ammo_inventory_bar')"><span class="property-name">bar</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#ammo_inventory_oneOf_i0_bar"
+                        aria-expanded="" aria-controls="ammo_inventory_oneOf_i0_bar" onclick="setAnchor('#ammo_inventory_oneOf_i0_bar')"><span class="property-name">bar</span></button>
             </h2>
         </div>
 
-        <div id="ammo_inventory_bar"
-             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_bar"
-             data-parent="#accordionammo_inventory_bar">
+        <div id="ammo_inventory_oneOf_i0_bar"
+             class="collapse property-definition-div" aria-labelledby="headingammo_inventory_oneOf_i0_bar"
+             data-parent="#accordionammo_inventory_oneOf_i0_bar">
             <div class="card-body pl-5">
 
     <h4>Limiting Bar</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Limits the inventory to this many available slots.</p>
 </span>
 
-    <div class="one-of-value" id="ammo_inventory_bar_oneOf"><h2 class="handle">
+    <div class="one-of-value" id="ammo_inventory_oneOf_i0_bar_oneOf"><h2 class="handle">
   <label>One of</label>
-</h2><ul class="nav nav-tabs" id="tabsammo_inventory_bar_oneOf_oneOf" role="tablist"><li class="nav-item">
+</h2><ul class="nav nav-tabs" id="tabsammo_inventory_oneOf_i0_bar_oneOf_oneOf" role="tablist"><li class="nav-item">
             <a class="nav-link active oneOf-option"
-               id="ammo_inventory_bar_oneOf_i0" data-toggle="tab" href="#tab-pane_ammo_inventory_bar_oneOf_i0" role="tab"
-               onclick="setAnchor('#ammo_inventory_bar_oneOf_i0')"
+               id="ammo_inventory_oneOf_i0_bar_oneOf_i0" data-toggle="tab" href="#tab-pane_ammo_inventory_oneOf_i0_bar_oneOf_i0" role="tab"
+               onclick="setAnchor('#ammo_inventory_oneOf_i0_bar_oneOf_i0')"
             >uint16</a>
         </li><li class="nav-item">
             <a class="nav-link oneOf-option"
-               id="ammo_inventory_bar_oneOf_i1" data-toggle="tab" href="#tab-pane_ammo_inventory_bar_oneOf_i1" role="tab"
-               onclick="setAnchor('#ammo_inventory_bar_oneOf_i1')"
+               id="ammo_inventory_oneOf_i0_bar_oneOf_i1" data-toggle="tab" href="#tab-pane_ammo_inventory_oneOf_i0_bar_oneOf_i1" role="tab"
+               onclick="setAnchor('#ammo_inventory_oneOf_i0_bar_oneOf_i1')"
             >null</a>
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
-             id="tab-pane_ammo_inventory_bar_oneOf_i0" role="tabpanel">
+             id="tab-pane_ammo_inventory_oneOf_i0_bar_oneOf_i0" role="tabpanel">
             
 
     <h4>uint16</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
@@ -274,11 +293,11 @@
         
 
         
-        <p><span class="badge badge-light restriction numeric-restriction" id="ammo_inventory_bar_oneOf_i0_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>65536</code></span></p>
+        <p><span class="badge badge-light restriction numeric-restriction" id="ammo_inventory_oneOf_i0_bar_oneOf_i0_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>65536</code></span></p>
 
         
         </div><div class="tab-pane fade card-body "
-             id="tab-pane_ammo_inventory_bar_oneOf_i1" role="tabpanel">
+             id="tab-pane_ammo_inventory_oneOf_i0_bar_oneOf_i1" role="tabpanel">
             
 
     <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>
@@ -300,6 +319,25 @@
         </div>
     </div>
 </div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_ammo_inventory_oneOf_i1" role="tabpanel">
+            
+
+    <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>
+
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
             </div>
         </div>
     </div>
@@ -318,8 +356,27 @@
              data-parent="#accordiontrunk_inventory">
             <div class="card-body pl-5">
 
-    <h4>Trunk Inventory</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+    <h4>Trunk Inventory</h4> <span class="badge badge-success default-value">Default: null</span><br/>
 <span class="description"><p>Inventory object representing regular item storage.</p>
+</span><div class="one-of-value" id="trunk_inventory_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabstrunk_inventory_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="trunk_inventory_oneOf_i0" data-toggle="tab" href="#tab-pane_trunk_inventory_oneOf_i0" role="tab"
+               onclick="setAnchor('#trunk_inventory_oneOf_i0')"
+            >Inventory Object</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="trunk_inventory_oneOf_i1" data-toggle="tab" href="#tab-pane_trunk_inventory_oneOf_i1" role="tab"
+               onclick="setAnchor('#trunk_inventory_oneOf_i1')"
+            >null</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_trunk_inventory_oneOf_i0" role="tabpanel">
+            
+
+    <h4>Inventory Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object which holds any item slot filters defined for this inventory in addition to a limiting bar.</p>
 </span>
 
     
@@ -329,18 +386,18 @@
         
 
         
-<div class="accordion" id="accordiontrunk_inventory_filters">
+<div class="accordion" id="accordiontrunk_inventory_oneOf_i0_filters">
     <div class="card">
-        <div class="card-header" id="headingtrunk_inventory_filters">
+        <div class="card-header" id="headingtrunk_inventory_oneOf_i0_filters">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_filters"
-                        aria-expanded="" aria-controls="trunk_inventory_filters" onclick="setAnchor('#trunk_inventory_filters')"><span class="property-name">filters</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_oneOf_i0_filters"
+                        aria-expanded="" aria-controls="trunk_inventory_oneOf_i0_filters" onclick="setAnchor('#trunk_inventory_oneOf_i0_filters')"><span class="property-name">filters</span></button>
             </h2>
         </div>
 
-        <div id="trunk_inventory_filters"
-             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_filters"
-             data-parent="#accordiontrunk_inventory_filters">
+        <div id="trunk_inventory_oneOf_i0_filters"
+             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_oneOf_i0_filters"
+             data-parent="#accordiontrunk_inventory_oneOf_i0_filters">
             <div class="card-body pl-5">
 
     <h4>Inventory Filters</h4><span class="badge badge-dark value-type">Type: array</span> <span class="badge badge-success default-value">Default: []</span><br/>
@@ -353,7 +410,7 @@
 
          <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
     <div class="card">
-        <div class="card-body items-definition" id="trunk_inventory_filters_items">
+        <div class="card-body items-definition" id="trunk_inventory_oneOf_i0_filters_items">
             
 
     <h4>Item Filter</h4><span class="badge badge-dark value-type">Type: object</span><br/>
@@ -370,12 +427,12 @@
 
         <br/>
 <div class="badge badge-secondary">Examples:</div>
-<br/><div id="trunk_inventory_filters_items_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<br/><div id="trunk_inventory_oneOf_i0_filters_items_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;iron-ore&quot;</span>
 <span class="p">}</span>
 </pre></div>
-</div><div id="trunk_inventory_filters_items_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+</div><div id="trunk_inventory_oneOf_i0_filters_items_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copper-ore&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;quality&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rare&quot;</span><span class="p">,</span>
@@ -383,25 +440,25 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="accordion" id="accordiontrunk_inventory_filters_items_quality">
+<div class="accordion" id="accordiontrunk_inventory_oneOf_i0_filters_items_quality">
     <div class="card">
-        <div class="card-header" id="headingtrunk_inventory_filters_items_quality">
+        <div class="card-header" id="headingtrunk_inventory_oneOf_i0_filters_items_quality">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_filters_items_quality"
-                        aria-expanded="" aria-controls="trunk_inventory_filters_items_quality" onclick="setAnchor('#trunk_inventory_filters_items_quality')"><span class="property-name">quality</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_oneOf_i0_filters_items_quality"
+                        aria-expanded="" aria-controls="trunk_inventory_oneOf_i0_filters_items_quality" onclick="setAnchor('#trunk_inventory_oneOf_i0_filters_items_quality')"><span class="property-name">quality</span></button>
             </h2>
         </div>
 
-        <div id="trunk_inventory_filters_items_quality"
-             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_filters_items_quality"
-             data-parent="#accordiontrunk_inventory_filters_items_quality">
+        <div id="trunk_inventory_oneOf_i0_filters_items_quality"
+             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_oneOf_i0_filters_items_quality"
+             data-parent="#accordiontrunk_inventory_oneOf_i0_filters_items_quality">
             <div class="card-body pl-5">
 
     <h4>Filter Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
 <span class="description"><p>Quality of the item that should occupy this slot. If omitted, this value is treated as 'any' quality. Otherwise, the quality specified here is used in relation to <code>comparator</code>, which can be used to specify a range of quality values. Required if <code>comparator</code> is specified.</p>
 </span>
 
-    <div class="enum-value" id="trunk_inventory_filters_items_quality_enum">
+    <div class="enum-value" id="trunk_inventory_oneOf_i0_filters_items_quality_enum">
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
             </div>
@@ -415,25 +472,25 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordiontrunk_inventory_filters_items_comparator">
+<div class="accordion" id="accordiontrunk_inventory_oneOf_i0_filters_items_comparator">
     <div class="card">
-        <div class="card-header" id="headingtrunk_inventory_filters_items_comparator">
+        <div class="card-header" id="headingtrunk_inventory_oneOf_i0_filters_items_comparator">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_filters_items_comparator"
-                        aria-expanded="" aria-controls="trunk_inventory_filters_items_comparator" onclick="setAnchor('#trunk_inventory_filters_items_comparator')"><span class="property-name">comparator</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_oneOf_i0_filters_items_comparator"
+                        aria-expanded="" aria-controls="trunk_inventory_oneOf_i0_filters_items_comparator" onclick="setAnchor('#trunk_inventory_oneOf_i0_filters_items_comparator')"><span class="property-name">comparator</span></button>
             </h2>
         </div>
 
-        <div id="trunk_inventory_filters_items_comparator"
-             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_filters_items_comparator"
-             data-parent="#accordiontrunk_inventory_filters_items_comparator">
+        <div id="trunk_inventory_oneOf_i0_filters_items_comparator"
+             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_oneOf_i0_filters_items_comparator"
+             data-parent="#accordiontrunk_inventory_oneOf_i0_filters_items_comparator">
             <div class="card-body pl-5">
 
     <h4>Quality Comparator</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "="</span><br/>
 <span class="description"><p>What comparison should be performed along with <code>quality</code> when determining what range of qualities can be filtered against. Required if <code>quality</code> is specified.</p>
 </span>
 
-    <div class="enum-value" id="trunk_inventory_filters_items_comparator_enum">
+    <div class="enum-value" id="trunk_inventory_oneOf_i0_filters_items_comparator_enum">
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
             </div>
@@ -447,18 +504,18 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordiontrunk_inventory_filters_items_index">
+<div class="accordion" id="accordiontrunk_inventory_oneOf_i0_filters_items_index">
     <div class="card">
-        <div class="card-header" id="headingtrunk_inventory_filters_items_index">
+        <div class="card-header" id="headingtrunk_inventory_oneOf_i0_filters_items_index">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_filters_items_index"
-                        aria-expanded="" aria-controls="trunk_inventory_filters_items_index" onclick="setAnchor('#trunk_inventory_filters_items_index')"><span class="property-name">index</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_oneOf_i0_filters_items_index"
+                        aria-expanded="" aria-controls="trunk_inventory_oneOf_i0_filters_items_index" onclick="setAnchor('#trunk_inventory_oneOf_i0_filters_items_index')"><span class="property-name">index</span></button>
             </h2>
         </div>
 
-        <div id="trunk_inventory_filters_items_index"
-             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_filters_items_index"
-             data-parent="#accordiontrunk_inventory_filters_items_index">
+        <div id="trunk_inventory_oneOf_i0_filters_items_index"
+             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_oneOf_i0_filters_items_index"
+             data-parent="#accordiontrunk_inventory_oneOf_i0_filters_items_index">
             <div class="card-body pl-5">
 
     <h4>Index</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
@@ -469,25 +526,25 @@
         
 
         
-        <p><span class="badge badge-light restriction numeric-restriction" id="trunk_inventory_filters_items_index_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
+        <p><span class="badge badge-light restriction numeric-restriction" id="trunk_inventory_oneOf_i0_filters_items_index_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
 
         
             </div>
         </div>
     </div>
 </div>
-<div class="accordion" id="accordiontrunk_inventory_filters_items_name">
+<div class="accordion" id="accordiontrunk_inventory_oneOf_i0_filters_items_name">
     <div class="card">
-        <div class="card-header" id="headingtrunk_inventory_filters_items_name">
+        <div class="card-header" id="headingtrunk_inventory_oneOf_i0_filters_items_name">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_filters_items_name"
-                        aria-expanded="" aria-controls="trunk_inventory_filters_items_name" onclick="setAnchor('#trunk_inventory_filters_items_name')"><span class="property-name">name</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_oneOf_i0_filters_items_name"
+                        aria-expanded="" aria-controls="trunk_inventory_oneOf_i0_filters_items_name" onclick="setAnchor('#trunk_inventory_oneOf_i0_filters_items_name')"><span class="property-name">name</span></button>
             </h2>
         </div>
 
-        <div id="trunk_inventory_filters_items_name"
-             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_filters_items_name"
-             data-parent="#accordiontrunk_inventory_filters_items_name">
+        <div id="trunk_inventory_oneOf_i0_filters_items_name"
+             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_oneOf_i0_filters_items_name"
+             data-parent="#accordiontrunk_inventory_oneOf_i0_filters_items_name">
             <div class="card-body pl-5">
 
     <h4>Item Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
@@ -509,39 +566,39 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordiontrunk_inventory_bar">
+<div class="accordion" id="accordiontrunk_inventory_oneOf_i0_bar">
     <div class="card">
-        <div class="card-header" id="headingtrunk_inventory_bar">
+        <div class="card-header" id="headingtrunk_inventory_oneOf_i0_bar">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_bar"
-                        aria-expanded="" aria-controls="trunk_inventory_bar" onclick="setAnchor('#trunk_inventory_bar')"><span class="property-name">bar</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#trunk_inventory_oneOf_i0_bar"
+                        aria-expanded="" aria-controls="trunk_inventory_oneOf_i0_bar" onclick="setAnchor('#trunk_inventory_oneOf_i0_bar')"><span class="property-name">bar</span></button>
             </h2>
         </div>
 
-        <div id="trunk_inventory_bar"
-             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_bar"
-             data-parent="#accordiontrunk_inventory_bar">
+        <div id="trunk_inventory_oneOf_i0_bar"
+             class="collapse property-definition-div" aria-labelledby="headingtrunk_inventory_oneOf_i0_bar"
+             data-parent="#accordiontrunk_inventory_oneOf_i0_bar">
             <div class="card-body pl-5">
 
     <h4>Limiting Bar</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Limits the inventory to this many available slots.</p>
 </span>
 
-    <div class="one-of-value" id="trunk_inventory_bar_oneOf"><h2 class="handle">
+    <div class="one-of-value" id="trunk_inventory_oneOf_i0_bar_oneOf"><h2 class="handle">
   <label>One of</label>
-</h2><ul class="nav nav-tabs" id="tabstrunk_inventory_bar_oneOf_oneOf" role="tablist"><li class="nav-item">
+</h2><ul class="nav nav-tabs" id="tabstrunk_inventory_oneOf_i0_bar_oneOf_oneOf" role="tablist"><li class="nav-item">
             <a class="nav-link active oneOf-option"
-               id="trunk_inventory_bar_oneOf_i0" data-toggle="tab" href="#tab-pane_trunk_inventory_bar_oneOf_i0" role="tab"
-               onclick="setAnchor('#trunk_inventory_bar_oneOf_i0')"
+               id="trunk_inventory_oneOf_i0_bar_oneOf_i0" data-toggle="tab" href="#tab-pane_trunk_inventory_oneOf_i0_bar_oneOf_i0" role="tab"
+               onclick="setAnchor('#trunk_inventory_oneOf_i0_bar_oneOf_i0')"
             >uint16</a>
         </li><li class="nav-item">
             <a class="nav-link oneOf-option"
-               id="trunk_inventory_bar_oneOf_i1" data-toggle="tab" href="#tab-pane_trunk_inventory_bar_oneOf_i1" role="tab"
-               onclick="setAnchor('#trunk_inventory_bar_oneOf_i1')"
+               id="trunk_inventory_oneOf_i0_bar_oneOf_i1" data-toggle="tab" href="#tab-pane_trunk_inventory_oneOf_i0_bar_oneOf_i1" role="tab"
+               onclick="setAnchor('#trunk_inventory_oneOf_i0_bar_oneOf_i1')"
             >null</a>
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
-             id="tab-pane_trunk_inventory_bar_oneOf_i0" role="tabpanel">
+             id="tab-pane_trunk_inventory_oneOf_i0_bar_oneOf_i0" role="tabpanel">
             
 
     <h4>uint16</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
@@ -552,11 +609,11 @@
         
 
         
-        <p><span class="badge badge-light restriction numeric-restriction" id="trunk_inventory_bar_oneOf_i0_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>65536</code></span></p>
+        <p><span class="badge badge-light restriction numeric-restriction" id="trunk_inventory_oneOf_i0_bar_oneOf_i0_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>65536</code></span></p>
 
         
         </div><div class="tab-pane fade card-body "
-             id="tab-pane_trunk_inventory_bar_oneOf_i1" role="tabpanel">
+             id="tab-pane_trunk_inventory_oneOf_i0_bar_oneOf_i1" role="tabpanel">
             
 
     <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>
@@ -578,6 +635,25 @@
         </div>
     </div>
 </div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_trunk_inventory_oneOf_i1" role="tabpanel">
+            
+
+    <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>
+
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
             </div>
         </div>
     </div>

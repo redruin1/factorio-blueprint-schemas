@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/furnace.json",
+    "title": "Furnace",
+    "description": "A crafting machine that automatically determines it's recipe from it's inputs.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

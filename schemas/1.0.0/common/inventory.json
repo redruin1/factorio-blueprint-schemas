@@ -1,0 +1,17 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/common/inventory.json",
+    "title": "Inventory Object",
+    "description": "An object which holds any item slot filters defined for this inventory in addition to a limiting bar.",
+    "type": "object",
+    "properties": {
+        "filters": {
+            "title": "Inventory Filters",
+            "description": "What inventory filters this inventory should have at what slots.",
+            "type": "array",
+            "items": {"$ref": "item-filter.json"},
+            "default": []
+        },
+        "bar": {"$ref": "../../common/limiting-bar.json"}
+    }
+}

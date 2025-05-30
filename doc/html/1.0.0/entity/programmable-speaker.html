@@ -30,6 +30,11 @@
             <a class="nav-link allOf-option"
                id="allOf_i1" data-toggle="tab" href="#tab-pane_allOf_i1" role="tab"
                onclick="setAnchor('#allOf_i1')"
+            >Circuit Connectable</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="allOf_i2" data-toggle="tab" href="#tab-pane_allOf_i2" role="tab"
+               onclick="setAnchor('#allOf_i2')"
             >Circuit Condition</a>
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
@@ -416,6 +421,703 @@
              id="tab-pane_allOf_i1" role="tabpanel">
             
 
+    <h4>Circuit Connectable</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Allows this entity to have circuit connections. Also includes copper wire connections if they eminate from a power switch.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections"
+                        aria-expanded="" aria-controls="allOf_i1_connections" onclick="setAnchor('#allOf_i1_connections')"><span class="property-name">connections</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections"
+             data-parent="#accordionallOf_i1_connections">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_1">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_1">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_1"
+                        aria-expanded="" aria-controls="allOf_i1_connections_1" onclick="setAnchor('#allOf_i1_connections_1')"><span class="property-name">1</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_1"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_1"
+             data-parent="#accordionallOf_i1_connections_1">
+            <div class="card-body pl-5">
+
+    <h4>Circuit Wire Input</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Input node for circuit wires. This node is used if the entity only has one connection point.</p>
+</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_1_red">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_1_red">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_1_red"
+                        aria-expanded="" aria-controls="allOf_i1_connections_1_red" onclick="setAnchor('#allOf_i1_connections_1_red')"><span class="property-name">red</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_1_red"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_1_red"
+             data-parent="#accordionallOf_i1_connections_1_red">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: array</span><br/>
+
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="allOf_i1_connections_1_red_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_1_red_items_entity_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_1_red_items_entity_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_1_red_items_entity_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_1_red_items_entity_id" onclick="setAnchor('#allOf_i1_connections_1_red_items_entity_id')"><span class="property-name">entity_id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_1_red_items_entity_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_1_red_items_entity_id"
+             data-parent="#accordionallOf_i1_connections_1_red_items_entity_id">
+            <div class="card-body pl-5">
+
+    <h4>uint64</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>An unsigned 64-bit integer.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="allOf_i1_connections_1_red_items_entity_id_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>18446744073709551616</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_1_red_items_circuit_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_1_red_items_circuit_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_1_red_items_circuit_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_1_red_items_circuit_id" onclick="setAnchor('#allOf_i1_connections_1_red_items_circuit_id')"><span class="property-name">circuit_id</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_1_red_items_circuit_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_1_red_items_circuit_id"
+             data-parent="#accordionallOf_i1_connections_1_red_items_circuit_id">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of integer)</span><br/>
+<div class="enum-value" id="allOf_i1_connections_1_red_items_circuit_id_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">1</li><li class="list-group-item enum-item">2</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_1_green">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_1_green">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_1_green"
+                        aria-expanded="" aria-controls="allOf_i1_connections_1_green" onclick="setAnchor('#allOf_i1_connections_1_green')"><span class="property-name">green</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_1_green"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_1_green"
+             data-parent="#accordionallOf_i1_connections_1_green">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: array</span><br/>
+
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="allOf_i1_connections_1_green_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_1_green_items_entity_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_1_green_items_entity_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_1_green_items_entity_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_1_green_items_entity_id" onclick="setAnchor('#allOf_i1_connections_1_green_items_entity_id')"><span class="property-name">entity_id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_1_green_items_entity_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_1_green_items_entity_id"
+             data-parent="#accordionallOf_i1_connections_1_green_items_entity_id">
+            <div class="card-body pl-5">
+
+    <h4>uint64</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>An unsigned 64-bit integer.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="allOf_i1_connections_1_green_items_entity_id_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>18446744073709551616</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_1_green_items_circuit_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_1_green_items_circuit_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_1_green_items_circuit_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_1_green_items_circuit_id" onclick="setAnchor('#allOf_i1_connections_1_green_items_circuit_id')"><span class="property-name">circuit_id</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_1_green_items_circuit_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_1_green_items_circuit_id"
+             data-parent="#accordionallOf_i1_connections_1_green_items_circuit_id">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of integer)</span><br/>
+<div class="enum-value" id="allOf_i1_connections_1_green_items_circuit_id_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">1</li><li class="list-group-item enum-item">2</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_2">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_2">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_2"
+                        aria-expanded="" aria-controls="allOf_i1_connections_2" onclick="setAnchor('#allOf_i1_connections_2')"><span class="property-name">2</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_2"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_2"
+             data-parent="#accordionallOf_i1_connections_2">
+            <div class="card-body pl-5">
+
+    <h4>Circuit Wire Output</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Output node for circuit wires.</p>
+</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_2_red">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_2_red">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_2_red"
+                        aria-expanded="" aria-controls="allOf_i1_connections_2_red" onclick="setAnchor('#allOf_i1_connections_2_red')"><span class="property-name">red</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_2_red"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_2_red"
+             data-parent="#accordionallOf_i1_connections_2_red">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: array</span><br/>
+
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="allOf_i1_connections_2_red_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_2_red_items_entity_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_2_red_items_entity_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_2_red_items_entity_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_2_red_items_entity_id" onclick="setAnchor('#allOf_i1_connections_2_red_items_entity_id')"><span class="property-name">entity_id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_2_red_items_entity_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_2_red_items_entity_id"
+             data-parent="#accordionallOf_i1_connections_2_red_items_entity_id">
+            <div class="card-body pl-5">
+
+    <h4>uint64</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>An unsigned 64-bit integer.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="allOf_i1_connections_2_red_items_entity_id_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>18446744073709551616</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_2_red_items_circuit_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_2_red_items_circuit_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_2_red_items_circuit_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_2_red_items_circuit_id" onclick="setAnchor('#allOf_i1_connections_2_red_items_circuit_id')"><span class="property-name">circuit_id</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_2_red_items_circuit_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_2_red_items_circuit_id"
+             data-parent="#accordionallOf_i1_connections_2_red_items_circuit_id">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of integer)</span><br/>
+<div class="enum-value" id="allOf_i1_connections_2_red_items_circuit_id_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">1</li><li class="list-group-item enum-item">2</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_2_green">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_2_green">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_2_green"
+                        aria-expanded="" aria-controls="allOf_i1_connections_2_green" onclick="setAnchor('#allOf_i1_connections_2_green')"><span class="property-name">green</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_2_green"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_2_green"
+             data-parent="#accordionallOf_i1_connections_2_green">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: array</span><br/>
+
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="allOf_i1_connections_2_green_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_2_green_items_entity_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_2_green_items_entity_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_2_green_items_entity_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_2_green_items_entity_id" onclick="setAnchor('#allOf_i1_connections_2_green_items_entity_id')"><span class="property-name">entity_id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_2_green_items_entity_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_2_green_items_entity_id"
+             data-parent="#accordionallOf_i1_connections_2_green_items_entity_id">
+            <div class="card-body pl-5">
+
+    <h4>uint64</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>An unsigned 64-bit integer.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="allOf_i1_connections_2_green_items_entity_id_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>18446744073709551616</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_2_green_items_circuit_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_2_green_items_circuit_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_2_green_items_circuit_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_2_green_items_circuit_id" onclick="setAnchor('#allOf_i1_connections_2_green_items_circuit_id')"><span class="property-name">circuit_id</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_2_green_items_circuit_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_2_green_items_circuit_id"
+             data-parent="#accordionallOf_i1_connections_2_green_items_circuit_id">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of integer)</span><br/>
+<div class="enum-value" id="allOf_i1_connections_2_green_items_circuit_id_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">1</li><li class="list-group-item enum-item">2</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_Cu0">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_Cu0">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_Cu0"
+                        aria-expanded="" aria-controls="allOf_i1_connections_Cu0" onclick="setAnchor('#allOf_i1_connections_Cu0')"><span class="property-name">Cu0</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_Cu0"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_Cu0"
+             data-parent="#accordionallOf_i1_connections_Cu0">
+            <div class="card-body pl-5">
+
+    <h4>Copper Wire Input</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description"><p>Power wire inputs (only used with power switch). Regular power connections use the <code>neighbours</code> key.</p>
+</span>
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="allOf_i1_connections_Cu0_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_Cu0_items_entity_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_Cu0_items_entity_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_Cu0_items_entity_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_Cu0_items_entity_id" onclick="setAnchor('#allOf_i1_connections_Cu0_items_entity_id')"><span class="property-name">entity_id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_Cu0_items_entity_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_Cu0_items_entity_id"
+             data-parent="#accordionallOf_i1_connections_Cu0_items_entity_id">
+            <div class="card-body pl-5">
+
+    <h4>uint64</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>An unsigned 64-bit integer.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="allOf_i1_connections_Cu0_items_entity_id_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>18446744073709551616</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_Cu0_items_wire_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_Cu0_items_wire_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_Cu0_items_wire_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_Cu0_items_wire_id" onclick="setAnchor('#allOf_i1_connections_Cu0_items_wire_id')"><span class="property-name">wire_id</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_Cu0_items_wire_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_Cu0_items_wire_id"
+             data-parent="#accordionallOf_i1_connections_Cu0_items_wire_id">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of integer)</span><br/>
+<div class="enum-value" id="allOf_i1_connections_Cu0_items_wire_id_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">0</li><li class="list-group-item enum-item">1</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_Cu1">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_Cu1">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_Cu1"
+                        aria-expanded="" aria-controls="allOf_i1_connections_Cu1" onclick="setAnchor('#allOf_i1_connections_Cu1')"><span class="property-name">Cu1</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_Cu1"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_Cu1"
+             data-parent="#accordionallOf_i1_connections_Cu1">
+            <div class="card-body pl-5">
+
+    <h4>Copper Wire Input</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description"><p>Power wire outputs (only used with power switch). Regular power connections use the <code>neighbours</code> key.</p>
+</span>
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="allOf_i1_connections_Cu1_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionallOf_i1_connections_Cu1_items_entity_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_Cu1_items_entity_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_Cu1_items_entity_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_Cu1_items_entity_id" onclick="setAnchor('#allOf_i1_connections_Cu1_items_entity_id')"><span class="property-name">entity_id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_Cu1_items_entity_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_Cu1_items_entity_id"
+             data-parent="#accordionallOf_i1_connections_Cu1_items_entity_id">
+            <div class="card-body pl-5">
+
+    <h4>uint64</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>An unsigned 64-bit integer.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="allOf_i1_connections_Cu1_items_entity_id_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>18446744073709551616</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionallOf_i1_connections_Cu1_items_wire_id">
+    <div class="card">
+        <div class="card-header" id="headingallOf_i1_connections_Cu1_items_wire_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_connections_Cu1_items_wire_id"
+                        aria-expanded="" aria-controls="allOf_i1_connections_Cu1_items_wire_id" onclick="setAnchor('#allOf_i1_connections_Cu1_items_wire_id')"><span class="property-name">wire_id</span></button>
+            </h2>
+        </div>
+
+        <div id="allOf_i1_connections_Cu1_items_wire_id"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_connections_Cu1_items_wire_id"
+             data-parent="#accordionallOf_i1_connections_Cu1_items_wire_id">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: enum (of integer)</span><br/>
+<div class="enum-value" id="allOf_i1_connections_Cu1_items_wire_id_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">0</li><li class="list-group-item enum-item">1</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_allOf_i2" role="tabpanel">
+            
+
     <h4>Circuit Condition</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Allows the entity to configure when it should operate based on some circuit network condition.</p>
 </span>
@@ -427,18 +1129,18 @@
         
 
         
-<div class="accordion" id="accordionallOf_i1_control_behavior">
+<div class="accordion" id="accordionallOf_i2_control_behavior">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior">
+        <div class="card-header" id="headingallOf_i2_control_behavior">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior" onclick="setAnchor('#allOf_i1_control_behavior')"><span class="property-name">control_behavior</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior" onclick="setAnchor('#allOf_i2_control_behavior')"><span class="property-name">control_behavior</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior"
-             data-parent="#accordionallOf_i1_control_behavior">
+        <div id="allOf_i2_control_behavior"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior"
+             data-parent="#accordionallOf_i2_control_behavior">
             <div class="card-body pl-5">
 
     <span class="badge badge-dark value-type">Type: object</span><br/>
@@ -449,18 +1151,18 @@
         
 
         
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition')"><span class="property-name">circuit_condition</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition')"><span class="property-name">circuit_condition</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition">
+        <div id="allOf_i2_control_behavior_circuit_condition"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition">
             <div class="card-body pl-5">
 
     <h4>Condition</h4><span class="badge badge-dark value-type">Type: object</span><br/>
@@ -474,39 +1176,39 @@
         
 
         
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition_first_signal">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition_first_signal">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition_first_signal">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition_first_signal">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition_first_signal"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition_first_signal" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_first_signal')"><span class="property-name">first_signal</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition_first_signal"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition_first_signal" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_first_signal')"><span class="property-name">first_signal</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition_first_signal"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition_first_signal"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition_first_signal">
+        <div id="allOf_i2_control_behavior_circuit_condition_first_signal"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition_first_signal"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition_first_signal">
             <div class="card-body pl-5">
 
     <h4>First Signal</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: null</span><br/>
 <span class="description"><p>The leftmost signal in the condition.</p>
 </span>
 
-    <div class="one-of-value" id="allOf_i1_control_behavior_circuit_condition_first_signal_oneOf"><h2 class="handle">
+    <div class="one-of-value" id="allOf_i2_control_behavior_circuit_condition_first_signal_oneOf"><h2 class="handle">
   <label>One of</label>
-</h2><ul class="nav nav-tabs" id="tabsallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
+</h2><ul class="nav nav-tabs" id="tabsallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
             <a class="nav-link active oneOf-option"
-               id="allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0" role="tab"
-               onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0')"
+               id="allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0" role="tab"
+               onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0')"
             >Signal ID</a>
         </li><li class="nav-item">
             <a class="nav-link oneOf-option"
-               id="allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i1" role="tab"
-               onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i1')"
+               id="allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i1" role="tab"
+               onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i1')"
             >null</a>
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
-             id="tab-pane_allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0" role="tabpanel">
+             id="tab-pane_allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0" role="tabpanel">
             
 
     <h4>Signal ID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
@@ -520,18 +1222,18 @@
         
 
         
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_name" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_name" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
+        <div id="allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_name"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_name">
             <div class="card-body pl-5">
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
@@ -546,23 +1248,23 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
+        <div id="allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type">
             <div class="card-body pl-5">
 
     <span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
 <span class="description"><p>The category of the signal. There can be multiple signals with the same name but differing types.</p>
-</span><div class="enum-value" id="allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i0_type_enum">
+</span><div class="enum-value" id="allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i0_type_enum">
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"virtual"</li></ul>
             </div>
@@ -577,7 +1279,7 @@
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
-             id="tab-pane_allOf_i1_control_behavior_circuit_condition_first_signal_oneOf_i1" role="tabpanel">
+             id="tab-pane_allOf_i2_control_behavior_circuit_condition_first_signal_oneOf_i1" role="tabpanel">
             
 
     <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>
@@ -599,25 +1301,25 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition_comparator">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition_comparator">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition_comparator">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition_comparator">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition_comparator"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition_comparator" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_comparator')"><span class="property-name">comparator</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition_comparator"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition_comparator" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_comparator')"><span class="property-name">comparator</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition_comparator"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition_comparator"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition_comparator">
+        <div id="allOf_i2_control_behavior_circuit_condition_comparator"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition_comparator"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition_comparator">
             <div class="card-body pl-5">
 
     <h4>Comparator</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: ">"</span><br/>
 <span class="description"><p>In/equality operation to use in conditions and item request filters.</p>
 </span>
 
-    <div class="enum-value" id="allOf_i1_control_behavior_circuit_condition_comparator_enum">
+    <div class="enum-value" id="allOf_i2_control_behavior_circuit_condition_comparator_enum">
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
             </div>
@@ -631,18 +1333,18 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition_constant">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition_constant">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition_constant">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition_constant">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition_constant"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition_constant" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_constant')"><span class="property-name">constant</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition_constant"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition_constant" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_constant')"><span class="property-name">constant</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition_constant"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition_constant"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition_constant">
+        <div id="allOf_i2_control_behavior_circuit_condition_constant"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition_constant"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition_constant">
             <div class="card-body pl-5">
 
     <h4>Constant</h4><span class="badge badge-dark value-type">Type: integer</span> <span class="badge badge-success default-value">Default: 0</span><br/>
@@ -653,46 +1355,46 @@
         
 
         
-        <p><span class="badge badge-light restriction numeric-restriction" id="allOf_i1_control_behavior_circuit_condition_constant_number">Value must be greater or equal to <code>-2147483648</code> and strictly lesser than <code>2147483648</code></span></p>
+        <p><span class="badge badge-light restriction numeric-restriction" id="allOf_i2_control_behavior_circuit_condition_constant_number">Value must be greater or equal to <code>-2147483648</code> and strictly lesser than <code>2147483648</code></span></p>
 
         
             </div>
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition_second_signal">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition_second_signal">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition_second_signal">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition_second_signal">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition_second_signal"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition_second_signal" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_second_signal')"><span class="property-name">second_signal</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition_second_signal"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition_second_signal" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_second_signal')"><span class="property-name">second_signal</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition_second_signal"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition_second_signal"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition_second_signal">
+        <div id="allOf_i2_control_behavior_circuit_condition_second_signal"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition_second_signal"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition_second_signal">
             <div class="card-body pl-5">
 
     <h4>Second Signal</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: null</span><br/>
 <span class="description"><p>The rightmost signal of the condition. Takes precedence over 'constant', if both happen to be specified.</p>
 </span>
 
-    <div class="one-of-value" id="allOf_i1_control_behavior_circuit_condition_second_signal_oneOf"><h2 class="handle">
+    <div class="one-of-value" id="allOf_i2_control_behavior_circuit_condition_second_signal_oneOf"><h2 class="handle">
   <label>One of</label>
-</h2><ul class="nav nav-tabs" id="tabsallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
+</h2><ul class="nav nav-tabs" id="tabsallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_oneOf" role="tablist"><li class="nav-item">
             <a class="nav-link active oneOf-option"
-               id="allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0" role="tab"
-               onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0')"
+               id="allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0" data-toggle="tab" href="#tab-pane_allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0" role="tab"
+               onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0')"
             >Signal ID</a>
         </li><li class="nav-item">
             <a class="nav-link oneOf-option"
-               id="allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i1" role="tab"
-               onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i1')"
+               id="allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i1" data-toggle="tab" href="#tab-pane_allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i1" role="tab"
+               onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i1')"
             >null</a>
         </li></ul>
 <div class="tab-content card"><div class="tab-pane fade card-body active show"
-             id="tab-pane_allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0" role="tabpanel">
+             id="tab-pane_allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0" role="tabpanel">
             
 
     <h4>Signal ID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
@@ -706,18 +1408,18 @@
         
 
         
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_name" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_name" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_name')"><span class="property-name">name</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
+        <div id="allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_name"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_name">
             <div class="card-body pl-5">
 
     <span class="badge badge-dark value-type">Type: string</span><br/>
@@ -732,23 +1434,23 @@
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
+<div class="accordion" id="accordionallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
     <div class="card">
-        <div class="card-header" id="headingallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
+        <div class="card-header" id="headingallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
-                        aria-expanded="" aria-controls="allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type" onclick="setAnchor('#allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
+                        aria-expanded="" aria-controls="allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type" onclick="setAnchor('#allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type')"><span class="property-name">type</span></button>
             </h2>
         </div>
 
-        <div id="allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
-             class="collapse property-definition-div" aria-labelledby="headingallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
-             data-parent="#accordionallOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
+        <div id="allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
+             class="collapse property-definition-div" aria-labelledby="headingallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type"
+             data-parent="#accordionallOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type">
             <div class="card-body pl-5">
 
     <span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "item"</span><br/>
 <span class="description"><p>The category of the signal. There can be multiple signals with the same name but differing types.</p>
-</span><div class="enum-value" id="allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i0_type_enum">
+</span><div class="enum-value" id="allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i0_type_enum">
             <h4>Must be one of:</h4>
             <ul class="list-group"><li class="list-group-item enum-item">"item"</li><li class="list-group-item enum-item">"fluid"</li><li class="list-group-item enum-item">"virtual"</li></ul>
             </div>
@@ -763,7 +1465,7 @@
     </div>
 </div>
         </div><div class="tab-pane fade card-body "
-             id="tab-pane_allOf_i1_control_behavior_circuit_condition_second_signal_oneOf_i1" role="tabpanel">
+             id="tab-pane_allOf_i2_control_behavior_circuit_condition_second_signal_oneOf_i1" role="tabpanel">
             
 
     <h4>null</h4><span class="badge badge-dark value-type">Type: null</span><br/>

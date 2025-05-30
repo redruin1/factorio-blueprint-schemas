@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/generator.json",
+    "title": "Generator",
+    "description": "An entity that consumes a fluid and produces electricity.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

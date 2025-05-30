@@ -1,0 +1,10 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/fluid-wagon.json",
+    "title": "Fluid Wagon",
+    "description": "A train car that can store fluids.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/orientation.json"}
+    ]
+}

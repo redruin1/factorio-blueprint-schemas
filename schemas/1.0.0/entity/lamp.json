@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/lamp.json",
+    "title": "Lamp",
+    "description": "An entity which illuminates a radius around it.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "color": {
+            "title": "Static Color",
+            "description": "The fixed color of the lamp to emit. Ignored if `control_behavior.use_colors` is `true`.",
+            "$ref": "../../common/color.json",
+            "default": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            }
+        },
+        "always_on": {
+            "title": "Always On",
+            "description": "Whether or not this lamp is always on. If not, it will shut off during the day.",
+            "type": "boolean",
+            "default": false
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "use_colors": {
+                    "title": "Use Colors",
+                    "description": "Whether or not this entity should use circuit signals to determine what color it should emit. Does nothing if not connected to a circuit network.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        }
+    }
+}

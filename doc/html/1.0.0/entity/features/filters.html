@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="schema_doc.css">
+    <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+    <script src="schema_doc.min.js"></script>
+    <meta charset="utf-8"/>
+        
+    
+    <title>Filters</title>
+</head>
+<body onload="anchorOnLoad();" id="root">
+
+     <h1>Filters</h1><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Allows this entity to filter items, such as on Inserters and Loaders.</p>
+</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionuse_filters">
+    <div class="card">
+        <div class="card-header" id="headinguse_filters">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#use_filters"
+                        aria-expanded="" aria-controls="use_filters" onclick="setAnchor('#use_filters')"><span class="property-name">use_filters</span></button>
+            </h2>
+        </div>
+
+        <div id="use_filters"
+             class="collapse property-definition-div" aria-labelledby="headinguse_filters"
+             data-parent="#accordionuse_filters">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span><br/>
+<span class="description"><p>Whether or not this entity should use item filters.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionfilter_mode">
+    <div class="card">
+        <div class="card-header" id="headingfilter_mode">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#filter_mode"
+                        aria-expanded="" aria-controls="filter_mode" onclick="setAnchor('#filter_mode')"><span class="property-name">filter_mode</span></button>
+            </h2>
+        </div>
+
+        <div id="filter_mode"
+             class="collapse property-definition-div" aria-labelledby="headingfilter_mode"
+             data-parent="#accordionfilter_mode">
+            <div class="card-body pl-5">
+
+    <h4>Filter Mode</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "whitelist"</span><br/>
+<span class="description"><p>In what manner should the <code>filters</code> defined for this entity apply.</p>
+</span><div class="enum-value" id="filter_mode_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"whitelist"</li><li class="list-group-item enum-item">"blacklist"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionfilters">
+    <div class="card">
+        <div class="card-header" id="headingfilters">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#filters"
+                        aria-expanded="" aria-controls="filters" onclick="setAnchor('#filters')"><span class="property-name">filters</span></button>
+            </h2>
+        </div>
+
+        <div id="filters"
+             class="collapse property-definition-div" aria-labelledby="headingfilters"
+             data-parent="#accordionfilters">
+            <div class="card-body pl-5">
+
+    <h4>Item Filters</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description"><p>A list of items that this entity should filter.</p>
+</span>
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="filters_items">
+            
+
+    <h4>Item Filter</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object representing a restricted item slot.</p>
+</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="filters_items_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;iron-ore&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div><div id="filters_items_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copper-ore&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="accordion" id="accordionfilters_items_index">
+    <div class="card">
+        <div class="card-header" id="headingfilters_items_index">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#filters_items_index"
+                        aria-expanded="" aria-controls="filters_items_index" onclick="setAnchor('#filters_items_index')"><span class="property-name">index</span></button>
+            </h2>
+        </div>
+
+        <div id="filters_items_index"
+             class="collapse property-definition-div" aria-labelledby="headingfilters_items_index"
+             data-parent="#accordionfilters_items_index">
+            <div class="card-body pl-5">
+
+    <h4>Index</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>Slot at which this filter occupies, 1-indexed.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="filters_items_index_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionfilters_items_name">
+    <div class="card">
+        <div class="card-header" id="headingfilters_items_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#filters_items_name"
+                        aria-expanded="" aria-controls="filters_items_name" onclick="setAnchor('#filters_items_name')"><span class="property-name">name</span></button>
+            </h2>
+        </div>
+
+        <div id="filters_items_name"
+             class="collapse property-definition-div" aria-labelledby="headingfilters_items_name"
+             data-parent="#accordionfilters_items_name">
+            <div class="card-body pl-5">
+
+    <h4>Item Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description"><p>Name of a valid Factorio item.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a></p>
+    </footer></body>
+</html>

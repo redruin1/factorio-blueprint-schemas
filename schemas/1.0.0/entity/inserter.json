@@ -1,0 +1,89 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/inserter.json",
+    "title": "Inserter",
+    "description": "A machine with a swing arm that can move items in and out of a variety of different entities.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/filters.json"},
+        {"$ref": "features/circuit-connectable.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"},
+        {"$ref": "features/circuit-set-filters.json"}
+    ],
+    "$defs": {
+        "hand-position": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "maxItems": 2
+        }
+    },
+    "type": "object",
+    "properties": {
+        "override_stack_size": {
+            "title": "Override Stack Size",
+            "description": "A custom stack size to give this inserter. Overwritten by the circuit network if `control_behavior.circuit_set_stack_size` is `true`.",
+            "oneOf": [
+                {"$ref": "../../common/uint8.json"},
+                {"title": "null", "type": "null"}
+            ]
+        },
+        "pickup_position": {
+            "title": "Pickup Position",
+            "description": "Custom pickup position of this inserter. Only has an effect if [`InserterPrototype.allow_custom_vectors`](https://lua-api.factorio.com/latest/prototypes/InserterPrototype.html#allow_custom_vectors) is `true`.",
+            "oneOf": [
+                {"$ref": "#/$defs/hand-position"},
+                {"title": "null", "type": "null"}
+            ]
+        },
+        "drop_position": {
+            "title": "Drop Position",
+            "description": "Custom dropoff position of this inserter. Only has an effect if [`InserterPrototype.allow_custom_vectors`](https://lua-api.factorio.com/latest/prototypes/InserterPrototype.html#allow_custom_vectors) is `true`.",
+            "oneOf": [
+                {"$ref": "#/$defs/hand-position"},
+                {"title": "null", "type": "null"}
+            ]
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_read_hand_contents": {
+                    "title": "Read Contents",
+                    "description": "Whether or not to broadcast the current items in the hand to a connected circuit network.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "circuit_read_hand_mode": {
+                    "title": "Read Hand Mode",
+                    "description": "In what manner should the contents of the hand be broadcast to a connected circuit network. Only has an effect if `circuit_read_hand_contents` is `true`.",
+                    "oneOf": [
+                        {
+                            "title": "Pulse",
+                            "const": 0
+                        },
+                        {
+                            "title": "Hold",
+                            "const": 1
+                        }
+                    ],
+                    "default": 0
+                },
+                "circuit_set_stack_size": {
+                    "title": "Circuit Set Stack Size",
+                    "description": "Whether or not this inserter should set it's stack size via a connected circuit network. What signal it uses to determine the stack size is defined by `stack_control_input_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "stack_control_input_signal": {
+                    "title": "Stack Control Input Signal",
+                    "description": "What signal should be used when determining the dynamic stack size of this inserter. Only has an effect if `circuit_set_stack_size` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-s", "type": "virtual"}
+                }
+            }
+        }
+    }
+}

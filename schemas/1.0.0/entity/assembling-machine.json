@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/assembling-machine.json",
+    "title": "Assembling Machine",
+    "description": "An entity that can convert items and fluids into other items and fluids.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "recipe": {
+            "title": "Recipe",
+            "description": "The recipe that this entity is configured to perform.",
+            "oneOf": [
+                {"title": "Recipe Name", "type": "string"},
+                {"title": "null", "type": "null"}
+            ]
+        }
+    }
+}

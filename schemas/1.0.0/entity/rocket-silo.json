@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/rocket-silo.json",
+    "title": "Rocket Silo",
+    "description": "An entity which automatically charts and reveals neighbouring chunks.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "auto_launch": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/rail-chain-signal.json",
+    "title": "Rail Chain Signal",
+    "description": "A rail signal that looks at neighbouring rail signals to determine it's state.",
+    "allOf": [
+        {"$ref": "rail-signal.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_read_signal": {
+                    "description": "Whether or not the signal's current state should be broadcast to a connected circuit network as a unit signal. Exactly what signals are output is controlled by `red_output_signal`, `orange_output_signal`, `green_output_signal`, and `blue_output_signal`."
+                },
+                "blue_output_signal": {
+                    "title": "Blue Output Signal",
+                    "description": "The signal to broadcast when this signal's state is blue.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-blue", "type": "virtual"}
+                }
+            }
+        }
+    }
+}

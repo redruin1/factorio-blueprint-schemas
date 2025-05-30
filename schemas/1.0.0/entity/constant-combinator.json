@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/constant-combinator.json",
+    "title": "Constant Combinator",
+    "description": "A combinator broadcasts static signals to a connected circuit network.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "properties": {
+                "is_on": {
+                    "title": "Enabled",
+                    "description": "Master enable/disable switch for the entire constant combinator.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "filters": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "index": {
+                                "title": "Index",
+                                "description": "GUI index of the filter, 1-indexed.",
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 1000
+                            },
+                            "signal": {"$ref": "../common/signal-id.json"},
+                            "count": {
+                                "title": "Count",
+                                "description": "How much of this item to request, or what signal value to output.",
+                                "$ref": "../../common/int32.json"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

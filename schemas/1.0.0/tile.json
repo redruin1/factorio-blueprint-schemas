@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity.json",
-    "title": "Entity",
-    "description": "A schema which contains the keys that all entities share.",
+    "$id": "1.0.0/tile.json",
+    "title": "Tile",
+    "description": "A schema which contains the keys that all tiles share.",
     "type": "object",
     "properties": {
         "name": {

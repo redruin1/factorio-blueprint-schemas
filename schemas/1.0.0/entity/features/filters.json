@@ -1,0 +1,34 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/features/filters.json",
+    "title": "Filters",
+    "description": "Allows this entity to filter items, such as on Inserters and Loaders.",
+    "$defs": {
+        "item-filter": {}
+    },
+    "type": "object",
+    "properties": {
+        "use_filters": {
+            "description": "Whether or not this entity should use item filters.",
+            "type": "boolean",
+            "default": false
+        },
+        "filter_mode": {
+            "title": "Filter Mode",
+            "description": "In what manner should the `filters` defined for this entity apply.",
+            "enum": [
+                "whitelist",
+                "blacklist"
+            ],
+            "default": "whitelist"
+        },
+        "filters": {
+            "title": "Item Filters",
+            "description": "A list of items that this entity should filter.",
+            "type": "array",
+            "items": {
+                "$ref": "../../common/item-filter.json"
+            }
+        }
+    }
+}

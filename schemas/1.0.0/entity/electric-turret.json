@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/electric-turret.json",
+    "title": "Electric Turret",
+    "description": "A turret that uses electricity for ammunition.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

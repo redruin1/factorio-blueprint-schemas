@@ -1,0 +1,74 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/train-stop.json",
+    "title": "Train Stop",
+    "description": "An entity representing a node on a Locomotive's schedule.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-connectable.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "color": {
+            "$ref": "../../common/color.json"
+        },
+        "station": {
+            "description": "The human-readable name of the station.",
+            "type": "string",
+            "default": ""
+        },
+        "manual_trains_limit": {
+            "description": "Static number of trains that this train stop can admit. If omitted, this train stop behaves as if it has no train limit. This value is ignored if `control_behavior.set_trains_limit` is `true`.",
+            "$ref": "../../common/uint32.json",
+            "default": null
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "send_to_train": {
+                    "description": "Whether or not to send the contents of the connected circuit network to the train so it can use it to determine it's schedule.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "set_trains_limit": {
+                    "description": "Whether or not to dynamically set the train limit of this stop via a circuit signal. What signal to use is determined by `trains_limit_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "trains_limit_signal": {
+                    "description": "What signal set the train limit with. Only has an effect if `set_trains_limit` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-L", "type": "virtual"}
+                },
+                "read_from_train": {
+                    "description": "Whether or not to broadcast the contents of the train currently stopped at this station.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "read_stopped_train": {
+                    "description": "Whether or not to output the unique ID of the train currently stopped at this station. What signal is output is determined by `train_stopped_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "train_stopped_signal": {
+                    "description": "What signal to output the currently stopped train's ID on. Only has an effect if `read_stopped_train` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-T", "type": "virtual"}
+                },
+                "read_trains_count": {
+                    "description": "Whether or not to broadcast the total number of trains scheduled to arrive at this stop. What signal is output is determined by `trains_count_signal`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "trains_count_signal": {
+                    "description": "What signal to output the current number of arriving trains on. Only has an effect if `read_trains_count` is `true`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-C", "type": "virtual"}
+                }
+            }
+        }
+    }
+}

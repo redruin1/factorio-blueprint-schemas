@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/features/power-connectable.json",
+    "title": "Power Connectable",
+    "description": "Allows this entity to have power connections.",
+    "properties": {
+        "neighbours": {
+            "title": "Power Neighbours",
+            "description": "List of other `entity_number`s connected to this entity with power connections.",
+            "type": "array",
+            "items": {
+                "$ref": "../../../common/uint64.json"
+            }
+        }
+    }
+}

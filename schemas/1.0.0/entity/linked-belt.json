@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/linked-belt.json",
+    "title": "Linked Belt",
+    "description": "A belt which can teleport items across space or between surfaces.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

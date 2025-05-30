@@ -1,0 +1,10 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/simple-entity-with-owner.json",
+    "title": "Simple Entity With Owner",
+    "description": "A simple entity which has an owner.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/visual-variation.json"}
+    ]
+}

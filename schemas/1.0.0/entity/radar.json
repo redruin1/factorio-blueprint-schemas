@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/radar.json",
+    "title": "Radar",
+    "description": "An entity which automatically charts and reveals neighbouring chunks.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

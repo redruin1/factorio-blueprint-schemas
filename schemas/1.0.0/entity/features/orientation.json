@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/features/orientation.json",
+    "title": "Orientation",
+    "description": "Allows this entity to specify an orientation, which is similar to direction but along a continuous range instead of a discrete one. Used by RollingStock and certain vehicles.",
+    "type": "object",
+    "properties": {
+        "orientation": {
+            "title": "Orientation",
+            "description": "A number in the range [0.0, 1.0] representing the direction this entity is facing. Any value specified out of this range is modulo'd back into this range.",
+            "type": "number",
+            "default": 0.0
+        }
+    }
+}
