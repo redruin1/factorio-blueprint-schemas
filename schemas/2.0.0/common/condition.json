@@ -15,7 +15,10 @@
         "constant": {
             "title": "Constant",
             "description": "A constant to compare against, always lying in the rightmost slot. This value is ignored if 'second_signal' is also present.",
-            "$ref": "../../common/int32.json",
+            "oneOf": [
+                {"$ref": "../../common/int32.json"},
+                {"title": "null", "type": "null"}
+            ],
             "default": 0
         },
         "second_signal": {

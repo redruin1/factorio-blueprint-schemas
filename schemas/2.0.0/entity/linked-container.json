@@ -11,7 +11,7 @@
         "link_id": {
             "title": "Link ID",
             "description": "A unique number which defines an abstract inventory location that multiple chests can access simultaneously.",
-            "type": "../../common/uint32.json",
+            "$ref": "../../common/uint32.json",
             "default": 0
         }
     }
