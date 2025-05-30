@@ -3,6 +3,21 @@
     "$id": "2.0.0/deconstruction-planner.json",
     "title": "Deconstruction Planner",
     "description": "A object that allows you to configure what entities/tiles to deconstruct.",
+    "$defs": {
+        "filter-mode": {
+            "oneOf": [
+                {
+                    "title": "Whitelist",
+                    "const": 0
+                },
+                {
+                    "title": "Blacklist",
+                    "const": 1
+                }
+            ],
+            "default": 0
+        }
+    },
     "type": "object",
     "properties": {
         "index": {
@@ -12,6 +27,145 @@
                 {"$ref": "../common/uint16.json"},
                 {"title": "Null", "type": "null"}
             ]
+        },
+        "deconstruction_planner": {
+            "title": "Deconstruction Planner Object",
+            "description": "Main object of the blueprint, which actually contains the majority of its keys.",
+            "type": "object",
+            "properties": {
+                "item": {
+                    "title": "Item",
+                    "description": "The name of the item associated with this blueprintable.",
+                    "const": "deconstruction-planner"
+                },
+                "label": {
+                    "title": "Label",
+                    "description": "The player-given title of this deconstruction planner. Can be specified with rich text colors and icons. If omitted or specified as an empty string, then the planner is given the default name 'Deconstruction Planner'.",
+                    "type": "string",
+                    "default": ""
+                },
+                "label_color": {
+                    "title": "Label Color",
+                    "description": "The color of the label. If omitted, this color defaults to a special hybrid color, where it is white in your inventory and black when being placed. Distinct from color modifiers applied to `label` using rich text, possibly deprecated.",
+                    "$ref": "../common/color.json"
+                },
+                "settings": {
+                    "title": "Additional Settings",
+                    "description": "An object which holds the deconstruction filters, in addition to other metadata.",
+                    "type": "object",
+                    "properties": {
+                        "description": {
+                            "title": "Description",
+                            "description": "The player-given description of this deconstruction planner. Can be specified with rich text colors and icons.",
+                            "type": "string",
+                            "default": ""
+                        },
+                        "icons": {
+                            "title": "Icons",
+                            "description": "The list of icons to display over the deconstruction planner item, with a maximum of 4 icons total.",
+                            "type": "array",
+                            "items": {
+                                "$ref": "common/icon.json"
+                            },
+                            "maxItems": 4
+                        },
+                        "entity_filter_mode": {
+                            "title": "Entity Filter Mode",
+                            "description": "In what manner should entities be filtered when using this deconstruction planner.",
+                            "$ref": "#/$defs/filter-mode"
+                        },
+                        "entity_filters": {
+                            "title": "Entity Filters",
+                            "description": "Actual entities that should be filtered or ignored, depending on `entity_filter_mode`.",
+                            "type": "array",
+                            "items": {
+                                "title": "Entity Filter",
+                                "type": "object",
+                                "properties": {
+                                    "index": {
+                                        "title": "Index",
+                                        "description": "Index of the filter in this entity's GUI.",
+                                        "$ref": "../common/uint64.json"
+                                    },
+                                    "name": {
+                                        "title": "Name",
+                                        "description": "Name of a valid Factorio entity.",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["index", "name"]
+                            },
+                            "maxItems": 30
+                        },
+                        "trees_and_rocks_only": {
+                            "title": "Trees And Rocks Only",
+                            "description": "Whether or not this deconstruction planner will only consider trees/rocks for deconstruction. Ignores all other configuration if `true`.",
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "tile_filter_mode": {
+                            "title": "Tile Filter Mode",
+                            "description": "In what manner should tiles be filtered when using this deconstruction planner.",
+                            "$ref": "#/$defs/filter-mode"
+                        },
+                        "tile_filters": {
+                            "title": "Tile Filters",
+                            "description": "Actual tiles that should be filtered or ignored, depending on `tile_filter_mode`.",
+                            "type": "array",
+                            "items": {
+                                "title": "Tile Filter",
+                                "type": "object",
+                                "properties": {
+                                    "index": {
+                                        "title": "Index",
+                                        "description": "Index of the filter in this entity's GUI.",
+                                        "$ref": "../common/uint64.json"
+                                    },
+                                    "name": {
+                                        "title": "Name",
+                                        "description": "Name of a valid Factorio tile.",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["index", "name"]
+                            },
+                            "maxItems": 30
+                        },
+                        "tile_selection_mode": {
+                            "title": "Tile Selection Mode",
+                            "description": "In what manner this Deconstruction Planner should select tiles.",
+                            "oneOf": [
+                                {
+                                    "title": "Normal",
+                                    "description": "Only select tiles for deconstruction if there are no entities in the selection area.",
+                                    "const": 0
+                                },
+                                {
+                                    "title": "Always",
+                                    "description": "Always select all tiles within the selection bounds.",
+                                    "const": 1
+                                },
+                                {
+                                    "title": "Never",
+                                    "description": "Never select any tiles within the selection bounds.",
+                                    "const": 2
+                                },
+                                {
+                                    "title": "Only",
+                                    "description": "Only select tiles within the selection bounds, ignoring entities.",
+                                    "const": 3
+                                }
+                            ],
+                            "default": 0
+                        }
+                    }
+                },
+                "version": {
+                    "title": "Version",
+                    "description": "The version of the game associated with this blueprint string. Encoded as four bytes, where each byte corresponds to a semantic version number.",
+                    "$ref": "../common/uint64.json"
+                }
+            }
         }
     }
 }

@@ -3,6 +3,63 @@
     "$id": "2.0.0/upgrade-planner.json",
     "title": "Upgrade Planner",
     "description": "A object that allows you to configure what entities/tiles to upgrade/downgrade.",
+    "$defs": {
+        "mapper-id-name": {
+            "title": "Name",
+            "description": "Name of a valid Factorio entity/item.",
+            "type": "string"
+        },
+        "mapper-id-type": {
+            "title": "Type",
+            "description": "Either 'entity' or 'item'.",
+            "enum": ["entity", "item"]
+        },
+        "from-mapper-id": {
+            "title": "From Mapper ID",
+            "type": "object",
+            "properties": {
+                "name": {"$ref": "#/$defs/mapper-id-name"},
+                "type": {"$ref": "#/$defs/mapper-id-type"}
+            },
+            "$ref": "common/quality-filter.json"
+        },
+        "to-mapper-id": {
+            "title": "From Mapper ID",
+            "type": "object",
+            "properties": {
+                "name": {"$ref": "#/$defs/mapper-id-name"},
+                "type": {"$ref": "#/$defs/mapper-id-type"},
+                "quality": {"$ref": "common/quality-name.json"}
+            }
+        },
+        "mapper": {
+            "title": "Mapper",
+            "type": "object",
+            "properties": {
+                "index": {
+                    "title": "Index",
+                    "description": "Index of this particular mapper pair in the upgrade planner GUI, 1-indexed.",
+                    "$ref": "../common/uint64.json"
+                },
+                "from": {
+                    "title": "From",
+                    "description": "Entity/item being converted from.",
+                    "oneOf": [
+                        {"$ref": "#/$defs/from-mapper-id"},
+                        {"title": "null", "type": "null"}
+                    ]
+                },
+                "to": {
+                    "title": "To",
+                    "description": "Entity/item being converted to.",
+                    "oneOf": [
+                        {"$ref": "#/$defs/to-mapper-id"},
+                        {"title": "null", "type": "null"}
+                    ]
+                }
+            }
+        }
+    },
     "type": "object",
     "properties": {
         "index": {
@@ -12,6 +69,63 @@
                 {"$ref": "../common/uint16.json"},
                 {"title": "Null", "type": "null"}
             ]
+        },
+        "upgrade_planner": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "title": "Item",
+                    "description": "The name of the item associated with this blueprintable.",
+                    "const": "blueprint"
+                },
+                "label": {
+                    "title": "Label",
+                    "description": "The player-given title of this upgrade planner. Can be specified with rich text colors and icons. If omitted or specified as an empty string, then the planner is given the default name 'Upgrade Planner'.",
+                    "type": "string",
+                    "default": ""
+                },
+                "label_color": {
+                    "title": "Label Color",
+                    "description": "The color of the label. If omitted, this color defaults to a special hybrid color, where it is white in your inventory and black when being placed. Distinct from color modifiers applied to `label` using rich text, possibly deprecated.",
+                    "$ref": "../common/color.json"
+                },
+                "settings": {
+                    "title": "Additional Settings",
+                    "description": "An object which holds the upgrade mappings, in addition to other metadata.",
+                    "type": "object",
+                    "properties": {
+                        "description": {
+                            "title": "Description",
+                            "description": "The player-given description of this upgrade planner. Can be specified with rich text colors and icons.",
+                            "type": "string",
+                            "default": ""
+                        },
+                        "icons": {
+                            "title": "Icons",
+                            "description": "The list of icons to display over the upgrade planner item, with a maximum of 4 icons total.",
+                            "type": "array",
+                            "items": {
+                                "$ref": "common/icon.json"
+                            },
+                            "maxItems": 4
+                        },
+                        "mappers": {
+                            "title": "Mappers",
+                            "description": "A list of mappings from old entities/items to new entities/items.",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/mapper"
+                            },
+                            "maxItems": 1000
+                        }
+                    }
+                },
+                "version": {
+                    "title": "Version",
+                    "description": "The version of the game associated with this blueprint string. Encoded as four bytes, where each byte corresponds to a semantic version number.",
+                    "$ref": "../common/uint64.json"
+                }
+            }
         }
     }
 }
