@@ -68,7 +68,7 @@
                     "title": "Show On Map",
                     "description": "Whether or not the displayed alert should appear on the map view, the icon being displayed as specified by `icon_signal_id`. Only has an effect if `show_alert` is `true`.",
                     "type": "boolean",
-                    "default": false
+                    "default": true
                 },
                 "alert_message": {
                     "title": "Alert Message",
