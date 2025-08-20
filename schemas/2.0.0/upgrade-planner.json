@@ -21,7 +21,9 @@
                 "name": {"$ref": "#/$defs/mapper-id-name"},
                 "type": {"$ref": "#/$defs/mapper-id-type"}
             },
-            "$ref": "common/quality-filter.json"
+            "allOf": [
+                {"$ref": "common/quality-filter.json"}
+            ]
         },
         "to-mapper-id": {
             "title": "From Mapper ID",
