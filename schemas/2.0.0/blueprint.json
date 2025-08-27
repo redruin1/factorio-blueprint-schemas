@@ -59,7 +59,7 @@
 
             "compare-type": {
                 "$comment": "(Re)define compare type with a default of 'and'",
-                "$ref": "../common/compare-type.json",
+                "allOf": [{"$ref": "../common/compare-type.json"}],
                 "default": "and"
             },
             "station": {
@@ -809,6 +809,7 @@
                             {"$ref": "entity/train-stop.json"},
                             {"$ref": "entity/transport-belt.json"},
                             {"$ref": "entity/underground-belt.json"},
+                            {"$ref": "entity/valve.json"},
                             {"$ref": "entity/wall.json"}
                         ]
                     },
