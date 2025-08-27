@@ -3,8 +3,10 @@
     "$id": "2.0.0/common/item-filter.json",
     "title": "Item Filter",
     "description": "An object representing a restricted item slot.",
+    "allOf": [
+        {"$ref": "quality-filter.json"}
+    ],
     "type": "object",
-    "$ref": "quality-filter.json",
     "properties": {
         "index": {
             "title": "Index",

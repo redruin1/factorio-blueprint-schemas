@@ -125,7 +125,7 @@
                 "title": "Fuel (Any Locomotives)",
                 "properties": {
                     "type": {"const": "fuel_item_count_any"},
-                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"}
+                    "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
                     "condition": {"$ref": "common/condition.json"}
                 },
                 "required": ["type", "compare_type"]

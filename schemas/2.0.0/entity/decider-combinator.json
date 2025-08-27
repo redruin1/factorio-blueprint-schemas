@@ -10,7 +10,10 @@
     "$defs": {
         "decider-condition": {
             "title": "Decider Condition",
-            "$ref": "../common/condition.json",
+            "allOf": [
+                {"$ref": "../common/condition.json"}
+            ],
+            "type": "object",
             "properties": {
                 "first_signal_networks": {
                     "title": "First Signal Networks",
