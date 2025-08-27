@@ -54,6 +54,82 @@
                 }
             ]
         },
+        "id-parameter": {
+            "title": "ID Parameter",
+            "description": "A parameter that replaces a signal ID in the blueprint.",
+            "type": "object",
+            "properties": {
+                "type": {"const": "id"},
+                "name": {
+                    "title": "Parameter Name",
+                    "description": "The user-readable name given to this parametrization.",
+                    "type": "string",
+                    "default": ""
+                },
+                "id": {
+                    "title": "Signal ID",
+                    "description": "The name of the signal that should be replaced when this blueprint is placed.",
+                    "type": "string",
+                },
+                "quality-condition": {"$ref": "common/quality-filter.json"},
+                "ingredient-of": {
+                    "title": "Ingredient Of",
+                    "description": "A name of a previously used parameter to grab a unique item ingredient of.",
+                    "oneOf": [
+                        {"type": "string"},
+                        {"title": "Null", "type": "null"}
+                    ]
+                },
+                "parameter": {
+                    "title": "Is Parameter?",
+                    "description": "Whether or not this parameter should be selected during placement, or if it should just act as a variable for use via other parameters.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "number-parameter": {
+            "title": "Number Parameter",
+            "description": "A parameter that replaces a numeric value in the blueprint.",
+            "type": "object",
+            "properties": {
+                "type": {"const": "number"},
+                "name": {
+                    "title": "Parameter Name",
+                    "description": "The user-readable name given to this parametrization.",
+                    "type": "string",
+                    "default": ""
+                },
+                "number": {
+                    "title": "Number",
+                    "description": "A *string* representing a number in the blueprint that should be replaced.",
+                    "type": "string"
+                },
+                "variable": {
+                    "title": "Variable",
+                    "description": "A string representing a variable name that can be reused in subsequent formula definitions.",
+                    "type": "string",
+                    "default": ""
+                },
+                "formula": {
+                    "title": "Formula",
+                    "description": "A mathemtatical expression that is used to calculate the new value of this parameter, potentially using previously defined variable names.",
+                    "type": "string",
+                    "default": ""
+                },
+                "dependent": {
+                    "title": "Dependent",
+                    "description": "Whether or not this parameter depends on previous parameters in order to determine it's value.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "not-parametrised": {
+                    "$comment": "Needs more investigation on exact purpose for title + description",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        },
         "schedule-conditions": {
             "$comment": "Definitions for all schedule condition objects (both wait and interrupt conditions) for both train schedules and space platform schedules",
 
@@ -849,6 +925,18 @@
                             }
                         ],
                         "items": false
+                    },
+                    "default": []
+                },
+                "parameters": {
+                    "title": "Parameters",
+                    "description": "The list of all parametrizations that this blueprint can configure when being placed.",
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {"$ref": "#/$defs/id-parameter"},
+                            {"$ref": "#/$defs/number-parameter"},
+                        ]
                     },
                     "default": []
                 },
