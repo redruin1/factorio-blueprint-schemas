@@ -69,7 +69,7 @@
                 "id": {
                     "title": "Signal ID",
                     "description": "The name of the signal that should be replaced when this blueprint is placed.",
-                    "type": "string",
+                    "type": "string"
                 },
                 "quality-condition": {"$ref": "common/quality-filter.json"},
                 "ingredient-of": {
@@ -935,7 +935,7 @@
                     "items": {
                         "oneOf": [
                             {"$ref": "#/$defs/id-parameter"},
-                            {"$ref": "#/$defs/number-parameter"},
+                            {"$ref": "#/$defs/number-parameter"}
                         ]
                     },
                     "default": []
