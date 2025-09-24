@@ -26,10 +26,83 @@
             ],
             "default": "none"
         },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "set_input_priority": {
+                    "title": "Set Input Priority",
+                    "description": "Whether or not this splitter should use a connected circuit network when determining which input side to prioritize.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "input_left_condition": {
+                    "title": "Input Left Condition",
+                    "description": "What condition should make the splitter prefer inputs from it's left side.",
+                    "allOf": [
+                        {"$ref": "../common/condition.json"}
+                    ],
+                    "default": {
+                        "first_signal": {"name": "signal-I"},
+                        "comparator": "<",
+                        "constant": 0
+                    }
+                },
+                "input_right_condition": {
+                    "title": "Input Right Condition",
+                    "description": "What condition should make the splitter prefer inputs from it's right side.",
+                    "allOf": [
+                        {"$ref": "../common/condition.json"}
+                    ],
+                    "default": {
+                        "first_signal": {"name": "signal-I"},
+                        "comparator": ">",
+                        "constant": 0
+                    }
+                },
+                "set_output_priority": {
+                    "title": "Set Output Priority",
+                    "description": "Whether or not this splitter should use a connected circuit network when determining which output side to prioritize.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "output_left_condition": {
+                    "title": "Output Left Condition",
+                    "description": "What condition should make the splitter prefer outputs from it's left side.",
+                    "allOf": [
+                        {"$ref": "../common/condition.json"}
+                    ],
+                    "default": {
+                        "first_signal": {"name": "signal-O"},
+                        "comparator": "<",
+                        "constant": 0
+                    }
+                },
+                "output_right_condition": {
+                    "title": "Output Right Condition",
+                    "description": "What condition should make the splitter prefer outputs from it's right side.",
+                    "allOf": [
+                        {"$ref": "../common/condition.json"}
+                    ],
+                    "default": {
+                        "first_signal": {"name": "signal-O"},
+                        "comparator": ">",
+                        "constant": 0
+                    }
+                },
+                "set_filter": {
+                    "title": "Set Filter",
+                    "description": "Whether or not this splitter should use the circuit network to determine the item filter applied to the prioritized output. If multiple signals are present, `any` signal is chosen.",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        },
         "filter": {
-            "title": "Item Name",
+            "title": "Item Filter",
             "description": "What item this splitter should filter on the `output_priority` side. If this value is set but `output_priority` is omitted, `output_priority` defaults to `'left'`",
-            "type": "string"
+            "anyOf": [
+                {"$ref": "../common/signal-id.json"}
+            ]
         }
     }
 }
