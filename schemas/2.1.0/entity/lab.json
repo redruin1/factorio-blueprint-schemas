@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/lab.json",
+    "title": "Lab",
+    "description": "An entity which consumes items to research technologies.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

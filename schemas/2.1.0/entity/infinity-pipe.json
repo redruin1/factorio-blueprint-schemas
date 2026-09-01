@@ -1,0 +1,52 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/infinity-pipe.json",
+    "title": "Infinity Pipe",
+    "description": "A pipe which can spawn or remove any fluid infinitely.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "infinity_settings": {
+            "title": "Infinity Settings",
+            "description": "Configuration parameters for this Infinity Pipe.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "oneOf": [
+                        {
+                            "title": "Fluid Name",
+                            "description": "Name of the fluid this pipe interacts with. Must be a valid Factorio fluid.",
+                            "type": "string"
+                        },
+                        {"title": "null", "type": "null"}
+                    ]
+                },
+                "percentage": {
+                    "title": "Fluid Percentage",
+                    "description": "Amount of fluid in this pipe, in the range [0.0, 1.0] (where 1.0 is 100%).",
+                    "type": "number",
+                    "minimum": 0.0
+                },
+                "mode": {
+                    "title": "Mode",
+                    "description": "The manner in which this pipe should interact with the fluid in it's neighbours.",
+                    "enum": [
+                        "at-least",
+                        "at-most",
+                        "exactly",
+                        "add",
+                        "remove"
+                    ],
+                    "default": "at-least"
+                },
+                "temperature": {
+                    "title": "Fluid Temperature",
+                    "description": "The temperature of the fluid to add or remove. Must be within the valid range of temperatures for the specified fluid `name`.",
+                    "$ref": "../../common/int64.json"
+                }
+            }
+        }
+    }
+}

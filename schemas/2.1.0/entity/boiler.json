@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/boiler.json",
+    "title": "Boiler",
+    "description": "An entity which uses item fuels to heat fluids.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

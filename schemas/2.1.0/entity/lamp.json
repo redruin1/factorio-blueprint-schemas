@@ -1,0 +1,89 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/lamp.json",
+    "title": "Lamp",
+    "description": "An entity which illuminates a radius around it.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "color": {
+            "title": "Static Color",
+            "description": "The fixed color of the lamp to emit. Ignored if `control_behavior.use_colors` is `true`.",
+            "$ref": "../../common/color.json",
+            "default": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 0.7490196078431373,
+                "a": 1.0
+            }
+        },
+        "always_on": {
+            "title": "Always On",
+            "description": "Whether or not this lamp is always on. If not, it will shut off during the day.",
+            "type": "boolean",
+            "default": false
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "use_colors": {
+                    "title": "Use Colors",
+                    "description": "Whether or not this entity should use circuit signals to determine what color it should emit. Does nothing if not connected to a circuit network.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "color_mode": {
+                    "title": "Color Mode",
+                    "description": "In what manner should this lamp interpret given signals when determining it's output color. Does nothing unless `use_colors` is `true`.",
+                    "oneOf": [
+                        {
+                            "title": "Color Mapping",
+                            "description": "Use the first virtual color signal provided.",
+                            "const": 0
+                        },
+                        {
+                            "title": "Color Components",
+                            "description": "Use the values of 3 different signals, where each one corresponds to one color component.",
+                            "const": 1
+                        },
+                        {
+                            "title": "Packed RGB",
+                            "description": "Decode all color components from a single bit-packed signal.",
+                            "const": 2
+                        }
+                    ],
+                    "default": 0
+                },
+                "red_signal": {
+                    "title": "Red Color Component Signal",
+                    "description": "What signal to pull the red color component from. Does nothing unless `color_mode` is `1`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-red", "type": "virtual"}
+                },
+                "green_signal": {
+                    "title": "Green Color Component Signal",
+                    "description": "What signal to pull the green color component from. Does nothing unless `color_mode` is `1`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-green", "type": "virtual"}
+                },
+                "blue_signal": {
+                    "title": "Blue Color Component Signal",
+                    "description": "What signal to pull the blue color component from. Does nothing unless `color_mode` is `1`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-blue", "type": "virtual"}
+                },
+                "rgb_signal": {
+                    "title": "Packed Color Component Signal",
+                    "description": "What signal to pull all color components from. Does nothing unless `color_mode` is `2`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-white", "type": "virtual"}
+                }
+            }
+        }
+    }
+}

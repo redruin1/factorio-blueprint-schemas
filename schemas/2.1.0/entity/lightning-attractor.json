@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/lightning-attractor.json",
+    "title": "Lightning Attractor",
+    "description": "An entity which directs lightning strikes and converts them into usable electricity.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

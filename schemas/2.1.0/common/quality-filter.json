@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/common/item-filter.json",
+    "title": "Quality Filter",
+    "description": "An object representing a restricted set of qualities.",
+    "type": "object",
+    "properties": {
+        "quality": {
+            "title": "Filter Quality",
+            "description": "Quality of the item that should occupy this slot. If omitted, this value is treated as 'any' quality. Otherwise, the quality specified here is used in relation to `comparator`, which can be used to specify a range of quality values. Required if `comparator` is specified.",
+            "$ref": "quality-name.json"
+        },
+        "comparator": {
+            "title": "Quality Comparator",
+            "description": "What comparison should be performed along with `quality` when determining what range of qualities can be filtered against. Required if `quality` is specified.",
+            "$ref": "../../common/comparator.json",
+            "default": "="
+        }
+    }
+}

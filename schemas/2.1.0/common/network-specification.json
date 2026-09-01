@@ -1,0 +1,17 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/common/network-specification.json",
+    "title": "Network Specification",
+    "description": "Which color circuit wires this circuit input should consider. Defaults to both red and green enabled.",
+    "type": "object",
+    "properties": {
+        "red": {
+            "type": "boolean",
+            "default": true
+        },
+        "green": {
+            "type": "boolean",
+            "default": true
+        }
+    }
+}

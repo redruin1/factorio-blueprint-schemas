@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/electric-energy-interface.json",
+    "title": "Electric Energy Interface",
+    "description": "An entity that adds or subtracts energy from the electric network it resides in.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "buffer_size": {
+            "title": "Buffer Size",
+            "description": "Amount of energy this machine can hold in Joules.",
+            "type": "number"
+        },
+        "power_production": {
+            "description": "Amount of energy this machine produces in Joules per tick.",
+            "type": "number"
+        },
+        "power_usage": {
+            "description": "Amount of energy this machine consumes in Joules per tick.",
+            "type": "number"
+        }
+    }
+}

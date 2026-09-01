@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/pipe-to-ground.json",
+    "title": "Pipe To Ground",
+    "description": "A static entity that can transport fluids under other entities.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

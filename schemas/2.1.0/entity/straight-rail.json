@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/straight-rail.json",
+    "title": "Straight Rail",
+    "description": "A straight rail segment.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

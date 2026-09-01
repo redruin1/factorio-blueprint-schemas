@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/rocket-silo.json",
+    "title": "Rocket Silo",
+    "description": "An entity which automatically charts and reveals neighbouring chunks.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "use_transitional_requests": {
+            "title": "Automatic Requests from Space Platforms",
+            "description": "Whether or not this rocket silo will automatically attempt to resolve logistic requests of space platforms.",
+            "type": "boolean",
+            "default": false
+        },
+        "transitional_request_index": {
+            "title": "Transitional Request Index",
+            "description": "Internal ID of the logistic section that this rocket silo is attempting to satisfy.",
+            "$ref": "../../common/uint32.json"
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "read_items_mode": {
+                    "title": "Read Items Mode",
+                    "description": "In what manner should this rocket silo populate a connected circuit network. See [`control_behavior.rocket_silo.read_mode`](https://lua-api.factorio.com/latest/defines.html#defines.control_behavior).",
+                    "oneOf": [
+                        {
+                            "title": "None",
+                            "description": "Do nothing when connected to a circuit network.",
+                            "const": 0
+                        },
+                        {
+                            "title": "Read Contents",
+                            "description": "Output the amount of items in the current rocket",
+                            "const": 1
+                        },
+                        {
+                            "title": "Read Orbital Requests",
+                            "description": "Output the amount if items being requested by a stationed space platform.",
+                            "const": 2
+                        }
+                    ],
+                    "default": 1
+                }
+            }
+        }
+    }
+}

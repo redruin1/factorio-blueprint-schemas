@@ -1,0 +1,90 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/selector-combinator.json",
+    "title": "Selector Combinator",
+    "description": "A combinator which has a number of miscellaneous functions.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/player-description.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "operation": {
+                    "title": "Operation",
+                    "description": "What operation this selector is configured to perform.",
+                    "enum": [
+                        "select",
+                        "count",
+                        "random",
+                        "stack-size",
+                        "rocket-capacity",
+                        "quality-filter",
+                        "quality-transfer"
+                    ],
+                    "default": "select"
+                },
+                "select_max": {
+                    "title": "Sort Order",
+                    "description": "Whether or not this selector should order the given signals by maximum first (`true`) or by minimum first (`false`). Only has an effect if `operation` is `'select'`.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "index_constant": {
+                    "title": "Index Constant",
+                    "description": "A constant index from the ordered signals to select from. Only has an effect if `operation` is `'select'`.",
+                    "$ref": "../../common/int32.json",
+                    "default": 0
+                },
+                "index_signal": {
+                    "title": "Index Signal",
+                    "description": "A signal to pull the index from to determine the corresponding output signal. Overwrites `index_constant` if both are specified. Only has an effect if `operation` is `'select'`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": null
+                },
+                "count_inputs_signal": {
+                    "title": "Count Inputs Signal",
+                    "description": "What signal to count the total number of unique signals as. Only has an effect if `operation` is `'count'`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": null
+                },
+                "random_update_interval": {
+                    "title": "Random Update Interval",
+                    "description": "The total number of ticks to wait before selecting a new random signal. Only has an effect if `operation` is `'random'`.",
+                    "$ref": "../../common/uint32.json",
+                    "default": 0
+                },
+                "quality_filter": {
+                    "description": "A specification of which quality signals to filter from the input to the output. Only has an effect if `operation` is `'quality-filter'`",
+                    "$ref": "../common/quality-filter.json"
+                },
+                "select_quality_from_signal": {
+                    "title": "Select Quality From Signal",
+                    "description": "Whether or not to select the quality from a given signal ID. Only has an effect if `operation` is `'quality-transfer'`.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "quality_source_static": {
+                    "title": "Quality Source Static",
+                    "description": "Fixed quality level to output the given signals with. This key is used if `select_quality_from_signal` is `false`. Only has an effect if `operation` is `'quality-transfer'`.",
+                    "$ref": "../common/quality-name.json",
+                    "default": "normal"
+                },
+                "quality_source_signal": {
+                    "title": "Quality Source Signal",
+                    "description": "What signal to sample it's quality level from. This key is used if `select_quality_from_signal` is `true`. Only has an effect if `operation` is `'quality-transfer'`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": null
+                },
+                "quality_destination_signal": {
+                    "title": "Quality Destination Signal",
+                    "description": "What signal(s) should be output with the newly selected quality. Only has an effect if `operation` is `'quality-transfer'`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": null
+                }
+            }
+        }
+    }
+}

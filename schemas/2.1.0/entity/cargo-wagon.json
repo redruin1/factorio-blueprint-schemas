@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/cargo-wagon.json",
+    "title": "Cargo Wagon",
+    "description": "A train car that can store items.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/orientation.json"},
+        {"$ref": "features/equipment-grid.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "inventory": {"$ref": "../common/inventory.json"}
+    }
+}

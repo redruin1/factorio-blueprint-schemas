@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/locomotive.json",
+    "title": "Locomotive",
+    "description": "A train car that drives other connected wagons around a rail network.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/orientation.json"},
+        {"$ref": "features/equipment-grid.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "color": {
+            "description": "The physical color of the locomotive.",
+            "$ref": "../../common/color.json",
+            "default": {
+                "r": 0.9176470588235294,
+                "g": 0.06666666666666667,
+                "b": 0,
+                "a": 0.4980392156862745
+            }
+        }
+    }
+}

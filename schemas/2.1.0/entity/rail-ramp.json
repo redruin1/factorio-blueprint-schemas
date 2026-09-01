@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/rail-ramp.json",
+    "title": "Rail Ramp",
+    "description": "An entity which transitions between regular and elevated rails.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

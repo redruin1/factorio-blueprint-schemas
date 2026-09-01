@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/fusion-generator.json",
+    "title": "Fusion Generator",
+    "description": "An entity that electricity when adjacent to Fusion Reactors.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

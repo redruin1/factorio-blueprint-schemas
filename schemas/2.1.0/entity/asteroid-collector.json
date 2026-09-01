@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/asteroid-collector.json",
+    "title": "Asteroid Collector",
+    "description": "An entity uses arms to grab asteroid chunks from space.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/circuit-set-filters.json"}
+    ],
+    "$defs": {
+        "asteroid-chunk-filter": {
+            "title": "Asteroid Chunk Filter",
+            "description": "An individual chunk filter entry.",
+            "type": "object",
+            "properties": {
+                "index": {
+                    "description": "The index of the filter in the GUI, 1-indexed.",
+                    "$ref": "../../common/uint32.json"
+                },
+                "name": {
+                    "title": "Asteroid Chunk Name",
+                    "description": "The name of a valid Factorio asteroid chunk.",
+                    "type": "string"
+                }
+            },
+            "examples": [
+                {
+                    "index": 1,
+                    "name": "oxide-asteroid-chunk"
+                }
+            ]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "result_inventory": {
+            "title": "Result Inventory Object",
+            "description": "Inventory object which holds the limiting bar for this entity.",
+            "type": "object",
+            "properties": {
+                "bar": {"$ref": "../../common/limiting-bar.json"}
+            },
+            "TODO": "Make this a reference to an `Inventory` object"
+        },
+        "chunk-filter": {
+            "title": "Chunk Filters",
+            "description": "A static list of chunk filters that this collector should abide by. Does nothing if `'circuit_set_filters'` is `true`.",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/asteroid-chunk-filter"
+            }
+        },
+        "control_behavior": {
+            "type": "object",
+            "properties": {
+                "circuit_read_contents": {
+                    "title": "Circuit Read Contents",
+                    "description": "Whether or not to broadcast the items contained within this machine's inventory to any connected circuit network.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "include_hands": {
+                    "title": "Include Hands",
+                    "description": "Whether or not the items currently in the asteroid collector's arms should be included in the total amount reported to the circuit network. Only has an effect if `circuit_read_contents` is `true`.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        }
+    }
+}

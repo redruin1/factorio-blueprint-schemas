@@ -1,0 +1,34 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/car.json",
+    "title": "Spider Vehicle",
+    "description": "A legged vehicle that can move in any direction at once.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/equipment-grid.json"},
+        {"$ref": "features/vehicle.json"},
+        {"$ref": "features/request-filters.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "color": {
+            "$ref": "../../common/color.json"
+        },
+        "automatic_targeting_parameters": {
+            "description": "Specifies in what manner this vehicle should auto-target.",
+            "type": "object",
+            "properties": {
+                "auto_target_without_gunner": {
+                    "description": "Whether or not this vehicle should auto-target with no passenger present.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "auto_target_with_gunner": {
+                    "description": "Whether or not this vehicle should auto-target with a passenger present.",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}

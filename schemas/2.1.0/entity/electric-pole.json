@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/electric-pole.json",
+    "title": "Electric Pole",
+    "description": "An entity which distributes electricity across a surface.",
+    "allOf": [
+        {"$ref": "../entity.json"}
+    ]
+}

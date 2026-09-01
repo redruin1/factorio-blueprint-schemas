@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/assembling-machine.json",
+    "title": "Assembling Machine",
+    "description": "An entity that can convert items and fluids into other items and fluids.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"},
+        {"$ref": "features/logistic-condition.json"},
+        {"$ref": "features/crafting-machine-controls.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "recipe": {
+            "title": "Recipe",
+            "description": "The recipe that this entity is configured to perform.",
+            "oneOf": [
+                {"title": "Recipe Name", "type": "string"},
+                {"title": "null", "type": "null"}
+            ]
+        },
+        "recipe_quality": {
+            "title": "Recipe Quality",
+            "description": "The quality of the ingredients/output items that this machine should use.",
+            "$ref": "../common/quality-name.json"
+        }
+    }
+}

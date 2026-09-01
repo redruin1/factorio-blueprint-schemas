@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.0.0/entity/constant-combinator.json",
+    "title": "Constant Combinator",
+    "description": "A combinator broadcasts static signals to a connected circuit network.",
+    "allOf": [
+        {"$ref": "../entity.json"},
+        {"$ref": "features/player-description.json"}
+    ],
+    "type": "object",
+    "properties": {
+        "control_behavior": {
+            "properties": {
+                "is_on": {
+                    "title": "Enabled",
+                    "description": "Master enable/disable switch for the entire constant combinator.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "sections": {
+                    "title": "Sections",
+                    "description": "Parent sections object. Only contains one property, `sections` with the same name. Might be a bug in serialization.",
+                    "type": "object",
+                    "properties": {
+                        "sections": {"$ref": "../common/logistic-sections.json"}
+                    }
+                }
+            }
+        }
+    }
+}
