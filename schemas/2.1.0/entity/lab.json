@@ -4,6 +4,7 @@
     "title": "Lab",
     "description": "An entity which consumes items to research technologies.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
     ]
 }

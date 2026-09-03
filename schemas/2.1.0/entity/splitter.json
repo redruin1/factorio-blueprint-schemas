@@ -4,7 +4,8 @@
     "title": "Splitter",
     "description": "An entity which distributes items across transport belts.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"}
     ],
     "type": "object",
     "properties": {

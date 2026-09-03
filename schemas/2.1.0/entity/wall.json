@@ -5,6 +5,7 @@
     "description": "A static barrier intended to protect structures.",
     "allOf": [
         {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-condition.json"}
     ],
     "type": "object",

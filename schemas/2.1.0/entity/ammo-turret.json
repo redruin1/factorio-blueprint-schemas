@@ -5,6 +5,7 @@
     "description": "A turret that uses item-based ammunition.",
     "allOf": [
         {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/logistic-condition.json"},

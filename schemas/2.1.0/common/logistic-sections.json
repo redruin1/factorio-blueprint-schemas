@@ -51,6 +51,14 @@
                     "title": "Max Count",
                     "description": "Maximum amount of this item to request, above which bots will actively remove. Has no effect when specified in constant combinators.",
                     "$ref": "../../common/int32.json"
+                },
+                "import_from": {
+                    "title": "Import From",
+                    "description": "What surface this logistic request should import from.",
+                    "oneOf": [
+                        {"type": "string"},
+                        {"title": "null", "type": "null"}
+                    ]
                 }
             },
             "required": ["index", "name", "count"]

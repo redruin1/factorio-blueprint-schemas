@@ -5,6 +5,7 @@
     "description": "An entity which divvies up a rail network into blocks that trains can path through.",
     "allOf": [
         {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-condition.json"}
     ],
     "type": "object",

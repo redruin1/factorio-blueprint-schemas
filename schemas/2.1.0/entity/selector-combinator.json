@@ -22,7 +22,8 @@
                         "stack-size",
                         "rocket-capacity",
                         "quality-filter",
-                        "quality-transfer"
+                        "quality-transfer",
+                        "time"
                     ],
                     "default": "select"
                 },
@@ -83,6 +84,24 @@
                     "description": "What signal(s) should be output with the newly selected quality. Only has an effect if `operation` is `'quality-transfer'`.",
                     "$ref": "../common/optional-signal-id.json",
                     "default": null
+                },
+                "game_tick_signal": {
+                    "title": "Game Tick Signal",
+                    "description": "What signal to emit the current game tick value of the save. Only has an effect if `operation` is `'time'`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-T", "type": "virtual"}
+                },
+                "day_tick_signal": {
+                    "title": "Day Tick Signal",
+                    "description": "What signal to emit the current day tick of the surface. Only has an effect if `operation` is `'time'`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-D", "type": "virtual"}
+                },
+                "day_length_signal": {
+                    "title": "Day Length Signal",
+                    "description": "What signal to emit the number of ticks per day for this surface. Only has an effect if `operation` is `'time'`.",
+                    "$ref": "../common/optional-signal-id.json",
+                    "default": {"name": "signal-L", "type": "virtual"}
                 }
             }
         }

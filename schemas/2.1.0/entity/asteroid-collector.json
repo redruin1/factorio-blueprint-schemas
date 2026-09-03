@@ -5,6 +5,7 @@
     "description": "An entity uses arms to grab asteroid chunks from space.",
     "allOf": [
         {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/circuit-set-filters.json"}

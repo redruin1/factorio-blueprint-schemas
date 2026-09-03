@@ -4,7 +4,8 @@
     "title": "Rail Chain Signal",
     "description": "A rail signal that looks at neighbouring rail signals to determine it's state.",
     "allOf": [
-        {"$ref": "rail-signal.json"}
+        {"$ref": "rail-signal.json"},
+        {"$ref": "features/circuit-split-io.json"}
     ],
     "type": "object",
     "properties": {

@@ -5,6 +5,7 @@
     "description": "An entity that seeds and harvests plants automatically.",
     "allOf": [
         {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/logistic-condition.json"}
@@ -13,6 +14,28 @@
     "properties": {
         "control_behavior": {
             "properties": {
+                "enable_harvesting_condition": {
+                    "title": "Enable Harvesting Condition",
+                    "description": "Whether or not this entity should conditionally enable/disable harvesting.",
+                    "type": "boolean",
+                    "default": false,
+                },
+                "harvesting_condition": {
+                    "title": "Harvesting Condition",
+                    "description": "The condition that must pass in order for this tower to harvest mature crops.",
+                    "$ref": "../../common/condition.json",
+                },
+                "enable_planting_condition": {
+                    "title": "Enable Planting Condition",
+                    "description": "Whether or not this entity should conditionally enable/disable planting.",
+                    "type": "boolean",
+                    "default": false,
+                },
+                "planting_condition": {
+                    "title": "Planting Condition",
+                    "description": "The condition that must pass in order for this tower to plant additional seeds.",
+                    "$ref": "../../common/condition.json",
+                },
                 "read_contents": {
                     "title": "Read Contents",
                     "description": "Whether or not this entity should broadcast the contents of its inventory to a connected circuit network.",

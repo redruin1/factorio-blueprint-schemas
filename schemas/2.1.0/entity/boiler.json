@@ -4,6 +4,9 @@
     "title": "Boiler",
     "description": "An entity which uses item fuels to heat fluids.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
+        {"$ref": "features/circuit-enabled.json"},
+        {"$ref": "features/circuit-condition.json"}
     ]
 }

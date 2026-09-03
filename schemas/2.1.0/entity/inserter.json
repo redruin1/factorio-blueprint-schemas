@@ -6,6 +6,7 @@
     "allOf": [
         {"$ref": "../entity.json"},
         {"$ref": "features/filters.json"},
+        {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-set-filters.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},

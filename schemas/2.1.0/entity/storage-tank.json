@@ -4,6 +4,8 @@
     "title": "Storage Tank",
     "description": "A static structure which stores fluids.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
+        {"$ref": "features/circuit-read-temperature.json"}
     ]
 }

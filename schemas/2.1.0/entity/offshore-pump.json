@@ -5,6 +5,7 @@
     "description": "A pump which extracts fluids from fluid surface tiles.",
     "allOf": [
         {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/logistic-condition.json"}
     ]

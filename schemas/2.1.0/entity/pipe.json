@@ -4,6 +4,8 @@
     "title": "Pipe",
     "description": "A static entity which transports fluids.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "../entity.json"},
+        {"$ref": "features/circuit-split-io.json"},
+        {"$ref": "features/circuit-read-temperature.json"}
     ]
 }
