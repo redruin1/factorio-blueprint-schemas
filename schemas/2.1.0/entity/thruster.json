@@ -1,9 +1,9 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/thruster.json",
+    "$id": "2.1.0/entity/thruster.json",
     "title": "Thruster",
     "description": "An entity which accellerates space platforms.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "/2.0.0/entity.json"}
     ]
 }

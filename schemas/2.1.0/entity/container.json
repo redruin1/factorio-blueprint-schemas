@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/container.json",
+    "$id": "2.1.0/entity/container.json",
     "title": "Container",
     "description": "A static entity that stores items.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "/2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {

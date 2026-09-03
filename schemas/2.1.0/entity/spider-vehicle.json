@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/car.json",
+    "$id": "2.1.0/entity/car.json",
     "title": "Spider Vehicle",
     "description": "A legged vehicle that can move in any direction at once.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/equipment-grid.json"},
         {"$ref": "features/vehicle.json"},
         {"$ref": "features/request-filters.json"}

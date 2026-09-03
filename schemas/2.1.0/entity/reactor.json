@@ -1,11 +1,11 @@
 {
 
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/reactor.json",
+    "$id": "2.1.0/entity/reactor.json",
     "title": "Reactor",
     "description": "A nuclear (fission) reactor.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-read-temperature.json"}
     ],

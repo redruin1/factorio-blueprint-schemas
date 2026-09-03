@@ -1,8 +1,0 @@
-{
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/common/quality-name.json",
-    "title": "Quality",
-    "description": "A type of quality.",
-    "enum": ["normal", "uncommon", "rare", "epic", "legendary", "quality-unknown"],
-    "default": "normal"
-}

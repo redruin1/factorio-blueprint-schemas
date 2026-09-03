@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/land-mine.json",
+    "$id": "2.1.0/entity/land-mine.json",
     "title": "Land Mine",
     "description": "A static structure which explodes when in radius of an enemy force.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"}

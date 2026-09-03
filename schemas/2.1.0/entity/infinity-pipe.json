@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/infinity-pipe.json",
+    "$id": "2.1.0/entity/infinity-pipe.json",
     "title": "Infinity Pipe",
     "description": "A pipe which can spawn or remove any fluid infinitely.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "/2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {

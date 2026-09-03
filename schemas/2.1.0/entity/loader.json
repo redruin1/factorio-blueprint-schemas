@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/loader.json",
+    "$id": "2.1.0/entity/loader.json",
     "title": "Loader",
     "description": "A machine which moves items from one entity to another without a swinging arm.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/filters.json"},
         {"$ref": "features/circuit-set-filters.json"},
         {"$ref": "features/circuit-enabled.json"},

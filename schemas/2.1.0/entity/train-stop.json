@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/train-stop.json",
+    "$id": "2.1.0/entity/train-stop.json",
     "title": "Train Stop",
     "description": "An entity representing a node on a Locomotive's schedule.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},

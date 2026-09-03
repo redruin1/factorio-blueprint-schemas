@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/electric-energy-interface.json",
+    "$id": "2.1.0/entity/electric-energy-interface.json",
     "title": "Electric Energy Interface",
     "description": "An entity that adds or subtracts energy from the electric network it resides in.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "/2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {

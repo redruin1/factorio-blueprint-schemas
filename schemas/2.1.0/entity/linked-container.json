@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/linked-container.json",
+    "$id": "2.1.0/entity/linked-container.json",
     "title": "Linked Container",
     "description": "A chest which shares it's contents with any other chest with the same `link_id`.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "/2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {

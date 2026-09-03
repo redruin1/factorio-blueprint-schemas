@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/pipe.json",
+    "$id": "2.1.0/entity/pipe.json",
     "title": "Pipe",
     "description": "A static entity which transports fluids.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-read-temperature.json"}
     ]

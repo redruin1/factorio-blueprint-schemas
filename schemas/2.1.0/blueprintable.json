@@ -6,7 +6,7 @@
     "oneOf": [
         {"$ref": "blueprint.json"},
         {"$ref": "deconstruction-planner.json"},
-        {"$ref": "upgrade-planner.json"},
-        {"$ref": "blueprint-book.json"}
+        {"$ref": "2.0.0/upgrade-planner.json"},
+        {"$ref": "2.0.0/blueprint-book.json"}
     ]
 }

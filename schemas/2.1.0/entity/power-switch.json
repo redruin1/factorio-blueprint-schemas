@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/power-switch.json",
+    "$id": "2.1.0/entity/power-switch.json",
     "title": "Power Switch",
     "description": "An entity which can conditionally connect or disconnect a power connection.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/logistic-condition.json"}
     ],

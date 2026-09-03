@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/blueprint.json",
+    "$id": "2.1.0/blueprint.json",
     "title": "Blueprint",
     "description": "A regular blueprint, which can contain entities, tiles, schedules, wire connections, and stock connections, as well as additional metadata.",
     "$defs": {
@@ -773,7 +773,7 @@
                     "description": "The list of icons to display over the blueprint item, with a maximum of 4 icons total.",
                     "type": "array",
                     "items": {
-                        "$ref": "common/icon.json"
+                        "$ref": "../2.0.0/common/icon.json"
                     },
                     "maxItems": 4
                 },

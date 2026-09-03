@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/pump.json",
+    "$id": "2.1.0/entity/pump.json",
     "title": "Pump",
-    "description": "A entity that permits the travel of fluids over long distances.",
+    "description": "An entity that permits the travel of fluids over long distances.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/logistic-condition.json"}

@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/selector-combinator.json",
+    "$id": "2.1.0/entity/selector-combinator.json",
     "title": "Selector Combinator",
     "description": "A combinator which has a number of miscellaneous functions.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/player-description.json"}
     ],
     "type": "object",

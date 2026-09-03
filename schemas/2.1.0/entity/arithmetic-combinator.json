@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/arithmetic-combinator.json",
+    "$id": "2.1.0/entity/arithmetic-combinator.json",
     "title": "Arithmetic Combinator",
     "description": "A combinator that can perform mathematical operations on one or more values.",
     "allOf": [
-        {"$ref": "../entity.json"},
+        {"$ref": "/2.0.0/entity.json"},
         {"$ref": "features/player-description.json"}
     ],
     "type": "object",
