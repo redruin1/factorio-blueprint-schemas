@@ -4,7 +4,7 @@
     "title": "Rail Signal",
     "description": "An entity which divvies up a rail network into blocks that trains can path through.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-condition.json"}
     ],
@@ -28,19 +28,19 @@
                 "red_output_signal": {
                     "title": "Red Output Signal",
                     "description": "The signal to broadcast when this signal's state is red.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-red", "type": "virtual"}
                 },
                 "orange_output_signal": {
                     "title": "Yellow Output Signal",
                     "description": "The signal to broadcast when this signal's state is yellow.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-yellow", "type": "virtual"}
                 },
                 "green_output_signal": {
                     "title": "Green Output Signal",
                     "description": "The signal to broadcast when this signal's state is green.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-green", "type": "virtual"}
                 }
             }

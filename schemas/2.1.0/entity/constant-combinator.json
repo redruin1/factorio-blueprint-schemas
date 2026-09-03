@@ -4,7 +4,7 @@
     "title": "Constant Combinator",
     "description": "A combinator broadcasts static signals to a connected circuit network.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/player-description.json"}
     ],
     "type": "object",

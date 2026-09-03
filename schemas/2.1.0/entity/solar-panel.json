@@ -4,6 +4,6 @@
     "title": "Solar Panel",
     "description": "An entity which generates electricity based on the presence of sunlight.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

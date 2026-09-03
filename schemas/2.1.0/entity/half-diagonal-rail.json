@@ -4,6 +4,6 @@
     "title": "Half Diagonal Rail",
     "description": "Half diagonal rails.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

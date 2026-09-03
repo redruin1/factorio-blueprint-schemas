@@ -37,7 +37,7 @@
                     "default": "item"
                 },
                 "quality": {
-                    "$ref": "quality-name.json"
+                    "$ref": "../../2.0.0/common/quality-name.json"
                 },
                 "comparator": {
                     "$ref": "../../common/comparator.json"

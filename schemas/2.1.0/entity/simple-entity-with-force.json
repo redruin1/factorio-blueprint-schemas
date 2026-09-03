@@ -4,7 +4,7 @@
     "title": "Simple Entity With Force",
     "description": "A simple entity associated with some force.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/visual-variation.json"}
     ]
 }

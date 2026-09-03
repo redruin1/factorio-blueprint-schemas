@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/features/equipment-grid.json",
+    "$id": "2.1.0/entity/features/equipment-grid.json",
     "title": "Equipment Grid",
     "description": "Gives this entity the ability to specify the contents of an attached equipment grid.",
     "$defs": {
@@ -14,7 +14,7 @@
                     "type": "string"
                 },
                 "quality": {
-                    "$ref": "../../common/quality-name.json"
+                    "$ref": "../../../2.0.0/common/quality-name.json"
                 }
             }
         },

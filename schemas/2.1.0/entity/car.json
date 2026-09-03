@@ -4,7 +4,7 @@
     "title": "Car",
     "description": "A wheeled or tracked vehicle that steers.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/orientation.json"},
         {"$ref": "features/equipment-grid.json"},
         {"$ref": "features/vehicle.json"},

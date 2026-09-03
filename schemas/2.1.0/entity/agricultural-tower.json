@@ -4,7 +4,7 @@
     "title": "Agricultural Tower",
     "description": "An entity that seeds and harvests plants automatically.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
@@ -18,23 +18,23 @@
                     "title": "Enable Harvesting Condition",
                     "description": "Whether or not this entity should conditionally enable/disable harvesting.",
                     "type": "boolean",
-                    "default": false,
+                    "default": false
                 },
                 "harvesting_condition": {
                     "title": "Harvesting Condition",
                     "description": "The condition that must pass in order for this tower to harvest mature crops.",
-                    "$ref": "../../common/condition.json",
+                    "$ref": "../../2.0.0/common/condition.json"
                 },
                 "enable_planting_condition": {
                     "title": "Enable Planting Condition",
                     "description": "Whether or not this entity should conditionally enable/disable planting.",
                     "type": "boolean",
-                    "default": false,
+                    "default": false
                 },
                 "planting_condition": {
                     "title": "Planting Condition",
                     "description": "The condition that must pass in order for this tower to plant additional seeds.",
-                    "$ref": "../../common/condition.json",
+                    "$ref": "../../2.0.0/common/condition.json"
                 },
                 "read_contents": {
                     "title": "Read Contents",

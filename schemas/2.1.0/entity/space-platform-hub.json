@@ -5,7 +5,7 @@
     "description": "The control center of a space platform.",
     "type": "object",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/request-filters.json"}
     ],
     "properties": {
@@ -44,7 +44,7 @@
                 },
                 "speed_signal": {
                     "description": "The signal to output this platforms current speed on. Has no effect unless `read_speed` is `true`.",
-                    "$ref": "../common/optional-signal-id.json"
+                    "$ref": "../../2.0.0/common/optional-signal-id.json"
                 },
                 "read_damage_taken": {
                     "description": "Whether or not the hub should output the amount of damage sustained by the platform since it started travelling. The signal type to output is determined by `damage_taken_signal`.",
@@ -53,7 +53,7 @@
                 },
                 "damage_taken_signal": {
                     "description": "The signal to output the amount of damage taken on. Has no effect unless `read_damage_taken` is `true`.",
-                    "$ref": "../common/optional-signal-id.json"
+                    "$ref": "../../2.0.0/common/optional-signal-id.json"
                 }
             }
         }

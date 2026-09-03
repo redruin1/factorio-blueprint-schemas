@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/features/filters.json",
+    "$id": "2.1.0/entity/features/filters.json",
     "title": "Filters",
     "description": "Allows this entity to filter items, such as on Inserters and Loaders.",
     "$defs": {
@@ -27,7 +27,7 @@
             "description": "A list of items that this entity should filter.",
             "type": "array",
             "items": {
-                "$ref": "../../common/item-filter.json"
+                "$ref": "../../../2.0.0/common/item-filter.json"
             }
         }
     }

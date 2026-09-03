@@ -4,6 +4,6 @@
     "title": "Beacon",
     "description": "An entity which broadcasts module effects to other machines within radius.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

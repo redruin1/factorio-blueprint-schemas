@@ -180,7 +180,7 @@
             <div class="card-body pl-5">
 
     <h4>Direction</h4> <span class="badge badge-success default-value">Default: 0</span><br/>
-<span class="description"><p>The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect. See <a href="https://lua-api.factorio.com/latest/defines.html#defines.direction">&lt;code>defines.direction&lt;/code></a></p>
+<span class="description"><p>The direction of the entity, where 0 corresponds to north and incrementing spins clockwise. Not all entities can manipulate their direction, so setting this attribute may have no effect. See <a href="https://lua-api.factorio.com/latest/defines.html#defines.direction"><code>defines.direction</code></a></p>
 </span><div class="one-of-value" id="direction_oneOf"><h2 class="handle">
   <label>One of</label>
 </h2><ul class="nav nav-tabs" id="tabsdirection_oneOf_oneOf" role="tablist"><li class="nav-item">
@@ -570,7 +570,7 @@
             
 
     <h4>Insert Plan</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description"><p>All item requests for a particular item type, specifying the manner in which they should be delivered. See <a href="https://lua-api.factorio.com/latest/concepts/BlueprintInsertPlan.html">&lt;code>BlueprintInsertPlan&lt;/code></a>.</p>
+<span class="description"><p>All item requests for a particular item type, specifying the manner in which they should be delivered. See <a href="https://lua-api.factorio.com/latest/concepts/BlueprintInsertPlan.html"><code>BlueprintInsertPlan</code></a>.</p>
 </span>
 
     
@@ -614,7 +614,7 @@
             <div class="card-body pl-5">
 
     <h4>Item And Quality ID</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description"><p>The particular item/quality pair being requested. Must be a valid Factorio item and quality. See <a href="https://lua-api.factorio.com/latest/concepts/ItemIDAndQualityIDPair.html">&lt;code>ItemIDAndQualityIDPair&lt;/code></a>.</p>
+<span class="description"><p>The particular item/quality pair being requested. Must be a valid Factorio item and quality. See <a href="https://lua-api.factorio.com/latest/concepts/ItemIDAndQualityIDPair.html"><code>ItemIDAndQualityIDPair</code></a>.</p>
 </span>
 
     
@@ -764,7 +764,7 @@
             <div class="card-body pl-5">
 
     <h4>Inventory ID</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
-<span class="description"><p>Which inventory this item should be requested to, 1-indexed. See <a href="https://lua-api.factorio.com/latest/defines.html#defines.inventory">&lt;code>defines.inventory&lt;/code></a>.</p>
+<span class="description"><p>Which inventory this item should be requested to, 1-indexed. See <a href="https://lua-api.factorio.com/latest/defines.html#defines.inventory"><code>defines.inventory</code></a>.</p>
 </span>
 
     
@@ -1031,7 +1031,7 @@
              data-parent="#accordioncontrol_behavior_input_left_condition">
             <div class="card-body pl-5">
 
-    <h4>Input Left Condition</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {"name": "signal-I", "comparator": "<", "constant": 0}</span><br/>
+    <h4>Input Left Condition</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {"first_signal": {"name": "signal-I"}, "comparator": "<", "constant": 0}</span><br/>
 <span class="description"><p>What condition should make the splitter prefer inputs from it's left side.</p>
 </span>
 
@@ -1473,7 +1473,7 @@
              data-parent="#accordioncontrol_behavior_input_right_condition">
             <div class="card-body pl-5">
 
-    <h4>Input Right Condition</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {"name": "signal-I", "comparator": ">", "constant": 0}</span><br/>
+    <h4>Input Right Condition</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {"first_signal": {"name": "signal-I"}, "comparator": ">", "constant": 0}</span><br/>
 <span class="description"><p>What condition should make the splitter prefer inputs from it's right side.</p>
 </span>
 
@@ -1942,7 +1942,7 @@
              data-parent="#accordioncontrol_behavior_output_left_condition">
             <div class="card-body pl-5">
 
-    <h4>Output Left Condition</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {"name": "signal-O", "comparator": "<", "constant": 0}</span><br/>
+    <h4>Output Left Condition</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {"first_signal": {"name": "signal-O"}, "comparator": "<", "constant": 0}</span><br/>
 <span class="description"><p>What condition should make the splitter prefer outputs from it's left side.</p>
 </span>
 
@@ -2384,7 +2384,7 @@
              data-parent="#accordioncontrol_behavior_output_right_condition">
             <div class="card-body pl-5">
 
-    <h4>Output Right Condition</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {"name": "signal-O", "comparator": ">", "constant": 0}</span><br/>
+    <h4>Output Right Condition</h4><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-success default-value">Default: {"first_signal": {"name": "signal-O"}, "comparator": ">", "constant": 0}</span><br/>
 <span class="description"><p>What condition should make the splitter prefer outputs from it's right side.</p>
 </span>
 
@@ -2857,7 +2857,7 @@
              data-parent="#accordionfilter">
             <div class="card-body pl-5">
 
-    <h4>Item Name</h4><br/>
+    <h4>Item Filter</h4><br/>
 <span class="description"><p>What item this splitter should filter on the <code>output_priority</code> side. If this value is set but <code>output_priority</code> is omitted, <code>output_priority</code> defaults to <code>'left'</code></p>
 </span><div class="any-of-value" id="filter_anyOf"><h2 class="handle">
   <label>Any of</label>

@@ -4,26 +4,26 @@
     "title": "Decider Combinator",
     "description": "A combinator that can check one or more conditions and output signals based on those conditions.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/player-description.json"}
     ],
     "$defs": {
         "decider-condition": {
             "title": "Decider Condition",
             "allOf": [
-                {"$ref": "../common/condition.json"}
+                {"$ref": "../../2.0.0/common/condition.json"}
             ],
             "type": "object",
             "properties": {
                 "first_signal_networks": {
                     "title": "First Signal Networks",
                     "description": "Which wires should be used when determining the value of the first signal.",
-                    "$ref": "../common/network-specification.json"
+                    "$ref": "../../2.0.0/common/network-specification.json"
                 },
                 "second_signal_networks": {
                     "title": "Second Signal Networks",
                     "description": "Which wires should be used when determining the value of the second signal.",
-                    "$ref": "../common/network-specification.json"
+                    "$ref": "../../2.0.0/common/network-specification.json"
                 },
                 "compare_type": {
                     "$ref": "../../common/compare-type.json",
@@ -39,7 +39,7 @@
                 "signal": {
                     "title": "Signal",
                     "description": "What signal to output, if `copy_count_from_input` is `true`.",
-                    "$ref": "../common/optional-signal-id.json"
+                    "$ref": "../../2.0.0/common/optional-signal-id.json"
                 },
                 "copy_count_from_input": {
                     "title": "Copy Count From Input",
@@ -50,7 +50,7 @@
                 "networks": {
                     "title": "Output Networks",
                     "description": "Which wires should be considered when determining the value of the output, if `copy_count_from_input` is `true`.",
-                    "$ref": "../common/network-specification.json"
+                    "$ref": "../../2.0.0/common/network-specification.json"
                 },
                 "constant": {
                     "description": "The constant value to output if `copy_count_from_input` is `false`. Can be any 32-bit integer.",

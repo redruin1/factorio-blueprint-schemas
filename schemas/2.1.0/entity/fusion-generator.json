@@ -4,6 +4,6 @@
     "title": "Fusion Generator",
     "description": "An entity that electricity when adjacent to Fusion Reactors.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

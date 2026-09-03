@@ -4,7 +4,7 @@
     "title": "Radar",
     "description": "An entity which automatically charts and reveals neighbouring chunks.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "properties": {
         "control_behavior": {
@@ -13,12 +13,22 @@
                 "mode": {
                     "title": "Radar Mode",
                     "description": "The manner in which circuit network signals should be broadcast to/from this radar.",
-
+                    "type": "enum",
+                    "oneOf": [
+                        {
+                            "title": "Surface",
+                            "const": 1
+                        },
+                        {
+                            "title": "Universe",
+                            "const": 2
+                        }
+                    ]
                 },
                 "universe_channel": {
                     "title": "Universe Channel",
                     "description": "What unique channel this radar should use when `mode` is set to 'universe'.",
-                    "$ref": "../../common/optional-signal-id.json"
+                    "$ref": "../../2.0.0/common/optional-signal-id.json"
                 }
             }
         }

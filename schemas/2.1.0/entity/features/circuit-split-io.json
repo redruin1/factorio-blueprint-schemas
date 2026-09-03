@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/features/circuit-split-io.json",
+    "$id": "2.1.0/entity/features/circuit-split-io.json",
     "title": "Circuit Split Input/Output",
     "description": "Allows this entity to specify what connected circuit wires are considered input and which are considered output.",
     "type": "object",
@@ -9,10 +9,10 @@
             "type": "object",
             "properties": {
                 "input_networks": {
-                    "$ref": "../../common/network-specification.json"
+                    "$ref": "../../../2.0.0/common/network-specification.json"
                 },
                 "output_networks": {
-                    "$ref": "../../common/network-specification.json"
+                    "$ref": "../../../2.0.0/common/network-specification.json"
                 }
             }
         }

@@ -4,7 +4,7 @@
     "title": "Linked Container",
     "description": "A chest which shares it's contents with any other chest with the same `link_id`.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {

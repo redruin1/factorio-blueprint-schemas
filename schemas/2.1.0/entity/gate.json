@@ -4,6 +4,6 @@
     "title": "Gate",
     "description": "A retractable barrier.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

@@ -2,7 +2,7 @@
 
 This document is intended to be an open source public specification for the decoded JSON format of [Factorio](https://factorio.com/) blueprint strings. If you don't know what any of that that means, see [here](https://wiki.factorio.com/Blueprint_string_format).
 
-The purpose of this repository is similar to that of the Factorio wiki page on the blueprint string format, but specified in a standardized, machine readable format - giving it the potential to used by software suites for validation purposes. In addition to providing rigorous technical description of the format, documentation and descriptions are also provided directly alongside each property, meaning that automatically generating accurate, readable documentation of these formats is not only possible, but eminently feasible. [For example, here's a convenient, navigatable digest of the entire 2.0 blueprint string format.](https://redruin1.github.io/factorio-blueprint-schemas/html/2.0.0/blueprintable.html)
+The purpose of this repository is similar to that of the Factorio wiki page on the blueprint string format, but specified in a standardized, machine readable format - giving it the potential to used by software suites for validation purposes. In addition to providing rigorous technical description of the format, documentation and descriptions are also provided directly alongside each property, meaning that automatically generating accurate, readable documentation of these formats is not only possible, but eminently feasible. [For example, here's a convenient, navigatable digest of the entire 2.1 blueprint string format.](https://redruin1.github.io/factorio-blueprint-schemas/html/2.1.0/blueprintable.html)
 
 ## Validation
 
@@ -72,8 +72,6 @@ python doc/make.py md
 ```
 
 Which will then populate the `doc/md` folder with the same structure.
-
-Additionally, `doc/make.py` is specified as a pre-commit hook, so it should automatically run on `git commit` and keep the generated files up-to-date.
 
 ## Contributing
 

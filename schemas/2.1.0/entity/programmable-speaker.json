@@ -4,7 +4,7 @@
     "title": "Programmable Speaker",
     "description": "A circuit-controllable entity which can emit sounds.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-condition.json"}
     ],
     "type": "object",
@@ -44,7 +44,7 @@
                 "volume_signal_id": {
                     "title": "Volume Control Signal",
                     "description": "What signal should be read in order to determine the speakers volume. Only has an effect if `volume_controlled_by_signal` is `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": null
                 }
             }
@@ -61,7 +61,7 @@
                 "icon_signal_id": {
                     "title": "Alert Icon",
                     "description": "The icon that should display when this speaker is playing. If left null, the game defaults to the standard warning alert icon. Only has an effect if `show_alert` is `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": null
                 },
                 "show_on_map": {

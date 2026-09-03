@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/features/crafting-machine-controls.json",
+    "$id": "2.1.0/entity/features/crafting-machine-controls.json",
     "title": "Crafting Machine Circuit Controls",
     "description": "Allows this crafting machine to control it's behavior via the circuit network, if connected.",
     "type": "object",
@@ -35,7 +35,7 @@
                 "recipe_finished_signal": {
                     "title": "Recipe Finished Signal",
                     "description": "What signal should be broadcast to the circuit network when the recipe finishes. Only has an effect if `read_recipe_finished` is `true`.",
-                    "$ref": "../../common/optional-signal-id.json",
+                    "$ref": "../../../2.0.0/common/optional-signal-id.json",
                     "default": null
                 },
                 "read_working": {
@@ -47,7 +47,7 @@
                 "working_signal": {
                     "title": "Working Signal",
                     "description": "What signal should be broadcast to the circuit network during the machines operation. Only has an effect if `read_working` is `true`.",
-                    "$ref": "../../common/optional-signal-id.json",
+                    "$ref": "../../../2.0.0/common/optional-signal-id.json",
                     "default": null
                 }
             }

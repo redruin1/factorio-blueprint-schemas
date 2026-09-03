@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/features/logistic-condition.json",
+    "$id": "2.1.0/entity/features/logistic-condition.json",
     "title": "Logistic Condition",
     "description": "Allows this entity to control it's function based on the logistic network it lives inside of.",
     "properties": {
@@ -15,7 +15,7 @@
                 "logistic_condition": {
                     "title": "Logistic Condition",
                     "description": "The logistic condition that the entity should be enabled with, if `'connect_to_logistic_network'` is `true`.",
-                    "$ref": "../../common/condition.json"
+                    "$ref": "../../../2.0.0/common/condition.json"
                 }
             }
         }

@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/features/vehicle.json",
+    "$id": "2.1.0/entity/features/vehicle.json",
     "title": "Vehicle",
     "description": "Gives this entity a trunk and ammo inventory, as well as gunnar control parameters.",
     "type": "object",

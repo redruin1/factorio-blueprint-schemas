@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "2.0.0/entity/features/circuit-read-temperature.json",
+    "$id": "2.1.0/entity/features/circuit-read-temperature.json",
     "title": "Circuit Read Temperature",
     "description": "Allows this entity broadcast the temperature of it's contents to the output circuit network.",
     "type": "object",
@@ -17,7 +17,7 @@
                 "temperature_signal": {
                     "title": "Temperature Signal",
                     "description": "What signal to output this reactors temperature as. Only has an effect if `read_temperature` is `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-T", "type": "virtual"}
                 }
             }

@@ -4,7 +4,7 @@
     "title": "Spider Vehicle",
     "description": "A legged vehicle that can move in any direction at once.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/equipment-grid.json"},
         {"$ref": "features/vehicle.json"},
         {"$ref": "features/request-filters.json"}

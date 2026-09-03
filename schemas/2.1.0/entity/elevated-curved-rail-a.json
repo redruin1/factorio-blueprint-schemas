@@ -4,6 +4,6 @@
     "title": "Elevated Curved Rail A",
     "description": "One half of the 2.0 elevated curved rail entities.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

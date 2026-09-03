@@ -4,7 +4,7 @@
     "title": "Heat Pipe",
     "description": "An entity used for heat transfer.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
-        {"$ref": "features/circuit-split-io.json"},
+        {"$ref": "../../2.0.0/entity.json"},
+        {"$ref": "features/circuit-split-io.json"}
     ]
 }

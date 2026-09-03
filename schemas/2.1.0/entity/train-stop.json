@@ -4,7 +4,7 @@
     "title": "Train Stop",
     "description": "An entity representing a node on a Locomotive's schedule.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
@@ -45,7 +45,7 @@
                 },
                 "trains_limit_signal": {
                     "description": "What signal set the train limit with. Only has an effect if `set_trains_limit` is `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-L", "type": "virtual"}
                 },
                 "read_from_train": {
@@ -60,7 +60,7 @@
                 },
                 "train_stopped_signal": {
                     "description": "What signal to output the currently stopped train's ID on. Only has an effect if `read_stopped_train` is `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-T", "type": "virtual"}
                 },
                 "read_trains_count": {
@@ -70,7 +70,7 @@
                 },
                 "trains_count_signal": {
                     "description": "What signal to output the current number of arriving trains on. Only has an effect if `read_trains_count` is `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-C", "type": "virtual"}
                 },
                 "set_priority": {
@@ -80,7 +80,7 @@
                 },
                 "priority_signal": {
                     "description": "What signal to set this stop's priority with. Only has an effect if `set_priority` is `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-P", "type": "virtual"}
                 }
             }

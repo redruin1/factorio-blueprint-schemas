@@ -4,7 +4,7 @@
     "title": "Locomotive",
     "description": "A train car that drives other connected wagons around a rail network.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/orientation.json"},
         {"$ref": "features/equipment-grid.json"}
     ],

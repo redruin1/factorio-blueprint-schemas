@@ -71,7 +71,7 @@
                     "description": "The name of the signal that should be replaced when this blueprint is placed.",
                     "type": "string"
                 },
-                "quality-condition": {"$ref": "common/quality-filter.json"},
+                "quality-condition": {"$ref": "../2.0.0/common/quality-filter.json"},
                 "ingredient-of": {
                     "title": "Ingredient Of",
                     "description": "A name of a previously used parameter to grab a unique item ingredient of.",
@@ -159,7 +159,7 @@
                 "properties": {
                     "type": {"const": "circuit"},
                     "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
-                    "condition": {"$ref": "common/condition.json"}
+                    "condition": {"$ref": "../2.0.0/common/condition.json"}
                 },
                 "required": ["type", "compare_type"]
             },
@@ -184,7 +184,7 @@
                 "properties": {
                     "type": {"const": "fluid_count"},
                     "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
-                    "condition": {"$ref": "common/condition.json"}
+                    "condition": {"$ref": "../2.0.0/common/condition.json"}
                 },
                 "required": ["type", "compare_type"]
             },
@@ -193,7 +193,7 @@
                 "properties": {
                     "type": {"const": "fuel_item_count_all"},
                     "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
-                    "condition": {"$ref": "common/condition.json"}
+                    "condition": {"$ref": "../2.0.0/common/condition.json"}
                 },
                 "required": ["type", "compare_type"]
             },
@@ -202,7 +202,7 @@
                 "properties": {
                     "type": {"const": "fuel_item_count_any"},
                     "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
-                    "condition": {"$ref": "common/condition.json"}
+                    "condition": {"$ref": "../2.0.0/common/condition.json"}
                 },
                 "required": ["type", "compare_type"]
             },
@@ -248,7 +248,7 @@
                 "properties": {
                     "type": {"const": "item_count"},
                     "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
-                    "condition": {"$ref": "common/condition.json"}
+                    "condition": {"$ref": "../2.0.0/common/condition.json"}
                 },
                 "required": ["type", "compare_type"]
             },
@@ -353,7 +353,7 @@
                     "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
                     "condition": {
                         "description": "The value of `first_signal` will determine what item request is being checked.",
-                        "$ref": "common/condition.json"
+                        "$ref": "../2.0.0/common/condition.json"
                     }
                 },
                 "required": ["type", "compare_type"]
@@ -365,7 +365,7 @@
                     "compare_type": {"$ref": "#/$defs/schedule-conditions/compare-type"},
                     "condition": {
                         "description": "The value of `first_signal` will determine what item request is being checked.",
-                        "$ref": "common/condition.json"
+                        "$ref": "../2.0.0/common/condition.json"
                     }
                 },
                 "required": ["type", "compare_type"]

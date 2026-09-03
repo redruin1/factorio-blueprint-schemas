@@ -4,7 +4,7 @@
     "title": "Infinity Container",
     "description": "A container which can spawn or remove any item infinitely.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "$defs": {
         "infinity-inventory-filter": {

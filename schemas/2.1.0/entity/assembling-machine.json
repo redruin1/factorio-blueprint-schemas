@@ -4,7 +4,7 @@
     "title": "Assembling Machine",
     "description": "An entity that can convert items and fluids into other items and fluids.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
@@ -24,7 +24,7 @@
         "recipe_quality": {
             "title": "Recipe Quality",
             "description": "The quality of the ingredients/output items that this machine should use.",
-            "$ref": "../common/quality-name.json"
+            "$ref": "../../2.0.0/common/quality-name.json"
         }
     }
 }

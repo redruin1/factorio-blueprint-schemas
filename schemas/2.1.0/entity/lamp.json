@@ -4,7 +4,7 @@
     "title": "Lamp",
     "description": "An entity which illuminates a radius around it.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-enabled.json"},
         {"$ref": "features/circuit-condition.json"},
@@ -63,25 +63,25 @@
                 "red_signal": {
                     "title": "Red Color Component Signal",
                     "description": "What signal to pull the red color component from. Does nothing unless `color_mode` is `1`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-red", "type": "virtual"}
                 },
                 "green_signal": {
                     "title": "Green Color Component Signal",
                     "description": "What signal to pull the green color component from. Does nothing unless `color_mode` is `1`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-green", "type": "virtual"}
                 },
                 "blue_signal": {
                     "title": "Blue Color Component Signal",
                     "description": "What signal to pull the blue color component from. Does nothing unless `color_mode` is `1`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-blue", "type": "virtual"}
                 },
                 "rgb_signal": {
                     "title": "Packed Color Component Signal",
                     "description": "What signal to pull all color components from. Does nothing unless `color_mode` is `2`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-white", "type": "virtual"}
                 }
             }

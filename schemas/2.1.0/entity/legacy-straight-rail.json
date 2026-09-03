@@ -4,6 +4,6 @@
     "title": "Legacy Straight Rail",
     "description": "An old, Factorio 1.0 straight rail entity.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

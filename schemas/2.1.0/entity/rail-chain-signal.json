@@ -17,7 +17,7 @@
                 "blue_output_signal": {
                     "title": "Blue Output Signal",
                     "description": "The signal to broadcast when this signal's state is blue.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-blue", "type": "virtual"}
                 }
             }

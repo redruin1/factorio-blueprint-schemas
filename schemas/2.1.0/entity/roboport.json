@@ -4,7 +4,7 @@
     "title": "Roboport",
     "description": "An entity in charge of holding, dispatching, and recharging logistic network robots.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"}
     ],
     "type": "object",
@@ -28,7 +28,7 @@
                 "available_logistic_output_signal": {
                     "title": "Available Logistic Robots",
                     "description": "What signal the number of available logistic robots in this network should be output as.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {
                         "name": "signal-X",
                         "type": "virtual"
@@ -37,7 +37,7 @@
                 "total_logistic_output_signal": {
                     "title": "Total Logistic Robots",
                     "description": "What signal the number of total logistic robots in this network should be output as.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {
                         "name": "signal-Y",
                         "type": "virtual"
@@ -46,7 +46,7 @@
                 "available_construction_output_signal": {
                     "title": "Available Construction Robots",
                     "description": "What signal the number of available construction robots in this network should be output as.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {
                         "name": "signal-Z",
                         "type": "virtual"
@@ -55,7 +55,7 @@
                 "total_construction_output_signal": {
                     "title": "Total Construction Robots",
                     "description": "What signal the number of total construction robots in this network should be output as.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {
                         "name": "signal-T",
                         "type": "virtual"

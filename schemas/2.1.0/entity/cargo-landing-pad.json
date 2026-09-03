@@ -5,7 +5,7 @@
     "title": "Cargo Landing Pad",
     "description": "An entity on a surface which recieves cargo from space platforms.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/request-filters.json"}
     ],
     "type": "object",
@@ -14,7 +14,7 @@
             "type": "object",
             "properties": {
                 "circuit_mode_of_operation": {
-                    "$ref": "../common/logistic-mode-of-operation.json"
+                    "$ref": "../../2.0.0/common/logistic-mode-of-operation.json"
                 }
             }
         }

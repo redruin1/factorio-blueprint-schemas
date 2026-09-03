@@ -4,6 +4,6 @@
     "title": "Linked Belt",
     "description": "A belt which can teleport items across space or between surfaces.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

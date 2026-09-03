@@ -4,7 +4,7 @@
     "title": "Display Panel",
     "description": "A circuit-controllable signpost which can display text as well as signal icons.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "$defs": {
         "display-panel-message": {
@@ -13,7 +13,7 @@
                 "icon": {
                     "title": "Icon",
                     "description": "Icon to display if `condition` evaluates to `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": null
                 },
                 "text": {
@@ -24,7 +24,7 @@
                 },
                 "condition": {
                     "description": "Condition under which this message should be displayed.",
-                    "$ref": "../common/condition.json"
+                    "$ref": "../../2.0.0/common/condition.json"
                 }
             }
         }
@@ -39,7 +39,7 @@
         "icon": {
             "title": "Static Icon",
             "description": "Static icon to display on the front of the panel. Overwritten by any conditional messages specified in `control_behavior.parameters` if connected to a circuit network.",
-            "$ref": "../common/optional-signal-id.json",
+            "$ref": "../../2.0.0/common/optional-signal-id.json",
             "default": null
         },
         "always_show": {

@@ -4,7 +4,7 @@
     "title": "Logistic Container",
     "description": "A container which acts as a node for the logistic network. Validates logistics chests of all 5 types, though some keys (`request_filters`) only apply to specific types.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/request-filters.json"},
         {"$ref": "features/circuit-enabled.json"},
@@ -17,7 +17,7 @@
             "type": "object",
             "properties": {
                 "circuit_mode_of_operation": {
-                    "$ref": "../common/logistic-mode-of-operation.json"
+                    "$ref": "../../2.0.0/common/logistic-mode-of-operation.json"
                 }
             }
         }

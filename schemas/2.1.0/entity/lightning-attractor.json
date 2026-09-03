@@ -4,6 +4,6 @@
     "title": "Lightning Attractor",
     "description": "An entity which directs lightning strikes and converts them into usable electricity.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

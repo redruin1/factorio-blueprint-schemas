@@ -4,7 +4,7 @@
     "title": "Splitter",
     "description": "An entity which distributes items across transport belts.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-split-io.json"}
     ],
     "type": "object",
@@ -40,7 +40,7 @@
                     "title": "Input Left Condition",
                     "description": "What condition should make the splitter prefer inputs from it's left side.",
                     "allOf": [
-                        {"$ref": "../common/condition.json"}
+                        {"$ref": "../../2.0.0/common/condition.json"}
                     ],
                     "default": {
                         "first_signal": {"name": "signal-I"},
@@ -52,7 +52,7 @@
                     "title": "Input Right Condition",
                     "description": "What condition should make the splitter prefer inputs from it's right side.",
                     "allOf": [
-                        {"$ref": "../common/condition.json"}
+                        {"$ref": "../../2.0.0/common/condition.json"}
                     ],
                     "default": {
                         "first_signal": {"name": "signal-I"},
@@ -70,7 +70,7 @@
                     "title": "Output Left Condition",
                     "description": "What condition should make the splitter prefer outputs from it's left side.",
                     "allOf": [
-                        {"$ref": "../common/condition.json"}
+                        {"$ref": "../../2.0.0/common/condition.json"}
                     ],
                     "default": {
                         "first_signal": {"name": "signal-O"},
@@ -82,7 +82,7 @@
                     "title": "Output Right Condition",
                     "description": "What condition should make the splitter prefer outputs from it's right side.",
                     "allOf": [
-                        {"$ref": "../common/condition.json"}
+                        {"$ref": "../../2.0.0/common/condition.json"}
                     ],
                     "default": {
                         "first_signal": {"name": "signal-O"},
@@ -102,7 +102,7 @@
             "title": "Item Filter",
             "description": "What item this splitter should filter on the `output_priority` side. If this value is set but `output_priority` is omitted, `output_priority` defaults to `'left'`",
             "anyOf": [
-                {"$ref": "../common/signal-id.json"}
+                {"$ref": "../../2.0.0/common/signal-id.json"}
             ]
         }
     }

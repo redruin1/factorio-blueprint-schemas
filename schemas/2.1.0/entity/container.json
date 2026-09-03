@@ -4,7 +4,7 @@
     "title": "Container",
     "description": "A static entity that stores items.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {

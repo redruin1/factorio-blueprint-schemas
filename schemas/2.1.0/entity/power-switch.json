@@ -4,7 +4,7 @@
     "title": "Power Switch",
     "description": "An entity which can conditionally connect or disconnect a power connection.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/circuit-condition.json"},
         {"$ref": "features/logistic-condition.json"}
     ],

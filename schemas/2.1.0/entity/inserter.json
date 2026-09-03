@@ -4,7 +4,7 @@
     "title": "Inserter",
     "description": "A machine with a swing arm that can move items in and out of a variety of different entities.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"},
+        {"$ref": "../../2.0.0/entity.json"},
         {"$ref": "features/filters.json"},
         {"$ref": "features/circuit-split-io.json"},
         {"$ref": "features/circuit-set-filters.json"},
@@ -90,7 +90,7 @@
                 "stack_control_input_signal": {
                     "title": "Stack Control Input Signal",
                     "description": "What signal should be used when determining the dynamic stack size of this inserter. Only has an effect if `circuit_set_stack_size` is `true`.",
-                    "$ref": "../common/optional-signal-id.json",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
                     "default": {"name": "signal-s", "type": "virtual"}
                 }
             }

@@ -4,6 +4,6 @@
     "title": "Fusion Reactor",
     "description": "A fusion reactor.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }

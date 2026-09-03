@@ -4,6 +4,6 @@
     "title": "Burner Generator",
     "description": "An entity which generates electricity directly from items.",
     "allOf": [
-        {"$ref": "/2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ]
 }
