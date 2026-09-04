@@ -68,7 +68,7 @@
                     "type": "boolean",
                     "default": false
                 },
-                "circuit_read_hand_mode": {
+                "circuit_hand_read_mode": {
                     "title": "Read Hand Mode",
                     "description": "In what manner should the contents of the hand be broadcast to a connected circuit network. Only has an effect if `circuit_read_hand_contents` is `true`.",
                     "oneOf": [
