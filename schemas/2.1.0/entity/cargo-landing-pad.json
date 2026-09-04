@@ -11,6 +11,9 @@
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"}
+            ],
             "type": "object",
             "properties": {
                 "circuit_mode_of_operation": {
