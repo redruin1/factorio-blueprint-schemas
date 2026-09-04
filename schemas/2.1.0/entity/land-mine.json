@@ -4,9 +4,15 @@
     "title": "Land Mine",
     "description": "A static structure which explodes when in radius of an enemy force.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"}
-    ]
+        {"$ref": "../../2.0.0/entity.json"}
+    ],
+    "properties": {
+        "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"}
+            ]
+        }
+    }
 }

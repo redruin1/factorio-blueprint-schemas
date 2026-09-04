@@ -5,16 +5,11 @@
     "description": "Allows this entity to specify what connected circuit wires are considered input and which are considered output.",
     "type": "object",
     "properties": {
-        "control_behavior": {
-            "type": "object",
-            "properties": {
-                "input_networks": {
-                    "$ref": "../../../2.0.0/common/network-specification.json"
-                },
-                "output_networks": {
-                    "$ref": "../../../2.0.0/common/network-specification.json"
-                }
-            }
+        "input_networks": {
+            "$ref": "../../../2.0.0/common/network-specification.json"
+        },
+        "output_networks": {
+            "$ref": "../../../2.0.0/common/network-specification.json"
         }
     }
 }

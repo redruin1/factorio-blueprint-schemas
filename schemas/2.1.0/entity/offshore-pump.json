@@ -4,9 +4,15 @@
     "title": "Offshore Pump",
     "description": "A pump which extracts fluids from fluid surface tiles.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
-    ]
+        {"$ref": "../../2.0.0/entity.json"}
+    ],
+    "properties": {
+        "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ]
+        }
+    }
 }

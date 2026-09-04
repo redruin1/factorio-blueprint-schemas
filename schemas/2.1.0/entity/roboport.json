@@ -4,12 +4,14 @@
     "title": "Roboport",
     "description": "An entity in charge of holding, dispatching, and recharging logistic network robots.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"}
+            ],
             "type": "object",
             "description": "Entity-specific structure which holds keys related to configuring how this entity acts.",
             "properties": {

@@ -5,13 +5,15 @@
     "title": "Reactor",
     "description": "A nuclear (fission) reactor.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"},
-        {"$ref": "features/circuit-read-temperature.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-read-temperature.json"}
+            ],
             "type": "object",
             "properties": {
                 "read_burner_fuel": {

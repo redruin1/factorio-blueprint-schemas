@@ -4,10 +4,7 @@
     "title": "Pump",
     "description": "An entity that permits the travel of fluids over long distances.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {
@@ -24,6 +21,11 @@
             ]
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ],
             "type": "object",
             "set_filter": {
                 "title": "Set Filter",

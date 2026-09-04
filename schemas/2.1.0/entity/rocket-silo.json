@@ -4,8 +4,7 @@
     "title": "Rocket Silo",
     "description": "An entity which automatically charts and reveals neighbouring chunks.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {
@@ -21,6 +20,9 @@
             "$ref": "../../common/uint32.json"
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"}
+            ],
             "type": "object",
             "properties": {
                 "read_items_mode": {

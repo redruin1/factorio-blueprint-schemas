@@ -4,9 +4,7 @@
     "title": "Power Switch",
     "description": "An entity which can conditionally connect or disconnect a power connection.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {
@@ -15,6 +13,13 @@
             "description": "Manual on/off switch for this entity. Has no effect if connected to a circuit network.",
             "type": "boolean",
             "default": false
+        },
+        "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ],
+            "type": "object"
         }
     }
 }

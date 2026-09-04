@@ -4,11 +4,17 @@
     "title": "Furnace",
     "description": "A crafting machine that automatically determines it's recipe from it's inputs.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"},
-        {"$ref": "features/crafting-machine-controls.json"}
-    ]
+        {"$ref": "../../2.0.0/entity.json"}
+    ],
+    "properties": {
+        "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"},
+                {"$ref": "features/crafting-machine-controls.json"}
+            ]
+        }
+    }
 }

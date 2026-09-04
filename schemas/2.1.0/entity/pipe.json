@@ -4,8 +4,15 @@
     "title": "Pipe",
     "description": "A static entity which transports fluids.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"},
-        {"$ref": "features/circuit-read-temperature.json"}
-    ]
+        {"$ref": "../../2.0.0/entity.json"}
+    ],
+    "properties": {
+        "control_behavior": {
+            "allOf": [
+                {"$ref": "features/pipe-mode.json"},
+                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-read-temperature.json"}
+            ]
+        }
+    }
 }

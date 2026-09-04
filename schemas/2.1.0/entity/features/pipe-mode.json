@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "2.1.0/entity/features/pipe-mode.json",
+    "title": "Pipe Mode",
+    "description": "Allows the entity to configure how it should broadcast it's fluid contents to the circuit network.",
+    "type": "object",
+    "properties": {
+        "mode": {
+            "oneOf": [
+                { 
+                    "title": "None",
+                    "description": "Do not broadcast this pipe's/pipeline's contents.",
+                    "const": 0
+                },
+                { 
+                    "title": "Pipe",
+                    "description": "Broadcast only the volume in this pipe/storage tank.",
+                    "const": 1
+                },
+                { 
+                    "title": "Pipeline",
+                    "description": "Broadcast the volume of the entire connected pipe network for this fluid.",
+                    "const": 2
+                }
+            ],
+            "default": 1
+        }
+    }
+}

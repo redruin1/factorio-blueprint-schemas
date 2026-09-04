@@ -4,11 +4,13 @@
     "title": "Lab",
     "description": "An entity which consumes items to research technologies.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"} 
+            ],
             "type": "object",
             "properties": {
                 

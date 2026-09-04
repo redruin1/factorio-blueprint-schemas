@@ -4,8 +4,7 @@
     "title": "Splitter",
     "description": "An entity which distributes items across transport belts.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {
@@ -28,6 +27,9 @@
             "default": "none"
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"}
+            ],
             "type": "object",
             "properties": {
                 "set_input_priority": {

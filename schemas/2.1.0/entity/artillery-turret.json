@@ -5,11 +5,17 @@
     "description": "A turret that targets enemy structures over long ranges.",
     "allOf": [
         {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"},
-        {"$ref": "features/read-ammo.json"},
         {"$ref": "features/artillery-auto-targeting.json"}
-    ]
+    ],
+    "properties": {
+        "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"},
+                {"$ref": "features/read-ammo.json"}
+            ]
+        }
+    }
 }

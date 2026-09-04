@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="schema_doc.css">
+    <script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+    <script src="schema_doc.min.js"></script>
+    <meta charset="utf-8"/>
+        
+    
+    <title>Pipe Mode</title>
+</head>
+<body onload="anchorOnLoad();" id="root">
+
+     <h1>Pipe Mode</h1><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>Allows the entity to configure how it should broadcast it's fluid contents to the circuit network.</p>
+</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionmode">
+    <div class="card">
+        <div class="card-header" id="headingmode">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#mode"
+                        aria-expanded="" aria-controls="mode" onclick="setAnchor('#mode')"><span class="property-name">mode</span></button>
+            </h2>
+        </div>
+
+        <div id="mode"
+             class="collapse property-definition-div" aria-labelledby="headingmode"
+             data-parent="#accordionmode">
+            <div class="card-body pl-5">
+
+     <span class="badge badge-success default-value">Default: 1</span><br/>
+<div class="one-of-value" id="mode_oneOf"><h2 class="handle">
+  <label>One of</label>
+</h2><ul class="nav nav-tabs" id="tabsmode_oneOf_oneOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active oneOf-option"
+               id="mode_oneOf_i0" data-toggle="tab" href="#tab-pane_mode_oneOf_i0" role="tab"
+               onclick="setAnchor('#mode_oneOf_i0')"
+            >None</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="mode_oneOf_i1" data-toggle="tab" href="#tab-pane_mode_oneOf_i1" role="tab"
+               onclick="setAnchor('#mode_oneOf_i1')"
+            >Pipe</a>
+        </li><li class="nav-item">
+            <a class="nav-link oneOf-option"
+               id="mode_oneOf_i2" data-toggle="tab" href="#tab-pane_mode_oneOf_i2" role="tab"
+               onclick="setAnchor('#mode_oneOf_i2')"
+            >Pipeline</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_mode_oneOf_i0" role="tabpanel">
+            
+
+    <h4>None</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p>Do not broadcast this pipe's/pipeline's contents.</p>
+</span><span class="const-value" id="mode_oneOf_i0_const">Specific value: <code>0</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_mode_oneOf_i1" role="tabpanel">
+            
+
+    <h4>Pipe</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p>Broadcast only the volume in this pipe/storage tank.</p>
+</span><span class="const-value" id="mode_oneOf_i1_const">Specific value: <code>1</code></span>
+        
+
+        
+        
+
+        
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_mode_oneOf_i2" role="tabpanel">
+            
+
+    <h4>Pipeline</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="description"><p>Broadcast the volume of the entire connected pipe network for this fluid.</p>
+</span><span class="const-value" id="mode_oneOf_i2_const">Specific value: <code>2</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a></p>
+    </footer></body>
+</html>

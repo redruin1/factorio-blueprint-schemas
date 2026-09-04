@@ -10,8 +10,8 @@
     "properties": {
         "control_behavior": {
             "allOf": [
-                {"$ref": "features/cb-circuit-split-io.json"},
-                {"$ref": "features/cb-circuit-condition.json"}
+                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-condition.json"}
             ],
             "type": "object",
             "properties": {
