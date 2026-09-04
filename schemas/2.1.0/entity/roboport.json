@@ -4,7 +4,8 @@
     "title": "Roboport",
     "description": "An entity in charge of holding, dispatching, and recharging logistic network robots.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"},
+        {"$ref": "features/request-filters.json"}
     ],
     "type": "object",
     "properties": {
