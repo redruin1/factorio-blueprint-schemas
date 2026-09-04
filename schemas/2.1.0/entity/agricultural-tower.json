@@ -9,13 +9,13 @@
     "type": "object",
     "properties": {
         "control_behavior": {
-            "properties": {
-                "allOf": [
-                    {"$ref": "features/circuit-split-io.json"},
-                    {"$ref": "features/circuit-enabled.json"},
-                    {"$ref": "features/circuit-condition.json"},
-                    {"$ref": "features/logistic-condition.json"}
-                ],
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ],
+            "properties": {  
                 "enable_harvesting_condition": {
                     "title": "Enable Harvesting Condition",
                     "description": "Whether or not this entity should conditionally enable/disable harvesting.",
