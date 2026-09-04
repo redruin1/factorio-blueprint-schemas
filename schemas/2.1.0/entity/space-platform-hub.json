@@ -9,7 +9,7 @@
         {"$ref": "features/request-filters.json"}
     ],
     "properties": {
-        "request_missing_construction_materials": {\
+        "request_missing_construction_materials": {
             "title": "Request Missing Construction Materials",
             "description": "Whether or not this space platform should automatically request deliveries to satisfy it's own construction demands.",
             "type": "boolean",
@@ -23,7 +23,7 @@
         },
         "control_behavior": {
             "allOf": [
-                {"$ref": "features/circuit-split-io.json"},
+                {"$ref": "features/circuit-split-io.json"}
             ],
             "type": "object",
             "properties": {
