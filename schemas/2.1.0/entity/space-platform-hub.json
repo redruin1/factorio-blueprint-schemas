@@ -9,14 +9,30 @@
         {"$ref": "features/request-filters.json"}
     ],
     "properties": {
-        "request_missing_construction_materials": {
+        "request_missing_construction_materials": {\
+            "title": "Request Missing Construction Materials",
             "description": "Whether or not this space platform should automatically request deliveries to satisfy it's own construction demands.",
             "type": "boolean",
             "default": true
         },
+        "providing_to_other_platforms": {
+            "title": "Provide to Other Platforms",
+            "description": "Whether or not this space platform should automatically request deliveries to satisfy it's own construction demands.",
+            "type": "boolean",
+            "default": false
+        },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-split-io.json"},
+            ],
             "type": "object",
             "properties": {
+                "set_requests": {
+                    "title": "Set Requests",
+                    "description": "Whether or not this space platform should set it's requests dynamically via its circuit network input wires.",
+                    "type": "boolean",
+                    "default": false
+                },
                 "read_contents": {
                     "description": "Whether or not this hub should broadcast the contents of it's inventory to a connected circuit network.",
                     "type": "boolean",
