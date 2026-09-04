@@ -4,13 +4,15 @@
     "title": "Wall",
     "description": "A static barrier intended to protect structures.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"},
-        {"$ref": "features/circuit-split-io.json"},
-        {"$ref": "features/circuit-condition.json"}
+        {"$ref": "../../2.0.0/entity.json"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/cb-circuit-split-io.json"},
+                {"$ref": "features/cb-circuit-condition.json"}
+            ],
             "type": "object",
             "properties": {
                 "circuit_open_gate": {
