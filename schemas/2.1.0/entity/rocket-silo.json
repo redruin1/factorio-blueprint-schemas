@@ -8,6 +8,19 @@
     ],
     "type": "object",
     "properties": {
+        "recipe": {
+            "title": "Recipe",
+            "description": "The recipe that this entity is configured to perform.",
+            "oneOf": [
+                {"title": "Recipe Name", "type": "string"},
+                {"title": "null", "type": "null"}
+            ]
+        },
+        "recipe_quality": {
+            "title": "Recipe Quality",
+            "description": "The quality of the ingredients/output items that this machine should use.",
+            "$ref": "../../2.0.0/common/quality-name.json"
+        },
         "use_transitional_requests": {
             "title": "Automatic Requests from Space Platforms",
             "description": "Whether or not this rocket silo will automatically attempt to resolve logistic requests of space platforms.",
