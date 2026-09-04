@@ -3,6 +3,30 @@
     "$id": "2.1.0/entity/lab.json",
     "title": "Lab",
     "description": "An entity which consumes items to research technologies.",
+    "$defs": {
+        "research-condition": {
+            "type": "object",
+            "properties": {
+                "condition": {
+                    "$ref": "../../2.0.0/common/condition.json"
+                },
+                "name": {
+                    "title": "Name",
+                    "description": "The name of the technology to research if `condition` is true.",
+                    "oneOf": [
+                        {"type": "string"},
+                        {"title": "Null", "type": "null"}
+                    ]
+                },
+                "count": {
+                    "title": "Count",
+                    "description": "Unknown.",
+                    "type": "integer",
+                    "default": 0
+                }
+            }
+        }
+    },
     "allOf": [
         {"$ref": "../../2.0.0/entity.json"}
     ],
@@ -13,7 +37,44 @@
             ],
             "type": "object",
             "properties": {
-                
+                "set_research": {
+                    "title": "Set Research",
+                    "description": "Whether or not this lab should determine the next research based in circuit inputs.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "conditions": {
+                    "title": "Research Conditions",
+                    "description": "The list of conditions to evaluate when determining the current research.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/research-condition"
+                    }
+                },
+                "read_contents": {
+                    "title": "Read Contents",
+                    "description": "Whether or not this lab should broadcast the amount of science packs in its inventory.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "read_research_cost": {
+                    "title": "Read Research Cost",
+                    "description": "Whether or not this lab should broadcast the amount of science packs ramaining in order to complete the current research.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "read_technology_level": {
+                    "title": "Read Technology Level",
+                    "description": "Whether or not this lab should broadcast the current research level of the researching technology.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "technology_level_signal": {
+                    "title": "Technology Level Signal",
+                    "description": "What signal this lab should output the current tech research level, if `read_technology_level` is true.",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
+                    "default": {"name": "signal-M", "type": "virtual"}
+                }
             }
         }
     }

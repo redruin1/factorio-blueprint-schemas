@@ -925,12 +925,194 @@
     <h4>Result Inventory Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
 <span class="description"><p>Inventory object which holds the limiting bar for this entity.</p>
 </span>
+
+    
         
 
         
         
 
         
+<div class="accordion" id="accordionresult_inventory_filters">
+    <div class="card">
+        <div class="card-header" id="headingresult_inventory_filters">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#result_inventory_filters"
+                        aria-expanded="" aria-controls="result_inventory_filters" onclick="setAnchor('#result_inventory_filters')"><span class="property-name">filters</span></button>
+            </h2>
+        </div>
+
+        <div id="result_inventory_filters"
+             class="collapse property-definition-div" aria-labelledby="headingresult_inventory_filters"
+             data-parent="#accordionresult_inventory_filters">
+            <div class="card-body pl-5">
+
+    <h4>Inventory Filters</h4><span class="badge badge-dark value-type">Type: array</span> <span class="badge badge-success default-value">Default: []</span><br/>
+<span class="description"><p>What inventory filters this inventory should have at what slots.</p>
+</span>
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="result_inventory_filters_items">
+            
+
+    <h4>Item Filter</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description"><p>An object representing a restricted item slot.</p>
+</span>
+
+    
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="result_inventory_filters_items_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;iron-ore&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div><div id="result_inventory_filters_items_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copper-ore&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;quality&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rare&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;comparator&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="accordion" id="accordionresult_inventory_filters_items_quality">
+    <div class="card">
+        <div class="card-header" id="headingresult_inventory_filters_items_quality">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#result_inventory_filters_items_quality"
+                        aria-expanded="" aria-controls="result_inventory_filters_items_quality" onclick="setAnchor('#result_inventory_filters_items_quality')"><span class="property-name">quality</span></button>
+            </h2>
+        </div>
+
+        <div id="result_inventory_filters_items_quality"
+             class="collapse property-definition-div" aria-labelledby="headingresult_inventory_filters_items_quality"
+             data-parent="#accordionresult_inventory_filters_items_quality">
+            <div class="card-body pl-5">
+
+    <h4>Filter Quality</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "normal"</span><br/>
+<span class="description"><p>Quality of the item that should occupy this slot. If omitted, this value is treated as 'any' quality. Otherwise, the quality specified here is used in relation to <code>comparator</code>, which can be used to specify a range of quality values. Required if <code>comparator</code> is specified.</p>
+</span>
+
+    <div class="enum-value" id="result_inventory_filters_items_quality_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">"normal"</li><li class="list-group-item enum-item">"uncommon"</li><li class="list-group-item enum-item">"rare"</li><li class="list-group-item enum-item">"epic"</li><li class="list-group-item enum-item">"legendary"</li><li class="list-group-item enum-item">"quality-unknown"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionresult_inventory_filters_items_comparator">
+    <div class="card">
+        <div class="card-header" id="headingresult_inventory_filters_items_comparator">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#result_inventory_filters_items_comparator"
+                        aria-expanded="" aria-controls="result_inventory_filters_items_comparator" onclick="setAnchor('#result_inventory_filters_items_comparator')"><span class="property-name">comparator</span></button>
+            </h2>
+        </div>
+
+        <div id="result_inventory_filters_items_comparator"
+             class="collapse property-definition-div" aria-labelledby="headingresult_inventory_filters_items_comparator"
+             data-parent="#accordionresult_inventory_filters_items_comparator">
+            <div class="card-body pl-5">
+
+    <h4>Quality Comparator</h4><span class="badge badge-dark value-type">Type: enum (of string)</span> <span class="badge badge-success default-value">Default: "="</span><br/>
+<span class="description"><p>What comparison should be performed along with <code>quality</code> when determining what range of qualities can be filtered against. Required if <code>quality</code> is specified.</p>
+</span>
+
+    <div class="enum-value" id="result_inventory_filters_items_comparator_enum">
+            <h4>Must be one of:</h4>
+            <ul class="list-group"><li class="list-group-item enum-item">">"</li><li class="list-group-item enum-item">"<"</li><li class="list-group-item enum-item">"="</li><li class="list-group-item enum-item">"≥"</li><li class="list-group-item enum-item">"≤"</li><li class="list-group-item enum-item">"≠"</li></ul>
+            </div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionresult_inventory_filters_items_index">
+    <div class="card">
+        <div class="card-header" id="headingresult_inventory_filters_items_index">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#result_inventory_filters_items_index"
+                        aria-expanded="" aria-controls="result_inventory_filters_items_index" onclick="setAnchor('#result_inventory_filters_items_index')"><span class="property-name">index</span></button>
+            </h2>
+        </div>
+
+        <div id="result_inventory_filters_items_index"
+             class="collapse property-definition-div" aria-labelledby="headingresult_inventory_filters_items_index"
+             data-parent="#accordionresult_inventory_filters_items_index">
+            <div class="card-body pl-5">
+
+    <h4>Index</h4><span class="badge badge-dark value-type">Type: integer</span><br/>
+<span class="description"><p>Slot at which this filter occupies, 1-indexed.</p>
+</span>
+
+    
+        
+
+        
+        <p><span class="badge badge-light restriction numeric-restriction" id="result_inventory_filters_items_index_number">Value must be greater or equal to <code>0</code> and strictly lesser than <code>4294967296</code></span></p>
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionresult_inventory_filters_items_name">
+    <div class="card">
+        <div class="card-header" id="headingresult_inventory_filters_items_name">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#result_inventory_filters_items_name"
+                        aria-expanded="" aria-controls="result_inventory_filters_items_name" onclick="setAnchor('#result_inventory_filters_items_name')"><span class="property-name">name</span></button>
+            </h2>
+        </div>
+
+        <div id="result_inventory_filters_items_name"
+             class="collapse property-definition-div" aria-labelledby="headingresult_inventory_filters_items_name"
+             data-parent="#accordionresult_inventory_filters_items_name">
+            <div class="card-body pl-5">
+
+    <h4>Item Name</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description"><p>Name of a valid Factorio item.</p>
+</span>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="accordion" id="accordionresult_inventory_bar">
     <div class="card">
         <div class="card-header" id="headingresult_inventory_bar">
