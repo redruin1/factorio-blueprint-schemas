@@ -11,7 +11,8 @@
         "control_behavior": {
             "allOf": [
                 {"$ref": "features/circuit-split-io.json"},
-                {"$ref": "features/circuit-condition.json"}
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/rail-signal-io.json"}
             ],
             "type": "object",
             "properties": {
@@ -26,24 +27,6 @@
                     "description": "Whether or not the signal's current state should be broadcast to a connected circuit network as a unit signal. Exactly what signals are output is controlled by `red_output_signal`, `orange_output_signal`, and `green_output_signal`.",
                     "type": "boolean",
                     "default": true
-                },
-                "red_output_signal": {
-                    "title": "Red Output Signal",
-                    "description": "The signal to broadcast when this signal's state is red.",
-                    "$ref": "../../2.0.0/common/optional-signal-id.json",
-                    "default": {"name": "signal-red", "type": "virtual"}
-                },
-                "orange_output_signal": {
-                    "title": "Yellow Output Signal",
-                    "description": "The signal to broadcast when this signal's state is yellow.",
-                    "$ref": "../../2.0.0/common/optional-signal-id.json",
-                    "default": {"name": "signal-yellow", "type": "virtual"}
-                },
-                "green_output_signal": {
-                    "title": "Green Output Signal",
-                    "description": "The signal to broadcast when this signal's state is green.",
-                    "$ref": "../../2.0.0/common/optional-signal-id.json",
-                    "default": {"name": "signal-green", "type": "virtual"}
                 }
             }
         }
