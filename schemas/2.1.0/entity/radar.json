@@ -13,7 +13,6 @@
                 "mode": {
                     "title": "Radar Mode",
                     "description": "The manner in which circuit network signals should be broadcast to/from this radar.",
-                    "type": "enum",
                     "oneOf": [
                         {
                             "title": "Surface",
