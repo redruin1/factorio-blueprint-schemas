@@ -35,11 +35,7 @@
         "result_inventory": {
             "title": "Result Inventory Object",
             "description": "Inventory object which holds the limiting bar for this entity.",
-            "type": "object",
-            "properties": {
-                "bar": {"$ref": "../../common/limiting-bar.json"}
-            },
-            "TODO": "Make this a reference to an `Inventory` object"
+            "$ref": "../../../2.0.0/common/inventory.json"
         },
         "chunk-filter": {
             "title": "Chunk Filters",
