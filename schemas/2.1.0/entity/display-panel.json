@@ -4,7 +4,8 @@
     "title": "Display Panel",
     "description": "A circuit-controllable signpost which can display text as well as signal icons.",
     "allOf": [
-        {"$ref": "../../2.0.0/entity.json"}
+        {"$ref": "../../2.0.0/entity.json"},
+        {"$ref": "features/player-description.json"}
     ],
     "$defs": {
         "display-panel-message": {
