@@ -4,7 +4,8 @@
     "title": "Asteroid Collector",
     "description": "An entity uses arms to grab asteroid chunks from space.",
     "allOf": [
-        {"$ref": "../entity.json"}
+        {"$ref": "../entity.json"},
+        {"$ref": "features/filters.json"}
     ],
     "$defs": {
         "asteroid-chunk-filter": {
