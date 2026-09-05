@@ -85,6 +85,15 @@
                         "name": "signal-T",
                         "type": "virtual"
                     }
+                },
+                "roboport_count_output_signal": {
+                    "title": "Roboport Count Signal",
+                    "description": "What signal the number of total roboports in this network should be output as.",
+                    "$ref": "../../2.0.0/common/optional-signal-id.json",
+                    "default": {
+                        "name": "signal-R",
+                        "type": "virtual"
+                    }
                 }
             }
         }
