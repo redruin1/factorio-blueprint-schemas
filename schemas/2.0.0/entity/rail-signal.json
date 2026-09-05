@@ -4,12 +4,15 @@
     "title": "Rail Signal",
     "description": "An entity which divvies up a rail network into blocks that trains can path through.",
     "allOf": [
-        {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-condition.json"}
+        {"$ref": "../entity.json"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/rail-signal-io.json"},
+                {"$ref": "features/circuit-condition.json"}
+            ],
             "type": "object",
             "properties": {
                 "circuit_close_signal": {

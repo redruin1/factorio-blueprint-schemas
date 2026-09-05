@@ -4,10 +4,7 @@
     "title": "Asteroid Collector",
     "description": "An entity uses arms to grab asteroid chunks from space.",
     "allOf": [
-        {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/circuit-set-filters.json"}
+        {"$ref": "../entity.json"}
     ],
     "$defs": {
         "asteroid-chunk-filter": {
@@ -53,6 +50,11 @@
             }
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/circuit-set-filters.json"}
+            ],
             "type": "object",
             "properties": {
                 "circuit_read_contents": {

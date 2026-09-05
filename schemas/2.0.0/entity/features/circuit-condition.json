@@ -3,14 +3,10 @@
     "$id": "2.0.0/entity/features/circuit-condition.json",
     "title": "Circuit Condition",
     "description": "Allows the entity to configure when it should operate based on some circuit network condition.",
+    "type": "object",
     "properties": {
-        "control_behavior": {
-            "type": "object",
-            "properties": {
-                "circuit_condition": {
-                    "$ref": "../../common/condition.json"
-                }
-            }
+        "circuit_condition": {
+            "$ref": "../../common/condition.json"
         }
     }
 }

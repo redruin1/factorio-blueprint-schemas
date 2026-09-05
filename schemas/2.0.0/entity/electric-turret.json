@@ -5,10 +5,16 @@
     "description": "A turret that uses electricity for ammunition.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"},
-        {"$ref": "features/turret-priorities.json"},
-        {"$ref": "features/read-ammo.json"}
-    ]
+        {"$ref": "features/turret-priorities.json"}
+    ],
+    "properties": {
+        "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"},
+                {"$ref": "features/read-ammo.json"}
+            ]
+        }
+    }
 }

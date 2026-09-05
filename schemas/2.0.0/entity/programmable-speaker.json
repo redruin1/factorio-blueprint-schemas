@@ -4,8 +4,7 @@
     "title": "Programmable Speaker",
     "description": "A circuit-controllable entity which can emit sounds.",
     "allOf": [
-        {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-condition.json"}
+        {"$ref": "../entity.json"}
     ],
     "type": "object",
     "properties": {
@@ -79,6 +78,9 @@
             }
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-condition.json"}
+            ],
             "type": "object",
             "properties": {
                 "circuit_parameters": {

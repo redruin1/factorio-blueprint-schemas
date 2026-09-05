@@ -4,14 +4,16 @@
     "title": "Mining Drill",
     "description": "An entity which extracts resources from the environment.",
     "allOf": [
-        {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
+        {"$ref": "../entity.json"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ],
             "type": "object",
             "properties": {
                 "circuit_read_resources": {

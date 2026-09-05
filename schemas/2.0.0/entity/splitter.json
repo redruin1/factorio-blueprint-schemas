@@ -29,7 +29,7 @@
         "control_behavior": {
             "type": "object",
             "properties": {
-                "set_input_priority": {
+                "set_input_side": {
                     "title": "Set Input Priority",
                     "description": "Whether or not this splitter should use a connected circuit network when determining which input side to prioritize.",
                     "type": "boolean",
@@ -59,7 +59,7 @@
                         "constant": 0
                     }
                 },
-                "set_output_priority": {
+                "set_output_side": {
                     "title": "Set Output Priority",
                     "description": "Whether or not this splitter should use a connected circuit network when determining which output side to prioritize.",
                     "type": "boolean",

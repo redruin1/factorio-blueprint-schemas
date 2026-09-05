@@ -22,6 +22,19 @@
         "control_behavior": {
             "type": "object",
             "properties": {
+                "recipe": {
+                    "title": "Recipe",
+                    "description": "The recipe that this entity is configured to perform.",
+                    "oneOf": [
+                        {"title": "Recipe Name", "type": "string"},
+                        {"title": "null", "type": "null"}
+                    ]
+                },
+                "recipe_quality": {
+                    "title": "Recipe Quality",
+                    "description": "The quality of the ingredients/output items that this machine should use.",
+                    "$ref": "../../2.0.0/common/quality-name.json"
+                },
                 "read_items_mode": {
                     "title": "Read Items Mode",
                     "description": "In what manner should this rocket silo populate a connected circuit network. See [`control_behavior.rocket_silo.read_mode`](https://lua-api.factorio.com/latest/defines.html#defines.control_behavior).",

@@ -4,14 +4,16 @@
     "title": "Agricultural Tower",
     "description": "An entity that seeds and harvests plants automatically.",
     "allOf": [
-        {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
+        {"$ref": "../entity.json"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ],
             "properties": {
                 "read_contents": {
                     "title": "Read Contents",

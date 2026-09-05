@@ -16,6 +16,28 @@
             "type": "object",
             "description": "Entity-specific structure which holds keys related to configuring how this entity acts.",
             "properties": {
+                "read_items_mode": {
+                    "title": "Read Items Mode",
+                    "description": "In what manner should this roboport output item contents to the circuit network.",
+                    "oneOf": [
+                        {
+                            "title": "None",
+                            "description": "No item signals are broadcast.",
+                            "const": 0
+                        },
+                        {
+                            "title": "Logistics",
+                            "description": "The item contents of the connected logistics network.",
+                            "const": 1
+                        },
+                        {
+                            "title": "Missing Requests",
+                            "description": "The missing construction requests within the connected logistic network.",
+                            "const": 2
+                        }
+                    ],
+                    "default": 1
+                },
                 "read_logistics": {
                     "title": "Read Logistics",
                     "description": "Whether or not this roboport should broadcast all the items contained within the network it is a part of to a connected circuit network.",

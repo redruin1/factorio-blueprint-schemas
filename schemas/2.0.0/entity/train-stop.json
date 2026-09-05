@@ -4,10 +4,7 @@
     "title": "Train Stop",
     "description": "An entity representing a node on a Locomotive's schedule.",
     "allOf": [
-        {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
+        {"$ref": "../entity.json"}
     ],
     "type": "object",
     "properties": {
@@ -30,6 +27,11 @@
             "default": 50
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ],
             "type": "object",
             "properties": {
                 "send_to_train": {
