@@ -44,7 +44,7 @@
                     "$ref": "../common/optional-signal-id.json",
                     "default": null
                 },
-                "count_inputs_signal": {
+                "count_signal": {
                     "title": "Count Inputs Signal",
                     "description": "What signal to count the total number of unique signals as. Only has an effect if `operation` is `'count'`.",
                     "$ref": "../common/optional-signal-id.json",
