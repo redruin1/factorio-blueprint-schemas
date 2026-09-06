@@ -5,7 +5,7 @@
     "description": "An entity which illuminates a radius around it.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-enabled.json"}
+        {"$ref": "features/circuit-connectable.json"}
     ],
     "type": "object",
     "properties": {

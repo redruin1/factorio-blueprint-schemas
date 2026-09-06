@@ -10,28 +10,21 @@
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "../common/condition.json"}
+            ],
             "type": "object",
             "properties": {
-                "decider_conditions": {
-                    "title": "Decider Parameters",
-                    "description": "Container for decider combinator specific parameters.",
-                    "allOf": [
-                        {"$ref": "../common/condition.json"}
-                    ],
-                    "type": "object",
-                    "properties": {
-                        "output_signal": {
-                            "title": "Signal",
-                            "description": "What signal to output, if `copy_count_from_input` is `true`.",
-                            "$ref": "../common/optional-signal-id.json"
-                        },
-                        "copy_count_from_input": {
-                            "title": "Copy Count From Input",
-                            "description": "Whether or not this entity should use the input wires to determine the output value, or to simply output a constant value of 1.",
-                            "type": "boolean",
-                            "default": true
-                        }
-                    }
+                "output_signal": {
+                    "title": "Signal",
+                    "description": "What signal to output, if `copy_count_from_input` is `true`.",
+                    "$ref": "../common/optional-signal-id.json"
+                },
+                "copy_count_from_input": {
+                    "title": "Copy Count From Input",
+                    "description": "Whether or not this entity should use the input wires to determine the output value, or to simply output a constant value of 1.",
+                    "type": "boolean",
+                    "default": true
                 }
             }
         }
