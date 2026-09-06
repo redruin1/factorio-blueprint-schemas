@@ -36,6 +36,10 @@
             "items": {
                 "$ref": "../common/item-request.json"
             }
+        },
+        "request_from_buffers": {
+            "type": "boolean",
+            "default": false
         }
     }
 }
