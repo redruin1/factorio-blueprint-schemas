@@ -20,7 +20,7 @@
                     "type": "boolean",
                     "default": true
                 },
-                "circuit_read_gate": {
+                "circuit_read_sensor": {
                     "description": "Whether or not the state of the gate should be broadcast as a unit signal to a connected circuit network.",
                     "type": "boolean",
                     "default": false
