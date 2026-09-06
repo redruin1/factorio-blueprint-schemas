@@ -5,9 +5,7 @@
     "description": "An entity which illuminates a radius around it.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
+        {"$ref": "features/circuit-enabled.json"}
     ],
     "type": "object",
     "properties": {
@@ -29,6 +27,10 @@
             "default": false
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ],
             "type": "object",
             "properties": {
                 "use_colors": {

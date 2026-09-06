@@ -5,12 +5,14 @@
     "description": "A static barrier intended to protect structures.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-connectable.json"},
-        {"$ref": "features/circuit-condition.json"}
+        {"$ref": "features/circuit-connectable.json"}
     ],
     "type": "object",
     "properties": {
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-condition.json"}
+            ],
             "type": "object",
             "properties": {
                 "circuit_open_gate": {

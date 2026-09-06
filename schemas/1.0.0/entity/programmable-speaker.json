@@ -5,8 +5,7 @@
     "description": "A circuit-controllable entity which can emit sounds.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-connectable.json"},
-        {"$ref": "features/circuit-condition.json"}
+        {"$ref": "features/circuit-connectable.json"}
     ],
     "type": "object",
     "properties": {
@@ -63,6 +62,9 @@
             }
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-condition.json"}
+            ],
             "type": "object",
             "description": "Entity-specific structure which holds keys related to configuring how this entity acts.",
             "properties": {

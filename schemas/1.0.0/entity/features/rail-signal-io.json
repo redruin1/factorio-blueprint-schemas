@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/entity/features/rail-signal-io.json",
+    "title": "Rail Signal IO",
+    "description": "Implements circuit signal colors for rail signals and chain signals.",
+    "type": "object",
+    "properties": {
+        "red_output_signal": {
+            "title": "Red Output Signal",
+            "description": "The signal to broadcast when this signal's state is red.",
+            "$ref": "../../common/optional-signal-id.json",
+            "default": {"name": "signal-red", "type": "virtual"}
+        },
+        "orange_output_signal": {
+            "title": "Yellow Output Signal",
+            "description": "The signal to broadcast when this signal's state is yellow.",
+            "$ref": "../../common/optional-signal-id.json",
+            "default": {"name": "signal-yellow", "type": "virtual"}
+        },
+        "green_output_signal": {
+            "title": "Green Output Signal",
+            "description": "The signal to broadcast when this signal's state is green.",
+            "$ref": "../../common/optional-signal-id.json",
+            "default": {"name": "signal-green", "type": "virtual"}
+        }
+    }
+}

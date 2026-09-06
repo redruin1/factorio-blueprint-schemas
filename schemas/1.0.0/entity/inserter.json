@@ -6,11 +6,7 @@
     "allOf": [
         {"$ref": "../entity.json"},
         {"$ref": "features/filters.json"},
-        {"$ref": "features/circuit-connectable.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"},
-        {"$ref": "features/circuit-set-filters.json"}
+        {"$ref": "features/circuit-connectable.json"}
     ],
     "$defs": {
         "hand-position": {
@@ -48,6 +44,12 @@
             ]
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"},
+                {"$ref": "features/circuit-set-filters.json"}
+            ],
             "type": "object",
             "properties": {
                 "circuit_read_hand_contents": {

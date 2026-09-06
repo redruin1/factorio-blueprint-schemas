@@ -5,8 +5,14 @@
     "description": "A pump which extracts fluids from fluid surface tiles.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-connectable.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
-    ]
+        {"$ref": "features/circuit-connectable.json"}
+    ],
+    "properties": {
+        "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ]
+        }
+    }
 }

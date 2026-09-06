@@ -5,10 +5,7 @@
     "description": "An entity representing a node on a Locomotive's schedule.",
     "allOf": [
         {"$ref": "../entity.json"},
-        {"$ref": "features/circuit-connectable.json"},
-        {"$ref": "features/circuit-enabled.json"},
-        {"$ref": "features/circuit-condition.json"},
-        {"$ref": "features/logistic-condition.json"}
+        {"$ref": "features/circuit-connectable.json"}
     ],
     "type": "object",
     "properties": {
@@ -26,6 +23,11 @@
             "default": null
         },
         "control_behavior": {
+            "allOf": [
+                {"$ref": "features/circuit-enabled.json"},
+                {"$ref": "features/circuit-condition.json"},
+                {"$ref": "features/logistic-condition.json"}
+            ],
             "type": "object",
             "properties": {
                 "send_to_train": {
