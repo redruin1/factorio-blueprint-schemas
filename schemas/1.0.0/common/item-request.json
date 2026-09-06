@@ -1,0 +1,36 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "1.0.0/common/item-request.json",
+    "title": "Item Request",
+    "description": "An object representing a desired amount of a particular item.",
+    "type": "object",
+    "properties": {
+        "index": {
+            "title": "Index",
+            "description": "Slot at which this filter occupies, 1-indexed.",
+            "$ref": "../../common/uint32.json"
+        },
+        "name": {
+            "title": "Item Name",
+            "description": "Name of a valid Factorio item.",
+            "type": "string"
+        },
+        "count": {
+            "title": "Item Count",
+            "description": "The total amount of this item to request.",
+            "$ref": "../../common/uint32.json"
+        }
+    },
+    "examples": [
+        {
+            "index": 1,
+            "name": "iron-ore",
+            "count": 100
+        },
+        {
+            "index": 2,
+            "name": "copper-ore",
+            "count": 0
+        }
+    ]
+}

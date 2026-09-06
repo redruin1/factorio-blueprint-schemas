@@ -45,13 +45,32 @@
         },
         "control_behavior": {
             "allOf": [
-                {"$ref": "features/circuit-enabled.json"},
                 {"$ref": "features/circuit-condition.json"},
                 {"$ref": "features/logistic-condition.json"},
                 {"$ref": "features/circuit-set-filters.json"}
             ],
             "type": "object",
             "properties": {
+                "circuit_mode_of_operation": {
+                    "title": "Circuit Mode of Operation",
+                    "description": "In what manner should this inserter interpret signals from the connected circuit network.",
+                    "type": "integer",
+                    "oneOf": [
+                        {
+                            "title": "Set Filters", 
+                            "const": 1
+                        },
+                        {
+                            "title": "Enable/Disable",
+                            "const": 2
+                        },
+                        {
+                            "title": "None", 
+                            "const": 3
+                        }
+                    ],
+                    "default": 2
+                },
                 "circuit_read_hand_contents": {
                     "title": "Read Contents",
                     "description": "Whether or not to broadcast the current items in the hand to a connected circuit network.",

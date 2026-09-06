@@ -11,12 +11,30 @@
     "properties": {
         "bar": {"$ref": "../../common/limiting-bar.json"},
         "control_behavior": {
-            "allOf": [
-                {"$ref": "features/circuit-enabled.json"},
-                {"$ref": "features/circuit-condition.json"}
-            ],
             "type": "object",
             "properties": {
+                "circuit_mode_of_operation": {
+                    "title": "Circuit Mode of Operation",
+                    "description": "In what manner should this logistic chest interact with a connected circuit network. Only buffer and requester chests can modify this value to anything other than 'Read Contents'.",
+                    "type": "integer",
+                    "oneOf": [
+                        {
+                            "title": "Read Contents",
+                            "const": 0
+                        },
+                        {
+                            "title": "Set Requests",
+                            "const": 1
+                        }
+                    ],
+                    "default": 0
+                }
+            }
+        },
+        "request_filters": {
+            "type": "array",
+            "items": {
+                "$ref": "../common/item-request.json"
             }
         }
     }
