@@ -57,19 +57,27 @@
                     "type": "integer",
                     "oneOf": [
                         {
+                            "title": "Enable/Disable",
+                            "const": 0
+                        },
+                        {
                             "title": "Set Filters", 
                             "const": 1
                         },
                         {
-                            "title": "Enable/Disable",
+                            "title": "Read Hand Contents",
                             "const": 2
                         },
                         {
                             "title": "None", 
                             "const": 3
+                        },
+                        {
+                            "title": "Set Stack Size",
+                            "const": 4
                         }
                     ],
-                    "default": 2
+                    "default": 0
                 },
                 "circuit_read_hand_contents": {
                     "title": "Read Contents",
