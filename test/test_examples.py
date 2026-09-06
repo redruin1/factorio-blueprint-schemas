@@ -26,19 +26,22 @@ def gather_examples(path, extension):
 
 def do_test_schema(filename, version):
     # Decode the value to json
-        print(filename)
-    
-        with open(filename, "r") as file:
-            bp_string = file.read()
-    
-        json_dict = json.loads(zlib.decompress(base64.b64decode(bp_string[1:])))
-    
-        # We assume version 2.0
-        validator = Draft202012Validator(
-            grab_json_file("schemas", version, "blueprint.json"),
-            registry=test_reg
-        )
-        validator.validate(json_dict)
+    print(filename)
+
+    with open(filename, "r") as file:
+        bp_string = file.read()
+
+    json_dict = json.loads(zlib.decompress(base64.b64decode(bp_string[1:])))
+
+    validator = Draft202012Validator(
+        grab_json_file("schemas", version, "blueprint.json"),
+        registry=test_reg
+    )
+    validator.validate(json_dict)
+
+@pytest.mark.parametrize("filename", gather_examples(os.path.join("test", "examples", "1.0.0"), ".bp"))
+def test_example_blueprints_1_0(filename):
+    do_test_schema(filename, "1.0.0")
 
 @pytest.mark.parametrize("filename", gather_examples(os.path.join("test", "examples", "2.0.0"), ".bp"))
 def test_example_blueprints_2_0(filename):

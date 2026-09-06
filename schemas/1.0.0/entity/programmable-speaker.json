@@ -68,23 +68,28 @@
             "type": "object",
             "description": "Entity-specific structure which holds keys related to configuring how this entity acts.",
             "properties": {
-                "signal_value_is_pitch": {
-                    "title": "Signal Value Is Pitch",
-                    "description": "Whether or not the value of the provided signal should be used to modulate the pitch of the played sound.",
-                    "type": "boolean",
-                    "default": false
-                },
-                "instrument_id": {
-                    "title": "Instrument ID",
-                    "description": "Index of the family of sounds this speaker is programmed to play.",
-                    "type": "integer",
-                    "default": 0
-                },
-                "note_id": {
-                    "title": "Note ID",
-                    "description": "Index of particular note of the instrument that this speaker is programmed to play. Only has an effect if `signal_value_is_pitch` is `false`.",
-                    "type": "integer",
-                    "default": 0
+                "circuit_parameters": {
+                    "type": "object",
+                    "properties": {
+                        "signal_value_is_pitch": {
+                            "title": "Signal Value Is Pitch",
+                            "description": "Whether or not the value of the provided signal should be used to modulate the pitch of the played sound.",
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "instrument_id": {
+                            "title": "Instrument ID",
+                            "description": "Index of the family of sounds this speaker is programmed to play.",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "note_id": {
+                            "title": "Note ID",
+                            "description": "Index of particular note of the instrument that this speaker is programmed to play. Only has an effect if `signal_value_is_pitch` is `false`.",
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
                 }
             }
         }
