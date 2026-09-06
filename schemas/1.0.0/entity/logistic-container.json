@@ -17,9 +17,6 @@
             ],
             "type": "object",
             "properties": {
-                "circuit_mode_of_operation": {
-                    "$ref": "../common/logistic-mode-of-operation.json"
-                }
             }
         }
     }
